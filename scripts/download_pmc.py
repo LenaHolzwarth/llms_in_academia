@@ -16,4 +16,4 @@ if use_local:
 else:
     output_path = path_remote
 
-scrape_baseline(output_path, get_baseline=False, get_filelist=True)
+scrape_baseline(output_path, get_baseline=True, get_filelist=False)
