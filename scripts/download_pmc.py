@@ -3,8 +3,8 @@
 import sys
 from src.pmc_scrape import scrape_baseline
 
-path_local = '/Users/lena/Documents/GitHub/llms_in_academia/data/'
-path_remote = '/gpfs01/berens/data/data/pubmed_central/'
+path_local = '/Users/lena/documents/GitHub/llms_in_academia/data/'
+path_remote = '/Users/lena/documents/cinmount-data/'
 
 if len(sys.argv) > 1:
     use_local = sys.argv[1]
@@ -16,4 +16,4 @@ if use_local:
 else:
     output_path = path_remote
 
-scrape_baseline(output_path, get_baseline=False, get_filelist=True)
+scrape_baseline(output_path, get_baseline=True, get_filelist=False)
