@@ -6,6 +6,7 @@ import pandas as pd
 import re
 import os
 from tqdm import tqdm
+from iso3166 import countries
 
 def xml_parse_single(xml_file: str) -> dict:
     """parses a single .xml file and stores the information in a dict"""
@@ -19,17 +20,21 @@ def xml_parse_single(xml_file: str) -> dict:
     paper_dict['language'] = xml_get_attr(xroot, '{http://www.w3.org/XML/1998/namespace}lang')
     paper_dict['journal'] = xml_get_text(xroot.findall('./front/journal-meta/journal-title-group/journal-title'))
     paper_dict['pmc-id'] = xml_get_text(xroot.findall('./front/article-meta/article-id/[@pub-id-type="pmc"]'))
+    paper_dict['pmid'] = xml_get_text(xroot.findall('./front/article-meta/article-id/[@pub-id-type="pmid"]'))
     paper_dict['title'] = xml_get_text(xroot.findall('./front/article-meta/title-group/article-title'))
     paper_dict['country'] = get_country(xroot)
     paper_dict['date'] = get_date(xroot)
     paper_dict['abstract'] = get_abstr(xroot.findall('./front/article-meta/abstract'))
+    paper_dict['section_titles'] = get_sec_titles(xroot)
+    paper_dict['section_count'] = len(xroot.findall('./body/sec'))
 
     return paper_dict
 
 def xml_parse_baseline(data_path: str, json_path: str) -> pd.DataFrame:
 
     # set up dict to collect individiual papers
-    keys = ['article-type', 'language', 'journal', 'pmc-id', 'title', 'country', 'date', 'abstract']
+    keys = ['article-type', 'language', 'journal', 'pmc-id', 'pmid', 'title', 
+            'country', 'date', 'abstract', 'section_titles', 'section_count']
     baseline = {k:[] for k in keys}
 
     for dirpath, _, filenames in os.walk(data_path):
@@ -82,37 +87,15 @@ def get_date(root):
 
     return date
 
-def get_country_old(root):
-    
-    # try first location
-    country = xml_get_text(root.findall('./front/article-meta/aff/country'))
-
-    if country == None:
-        #try second location
-        country = xml_get_text(root.findall('./front/article-meta/aff/[@id="I1"]'))
-        if not country == None:
-            country = country.split()
-            if len(country) > 0:
-                country = country[-1]
-            else:
-                country = None
-    
-    if country == None:
-        #try third location
-        country = xml_get_text(root.findall('./front/article-meta/contrib-group/contrib/[@corresp="yes"]/aff/country'))
-      
-    # prevent two names for same country
-    if country == 'United States':
-        country = 'USA'
-    
-    return country
 
 def get_country(root):
 
     locations = ['./front/article-meta/aff/country',
-                 './front/article-meta/aff',
+                 './front/article-meta/contrib-group/aff/country',
                  './front/article-meta/contrib-group/contrib/aff/country',
-                 './front/article-meta/contrib-group/aff']
+                 './front/article-meta/aff',
+                 './front/article-meta/contrib-group/aff',
+                 './front/article-meta/contrib-group/contrib/aff',]
     
     i = 0
     country = None
@@ -122,15 +105,69 @@ def get_country(root):
             break
 
         country = xml_get_text(root.findall(locations[i]))
+        # some queries return a whole adress, in which case we need the last word(s) of the string 
+        country = extract_country(country)
+        
         i += 1
     
-    # some queries return a whole adress, in which case we need the last word of the string 
-    if not country == None:
-        country = country.split()
-        if len(country) > 0:        # check that the string is non-empty
-            country = country[-1]
-        else:
-            country = None          # replace empty string with None
-        
+    return country
+
+def extract_country(s: str) -> str:
+    """checks if the end of a string contains a valid country name
+    this function is necessary bc some countries have names with multiple words (e.g. united states)
+    if there is no country at the end of the string, the function returns None"""
+
+    if s in [None, '']:
+        return None
+    
+    s = s.split()
+    for i in range(1, len(s)+1):
+        c = validate_country(' '.join(s[-i:]).strip('.,;'))
+        if not c == None:
+            return c
+    
+    return None
+
+
+def validate_country(c: str) -> str:
+
+    #TO-DO: introduce case insensivity?
+
+    if c == None:
+        return None
+    
+    # country names that iso3166 doesn't recognize with their iso version
+    country_alt_names = {'United States': 'USA',
+                         'Republic of Korea': 'KOR',
+                         'South Korea': 'KOR',
+                         'United Kingdom': 'GBR',
+                         'UK': 'GBR',
+                         'Iran': 'IRN',
+                         'Turkey': 'TUR',
+                         'Vietnam': 'VNM',
+                         'M&#x000e9;xico': 'MEX', # this doesn't work
+                         'Czech Republic': 'CZE',
+                         'Russia': 'RUS',
+                         'Bolivia': 'BOL',
+                         'Tanzania': 'TZA',
+                         'Venezuela': 'VEN',
+                         'Brasil': 'BRA'}
+    
+    if c in list(country_alt_names.keys()):
+        c = country_alt_names[c]
+    
+    try:
+        country = countries.get(c).apolitical_name
+    except KeyError:
+        country = None
     
     return country
+
+def get_sec_titles(root):
+
+    titles = root.findall('./body/sec/title')
+    title_names = [title.text for title in titles]
+    if len(title_names) == 0:
+        title_names = None
+
+    return title_names
