@@ -26,30 +26,57 @@ def xml_parse_single(xml_file: str) -> dict:
     paper_dict['date'] = get_date(xroot)
     paper_dict['abstract'] = get_abstr(xroot.findall('./front/article-meta/abstract'))
     paper_dict['section_titles'] = get_sec_titles(xroot)
-    paper_dict['section_count'] = len(xroot.findall('./body/sec'))
+    paper_dict['sections'] = get_sections(xroot)
 
     return paper_dict
 
-def xml_parse_baseline(data_path: str, json_path: str) -> pd.DataFrame:
-
+def xml_parse_baseline_segment(data_path: str, json_path: str) -> pd.DataFrame:
+    """parse all of the .xml files in a folder into one pandas dataframe, which is saved to a json file"""
     # set up dict to collect individiual papers
     keys = ['article-type', 'language', 'journal', 'pmc-id', 'pmid', 'title', 
-            'country', 'date', 'abstract', 'section_titles', 'section_count']
+            'country', 'date', 'abstract', 'section_titles', 'sections']
     baseline = {k:[] for k in keys}
+
+    # exclude files that don't parse because of unbound prefixes
+    exclude = ['PMC8494208.xml']
 
     for dirpath, _, filenames in os.walk(data_path):
         for file in tqdm(filenames):
             # check that only files named 'PMCxxxxxxxx.xml' are being processed
-            r = re.compile('PMC\d{8}.xml')
-            if r.match(file):
-                paper_dict = xml_parse_single(os.path.join(dirpath, file))
-                # append new paper to baseline dict
-                {k:v.append(paper_dict[k]) for k,v in baseline.items()}
+            r = re.compile('PMC\\d{6,8}.xml')
+            if r.match(file) and not file in exclude:
+                try:
+                    paper_dict = xml_parse_single(os.path.join(dirpath, file))
+                except et.ParseError as e:
+                    print(f'parse error in file {file}: {e}')
+                else:
+                    # append new paper to baseline dict
+                    {k:v.append(paper_dict[k]) for k,v in baseline.items()}
 
     baseline_df = pd.DataFrame.from_dict(baseline)
     baseline_df.to_json(json_path)
 
     return baseline_df
+
+def xml_parse_baseline(data_path: str, json_path: str = '../data', replace: bool = False):
+    """parse multiple folders of .xml files and save the extracted info in one .json file per folder
+    data_path: location of .xml files
+    json_path: location of .json output
+    replace: if a .json file of same name already exists, should it be replaced?
+    """
+
+    dirname = os.path.basename(data_path)
+    subdirs = next(os.walk(data_path))[1]
+
+    for subdir in subdirs:
+        subdir_path = os.path.join(data_path, subdir)
+        json_file = os.path.join(json_path, dirname, subdir + '.json')
+        
+        print(f'parsing {subdir}')
+        if replace or not os.path.exists(json_file):
+            _ = xml_parse_baseline_segment(subdir_path, json_file)
+
+
 
 
 ### HELPER FUNCTIONS ###
@@ -171,3 +198,13 @@ def get_sec_titles(root):
         title_names = None
 
     return title_names
+
+def get_sections(root):
+
+    section_nodes = root.findall('./body/sec')
+
+    secs = []
+    for sec in section_nodes:
+        secs.append(' '.join(sec.itertext()))
+
+    return secs
