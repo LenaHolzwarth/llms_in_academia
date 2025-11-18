@@ -1,5 +1,6 @@
 import re
 import pandas as pd
+from pandas._libs.tslibs.timestamps import Timestamp
 from polyglot.detect import Detector
 from polyglot.detect.base import Error
 
@@ -16,23 +17,25 @@ def get_alt_date(dates: list) -> list:
 
     dates_formatted = []
     for i, date in enumerate(dates):
-        # if the date starts with letters, save them to get the alt_date entry
-        r = r'^[a-zA-Z]*'
-        key = re.match(r, date).group()
-        # replace letters with correct digits
-        if not key == '':
-            r = r'.+(?=\-\d{4})'
-            date = re.sub(r, alt_dates[key], date)
-        # remove everything after year
-        r = r'(?<=\-\d{4}).+'
-        date = re.sub(r, '', date)
+        if type(date) == Timestamp:
+            date = pd.to_datetime(date.strftime('%d-%m-%Y %H:%M:%S'), dayfirst = True)
+        elif type(date) == str:
+            # if the date starts with letters, save them to get the alt_date entry
+            r = r'^[a-zA-Z]*'
+            key = re.match(r, date).group()
+            # replace letters with correct digits
+            if not key == '':
+                r = r'.+(?=\-\d{4})'
+                date = re.sub(r, alt_dates[key], date)
+            # remove everything after year
+            r = r'(?<=\-\d{4}).+'
+            date = re.sub(r, '', date)
+
+            date = pd.to_datetime(date, dayfirst = True, errors = 'coerce')
+        else:
+            date = pd.NaT
     
-        try: 
-            date = pd.to_datetime(date, dayfirst = True)
-        except pd._libs.tslibs.parsing.DateParseError:
-            print(f'DateParseError for {date} with index {i}')
-        
-        dates_formatted.append(date)
+    dates_formatted.append(date)
     
     return dates_formatted
 

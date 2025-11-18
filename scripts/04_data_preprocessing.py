@@ -1,6 +1,7 @@
 import pandas as pd
 import re
 import os
+import json
 from tqdm import tqdm
 from collections import Counter
 from polyglot.detect import Detector
@@ -10,12 +11,15 @@ import src.data_utils as utils
 BASELINE_NAME = "baseline_2025-06-26"
 DATA_PATH = os.path.join("../data", BASELINE_NAME)
 
+# dictionary for tracking number of papers removed during preprocessing
+paper_count_dict = {}
+
 # iterate through baseline .json files
 for dirpath, _, filenames in os.walk(DATA_PATH):
     for file in tqdm(filenames):
         print(file)
         # check that only files named 'PMCxxxxxxxx.xml' are being processed
-        r = re.compile(r'PMC\d{3}xxxxxx')
+        r = re.compile(r"PMC\d{3}xxxxxx")
         if r.match(file):
             baseline_df = pd.read_json(os.path.join(dirpath, file))
 
@@ -42,32 +46,50 @@ for dirpath, _, filenames in os.walk(DATA_PATH):
             baseline_df["language"] = utils.determine_lang(
                 baseline_df["language"], list(baseline_df["abstract"])
             )
-            baseline_df = baseline_df[baseline_df['language'].apply(lambda x: x == 'en')]
+            baseline_df = baseline_df[
+                baseline_df["language"].apply(lambda x: x == "en")
+            ]
 
-            # format dates to be type pd.timeseries 
-            baseline_df['date'] = utils.get_alt_date(baseline_df['date'])
+            # format dates to be type pd.timeseries
+            baseline_df["date"] = utils.get_alt_date(baseline_df["date"])
             baseline_df = baseline_df[
                 baseline_df["date"].apply(lambda x: not x == None)
             ]
 
+            baseline_df = baseline_df[
+                baseline_df["date"].apply(lambda x: not pd.isna(x))
+            ]
+
             paper_count_1 = len(baseline_df)
-            print(f'{file}: kept {paper_count_1} out of {paper_count_0} papers (removed {100*paper_count_1/paper_count_0}%)')
+            print(
+                f'{file}: kept {paper_count_1} out of {paper_count_0} papers (removed {"%.2f" % (1 - (100*paper_count_1/paper_count_0))}%)'
+            )
+            paper_count_dict[file] = {
+                "before_prep": paper_count_0,
+                "after_prep": paper_count_1,
+            }
             
+
             # re-organize json files, such that there is a separate .json file for each year
-            os.makedirs(os.path.join(DATA_PATH, 'formatted'), exist_ok=True)
+            os.makedirs(os.path.join(DATA_PATH, "formatted"), exist_ok=True)
 
             for year in range(2000, 2026):
-                df = baseline_df[baseline_df['date'].apply(lambda x: x.year == year)]
+                df = baseline_df[baseline_df["date"].apply(lambda x: x.year == year)]
 
                 # check if there is already a df for the current year
-                json_path = os.path.join(DATA_PATH, 'formatted', str(year) + '.json')
+                json_path = os.path.join(DATA_PATH, "formatted", str(year) + ".json")
                 if os.path.exists(json_path):
                     df_old = pd.read_json(json_path)
-                    df = pd.concat([df_old, df], ignore_index=True).drop_duplicates(subset=['pmc-id'])
+                    df = pd.concat([df_old, df], ignore_index=True).drop_duplicates(
+                        subset=["pmc-id"]
+                    )
 
-                df = df.sort_values('date', ignore_index=True)
+                df = df.sort_values("date", ignore_index=True)
 
                 # save df as json
                 if len(df) > 0:
                     df.to_json(json_path)
 
+# save paper counts
+with open(os.path.join(DATA_PATH, "formatted", 'paper_counts.json')) as f:
+    json.dump(paper_count_dict, f)
