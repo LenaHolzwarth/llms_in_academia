@@ -2,9 +2,6 @@
 	"folders": [
 		{
 			"path": ".."
-		},
-		{
-			"path": "../../../../data/data/pubmed_central/baseline_2025-06-26"
 		}
 	],
 	"settings": {}

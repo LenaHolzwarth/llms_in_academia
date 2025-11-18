@@ -1,0 +1,73 @@
+import pandas as pd
+import re
+import os
+from tqdm import tqdm
+from collections import Counter
+from polyglot.detect import Detector
+from polyglot.detect.base import Error
+import src.data_utils as utils
+
+BASELINE_NAME = "baseline_2025-06-26"
+DATA_PATH = os.path.join("../data", BASELINE_NAME)
+
+# iterate through baseline .json files
+for dirpath, _, filenames in os.walk(DATA_PATH):
+    for file in tqdm(filenames):
+        print(file)
+        # check that only files named 'PMCxxxxxxxx.xml' are being processed
+        r = re.compile(r'PMC\d{3}xxxxxx')
+        if r.match(file):
+            baseline_df = pd.read_json(os.path.join(dirpath, file))
+
+            paper_count_0 = len(baseline_df)
+
+            # filter for article types
+            include_types = ["research-article", "review-article", "case-report"]
+            baseline_df = baseline_df[
+                baseline_df["article-type"].apply(lambda x: x in include_types)
+            ]
+
+            # format sections
+            baseline_df["section_titles"] = baseline_df["section_titles"].apply(
+                lambda x: [] if x == None else x
+            )
+            baseline_df["sections"] = utils.standardize_sections(
+                list(baseline_df["sections"]), list(baseline_df["section_titles"])
+            )
+            baseline_df = baseline_df[
+                baseline_df["sections"].apply(lambda x: not x == {})
+            ]
+
+            # remove non-english papers
+            baseline_df["language"] = utils.determine_lang(
+                baseline_df["language"], list(baseline_df["abstract"])
+            )
+            baseline_df = baseline_df[baseline_df['language'].apply(lambda x: x == 'en')]
+
+            # format dates to be type pd.timeseries 
+            baseline_df['date'] = utils.get_alt_date(baseline_df['date'])
+            baseline_df = baseline_df[
+                baseline_df["date"].apply(lambda x: not x == None)
+            ]
+
+            paper_count_1 = len(baseline_df)
+            print(f'{file}: kept {paper_count_1} out of {paper_count_0} papers (removed {100*paper_count_1/paper_count_0}%)')
+            
+            # re-organize json files, such that there is a separate .json file for each year
+            os.makedirs(os.path.join(DATA_PATH, 'formatted'), exist_ok=True)
+
+            for year in range(2000, 2026):
+                df = baseline_df[baseline_df['date'].apply(lambda x: x.year == year)]
+
+                # check if there is already a df for the current year
+                json_path = os.path.join(DATA_PATH, 'formatted', str(year) + '.json')
+                if os.path.exists(json_path):
+                    df_old = pd.read_json(json_path)
+                    df = pd.concat([df_old, df], ignore_index=True).drop_duplicates(subset=['pmc-id'])
+
+                df = df.sort_values('date', ignore_index=True)
+
+                # save df as json
+                if len(df) > 0:
+                    df.to_json(json_path)
+

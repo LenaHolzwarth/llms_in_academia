@@ -1,3 +1,142 @@
+import re
+import pandas as pd
+from polyglot.detect import Detector
+from polyglot.detect.base import Error
+
+##### DATES #####
+
+def get_alt_date(dates: list) -> list:
+    '''take list of of unformatted dates and return list of pd.datetime objects
+    this function expects the list entries to be in one of the following formats:
+        - 17-11-2025
+        - Nov-Dec-2025
+        - Fall-2025
+        - 17-11-2024-November-17
+    '''
+
+    dates_formatted = []
+    for i, date in enumerate(dates):
+        # if the date starts with letters, save them to get the alt_date entry
+        r = r'^[a-zA-Z]*'
+        key = re.match(r, date).group()
+        # replace letters with correct digits
+        if not key == '':
+            r = r'.+(?=\-\d{4})'
+            date = re.sub(r, alt_dates[key], date)
+        # remove everything after year
+        r = r'(?<=\-\d{4}).+'
+        date = re.sub(r, '', date)
+    
+        try: 
+            date = pd.to_datetime(date, dayfirst = True)
+        except pd._libs.tslibs.parsing.DateParseError:
+            print(f'DateParseError for {date} with index {i}')
+        
+        dates_formatted.append(date)
+    
+    return dates_formatted
+
+# for the seasons, the meterological start of the season is used as the date 
+# for time spans, the first date is used (although the span can be huge, e.g. 'Jan-Jun-2021' for PMC8297570)
+alt_dates = {'Jan': '01-01',
+             'January': '01-01',
+             'Feb': '01-02',
+             'February': '01-02',
+             'Mar': '01-03',
+             'March': '01-03',
+             'Apr': '01-04',
+             'April': '01-04',
+             'May': '01-05',
+             'Jun': '01-06',
+             'June': '01-06',
+             'Jul': '01-07',
+             'July': '01-07',
+             'Aug': '01-08',
+             'August': '01-08',
+             'Sep': '01-09',
+             'September': '01-09',
+             'Oct': '01-10',
+             'October': '01-10',
+             'Nov': '01-11',
+             'November': '01-11',
+             'Dec': '01-12',
+             'December': '01-12',
+             'Spring': '01-03',
+             'Summer': '01-06',
+             'Fall': '01-09',
+             'Autumn': '01-09',
+             'Winter': '01-12'}
+
+##### LANGUAGE #####
+
+def determine_lang(langs: list, texts: list):
+    
+    langs_new = []
+
+    for i, lang in enumerate(langs):
+        if lang == None and not texts[i] == None:
+            try:
+                lang = Detector(texts[i]).languages[0].code
+            except Error:
+                lang = None
+        
+        langs_new.append(lang)
+    
+    return langs_new
+
+##### SECTIONS #####
+
+def standardize_sections(sections: list, section_titles: list) -> list:
+    """replaces list entries of 'sections' with dict entries, where each section is mapped to its standardized section name.
+    sections without a standardized name are discarded
+    if there is more than one section with the same standardized name (e.g. 'case 1' and 'case 2' would both be assigned to 
+    'case report'), the section strings are concatenated 
+    Arguments:
+    - sections: nested list, each entry a list of strings, each is a section from a paper
+    - section_titles: same as sections, but with corresponding title for each section
+    """
+    
+    
+    standardized = []
+    
+    for i, secs in enumerate(sections):
+        sec_dict = {}
+        if len(secs) == len(section_titles[i]):
+            for j, sec in enumerate(secs):
+                alt_title = get_alt_title(section_titles[i][j])
+                if not alt_title == '':
+                    if alt_title in sec_dict.keys():
+                        sec_dict[alt_title] += ' ' + sec
+                    else:
+                        sec_dict[alt_title] = sec
+        standardized.append(sec_dict)
+        
+
+    return standardized
+
+##### SECTION TITLES #####
+
+def get_alt_title(title: str) -> str:
+    
+    # sections we're not interested in
+    ignore_list = ['supplementary', 'admin', 'combined', 'misc'] 
+    
+    # if title is not in the inclusion list, set to empty string
+    alt = ''
+    for key, synonyms in title_versions.items():
+        if key in ignore_list:
+            continue
+        if not title == None:
+            # clean title
+            for pat, repl in title_clean.items():
+                title = re.sub(pat, repl, title)
+            title = title.strip(':').strip()
+            if title.casefold() in synonyms:
+                alt = key
+    return alt
+
+
+
 # strings to remove when processing section titles
 title_clean = {r'\n': ' ', r'\ufeff': '', r' *\d+\.* *': '', r'\xa0': ' ', r'&': 'and'}
 

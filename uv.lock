@@ -460,6 +460,15 @@ wheels = [
 ]
 
 [[package]]
+name = "icu"
+version = "0.0.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/10/43/6777e772d706126c72dd0fc639030789fc5ee6253cfa6ab691016c54b01c/icu-0.0.1.tar.gz", hash = "sha256:89461be7c10a3d32f01f35730e35d5a0cc046e9f72ef56bdb561e35d5064581c", size = 37320, upload-time = "2020-09-21T11:55:07.656Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/89/d8/0972fa39747faea092e8105103f261e01d6cefe262cbe036df8b0b8ada44/icu-0.0.1-py3-none-any.whl", hash = "sha256:6109bf4fa9544e2d66063050648b05711ae31573ae78b44730fa611849c33ff9", size = 49574, upload-time = "2020-09-21T11:55:03.345Z" },
+]
+
+[[package]]
 name = "idna"
 version = "3.11"
 source = { registry = "https://pypi.org/simple" }
@@ -924,11 +933,16 @@ name = "llms-in-academia"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "icu" },
     { name = "iso3166" },
     { name = "jupyter" },
+    { name = "morfessor" },
     { name = "nc" },
     { name = "numpy" },
     { name = "pandas" },
+    { name = "polyglot" },
+    { name = "pycld2" },
+    { name = "pyicu" },
     { name = "requests" },
     { name = "scikit-learn" },
     { name = "seaborn" },
@@ -937,11 +951,16 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "icu", specifier = ">=0.0.1" },
     { name = "iso3166", specifier = ">=2.1.1" },
     { name = "jupyter", specifier = ">=1.1.1" },
+    { name = "morfessor", specifier = ">=2.0.6" },
     { name = "nc", specifier = ">=1.0.2" },
     { name = "numpy", specifier = ">=2.3.4" },
     { name = "pandas", specifier = ">=2.3.3" },
+    { name = "polyglot", specifier = ">=16.7.4" },
+    { name = "pycld2", specifier = ">=0.42" },
+    { name = "pyicu", specifier = ">=2.16" },
     { name = "requests", specifier = ">=2.32.5" },
     { name = "scikit-learn", specifier = ">=1.7.2" },
     { name = "seaborn", specifier = ">=0.13.2" },
@@ -1066,6 +1085,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/d7/02/a7fb8b21d4d55ac93cdcde9d3638da5dd0ebdd3a4fed76c7725e10b81cbe/mistune-3.1.4.tar.gz", hash = "sha256:b5a7f801d389f724ec702840c11d8fc48f2b33519102fc7ee739e8177b672164", size = 94588, upload-time = "2025-08-29T07:20:43.594Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7a/f0/8282d9641415e9e33df173516226b404d367a0fc55e1a60424a152913abc/mistune-3.1.4-py3-none-any.whl", hash = "sha256:93691da911e5d9d2e23bc54472892aff676df27a75274962ff9edc210364266d", size = 53481, upload-time = "2025-08-29T07:20:42.218Z" },
+]
+
+[[package]]
+name = "morfessor"
+version = "2.0.6"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/af/5e/760a41def80f7e48e4f95937a8de73057871f655c0ec459f7aff3c1f95a2/Morfessor-2.0.6.tar.gz", hash = "sha256:bb3beac234341724c5f640f65803071f62373a50dba854d5a398567f9aefbab2", size = 34341, upload-time = "2019-07-31T12:35:10.401Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/39/e6/7afea30be2ee4d29ce9de0fa53acbb033163615f849515c0b1956ad074ee/Morfessor-2.0.6-py3-none-any.whl", hash = "sha256:7215e37909ebd2bafeeec5fdf4e339a25e61aee4895ff99317b9fb44eddab562", size = 35784, upload-time = "2019-07-31T12:35:08.945Z" },
 ]
 
 [[package]]
@@ -1371,6 +1399,12 @@ wheels = [
 ]
 
 [[package]]
+name = "polyglot"
+version = "16.7.4"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e7/98/e24e2489114c5112b083714277204d92d372f5bbe00d5507acf40370edb9/polyglot-16.7.4.tar.gz", hash = "sha256:f7d9cca9a212622548e9416fb89f1238b994b8860ef49e03b7c82c67f9b6269b", size = 126296, upload-time = "2016-07-03T20:05:42.197Z" }
+
+[[package]]
 name = "prometheus-client"
 version = "0.23.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1436,6 +1470,21 @@ wheels = [
 ]
 
 [[package]]
+name = "pycld2"
+version = "0.42"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/89/81/d4d348e224ac0994234992c6d5fb3a78cc9b660337d5bd17c67fac1baf6a/pycld2-0.42.tar.gz", hash = "sha256:5188084c97f99e896cf464057c64f6b0f91f68d111182dceb5bcfe487d7f4c0f", size = 41372203, upload-time = "2025-03-28T06:47:10.803Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0a/a9/eb235acf4233d0f448b644dc58e955c304ae35fb646dee06b11a54375177/pycld2-0.42-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:94b84050081c85f0038369ee4db1bdddc5c8178773809aa55fb4e78b94a3a1c5", size = 4825743, upload-time = "2025-03-28T06:46:03.848Z" },
+    { url = "https://files.pythonhosted.org/packages/29/2d/649713e978b89407d60a88f5406e98bb347b572fefcb917b29a866e24af2/pycld2-0.42-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f939bfa74347ff931d2bfa7e19b06e1b21ecfcc93769e0ed2db2f36fc4252735", size = 9889420, upload-time = "2025-03-28T06:46:05.394Z" },
+    { url = "https://files.pythonhosted.org/packages/dd/9e/90598c4d66e300d760666d93fa17af7946cc612d5ee64a828bb1ae636ecd/pycld2-0.42-cp313-cp313-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:5a3676d4c9e258a74fdb6c94e7577c02a99974e41c8641e045a980ade64b818a", size = 9851117, upload-time = "2025-03-28T06:46:07.613Z" },
+    { url = "https://files.pythonhosted.org/packages/c1/22/2583dff682a54366857dfee5d6f4478bedc03265cf0fff8ea610d17baece/pycld2-0.42-cp313-cp313-musllinux_1_2_i686.whl", hash = "sha256:f8d6dedca968b3b64a0bb1e693f67cfed7fe7bd207ab13d4c5b9fd1a27ce9600", size = 10997561, upload-time = "2025-03-28T06:46:09.96Z" },
+    { url = "https://files.pythonhosted.org/packages/f2/34/de9d6a785c45b0679da5dd545df2f0b95e2011588eb74b08d819bb01c420/pycld2-0.42-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:593465e6f79ddb3a4be0c43dda8f0400015124a0f3bfe5cd3741d8d2c371412d", size = 10922625, upload-time = "2025-03-28T06:46:12.369Z" },
+    { url = "https://files.pythonhosted.org/packages/a7/9a/67e29dab3665ea7925d5d9160b8560c97a588c980c336e402957a06333e8/pycld2-0.42-cp313-cp313-win32.whl", hash = "sha256:9820d363886177de1cc0886db9cd40629d61261d2896f755d682c71539b5ed5e", size = 4749125, upload-time = "2025-03-28T06:46:14.315Z" },
+    { url = "https://files.pythonhosted.org/packages/7b/80/48e21c1c93cd375c61d3ac41737b166152cd105e653b042c401cbbb2ee91/pycld2-0.42-cp313-cp313-win_amd64.whl", hash = "sha256:3570a6c2d9487fad4c7ac9d36e1537caca9456fccfd23ec1b87d0c7e6a544e5c", size = 4755335, upload-time = "2025-03-28T06:46:15.906Z" },
+]
+
+[[package]]
 name = "pycparser"
 version = "2.23"
 source = { registry = "https://pypi.org/simple" }
@@ -1452,6 +1501,12 @@ sdist = { url = "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b014
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl", hash = "sha256:86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b", size = 1225217, upload-time = "2025-06-21T13:39:07.939Z" },
 ]
+
+[[package]]
+name = "pyicu"
+version = "2.16"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/11/c3/8d558b30deb33eb583c0bcae3e64d6db8316b69461a04bb9db5ff63d3f6e/pyicu-2.16.tar.gz", hash = "sha256:42b3a8062e3b23e927ca727e6b5e1730d86c70279834e4887152895d2eb012d9", size = 268126, upload-time = "2025-11-04T23:33:00.006Z" }
 
 [[package]]
 name = "pyparsing"
