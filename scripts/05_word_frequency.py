@@ -13,7 +13,9 @@ DATA_PATH = os.path.join("../data", BASELINE_NAME, "formatted")
 secs_acro = "".join([x[0] for x in SECTIONS])
 if FULL_TEXT:
     secs_acro += "_f"
-RESULTS_PATH = os.path.join("../results", BASELINE_NAME, f"{ARTICLE_TYPE}_a{secs_acro}")
+RESULTS_PATH = os.path.join(
+    "../data/results", BASELINE_NAME, f"{ARTICLE_TYPE}_a{secs_acro}"
+)
 
 if not os.path.exists(RESULTS_PATH):
     print("computing word frequency")
