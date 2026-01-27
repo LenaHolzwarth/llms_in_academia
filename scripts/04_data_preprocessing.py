@@ -46,6 +46,8 @@ for dirpath, _, filenames in os.walk(DATA_PATH):
 
             # remove papers with abstracts that are too long (> 4000) or
             # too short (< 250 characters)
+            # is the too long part really necessary though? the other sections
+            # are all longer anyways
             baseline_df = baseline_df[
                 baseline_df["abstract"].apply(
                     lambda x: (len(x) >= 250) and (len(x) <= 4000)

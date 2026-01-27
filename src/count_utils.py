@@ -1,5 +1,6 @@
 import os
 import json
+import random
 import pandas as pd
 import numpy as np
 import scipy as sp
@@ -15,7 +16,7 @@ def load_paper_df(
     sections: list = [],
     full_text: bool = True,
     allow_other: bool = False,
-    subset : str = "all"
+    subset: str = "all",
 ):
     """
     load and filter data frame with pubmed papers
@@ -34,7 +35,7 @@ def load_paper_df(
     """
 
     if subset == "all":
-         df = pd.read_pickle(os.path.join(data_path, f"{subset}.pkl"))
+        df = pd.read_pickle(os.path.join(data_path, f"{subset}.pkl"))
     else:
         df = pd.read_json(os.path.join(data_path, f"{subset}.json"))
 
@@ -49,14 +50,21 @@ def load_paper_df(
             df = df[df["sections"].apply(lambda x: set(x.keys()) >= set(sections))]
         else:
             df = df[df["sections"].apply(lambda x: set(x.keys()) == set(sections))]
-        if full_text:
-            df["full"] = [""] * len(df)
+
         for sec in sections:
             df[sec] = list(map((lambda x: x[sec]), df["sections"]))
-            if full_text:
+            # only include papers where each section has length >= 250
+            df = df[df[sec].apply(lambda x: len(x) >= 250)]
+
+        # also filter abstract length
+        df = df[df["abstract"].apply(lambda x: len(x) >= 250)]
+
+        if full_text:
+            df["full"] = [""] * len(df)
+            for sec in sections:
                 df["full"] = df["full"] + df[sec]
 
-    paper_count_filtered = len(df)
+        paper_count_filtered = len(df)
 
     return df, paper_count_full, paper_count_filtered
 
@@ -70,6 +78,8 @@ def compute_word_frequency(
     allow_other: bool = False,
     token_pattern: str = r"(?u)\b[A-Za-z]{4,}\b",
     min_token_len: int = 4,
+    version: str = "",
+    max_len: int = -1,
 ):
     """
     Get monthly word frequency for each section of PMC papers.
@@ -94,16 +104,18 @@ def compute_word_frequency(
         token_pattern: only vectorize words that fit this pattern
         min_token_len: don't tokenize words shorten than this, make sure this
                         is in line with the token_pattern!
+        version: one of ["crop", "sample", "] determine if the texts
+                 should be cropped or sampled to be at most as long as max_len
+        max_len: texts should not have more words than this. Fewer is okay
     """
     years = np.arange(2000, 2026)
     months = np.arange(1, 13)
-    
+
     os.makedirs(os.path.join(results_path, "abstract"), exist_ok=False)
     if full_text:
         os.makedirs(os.path.join(results_path, "full"), exist_ok=False)
     for sec in sections:
         os.makedirs(os.path.join(results_path, sec), exist_ok=False)
-    
 
     df, paper_count_full, paper_count_filtered = load_paper_df(
         data_path, article_type, sections, full_text, allow_other
@@ -114,7 +126,7 @@ def compute_word_frequency(
     }
 
     filters_dict["all_dates"] = list(map(str, df["date"].values))
-    
+
     sections.append("abstract")
     if full_text:
         sections.append("full")
@@ -124,7 +136,17 @@ def compute_word_frequency(
         vectorizer = CountVectorizer(
             binary=True, min_df=1e-6, token_pattern=token_pattern
         )
-        X = vectorizer.fit_transform(df[sec].values)
+
+        random.seed(0)
+        if version == "crop":
+            cropped = list(map(lambda x: crop_section(x, max_len), df[sec]))
+            X = vectorizer.fit_transform(cropped)
+        elif version == "sample":
+            sampled = list(map(lambda x: sample_section(x, max_len), df[sec]))
+            X = vectorizer.fit_transform(sampled)
+        else:
+            X = vectorizer.fit_transform(df[sec].values)
+
         sp.sparse.save_npz(os.path.join(results_path, sec, f"count_{sec}.pkl"), X)
         print("vectorizing complete")
 
@@ -174,6 +196,12 @@ def compute_word_frequency(
         # save lemmas for each section
         with open(os.path.join(results_path, sec, "lemmas.json"), "w") as f:
             json.dump(lemmas, f)
+        # also save lemmatized word list?
+        np.save(
+            os.path.join(results_path, sec, "words_lemmatized.pkl"),
+            count_df.index,
+            allow_pickle=True,
+        )
 
         # df with each row corresponding to the frequency for one word
         # in each month (in how many papers does the word appear)
@@ -193,6 +221,8 @@ def compute_word_frequency(
         "full_text": full_text,
         "allow_other": allow_other,
         "token_pattern": token_pattern,
+        "version": version,
+        "max_len": max_len,
     }
 
     with open(os.path.join(results_path, "filters.json"), "w") as f:
@@ -261,12 +291,12 @@ def compute_group_frequency(
 
             for i, month in enumerate(months):
                 # this might need to be changed with the new date format
-                #ind = (dates.dt.month == month) & (dates.dt.year == year)  
-                #ind = ind.to_numpy(dtype=bool)
+                # ind = (dates.dt.month == month) & (dates.dt.year == year)
+                # ind = ind.to_numpy(dtype=bool)
                 # with new date format
                 ind = (dates.month == month) & (dates.year == year)
-                #print(f"ind shape: {ind.shape}")
-                #print(f"X shape: {X.shape}")
+                # print(f"ind shape: {ind.shape}")
+                # print(f"X shape: {X.shape}")
                 for k, ind_words in enumerate([ind_words_common, ind_words_rare]):
                     # count how many times any word from the selection appears in each month
                     group_counts[k, 12 * j + i] = np.sum(
@@ -299,6 +329,7 @@ def compute_frequency_projection(
     pred_range: int = 24,
     end_date: str = "11-2022",
     group_prefix: str = "",
+    cutoff: float = 1e-3,
 ):
     """
     uses linear regression to predict trends in monthly word frequency.
@@ -307,6 +338,9 @@ def compute_frequency_projection(
     It saves the projection, as well as the difference (obs - pred) and
     ratio (obs / proj) between observed and predicted frequency
 
+    ISSUE: which month to use to evaluate cutoff? last recorded? mean over 12
+           last recorded months?
+
 
     Args:
         results_path: directory with word frequency dataframes
@@ -314,18 +348,18 @@ def compute_frequency_projection(
         end_date: the month before end_date is the last month used in regression
         group_prefix: one of "" (projections for individual words),
                       "group_" (projections for word groups)
+        cutoff: ignore words with lower frequency than cutoff
     """
 
     secs = next(os.walk(results_path))[1]
     for sec in secs:
-        # if sec == "full":
-        #    continue
         print(f"computing projection for section {sec}")
         freqs_df = pd.read_csv(
             os.path.join(results_path, sec, f"{group_prefix}freqs_df.csv.gz"),
             compression="gzip",
             index_col=0,
         )
+        ###### DELETE FOR NEW BASELINE #######
         freqs_df = freqs_df.drop(
             ["7-2025", "8-2025", "9-2025", "10-2025", "11-2025", "12-2025"], axis=1
         )
@@ -335,6 +369,14 @@ def compute_frequency_projection(
         start_date_i = end_date_i - pred_range
         y_i_all = freqs_df.columns.values[start_date_i:]
         y_i_pred = y_i_all[:pred_range]
+
+        # cutoff based on the last month recorded
+        freqs_df = freqs_df[freqs_df.iloc[:, -1] >= cutoff]
+        np.save(
+            os.path.join(results_path, sec, "words_after_cutoff.pkl"),
+            freqs_df.index,
+            allow_pickle=True,
+        )
 
         proj = np.zeros((freqs_df.shape[0], len(y_i_all)))
 
@@ -349,9 +391,89 @@ def compute_frequency_projection(
         ratios = freqs / proj
         diffs = freqs - proj
 
+        np.save(os.path.join(results_path, sec, f"{group_prefix}freqs.npy"), freqs)
         np.save(os.path.join(results_path, sec, f"{group_prefix}proj.npy"), proj)
         np.save(os.path.join(results_path, sec, f"{group_prefix}ratios.npy"), ratios)
         np.save(os.path.join(results_path, sec, f"{group_prefix}diffs.npy"), diffs)
+
+
+def get_frequency_projection_yearly(results_path: str, sec: str, cutoff: float = 1e-3):
+    """
+    predict the mean frequency for every word and year for one section.
+    Frequency is predicted via interpolation from the mean frequencies
+    two and three years prior. Returns the actual frequencies, diff and
+    ratios
+
+    Args:
+        results_path: directory with word frequency dataframes
+        cutoff: ignore words with lower frequency than cutoff
+    """
+
+    results_path = os.path.join(results_path, sec)
+    freqs_path = os.path.join(results_path, "yearly_freqs_df.csv.gz")
+
+    if os.path.exists(freqs_path):
+        print("loading yearly projection")
+        yearly_freqs = pd.read_csv(
+            freqs_path,
+            compression="gzip",
+            index_col=0,
+        )
+        yearly_diffs = pd.read_csv(
+            os.path.join(results_path, "yearly_diffs_df.csv.gz"),
+            compression="gzip",
+            index_col=0,
+        )
+        yearly_ratios = pd.read_csv(
+            os.path.join(results_path, "yearly_ratios_df.csv.gz"),
+            compression="gzip",
+            index_col=0,
+        )
+
+    else:
+        print("computing yearly projection")
+        freqs_df = pd.read_csv(
+            os.path.join(results_path, "freqs_df.csv.gz"),
+            compression="gzip",
+            index_col=0,
+        )
+        freqs_df = freqs_df.drop(
+            ["7-2025", "8-2025", "9-2025", "10-2025", "11-2025", "12-2025"], axis=1
+        )
+        # remove frequencies below cutoff
+        #freqs_df = freqs_df[freqs_df.iloc[:, -1] >= cutoff]
+        #freqs_df = freqs_df[freqs_df >= cutoff]
+        words = freqs_df.index
+
+        n_months = 12
+        yearly_freqs = {}
+        for year in range(2010, 2026):
+            if year == 2025:
+                n_months = 6
+
+            ind = np.where(freqs_df.columns.values == f"1-{year}")[0][0]
+            current_freqs = freqs_df.iloc[:, ind : ind + n_months]
+            yearly_freqs[str(year)] = current_freqs.mean(axis=1)
+
+        yearly_freqs = pd.DataFrame(yearly_freqs, index=words)
+        yearly_projection = np.zeros(yearly_freqs.shape)[:, :-3]
+        for i, year in enumerate(range(2013, 2026)):
+            yearly_projection[:, i] = yearly_freqs[str(year - 2)] + np.maximum(
+                (yearly_freqs[str(year - 2)] - yearly_freqs[str(year - 3)]) * 2, 0
+            )
+
+        yearly_diffs = yearly_freqs.iloc[:, 3:] - yearly_projection
+        yearly_ratios = yearly_freqs.iloc[:, 3:] / yearly_projection
+
+        yearly_freqs.to_csv(os.path.join(freqs_path))
+        yearly_diffs.to_csv(
+            os.path.join(results_path, "yearly_diffs_df.csv.gz")
+        )
+        yearly_ratios.to_csv(
+            os.path.join(results_path, "yearly_ratios_df.csv.gz")
+        )
+
+    return yearly_freqs, yearly_diffs, yearly_ratios
 
 
 def load_freqs(
@@ -497,6 +619,38 @@ def get_lemma_dict(words: list) -> dict:
             lemmas[w] = wnl.lemmatize(str(w), pos="n")
 
     return lemmas
+
+
+def crop_section(sec: str, max_len: int):
+    """returns a section of sec with a given number of words. If sec is
+    shorter than the required word count, return sec unchanged.
+    The section of words that is returned is from a random place in sec.
+    IMPORTANT: The random seed needs to be set outside of this function
+    """
+    sec_words = sec.split()
+    sec_len = len(sec_words)
+
+    if sec_len <= max_len:
+        return sec
+
+    else:
+        start_i = random.randint(0, sec_len - max_len)
+        end_i = start_i + max_len
+        return " ".join(sec_words[start_i:end_i])
+
+
+def sample_section(sec: str, max_len: int):
+    """returns randomly sampled words (without replacement) from sec
+    If sec is shorter than the required word count, return sec unchanged.
+    IMPORTANT: The random seed needs to be set outside of this function
+    """
+    sec_words = sec.split()
+
+    if len(sec_words) <= max_len:
+        return sec
+
+    else:
+        return " ".join(random.sample(sec_words, max_len))
 
 
 chatgptwords_common = [
@@ -804,4 +958,86 @@ chatgptwords_rare = [
     "versatility",
     "warranting",
     "yielding",
+]
+
+ignore_list = [
+    "abstract",
+    "abstractgraphical",
+    "actabiomedica",
+    "amsbsy",
+    "amsfonts",
+    "amsmath",
+    "amssymb", 
+    "article",
+    "background",
+    "bstract",
+    "clinicaltrial",
+    "commentary",
+    "conclusion",
+    "discussion",
+    "documentclass",
+    "download",
+    "editor",
+    "elife",
+    "github",
+    "grant",
+    "introduction",
+    "mathrsfs",
+    "method",
+    "objective",
+    "oddsidemargin",
+    "pubmed",
+    "result",
+    "scholar",
+    "setlength",
+    "showproj",
+    "signifi",  # significant sometimes has a whitespace inside?
+    "supplemental",
+    "supplementary",
+    "textsupplemental",
+    "tinyurl",
+    "upgreek",
+    "usepackage",
+    "wasysym",
+    "wiley",
+    
+]
+
+geo_list = [
+    "arabia",
+    "barcelona",
+    "daegu",
+    "fudan",
+    "ghana",
+    "henan",
+    "hubei",
+    "israel",
+    "italy",
+    "jeddah",
+    "joanna", #Joanna Briggs Institute
+    "jordanian",
+    "kyoto",
+    "lebanon",
+    "liberia",
+    "lombardy",
+    "macedonia",
+    "oxford",
+    "peking",
+    "pittsburgh",
+    "qinghai",
+    "riyadh",
+    "saudi",
+    "syrian",
+    "taipei",
+    "tibetan",
+    "tongji",
+    "wuhan",
+]
+
+uncertain_list = [
+    # names of people and places, months
+    "keywords",
+    "objective",
+    "online",  # "materials available online", "online course"
+    "please",  # as in "please refer to", but also "patients were pleased"
 ]

@@ -11,6 +11,6 @@ RESULTS_PATH = os.path.join("../data/results", BASELINE_NAME, "research-article_
 print("computing group frequency")
 utils.compute_group_frequency(data_path=DATA_PATH, results_path=RESULTS_PATH)
 
-print("computing frequency projection")
+print("computing group frequency projection")
 utils.compute_frequency_projection(RESULTS_PATH, group_prefix="group_")
 print("--- %s minutes ---" % ((time.time() - start_time) / 60))
