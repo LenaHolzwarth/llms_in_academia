@@ -192,7 +192,7 @@ def compute_word_frequency(
         count_df = count_df.rename(index=british_spell).rename(index=lemmas)
         count_df = count_df.groupby(count_df.index).sum()
         # lemmatizing shortens some strings below threshold, they should be removed
-        count_df = count_df[count_df.index.str.len() > min_token_len]
+        count_df = count_df[count_df.index.str.len() >= min_token_len]
         # save lemmas for each section
         with open(os.path.join(results_path, sec, "lemmas.json"), "w") as f:
             json.dump(lemmas, f)
@@ -229,16 +229,14 @@ def compute_word_frequency(
         json.dump(filters_dict, f)
 
 
-def compute_group_frequency(
-    data_path: str,
-    results_path: str,
-):
+def compute_group_frequency(results_path: str, cutoff: float = 1.0):
     """
     Docstring for compute_group_frequency
 
     Args:
-        data_path: where the paper df is stored
         results_path: path to results/baseline_name/filters
+        cutoff: the maximum frequency a word may have in order to be
+                considered into the rare word list
     """
     years = np.arange(2000, 2026)
     months = np.arange(1, 13)
@@ -248,8 +246,6 @@ def compute_group_frequency(
 
     article_type = filters["filters"]["article_type"]
     sections = filters["filters"]["sections"]
-    print(f"sections: {sections}")
-    sections = [sec for sec in sections if not sec in ["abstract", "full"]]
     full_text = filters["filters"]["full_text"]
     allow_other = filters["filters"]["allow_other"]
 
@@ -258,19 +254,8 @@ def compute_group_frequency(
     print(f"full_text: {full_text}")
     print(f"allow_other: {allow_other}")
 
-    # get dates -> replace this with getting the dates from filters.json
-    """
-    dates, _, _ = load_paper_df(
-        data_path, article_type, sections, full_text, allow_other
-    )
-    dates = dates["date"]
-    """
     dates = pd.to_datetime(filters["all_dates"])
     print(f"dates shape: {dates.shape}")
-
-    sections.append("abstract")
-    if full_text:
-        sections.append("full")
 
     for sec in sections:
         print(f"counting section {sec}")
@@ -290,13 +275,7 @@ def compute_group_frequency(
                 months = np.arange(1, 7)
 
             for i, month in enumerate(months):
-                # this might need to be changed with the new date format
-                # ind = (dates.dt.month == month) & (dates.dt.year == year)
-                # ind = ind.to_numpy(dtype=bool)
-                # with new date format
                 ind = (dates.month == month) & (dates.year == year)
-                # print(f"ind shape: {ind.shape}")
-                # print(f"X shape: {X.shape}")
                 for k, ind_words in enumerate([ind_words_common, ind_words_rare]):
                     # count how many times any word from the selection appears in each month
                     group_counts[k, 12 * j + i] = np.sum(
@@ -320,8 +299,12 @@ def compute_group_frequency(
             dict(zip(months_w_years, list(freqs.T))), index=group_count_df.index
         )
 
-        group_count_df.to_csv(os.path.join(results_path, sec, f"group_count_df.csv.gz"))
-        group_freqs_df.to_csv(os.path.join(results_path, sec, f"group_freqs_df.csv.gz"))
+        group_count_df.to_csv(
+            os.path.join(results_path, sec, f"group_count_df_{cutoff}.csv.gz")
+        )
+        group_freqs_df.to_csv(
+            os.path.join(results_path, sec, f"group_freqs_df_{cutoff}.csv.gz")
+        )
 
 
 def compute_frequency_projection(
@@ -332,14 +315,16 @@ def compute_frequency_projection(
     cutoff: float = 1e-3,
 ):
     """
-    uses linear regression to predict trends in monthly word frequency.
+    uses linear regression to predict trends in monthly word frequency for
+    all sections
     The time covered by the prediction ranges from (end_date - pred_range)
     to the last time-point in the observed frequencies
     It saves the projection, as well as the difference (obs - pred) and
     ratio (obs / proj) between observed and predicted frequency
 
-    ISSUE: which month to use to evaluate cutoff? last recorded? mean over 12
-           last recorded months?
+    ISSUE:  should the projection only be computed for words with above-
+            cutoff frequency? for which timespan should the frequency be
+            evaluated?
 
 
     Args:
@@ -359,42 +344,56 @@ def compute_frequency_projection(
             compression="gzip",
             index_col=0,
         )
-        ###### DELETE FOR NEW BASELINE #######
-        freqs_df = freqs_df.drop(
-            ["7-2025", "8-2025", "9-2025", "10-2025", "11-2025", "12-2025"], axis=1
+
+        freqs, proj, ratios, diffs = frequency_projection(
+            freqs_df, pred_range, end_date
         )
-        # freqs_df = freqs_df[freqs_df.index.str.len() > 3]
-
-        end_date_i = list(freqs_df.columns.values).index(end_date)
-        start_date_i = end_date_i - pred_range
-        y_i_all = freqs_df.columns.values[start_date_i:]
-        y_i_pred = y_i_all[:pred_range]
-
-        # cutoff based on the last month recorded
-        freqs_df = freqs_df[freqs_df.iloc[:, -1] >= cutoff]
-        np.save(
-            os.path.join(results_path, sec, "words_after_cutoff.pkl"),
-            freqs_df.index,
-            allow_pickle=True,
-        )
-
-        proj = np.zeros((freqs_df.shape[0], len(y_i_all)))
-
-        for i, word in tqdm(enumerate(freqs_df.index)):
-            y = freqs_df.loc[word]
-            reg = LinearRegression().fit(
-                np.arange(len(y_i_pred)).reshape(-1, 1), y[y_i_pred]
-            )
-            proj[i, :] = reg.predict(np.arange(len(y_i_all)).reshape(-1, 1))
-
-        freqs = freqs_df[y_i_all].to_numpy()
-        ratios = freqs / proj
-        diffs = freqs - proj
 
         np.save(os.path.join(results_path, sec, f"{group_prefix}freqs.npy"), freqs)
         np.save(os.path.join(results_path, sec, f"{group_prefix}proj.npy"), proj)
         np.save(os.path.join(results_path, sec, f"{group_prefix}ratios.npy"), ratios)
         np.save(os.path.join(results_path, sec, f"{group_prefix}diffs.npy"), diffs)
+
+
+def frequency_projection(
+    freqs_df: pd.DataFrame, pred_range: int = 24, end_date: str = "11-2022"
+):
+    """worker function for frequency_projection: uses linear regression
+    to predict trends in monthly word frequency for a single frequency
+    dataframe
+
+    Args:
+        freqs_df: dataframe with monthly frequencies
+        pred_range: number of months to fit the regression on
+        end_date: the month before end_date is the last month used in regression
+        cutoff: ignore words with lower frequency than cutoff
+    """
+
+    ###### DELETE FOR NEW BASELINE #######
+    freqs_df = freqs_df.drop(
+        ["7-2025", "8-2025", "9-2025", "10-2025", "11-2025", "12-2025"], axis=1
+    )
+    # freqs_df = freqs_df[freqs_df.index.str.len() > 3]
+
+    end_date_i = list(freqs_df.columns.values).index(end_date)
+    start_date_i = end_date_i - pred_range
+    y_i_all = freqs_df.columns.values[start_date_i:]
+    y_i_pred = y_i_all[:pred_range]
+
+    proj = np.zeros((freqs_df.shape[0], len(y_i_all)))
+
+    for i, word in tqdm(enumerate(freqs_df.index)):
+        y = freqs_df.loc[word]
+        reg = LinearRegression().fit(
+            np.arange(len(y_i_pred)).reshape(-1, 1), y[y_i_pred]
+        )
+        proj[i, :] = reg.predict(np.arange(len(y_i_all)).reshape(-1, 1))
+
+    freqs = freqs_df[y_i_all].to_numpy()
+    ratios = freqs / proj
+    diffs = freqs - proj
+
+    return freqs, proj, ratios, diffs
 
 
 def get_frequency_projection_yearly(results_path: str, sec: str, cutoff: float = 1e-3):
@@ -406,6 +405,7 @@ def get_frequency_projection_yearly(results_path: str, sec: str, cutoff: float =
 
     Args:
         results_path: directory with word frequency dataframes
+        sec: section to compute frequencies for
         cutoff: ignore words with lower frequency than cutoff
     """
 
@@ -441,8 +441,8 @@ def get_frequency_projection_yearly(results_path: str, sec: str, cutoff: float =
             ["7-2025", "8-2025", "9-2025", "10-2025", "11-2025", "12-2025"], axis=1
         )
         # remove frequencies below cutoff
-        #freqs_df = freqs_df[freqs_df.iloc[:, -1] >= cutoff]
-        #freqs_df = freqs_df[freqs_df >= cutoff]
+        # freqs_df = freqs_df[freqs_df.iloc[:, -1] >= cutoff]
+        # freqs_df = freqs_df[freqs_df >= cutoff]
         words = freqs_df.index
 
         n_months = 12
@@ -466,14 +466,140 @@ def get_frequency_projection_yearly(results_path: str, sec: str, cutoff: float =
         yearly_ratios = yearly_freqs.iloc[:, 3:] / yearly_projection
 
         yearly_freqs.to_csv(os.path.join(freqs_path))
-        yearly_diffs.to_csv(
-            os.path.join(results_path, "yearly_diffs_df.csv.gz")
-        )
-        yearly_ratios.to_csv(
-            os.path.join(results_path, "yearly_ratios_df.csv.gz")
-        )
+        yearly_diffs.to_csv(os.path.join(results_path, "yearly_diffs_df.csv.gz"))
+        yearly_ratios.to_csv(os.path.join(results_path, "yearly_ratios_df.csv.gz"))
 
     return yearly_freqs, yearly_diffs, yearly_ratios
+
+
+def get_cutoff_frequency(
+    results_path: str, sec: str, excess_words: dict, lemmatized: str = ""
+):
+    """
+    get dataframe of freqencies (for one section) of excess word lists with different
+    frequency cutoff values (cutoff determines which of the entries of original
+    2024 excess word list are used to compute group frequencies: only those
+    that have a 2024 yearly frequency below cutoff).
+
+    Args:
+        results_path: directory with word frequency dataframes
+        sec: section to compute frequencies for
+        excess words: dict that maps the selected excess words to each
+                        cutoff value
+        lemmatized: indicate if the excess words were computed with lemmatized
+                    or non-lemmatized frequencies (only important for saving the
+                    results, it doesn't change the procedure)
+    """
+    with open(os.path.join(results_path, "filters.json")) as f:
+        filters = json.load(f)
+    dates = pd.to_datetime(filters["all_dates"])
+
+    results_path = os.path.join(results_path, sec)
+    freqs_path = os.path.join(results_path, f"cutoff_freqs_df{lemmatized}.csv.gz")
+
+    if os.path.exists(freqs_path):
+        print("loading cutoff freqs")
+        group_freqs_df = pd.read_csv(
+            freqs_path,
+            compression="gzip",
+            index_col=0,
+        )
+
+    else:
+        print("computing cutoff freqs")
+        years = np.arange(2000, 2026)
+        months = np.arange(1, 13)
+        months_w_years = [f"{m}-{y}" for y in years for m in months]
+
+        X = sp.sparse.load_npz(os.path.join(results_path, f"count_{sec}.pkl.npz"))
+        words = np.load(
+            os.path.join(results_path, f"words_{sec}.pkl.npy"), allow_pickle=True
+        )
+
+        cutoffs = list(excess_words.keys())
+        group_counts = np.zeros((len(cutoffs), 12 * years.size))
+        group_totals = np.zeros(12 * years.size)
+
+        for k, cutoff in enumerate(cutoffs):
+            ind_excess_2024 = np.isin(words, excess_words[cutoff])
+
+            for j, year in enumerate(years):
+                if year == 2025:
+                    months = np.arange(1, 7)
+
+                for i, month in enumerate(months):
+                    ind = (dates.month == month) & (dates.year == year)
+
+                    # count how many times any word from the selection appears in each month
+                    group_counts[k, 12 * j + i] = np.sum(
+                        np.sum(X[ind, :][:, ind_excess_2024], axis=1) > 0
+                    )
+                    # count papers per month (same for every cutoff value)
+                    if k == 0:
+                        group_totals[12 * j + i] = np.sum(ind)
+
+                if year == 2025:
+                    months = np.arange(1, 13)
+
+        group_count_df = pd.DataFrame(
+            dict(zip(months_w_years, list(group_counts.astype(int).T))),
+            index=cutoffs,
+        )
+        freqs = (group_counts + 1) / (group_totals + 1)
+        group_freqs_df = pd.DataFrame(
+            dict(zip(months_w_years, list(freqs.T))), index=group_count_df.index
+        )
+
+        freqs, proj, _, diffs = frequency_projection(group_freqs_df)
+        usage = diffs / (1 - proj)
+
+        group_freqs_df = restructure_freqs(group_freqs_df, proj, diffs, usage)
+        group_freqs_df.to_csv(os.path.join(freqs_path))
+
+    return group_freqs_df
+
+
+def restructure_freqs(
+    freqs_df: pd.DataFrame,
+    proj: np.ndarray,
+    diffs: np.ndarray,
+    usage: np.ndarray,
+    start_date: str = "11-2020",
+    end_date: str = "6-2025",
+):
+
+    start_split = start_date.split("-")
+    end_split = end_date.split("-")
+    x_months = np.arange(
+        int(start_split[1]) + ((int(start_split[0]) - 1) / 12),
+        int(end_split[1]) + ((int(end_split[0]) - 1) / 12),
+        1 / 12,
+    )
+
+    start_i = list(freqs_df.columns.values).index(start_date)
+    end_i = list(freqs_df.columns.values).index(end_date) + 1
+
+    freqs_df = freqs_df[freqs_df.columns.values[start_i:end_i]]
+    freqs_df = freqs_df.rename(columns=dict(zip(list(freqs_df.columns), x_months)))
+
+    proj_df = pd.DataFrame(proj, index=freqs_df.index, columns=x_months)
+    diffs_df = pd.DataFrame(diffs, index=freqs_df.index, columns=x_months)
+    usage_df = pd.DataFrame(usage, index=freqs_df.index, columns=x_months)
+
+    freqs_df = (
+        pd.melt(freqs_df, ignore_index=False)
+        .reset_index()
+        .rename(columns={"index": "cutoff", "variable": "time", "value": "frequency"})
+    )
+    proj_df = pd.melt(proj_df, ignore_index=False).reset_index()
+    diffs_df = pd.melt(diffs_df, ignore_index=False).reset_index()
+    usage_df = pd.melt(usage_df, ignore_index=False).reset_index()
+
+    freqs_df["projection"] = proj_df["value"]
+    freqs_df["diff"] = diffs_df["value"]
+    freqs_df["usage estimate"] = usage_df["value"]
+
+    return freqs_df
 
 
 def load_freqs(
@@ -652,6 +778,667 @@ def sample_section(sec: str, max_len: int):
     else:
         return " ".join(random.sample(sec_words, max_len))
 
+
+# lemmatized excess style words for 2024 pubmed abstracts
+excess_style_words_2024_lemmatized = [
+    "accentuate",
+    "achieve",
+    "acknowledge",
+    "across",
+    "additionally",
+    "address",
+    "adept",
+    "adhere",
+    "advance",
+    "advancement",
+    "advocate",
+    "affirm",
+    "afflict",
+    "aid",
+    "aim",
+    "akin",
+    "align",
+    "alongside",
+    "amidst",
+    "approach",
+    "assess",
+    "assessment",
+    "attain",
+    "attribute",
+    "augment",
+    "avenue",
+    "bolster",
+    "both",
+    "broader",
+    "burgeon",
+    "capability",
+    "capitalize",
+    "categorize",
+    "challenge",
+    "combat",
+    "commendable",
+    "compel",
+    "complex",
+    "complicate",
+    "comprehend",
+    "comprehensive",
+    "comprise",
+    "condition",
+    "conduct",
+    "consequently",
+    "consolidate",
+    "contribute",
+    "conversely",
+    "correlate",
+    "craft",
+    "crucial",
+    "culminate",
+    "customize",
+    "delineate",
+    "delve",
+    "demonstrate",
+    "dependability",
+    "dependable",
+    "despite",
+    "detail",
+    "detrimentally",
+    "diminish",
+    "diskern",
+    "diskerned",
+    "diskernible",
+    "diskerning",
+    "display",
+    "disrupt",
+    "distinct",
+    "distinction",
+    "distinctive",
+    "diverse",
+    "effectively",
+    "elevate",
+    "elucidate",
+    "embrace",
+    "emerge",
+    "emphasize",
+    "employ",
+    "empower",
+    "emulate",
+    "emulation",
+    "enable",
+    "encapsulate",
+    "encompass",
+    "endeavor",
+    "endure",
+    "enhance",
+    "enhancement",
+    "ensure",
+    "equip",
+    "escalate",
+    "evaluate",
+    "evolve",
+    "exacerbate",
+    "examine",
+    "exceed",
+    "excel",
+    "exceptional",
+    "exceptionally",
+    "exert",
+    "exhibit",
+    "expedite",
+    "exploration",
+    "explore",
+    "facilitate",
+    "feature",
+    "finding",
+    "focus",
+    "formidable",
+    "foster",
+    "foundational",
+    "furnish",
+    "gag",
+    "garner",
+    "grapple",
+    "groundbreaking",
+    "groundwork",
+    "harness",
+    "heighten",
+    "highlight",
+    "hinder",
+    "hinge",
+    "hint",
+    "hold",
+    "identify",
+    "illuminate",
+    "imbalance",
+    "impact",
+    "impede",
+    "imperative",
+    "impressive",
+    "inadequately",
+    "include",
+    "incorporate",
+    "indicate",
+    "individual",
+    "influence",
+    "inherent",
+    "initially",
+    "innovative",
+    "inquiry",
+    "insight",
+    "integrate",
+    "integration",
+    "interconnectedness",
+    "interplay",
+    "into",
+    "intricacy",
+    "intricate",
+    "intricately",
+    "introduce",
+    "invaluable",
+    "investigate",
+    "involve",
+    "juxtapose",
+    "lead",
+    "leverage",
+    "like",
+    "limitation",
+    "link",
+    "maintain",
+    "merge",
+    "methodology",
+    "meticulous",
+    "meticulously",
+    "multifaceted",
+    "necessitate",
+    "necessity",
+    "need",
+    "notable",
+    "notably",
+    "noteworthy",
+    "nuance",
+    "nuanced",
+    "observe",
+    "offer",
+    "optimize",
+    "orchestrate",
+    "outcome",
+    "outline",
+    "overlook",
+    "particularly",
+    "pave",
+    "persist",
+    "pinpoint",
+    "pioneer",
+    "pivotal",
+    "poise",
+    "pose",
+    "potential",
+    "potentially",
+    "precise",
+    "predominantly",
+    "present",
+    "preserve",
+    "press",
+    "prevalent",
+    "primarily",
+    "primary",
+    "promise",
+    "pronounce",
+    "propel",
+    "provide",
+    "realm",
+    "recognize",
+    "refine",
+    "remain",
+    "remarkable",
+    "renowned",
+    "research",
+    "result",
+    "reveal",
+    "revolutionize",
+    "revolve",
+    "role",
+    "scrutinize",
+    "seamless",
+    "seamlessly",
+    "seek",
+    "serve",
+    "shape",
+    "shed",
+    "showcase",
+    "signify",
+    "solidify",
+    "span",
+    "specifically",
+    "spur",
+    "stand",
+    "stem",
+    "strategically",
+    "strategy",
+    "streamline",
+    "struggle",
+    "subsequently",
+    "substantial",
+    "substantiate",
+    "surge",
+    "surmount",
+    "surpass",
+    "swift",
+    "swiftly",
+    "technique",
+    "their",
+    "thereby",
+    "these",
+    "this",
+    "thorough",
+    "through",
+    "transformative",
+    "typically",
+    "ultimately",
+    "uncharted",
+    "uncover",
+    "underexplored",
+    "underscore",
+    "understand",
+    "unexplored",
+    "unlock",
+    "unparalleled",
+    "unravel",
+    "unveil",
+    "uphold",
+    "urge",
+    "use",
+    "utilize",
+    "valuable",
+    "various",
+    "vary",
+    "versatility",
+    "warrant",
+    "while",
+    "within",
+    "yield",
+]
+
+excess_style_words_2024 = [
+    "accentuates",
+    "achieving",
+    "acknowledges",
+    "acknowledging",
+    "across",
+    "additionally",
+    "address",
+    "addresses",
+    "addressing",
+    "adept",
+    "adhered",
+    "adhering",
+    "advancement",
+    "advancements",
+    "advancing",
+    "advocates",
+    "advocating",
+    "affirming",
+    "afflicted",
+    "aiding",
+    "aims",
+    "akin",
+    "align",
+    "aligning",
+    "aligns",
+    "alongside",
+    "amidst",
+    "approach",
+    "assess",
+    "assessed",
+    "assessing",
+    "assessments",
+    "attains",
+    "attributed",
+    "augmenting",
+    "avenue",
+    "avenues",
+    "bolster",
+    "bolstered",
+    "bolstering",
+    "both",
+    "broader",
+    "burgeoning",
+    "capabilities",
+    "capitalizing",
+    "categorized",
+    "categorizes",
+    "categorizing",
+    "challenge",
+    "challenges",
+    "combating",
+    "commendable",
+    "compelling",
+    "complex",
+    "complicates",
+    "complicating",
+    "comprehending",
+    "comprehensive",
+    "comprising",
+    "conditions",
+    "conducted",
+    "consequently",
+    "consolidates",
+    "contributing",
+    "conversely",
+    "correlating",
+    "crafted",
+    "crafting",
+    "crucial",
+    "culminating",
+    "customizing",
+    "delineates",
+    "delve",
+    "delved",
+    "delves",
+    "delving",
+    "demonstrated",
+    "demonstrates",
+    "demonstrating",
+    "dependability",
+    "dependable",
+    "despite",
+    "detailing",
+    "detrimentally",
+    "diminishes",
+    "diminishing",
+    "discern",
+    "discerned",
+    "discernible",
+    "discerning",
+    "displaying",
+    "disrupts",
+    "distinct",
+    "distinctions",
+    "distinctive",
+    "diverse",
+    "effectively",
+    "elevate",
+    "elevated",
+    "elevates",
+    "elevating",
+    "elucidate",
+    "elucidates",
+    "elucidating",
+    "embracing",
+    "emerged",
+    "emerges",
+    "emphasises",
+    "emphasising",
+    "emphasize",
+    "emphasizes",
+    "emphasizing",
+    "employed",
+    "employing",
+    "employs",
+    "empowers",
+    "emulating",
+    "emulation",
+    "enabling",
+    "encapsulates",
+    "encompass",
+    "encompassed",
+    "encompasses",
+    "encompassing",
+    "endeavors",
+    "endeavours",
+    "enduring",
+    "enhance",
+    "enhanced",
+    "enhancements",
+    "enhances",
+    "enhancing",
+    "ensuring",
+    "equipping",
+    "escalating",
+    "evaluates",
+    "evolving",
+    "exacerbating",
+    "examines",
+    "exceeding",
+    "excels",
+    "exceptional",
+    "exceptionally",
+    "exerting",
+    "exhibit",
+    "exhibited",
+    "exhibiting",
+    "exhibits",
+    "expedite",
+    "expediting",
+    "exploration",
+    "explores",
+    "facilitated",
+    "facilitates",
+    "facilitating",
+    "featuring",
+    "findings",
+    "focusing",
+    "formidable",
+    "fostering",
+    "fosters",
+    "foundational",
+    "furnish",
+    "garnered",
+    "garnering",
+    "gauged",
+    "grappling",
+    "groundbreaking",
+    "groundwork",
+    "harness",
+    "harnesses",
+    "harnessing",
+    "heighten",
+    "heightened",
+    "highlight",
+    "highlighting",
+    "highlights",
+    "hinder",
+    "hinges",
+    "hinting",
+    "hold",
+    "holds",
+    "identified",
+    "illuminates",
+    "illuminating",
+    "imbalances",
+    "impact",
+    "impacting",
+    "impede",
+    "impeding",
+    "imperative",
+    "impressive",
+    "inadequately",
+    "including",
+    "incorporates",
+    "incorporating",
+    "indicating",
+    "individuals",
+    "influencing",
+    "inherent",
+    "initially",
+    "innovative",
+    "inquiries",
+    "insights",
+    "integrates",
+    "integrating",
+    "integration",
+    "interconnectedness",
+    "interplay",
+    "into",
+    "intricacies",
+    "intricate",
+    "intricately",
+    "introduces",
+    "invaluable",
+    "investigates",
+    "involves",
+    "involving",
+    "juxtaposed",
+    "leading",
+    "leverages",
+    "leveraging",
+    "like",
+    "limitations",
+    "linked",
+    "maintaining",
+    "merges",
+    "methodologies",
+    "meticulous",
+    "meticulously",
+    "multifaceted",
+    "necessitate",
+    "necessitates",
+    "necessitating",
+    "necessity",
+    "need",
+    "notable",
+    "notably",
+    "noteworthy",
+    "nuanced",
+    "nuances",
+    "observed",
+    "offer",
+    "offering",
+    "offers",
+    "optimizing",
+    "orchestrating",
+    "outcomes",
+    "outlines",
+    "overlook",
+    "overlooking",
+    "particularly",
+    "paving",
+    "persist",
+    "pinpoint",
+    "pinpointed",
+    "pinpointing",
+    "pioneering",
+    "pioneers",
+    "pivotal",
+    "poised",
+    "pose",
+    "posed",
+    "poses",
+    "posing",
+    "potential",
+    "potentially",
+    "precise",
+    "predominantly",
+    "presents",
+    "preserving",
+    "pressing",
+    "prevalent",
+    "primarily",
+    "primary",
+    "promise",
+    "promising",
+    "pronounced",
+    "propelling",
+    "providing",
+    "realm",
+    "realms",
+    "recognizing",
+    "refine",
+    "refines",
+    "refining",
+    "remains",
+    "remarkable",
+    "renowned",
+    "research",
+    "resulting",
+    "revealed",
+    "revealing",
+    "reveals",
+    "revolutionize",
+    "revolutionizing",
+    "revolves",
+    "role",
+    "scrutinize",
+    "scrutinized",
+    "scrutinizing",
+    "seamless",
+    "seamlessly",
+    "seeks",
+    "serves",
+    "serving",
+    "shaping",
+    "shedding",
+    "showcased",
+    "showcases",
+    "showcasing",
+    "signifying",
+    "solidify",
+    "spanned",
+    "spanning",
+    "specifically",
+    "spurred",
+    "stands",
+    "stemming",
+    "strategically",
+    "strategies",
+    "streamline",
+    "streamlined",
+    "streamlines",
+    "streamlining",
+    "struggle",
+    "subsequently",
+    "substantial",
+    "substantiated",
+    "substantiates",
+    "surged",
+    "surmount",
+    "surpass",
+    "surpassed",
+    "surpasses",
+    "surpassing",
+    "swift",
+    "swiftly",
+    "techniques",
+    "their",
+    "thereby",
+    "these",
+    "this",
+    "thorough",
+    "through",
+    "transformative",
+    "typically",
+    "ultimately",
+    "uncharted",
+    "uncovering",
+    "underexplored",
+    "underscore",
+    "underscored",
+    "underscores",
+    "underscoring",
+    "understanding",
+    "unexplored",
+    "unlocking",
+    "unparalleled",
+    "unraveling",
+    "unveil",
+    "unveiled",
+    "unveiling",
+    "unveils",
+    "uphold",
+    "upholding",
+    "urging",
+    "using",
+    "utilized",
+    "utilizes",
+    "utilizing",
+    "valuable",
+    "various",
+    "varying",
+    "versatility",
+    "warranting",
+    "while",
+    "within",
+    "yielding",
+]
 
 chatgptwords_common = [
     "exhibited",
@@ -967,7 +1754,7 @@ ignore_list = [
     "amsbsy",
     "amsfonts",
     "amsmath",
-    "amssymb", 
+    "amssymb",
     "article",
     "background",
     "bstract",
@@ -1000,7 +1787,6 @@ ignore_list = [
     "usepackage",
     "wasysym",
     "wiley",
-    
 ]
 
 geo_list = [
@@ -1014,7 +1800,7 @@ geo_list = [
     "israel",
     "italy",
     "jeddah",
-    "joanna", #Joanna Briggs Institute
+    "joanna",  # Joanna Briggs Institute
     "jordanian",
     "kyoto",
     "lebanon",
