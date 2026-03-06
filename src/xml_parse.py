@@ -87,6 +87,7 @@ def xml_parse_baseline_segment(data_path: str, json_path: str) -> pd.DataFrame:
             # check that only files named 'PMCxxxxxxxx.xml' are being processed
             r = re.compile("PMC\\d{6,8}.xml")
             if r.match(file):
+                #print(file)
                 try:
                     paper_dict = xml_parse_single(os.path.join(dirpath, file))
                 except et.ParseError as e:
@@ -301,7 +302,7 @@ b) if the introduction does not have the section tag, it needs to be
    separately parsed, and introduction needs to be added to the titles
 
 """
-def get_sec_titles(root):
+def get_sec_titles_old(root):
 
     titles = root.findall("./body/sec/title")
     title_names = [title.text for title in titles]
@@ -343,7 +344,12 @@ def get_sections(root):
       dict: dictionary mapping each section to the corresponding section title
     """
 
-    body = root.findall("./body")[0]
+    body = root.findall("./body")
+    if len(body) > 0: 
+        body = body[0] 
+    else: 
+        return {} # some papers don't have a body, so return empty dict
+
     secs = root.findall("./body/sec")
 
     # parse sections with titles
@@ -357,7 +363,7 @@ def get_sections(root):
                 sections_dict[title] = text
     
     # parse untitled sections
-    if len(sections_dict) < len(secs):
+    if len(sections_dict) < len(secs) and len(sections_dict) > 0:
         first_sec = " ".join(secs[0].itertext())
         first_sec_in_dict = list(sections_dict.values())[0]
         if not first_sec == first_sec_in_dict:

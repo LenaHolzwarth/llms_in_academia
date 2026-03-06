@@ -111,3 +111,12 @@ for dirpath, _, filenames in os.walk(DATA_PATH):
 # save paper counts
 with open(os.path.join(DATA_PATH, "formatted", "paper_counts.json"), "w") as f:
     json.dump(paper_count_dict, f)
+
+# concatenate all yearly dataframes
+dfs = []
+for year in tqdm(range(2000, 2026)):
+    json_path = os.path.join(DATA_PATH, "formatted", str(year) + ".json")
+    dfs.append(pd.read_json(json_path))
+
+big_df = pd.concat(dfs, ignore_index=True)
+big_df.to_pickle(os.path.join(DATA_PATH, "formatted", "all.pkl")) 
