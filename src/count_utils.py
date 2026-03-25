@@ -1,6 +1,7 @@
 import os
 import json
 import random
+import math
 import pandas as pd
 import numpy as np
 import scipy as sp
@@ -55,9 +56,6 @@ def load_paper_df(
             df[sec] = list(map((lambda x: x[sec]), df["sections"]))
             # only include papers where each section has length >= 250
             df = df[df[sec].apply(lambda x: len(x) >= 250)]
-
-        # also filter abstract length
-        df = df[df["abstract"].apply(lambda x: len(x) >= 250)]
 
         if full_text:
             df["full"] = [""] * len(df)
@@ -162,8 +160,8 @@ def compute_word_frequency(
         totals = np.zeros(12 * years.size)
 
         for j, year in enumerate(years):
-            if year == 2025:
-                months = np.arange(1, 7)
+            # if year == 2025:
+            #    months = np.arange(1, 7)
 
             for i, month in enumerate(months):
                 ind = (
@@ -176,8 +174,8 @@ def compute_word_frequency(
                 # count papers per month
                 totals[12 * j + i] = np.sum(ind)
 
-            if year == 2025:
-                months = np.arange(1, 13)  # set it back for the other sections!
+            # if year == 2025:
+            #    months = np.arange(1, 13)  # set it back for the other sections!
 
         # df with each row corresponding to the counts for one word in each month
         months_w_years = [f"{m}-{y}" for y in years for m in months]
@@ -229,14 +227,13 @@ def compute_word_frequency(
         json.dump(filters_dict, f)
 
 
-def compute_group_frequency(results_path: str, cutoff: float = 1.0):
+def compute_group_frequency(results_path: str, monthly: bool = True):
     """
     Docstring for compute_group_frequency
 
     Args:
         results_path: path to results/baseline_name/filters
-        cutoff: the maximum frequency a word may have in order to be
-                considered into the rare word list
+        monthly: are frequencies computed monthly or yearly?
     """
     years = np.arange(2000, 2026)
     months = np.arange(1, 13)
@@ -263,47 +260,62 @@ def compute_group_frequency(results_path: str, cutoff: float = 1.0):
         words = np.load(
             os.path.join(results_path, sec, f"words_{sec}.pkl.npy"), allow_pickle=True
         )
-
+        words_rare = np.load(
+            os.path.join(results_path, sec, f"optimized_excess_words_{sec}.pkl.npy"), allow_pickle=True
+        )
+        
         ind_words_common = np.isin(words, chatgptwords_common)
-        ind_words_rare = np.isin(words, chatgptwords_rare)
+        ind_words_rare = np.isin(words, words_rare)
 
-        group_counts = np.zeros((2, 12 * years.size))
-        group_totals = np.zeros(12 * years.size)
+        if monthly:
+            group_counts = np.zeros((2, 12 * years.size))
+            group_totals = np.zeros(12 * years.size)
 
-        for j, year in enumerate(years):
-            if year == 2025:
-                months = np.arange(1, 7)
+            for j, year in enumerate(years):
+                for i, month in enumerate(months):
+                    ind = (dates.month == month) & (dates.year == year)
+                    for k, ind_words in enumerate([ind_words_common, ind_words_rare]):
+                        # count how many times any word from the selection appears in each month
+                        group_counts[k, 12 * j + i] = np.sum(
+                        np.sum(X[ind, :][:, ind_words], axis=1) > 0
+                        )
+                        # count papers per month
+                        group_totals[12 * j + i] = np.sum(ind)
+            
+            timeline = [f"{m}-{y}" for y in years for m in months]
+        else:
+            group_counts = np.zeros((2, years.size))
+            group_totals = np.zeros(years.size)
 
-            for i, month in enumerate(months):
-                ind = (dates.month == month) & (dates.year == year)
+            for j, year in enumerate(years):
+                ind = (dates.year == year)
                 for k, ind_words in enumerate([ind_words_common, ind_words_rare]):
-                    # count how many times any word from the selection appears in each month
-                    group_counts[k, 12 * j + i] = np.sum(
+                    # count how many times any word from the selection appears in each year
+                    group_counts[k, j] = np.sum(
                         np.sum(X[ind, :][:, ind_words], axis=1) > 0
                     )
-                    # count papers per month
-                    group_totals[12 * j + i] = np.sum(ind)
+                    # count papers per year
+                    group_totals[j] = np.sum(ind)
+            
+            timeline = years
 
-            if year == 2025:
-                months = np.arange(1, 13)  # set it back for the other sections!
-
-        months_w_years = [f"{m}-{y}" for y in years for m in months]
+         
         group_count_df = pd.DataFrame(
-            dict(zip(months_w_years, list(group_counts.astype(int).T))),
+            dict(zip(timeline, list(group_counts.astype(int).T))),
             index=["common_words", "rare_words"],
         )
 
         counts_agg = group_count_df.to_numpy(copy=True)
         freqs = (counts_agg + 1) / (group_totals + 1)
         group_freqs_df = pd.DataFrame(
-            dict(zip(months_w_years, list(freqs.T))), index=group_count_df.index
+            dict(zip(timeline, list(freqs.T))), index=group_count_df.index
         )
 
         group_count_df.to_csv(
-            os.path.join(results_path, sec, f"group_count_df_{cutoff}.csv.gz")
+            os.path.join(results_path, sec, f"group_count_df_{"monthly" if monthly else "yearly"}.csv.gz")
         )
         group_freqs_df.to_csv(
-            os.path.join(results_path, sec, f"group_freqs_df_{cutoff}.csv.gz")
+            os.path.join(results_path, sec, f"group_freqs_df_{"monthly" if monthly else "yearly"}.csv.gz")
         )
 
 
@@ -312,7 +324,6 @@ def compute_frequency_projection(
     pred_range: int = 24,
     end_date: str = "11-2022",
     group_prefix: str = "",
-    cutoff: float = 1e-3,
 ):
     """
     uses linear regression to predict trends in monthly word frequency for
@@ -333,26 +344,30 @@ def compute_frequency_projection(
         end_date: the month before end_date is the last month used in regression
         group_prefix: one of "" (projections for individual words),
                       "group_" (projections for word groups)
-        cutoff: ignore words with lower frequency than cutoff
     """
+    if pred_range < 12: #this is a bit hacky, but oh well
+        monthly = False
+    else: 
+        monthly = True
 
     secs = next(os.walk(results_path))[1]
     for sec in secs:
         print(f"computing projection for section {sec}")
         freqs_df = pd.read_csv(
-            os.path.join(results_path, sec, f"{group_prefix}freqs_df.csv.gz"),
+            os.path.join(results_path, sec, f"{group_prefix}freqs_df_{"monthly" if monthly else "yearly"}.csv.gz"),
             compression="gzip",
             index_col=0,
         )
 
-        freqs, proj, ratios, diffs = frequency_projection(
+        freqs, proj, ratios, diffs, sdev = frequency_projection(
             freqs_df, pred_range, end_date
         )
 
-        np.save(os.path.join(results_path, sec, f"{group_prefix}freqs.npy"), freqs)
-        np.save(os.path.join(results_path, sec, f"{group_prefix}proj.npy"), proj)
-        np.save(os.path.join(results_path, sec, f"{group_prefix}ratios.npy"), ratios)
-        np.save(os.path.join(results_path, sec, f"{group_prefix}diffs.npy"), diffs)
+        np.save(os.path.join(results_path, sec, f"{group_prefix}freqs_predrange{pred_range}.npy"), freqs)
+        np.save(os.path.join(results_path, sec, f"{group_prefix}proj_predrange{pred_range}.npy"), proj)
+        np.save(os.path.join(results_path, sec, f"{group_prefix}ratios_predrange{pred_range}.npy"), ratios)
+        np.save(os.path.join(results_path, sec, f"{group_prefix}diffs_predrange{pred_range}.npy"), diffs)
+        np.save(os.path.join(results_path, sec, f"{group_prefix}sdev_predrange{pred_range}.npy"), diffs)
 
 
 def frequency_projection(
@@ -370,9 +385,9 @@ def frequency_projection(
     """
 
     ###### DELETE FOR NEW BASELINE #######
-    freqs_df = freqs_df.drop(
-        ["7-2025", "8-2025", "9-2025", "10-2025", "11-2025", "12-2025"], axis=1
-    )
+    # freqs_df = freqs_df.drop(
+    #    ["7-2025", "8-2025", "9-2025", "10-2025", "11-2025", "12-2025"], axis=1
+    # )
     # freqs_df = freqs_df[freqs_df.index.str.len() > 3]
 
     end_date_i = list(freqs_df.columns.values).index(end_date)
@@ -381,19 +396,37 @@ def frequency_projection(
     y_i_pred = y_i_all[:pred_range]
 
     proj = np.zeros((freqs_df.shape[0], len(y_i_all)))
+    var = np.zeros((freqs_df.shape[0], len(y_i_all)))
+
+    X = np.arange(len(y_i_pred))
+    X_design = np.column_stack([np.ones(len(X)), X])
+    XtX_inv = np.linalg.inv(X_design.T @ X_design)
+    X_all = np.arange(len(y_i_all))
+    X_all_design = np.column_stack([np.ones(len(X_all)), X_all])
 
     for i, word in tqdm(enumerate(freqs_df.index)):
         y = freqs_df.loc[word]
-        reg = LinearRegression().fit(
-            np.arange(len(y_i_pred)).reshape(-1, 1), y[y_i_pred]
+        beta = XtX_inv @ X_design.T @ y[y_i_pred]
+        reg = LinearRegression().fit(X.reshape(-1, 1), y[y_i_pred])
+        assert np.array_equal(
+            np.asarray(
+                [round(reg.intercept_, 8), round(reg.coef_[0], 8)], dtype=np.float64
+            ),
+            np.asarray([round(beta[0], 8), round(beta[1], 8)], dtype=np.float64),
         )
-        proj[i, :] = reg.predict(np.arange(len(y_i_all)).reshape(-1, 1))
+        y_hat = reg.predict(X.reshape(-1, 1))  # for error dist
+        residuals = y[y_i_pred] - y_hat
+        sigma2 = np.sum(residuals**2) / (len(X) - 2)
+        proj[i, :] = reg.predict(X_all.reshape(-1, 1))
+        var[i, :] = np.array(
+            [sigma2 * (x @ XtX_inv @ x) + sigma2 for x in X_all_design]
+        )
 
     freqs = freqs_df[y_i_all].to_numpy()
     ratios = freqs / proj
     diffs = freqs - proj
 
-    return freqs, proj, ratios, diffs
+    return freqs, proj, ratios, diffs, np.sqrt(var)
 
 
 def get_frequency_projection_yearly(results_path: str, sec: str, cutoff: float = 1e-3):
@@ -437,9 +470,9 @@ def get_frequency_projection_yearly(results_path: str, sec: str, cutoff: float =
             compression="gzip",
             index_col=0,
         )
-        freqs_df = freqs_df.drop(
-            ["7-2025", "8-2025", "9-2025", "10-2025", "11-2025", "12-2025"], axis=1
-        )
+        # freqs_df = freqs_df.drop(
+        #    ["7-2025", "8-2025", "9-2025", "10-2025", "11-2025", "12-2025"], axis=1
+        # )
         # remove frequencies below cutoff
         # freqs_df = freqs_df[freqs_df.iloc[:, -1] >= cutoff]
         # freqs_df = freqs_df[freqs_df >= cutoff]
@@ -448,8 +481,8 @@ def get_frequency_projection_yearly(results_path: str, sec: str, cutoff: float =
         n_months = 12
         yearly_freqs = {}
         for year in range(2010, 2026):
-            if year == 2025:
-                n_months = 6
+            # if year == 2025:
+            #    n_months = 6
 
             ind = np.where(freqs_df.columns.values == f"1-{year}")[0][0]
             current_freqs = freqs_df.iloc[:, ind : ind + n_months]
@@ -495,7 +528,7 @@ def get_cutoff_frequency(
     dates = pd.to_datetime(filters["all_dates"])
 
     results_path = os.path.join(results_path, sec)
-    freqs_path = os.path.join(results_path, f"cutoff_freqs_df{lemmatized}.csv.gz")
+    freqs_path = os.path.join(results_path, f"5y_cutoff_freqs_df{lemmatized}.csv.gz")
 
     if os.path.exists(freqs_path):
         print("loading cutoff freqs")
@@ -508,8 +541,8 @@ def get_cutoff_frequency(
     else:
         print("computing cutoff freqs")
         years = np.arange(2000, 2026)
-        months = np.arange(1, 13)
-        months_w_years = [f"{m}-{y}" for y in years for m in months]
+        # months = np.arange(1, 13)
+        # months_w_years = [f"{m}-{y}" for y in years for m in months]
 
         X = sp.sparse.load_npz(os.path.join(results_path, f"count_{sec}.pkl.npz"))
         words = np.load(
@@ -517,43 +550,43 @@ def get_cutoff_frequency(
         )
 
         cutoffs = list(excess_words.keys())
-        group_counts = np.zeros((len(cutoffs), 12 * years.size))
-        group_totals = np.zeros(12 * years.size)
+
+        group_counts = np.zeros((len(cutoffs), years.size))
+        group_totals = np.zeros(years.size)
 
         for k, cutoff in enumerate(cutoffs):
             ind_excess_2024 = np.isin(words, excess_words[cutoff])
 
             for j, year in enumerate(years):
-                if year == 2025:
-                    months = np.arange(1, 7)
 
-                for i, month in enumerate(months):
-                    ind = (dates.month == month) & (dates.year == year)
+                ind = dates.year == year
+                # count how many times any word from the selection appears in each year
+                group_counts[k, j] = np.sum(
+                    np.sum(X[ind, :][:, ind_excess_2024], axis=1) > 0
+                )
+                # count papers per year (same for every cutoff value)
+                if k == 0:
+                    group_totals[j] = np.sum(ind)
 
-                    # count how many times any word from the selection appears in each month
-                    group_counts[k, 12 * j + i] = np.sum(
-                        np.sum(X[ind, :][:, ind_excess_2024], axis=1) > 0
-                    )
-                    # count papers per month (same for every cutoff value)
-                    if k == 0:
-                        group_totals[12 * j + i] = np.sum(ind)
+                # if year == 2025:
+                #    months = np.arange(1, 13)
 
-                if year == 2025:
-                    months = np.arange(1, 13)
-
+        year_str = list(map(str, years))
         group_count_df = pd.DataFrame(
-            dict(zip(months_w_years, list(group_counts.astype(int).T))),
+            dict(zip(year_str, list(group_counts.astype(int).T))),
             index=cutoffs,
         )
         freqs = (group_counts + 1) / (group_totals + 1)
         group_freqs_df = pd.DataFrame(
-            dict(zip(months_w_years, list(freqs.T))), index=group_count_df.index
+            dict(zip(year_str, list(freqs.T))), index=group_count_df.index
         )
 
-        freqs, proj, _, diffs = frequency_projection(group_freqs_df)
+        freqs, proj, _, diffs, sdev = frequency_projection(
+            group_freqs_df, pred_range=5, end_date="2023"
+        )
         usage = diffs / (1 - proj)
 
-        group_freqs_df = restructure_freqs(group_freqs_df, proj, diffs, usage)
+        group_freqs_df = restructure_freqs(group_freqs_df, proj, diffs, usage, sdev)
         group_freqs_df.to_csv(os.path.join(freqs_path))
 
     return group_freqs_df
@@ -564,8 +597,47 @@ def restructure_freqs(
     proj: np.ndarray,
     diffs: np.ndarray,
     usage: np.ndarray,
+    sdev: np.ndarray,
+    start_date: str = "2018",
+    end_date: str = "2025",
+):
+
+    start_i = list(freqs_df.columns.values).index(start_date)
+    end_i = list(freqs_df.columns.values).index(end_date) + 1
+
+    freqs_df = freqs_df[freqs_df.columns.values[start_i:end_i]]
+    # freqs_df = freqs_df.rename(columns=dict(zip(list(freqs_df.columns), x_months)))
+
+    proj_df = pd.DataFrame(proj, index=freqs_df.index, columns=freqs_df.columns)
+    diffs_df = pd.DataFrame(diffs, index=freqs_df.index, columns=freqs_df.columns)
+    usage_df = pd.DataFrame(usage, index=freqs_df.index, columns=freqs_df.columns)
+    sdev_df = pd.DataFrame(sdev, index=freqs_df.index, columns=freqs_df.columns)
+
+    freqs_df = (
+        pd.melt(freqs_df, ignore_index=False)
+        .reset_index()
+        .rename(columns={"index": "cutoff", "variable": "time", "value": "frequency"})
+    )
+    proj_df = pd.melt(proj_df, ignore_index=False).reset_index()
+    diffs_df = pd.melt(diffs_df, ignore_index=False).reset_index()
+    usage_df = pd.melt(usage_df, ignore_index=False).reset_index()
+    sdev_df = pd.melt(sdev_df, ignore_index=False).reset_index()
+
+    freqs_df["projection"] = proj_df["value"]
+    freqs_df["diff"] = diffs_df["value"]
+    freqs_df["usage estimate"] = usage_df["value"]
+    freqs_df["regression se"] = sdev_df["value"]
+
+    return freqs_df
+
+
+def restructure_freqs_old(
+    freqs_df: pd.DataFrame,
+    proj: np.ndarray,
+    diffs: np.ndarray,
+    usage: np.ndarray,
     start_date: str = "11-2020",
-    end_date: str = "6-2025",
+    end_date: str = "12-2025",
 ):
 
     start_split = start_date.split("-")
@@ -606,7 +678,8 @@ def load_freqs(
     data_path: str,
     words: list = ["common_words", "rare_words"],
     start_date: str = "11-2020",
-    end_date: str = "6-2025",
+    end_date: str = "12-2025",
+    pred_range: str = "60",
     group_prefix: str = "",
 ):
     """
@@ -631,11 +704,12 @@ def load_freqs(
         group_prefix: one of "" (projections for individual words),
                       "group_" (projections for word groups)
     """
-    if not (start_date == "11-2020" and end_date == "6-2025"):
+    """
+    if not (start_date == "11-2020" and end_date == "12-2025"):
         raise Exception(
             "functionality for time span outside of prediction range not yet implemented"
         )
-
+    """
     # build continuous time axis for plotting (i.e. 2020.83 corresponds to nov-2020)
     start_split = start_date.split("-")
     end_split = end_date.split("-")
@@ -651,6 +725,8 @@ def load_freqs(
     proj_dfs = {}
     diff_dfs = {}
     ratio_dfs = {}
+    sdev_dfs = {}
+    usage_dfs = {}
 
     for sec in secs:
         df = pd.read_csv(
@@ -658,7 +734,7 @@ def load_freqs(
             compression="gzip",
             index_col=0,
         )
-        df = df[df.index.str.len() > 3]
+        #df = df[df.index.str.len() > 3]
 
         start_i = list(df.columns.values).index(start_date)
         end_i = list(df.columns.values).index(end_date) + 1
@@ -667,32 +743,47 @@ def load_freqs(
         selection_mask = [x in words for x in df.index]
         selection_i = df.iloc[selection_mask].index
 
-        proj = np.load(os.path.join(data_path, sec, f"{group_prefix}proj.npy"))
+        proj = np.load(os.path.join(data_path, sec, f"{group_prefix}proj_predrange{pred_range}.npy"))
         # if the time span given here doesn't line up with the prediction span,
         # here is the place to adjust the shape of proj to match x_months
         proj_dfs[sec] = pd.DataFrame(
             proj[selection_mask, :], index=selection_i, columns=x_months
         )
 
-        diff = np.load(os.path.join(data_path, sec, f"{group_prefix}diffs.npy"))
+        diff = np.load(os.path.join(data_path, sec, f"{group_prefix}diffs_predrange{pred_range}.npy"))
         diff_dfs[sec] = pd.DataFrame(
             diff[selection_mask, :], index=selection_i, columns=x_months
         )
 
-        ratio = np.load(os.path.join(data_path, sec, f"{group_prefix}ratios.npy"))
+        ratio = np.load(os.path.join(data_path, sec, f"{group_prefix}ratios_predrange{pred_range}.npy"))
         ratio_dfs[sec] = pd.DataFrame(
             ratio[selection_mask, :], index=selection_i, columns=x_months
         )
+
+        sdev = np.load(os.path.join(data_path, sec, f"{group_prefix}sdev_predrange{pred_range}.npy"))
+        sdev_dfs[sec] = pd.DataFrame(
+            sdev[selection_mask, :], index=selection_i, columns=x_months
+        )
+
+        usage = diff / (1 - proj)
+        usage_dfs[sec] = pd.DataFrame(
+            usage[selection_mask, :], index=selection_i, columns=x_months
+        )
+
 
     frequency_dfs = restructure_by_words(frequency_dfs, words, secs, x_months)
     proj_dfs = restructure_by_words(proj_dfs, words, secs, x_months)
     diff_dfs = restructure_by_words(diff_dfs, words, secs, x_months)
     ratio_dfs = restructure_by_words(ratio_dfs, words, secs, x_months)
+    sdev_dfs = restructure_by_words(sdev_dfs, words, secs, x_months)
+    usage_dfs = restructure_by_words(usage_dfs, words, secs, x_months)
 
     for word in words:
         frequency_dfs[word]["projection"] = proj_dfs[word]["frequency"]
         frequency_dfs[word]["diff"] = diff_dfs[word]["frequency"]
         frequency_dfs[word]["ratio"] = ratio_dfs[word]["frequency"]
+        frequency_dfs[word]["sdev"] = sdev_dfs[word]["frequency"]
+        frequency_dfs[word]["usage"] = usage_dfs[word]["frequency"]
 
     return frequency_dfs
 

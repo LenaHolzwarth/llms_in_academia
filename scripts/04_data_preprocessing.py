@@ -8,7 +8,7 @@ from polyglot.detect import Detector
 from polyglot.detect.base import Error
 import src.data_utils as utils
 
-BASELINE_NAME = "baseline_2025-06-26"
+BASELINE_NAME = "baseline_2026-01-23"
 DATA_PATH = os.path.join("../data", BASELINE_NAME)
 
 # dictionary for tracking number of papers removed during preprocessing
@@ -32,6 +32,8 @@ for dirpath, _, filenames in os.walk(DATA_PATH):
             ]
             after_article_type = len(baseline_df)
 
+            # get full text for language detection later
+            full_text = list(map(lambda x: " ".join(x), baseline_df["sections"]))
             # format sections
             baseline_df["section_titles"] = baseline_df["section_titles"].apply(
                 lambda x: [] if x == None else x
@@ -47,17 +49,18 @@ for dirpath, _, filenames in os.walk(DATA_PATH):
             # remove papers with abstracts that are too long (> 4000) or
             # too short (< 250 characters)
             # is the too long part really necessary though? the other sections
-            # are all longer anyways
+            # are all longer anyways -> remove upper limit
             baseline_df = baseline_df[
                 baseline_df["abstract"].apply(
-                    lambda x: (len(x) >= 250) and (len(x) <= 4000)
+                    lambda x: (len(x) >= 250)
                 )
             ]
             after_abstract = len(baseline_df)
 
             # remove non-english papers
-            baseline_df["language"] = utils.determine_lang(
-                baseline_df["language"], list(baseline_df["abstract"])
+            
+            baseline_df["language"], _ = utils.determine_lang(
+                baseline_df["language"], list(baseline_df["abstract"]), full_text
             )
             baseline_df = baseline_df[
                 baseline_df["language"].apply(lambda x: x == "en")

@@ -95,32 +95,39 @@ alt_dates = {
 ##### LANGUAGE #####
 
 
-def determine_lang(langs: list, texts: list) -> list:
+def determine_lang(langs: list, texts: list, long_texts: list) -> list:
     """
     For each text in texts, check if the language is specified in langs,
-    otherwise infer the language. If language cannot be determined, the
-    list entry is set to None
+    otherwise infer the language. If the detector fails, try the longer
+    text version (only in case of failure to minimize computation time)
+    If language cannot be determined, the list entry is set to None
 
     Args:
       langs (list): list of strings with language codes or None
       texts (list): list of strings whose language should be inferred
+      long_texts (list): longer versions of texts
 
     Returns:
       list: inferred languages
-
+      error_count: number of cases where language detection failed  
     """
     langs_new = []
+    error_count = 0
 
     for i, lang in enumerate(langs):
         if lang == None and not texts[i] == None:
             try:
                 lang = Detector(texts[i]).languages[0].code
             except Error:
-                lang = None
+                try:
+                    lang = Detector(long_texts[i]).languages[0].code
+                except Error:
+                    lang = None
+                    error_count += 1
 
         langs_new.append(lang)
 
-    return langs_new
+    return langs_new, error_count
 
 
 ##### SECTIONS #####
