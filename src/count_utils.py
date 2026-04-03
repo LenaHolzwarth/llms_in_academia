@@ -367,7 +367,7 @@ def compute_frequency_projection(
         np.save(os.path.join(results_path, sec, f"{group_prefix}proj_predrange{pred_range}.npy"), proj)
         np.save(os.path.join(results_path, sec, f"{group_prefix}ratios_predrange{pred_range}.npy"), ratios)
         np.save(os.path.join(results_path, sec, f"{group_prefix}diffs_predrange{pred_range}.npy"), diffs)
-        np.save(os.path.join(results_path, sec, f"{group_prefix}sdev_predrange{pred_range}.npy"), diffs)
+        np.save(os.path.join(results_path, sec, f"{group_prefix}sdev_predrange{pred_range}.npy"), sdev)
 
 
 def frequency_projection(
@@ -679,7 +679,7 @@ def load_freqs(
     words: list = ["common_words", "rare_words"],
     start_date: str = "11-2020",
     end_date: str = "12-2025",
-    pred_range: str = "60",
+    pred_range: int = 60,
     group_prefix: str = "",
 ):
     """
@@ -710,14 +710,22 @@ def load_freqs(
             "functionality for time span outside of prediction range not yet implemented"
         )
     """
-    # build continuous time axis for plotting (i.e. 2020.83 corresponds to nov-2020)
-    start_split = start_date.split("-")
-    end_split = end_date.split("-")
-    x_months = np.arange(
-        int(start_split[1]) + ((int(start_split[0]) - 1) / 12),
-        int(end_split[1]) + ((int(end_split[0]) - 1) / 12),
-        1 / 12,
-    )
+    if pred_range < 12: #this is a bit hacky, but oh well
+        monthly = False
+    else: 
+        monthly = True
+    
+    if monthly:
+        # build continuous time axis for plotting (i.e. 2020.83 corresponds to nov-2020)
+        start_split = start_date.split("-")
+        end_split = end_date.split("-")
+        dates = np.arange(
+            int(start_split[1]) + ((int(start_split[0]) - 1) / 12),
+            int(end_split[1]) + ((int(end_split[0]) - 1) / 12),
+            1 / 12,
+        )
+    else:
+        dates = np.arange(int(start_date), int(end_date)+1)
 
     secs = next(os.walk(data_path))[1]
 
@@ -730,7 +738,7 @@ def load_freqs(
 
     for sec in secs:
         df = pd.read_csv(
-            os.path.join(data_path, sec, f"{group_prefix}freqs_df.csv.gz"),
+            os.path.join(data_path, sec, f"{group_prefix}freqs_df_{"monthly" if monthly else "yearly"}.csv.gz"),
             compression="gzip",
             index_col=0,
         )
@@ -747,36 +755,36 @@ def load_freqs(
         # if the time span given here doesn't line up with the prediction span,
         # here is the place to adjust the shape of proj to match x_months
         proj_dfs[sec] = pd.DataFrame(
-            proj[selection_mask, :], index=selection_i, columns=x_months
+            proj[selection_mask, :], index=selection_i, columns=dates
         )
 
         diff = np.load(os.path.join(data_path, sec, f"{group_prefix}diffs_predrange{pred_range}.npy"))
         diff_dfs[sec] = pd.DataFrame(
-            diff[selection_mask, :], index=selection_i, columns=x_months
+            diff[selection_mask, :], index=selection_i, columns=dates
         )
 
         ratio = np.load(os.path.join(data_path, sec, f"{group_prefix}ratios_predrange{pred_range}.npy"))
         ratio_dfs[sec] = pd.DataFrame(
-            ratio[selection_mask, :], index=selection_i, columns=x_months
+            ratio[selection_mask, :], index=selection_i, columns=dates
         )
 
         sdev = np.load(os.path.join(data_path, sec, f"{group_prefix}sdev_predrange{pred_range}.npy"))
         sdev_dfs[sec] = pd.DataFrame(
-            sdev[selection_mask, :], index=selection_i, columns=x_months
+            sdev[selection_mask, :], index=selection_i, columns=dates
         )
 
         usage = diff / (1 - proj)
         usage_dfs[sec] = pd.DataFrame(
-            usage[selection_mask, :], index=selection_i, columns=x_months
+            usage[selection_mask, :], index=selection_i, columns=dates
         )
 
 
-    frequency_dfs = restructure_by_words(frequency_dfs, words, secs, x_months)
-    proj_dfs = restructure_by_words(proj_dfs, words, secs, x_months)
-    diff_dfs = restructure_by_words(diff_dfs, words, secs, x_months)
-    ratio_dfs = restructure_by_words(ratio_dfs, words, secs, x_months)
-    sdev_dfs = restructure_by_words(sdev_dfs, words, secs, x_months)
-    usage_dfs = restructure_by_words(usage_dfs, words, secs, x_months)
+    frequency_dfs = restructure_by_words(frequency_dfs, words, secs, dates)
+    proj_dfs = restructure_by_words(proj_dfs, words, secs, dates)
+    diff_dfs = restructure_by_words(diff_dfs, words, secs, dates)
+    ratio_dfs = restructure_by_words(ratio_dfs, words, secs, dates)
+    sdev_dfs = restructure_by_words(sdev_dfs, words, secs, dates)
+    usage_dfs = restructure_by_words(usage_dfs, words, secs, dates)
 
     for word in words:
         frequency_dfs[word]["projection"] = proj_dfs[word]["frequency"]
@@ -869,6 +877,83 @@ def sample_section(sec: str, max_len: int):
     else:
         return " ".join(random.sample(sec_words, max_len))
 
+
+def se(
+    p: float,
+    q: float,
+    n: int,
+    version: str,
+    reg_se: float = -1,
+    function: str = "g",
+):
+    """
+    compute the variance of a function of random variables p and q. 
+    q always has binomial variance determined by n, the variance of p is
+    either also binomial or from a regression or both added
+    """
+
+    if p >= 1.0:
+        p = 0.9999999999999999
+    if q == 1.0:
+        q = 0.9999999999999999
+
+    assert version in ["binomial", "regression", "both"]
+    assert function in ["g", "delta"]
+
+    if version == "binomial":
+        var_p = p * (1 - p) / n
+    else:
+        assert reg_se >= 0
+        if version == "regression":
+            var_p = reg_se**2
+        elif version == "both":
+            var_p = reg_se**2 + p * (1 - p) / n
+
+    if function == "g":
+        var = var_g(p, var_p, q, n)[0][0]
+    elif function == "delta":
+        var = var_delta(var_p, q, n)
+    
+    assert var >= 0
+    return math.sqrt(var)
+
+def var_g(p: float, var_p: float, q: float, n: int):
+    """
+    compute the variance of function g=(q-p)/(1-p) by propagating the 
+    variances of q and p. q always has binomial variance determined by n, 
+    the variance of p is given
+    """
+
+    grad_g = np.asarray([[(q - 1) / ((1 - p) ** 2)], [1 / (1 - p)]])
+    Sigma = np.asarray([[var_p, 0], [0, q * (1 - q) / n]])
+    return grad_g.T @ Sigma @ grad_g
+
+def var_delta(var_p: float, q: float, n: int):
+    """
+    compute the variance of function delta=(q-p) by propagating the 
+    variances of q and p. q always has binomial variance determined by n, 
+    the variance of p is given
+    """
+    return var_p + q * (1 - q) / n
+
+
+def get_totals(results_path: str, start_date: str, end_date: str):
+
+    with open(os.path.join(results_path, "filters.json")) as f:
+        filters = json.load(f)
+    dates = pd.to_datetime(filters["all_dates"])
+
+    totals_m = {}
+    totals_y = {}
+    start_split = start_date.split("-")
+    end_split = end_date.split("-")
+    for year in range(int(start_split[1]), int(end_split[1]) + 1):
+        totals_y[year] = np.sum(dates.year == year)
+        totals_m[year] = {}
+        for month in range(1, 13):
+            totals_m[year][month] = np.sum((dates.year == year) & (dates.month == month))
+    
+    return totals_m, totals_y
 
 # lemmatized excess style words for 2024 pubmed abstracts
 excess_style_words_2024_lemmatized = [

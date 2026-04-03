@@ -52,10 +52,12 @@ for version in VERSION:
     
     #print("computing group frequency")
     utils.compute_group_frequency(results_path=RESULTS_PATH, monthly=False)
+    utils.compute_group_frequency(results_path=RESULTS_PATH, monthly=True)
     
 
     print("computing group frequency projection")
     utils.compute_frequency_projection(RESULTS_PATH, group_prefix="group_", pred_range=5, end_date="2023")
+    utils.compute_frequency_projection(RESULTS_PATH, group_prefix="group_", pred_range=5*12)
 
 
 print("--- %s minutes ---" % ((time.time() - start_time) / 60))
