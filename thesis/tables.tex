@@ -1,0 +1,216 @@
+\begin{table}[]
+\centering
+\begin{tabular}{lrrrrrr}
+\toprule
+ & \multicolumn{2}{c}{2023} & \multicolumn{2}{c}{2024} & \multicolumn{2}{c}{2025} \\
+ & LLM-usage & cutoff & LLM-usage & cutoff & LLM-usage & cutoff \\
+\midrule
+\textcolor{abstract}{abstract (full text)}        & 0.09 $\pm$ 0.02 & 0.10 & 0.31 $\pm$ 0.02 & 0.10 & 0.53 $\pm$ 0.01 & 0.10 \\
+\midrule
+\textcolor{introduction}{introduction (full text)}    & 0.12 $\pm$ 0.02 & 0.10 & 0.34 $\pm$ 0.02 & 0.07 & 0.50 $\pm$ 0.02 & 0.07 \\
+\textcolor{methods}{methods (full text)}         & 0.11 $\pm$ 0.02 & 0.15 & 0.29 $\pm$ 0.02 & 0.15 & 0.46 $\pm$ 0.02 & 0.15 \\
+results (full text)         & 0.09 $\pm$ 0.02 & 0.10 & 0.27 $\pm$ 0.02 & 0.10 & 0.47 $\pm$ 0.02 & 0.15 \\
+discussion (full text)      & 0.14 $\pm$ 0.02 & 0.10 & 0.43 $\pm$ 0.02 & 0.10 & 0.68 $\pm$ 0.01 & 0.10 \\
+\midrule
+introduction (random par)   & 0.11 $\pm$ 0.02 & 0.10 & 0.31 $\pm$ 0.02 & 0.10 & 0.48 $\pm$ 0.01 & 0.07 \\
+methods (random par)        & 0.03 $\pm$ 0.01 & 0.10 & 0.16 $\pm$ 0.01 & 0.10 & 0.28 $\pm$ 0.02 & 0.20 \\
+results (random par)        & 0.09 $\pm$ 0.02 & 0.40 & 0.20 $\pm$ 0.01 & 0.15 & 0.35 $\pm$ 0.01 & 0.15 \\
+discussion (random par)     & 0.10 $\pm$ 0.02 & 0.10 & 0.35 $\pm$ 0.02 & 0.10 & 0.57 $\pm$ 0.02 & 0.10 \\
+\midrule
+full paper                  & 0.12 $\pm$ 0.02 & 0.05 & 0.42 $\pm$ 0.02 & 0.07 & 0.77 $\pm$ 0.02 & 0.20 \\
+\bottomrule
+\end{tabular}
+\caption{Caption}
+    \label{tab:LLM-estimate_ind_cutoff}
+\end{table}
+
+\begin{tabular}{lrrr}
+\toprule
+ & 2023 & 2024 & 2025 \\
+\midrule
+\rowcolor{abstract} abstract (full text)        & 0.09 $\pm$ 0.02 & 0.31 $\pm$ 0.02 & 0.53 $\pm$ 0.01 \\
+\midrule
+\rowcolor{introduction}introduction (full text)    & 0.12 $\pm$ 0.02 & 0.34 $\pm$ 0.02 & 0.50 $\pm$ 0.02 \\
+\rowcolor{methods}methods (full text)         & 0.11 $\pm$ 0.02 & 0.29 $\pm$ 0.02 & 0.46 $\pm$ 0.02 \\
+\rowcolor{results}results (full text)         & 0.09 $\pm$ 0.02 & 0.27 $\pm$ 0.02 & 0.47 $\pm$ 0.02 \\
+\rowcolor{discussion}discussion (full text)      & 0.14 $\pm$ 0.02 & 0.43 $\pm$ 0.02 & 0.68 $\pm$ 0.01 \\
+\midrule
+\rowcolor{full}full paper                  & 0.12 $\pm$ 0.02 & 0.42 $\pm$ 0.02 & 0.77 $\pm$ 0.02 \\
+\bottomrule
+\end{tabular}
+\\
+\\
+\begin{tabular}{lrrrr}
+\toprule
+ & LLM-usage 2023 & LLM-usage 2024 & LLM-usage 2025 & cutoff \\
+\midrule
+abstract (full text)        & 0.09 $\pm$ 0.02 & 0.31 $\pm$ 0.02 & 0.53 $\pm$ 0.01 & 0.10 \\
+\midrule
+introduction (full text)    & 0.11 $\pm$ 0.02 & 0.34 $\pm$ 0.02 & 0.50 $\pm$ 0.02 & 0.07 \\
+methods (full text)         & 0.11 $\pm$ 0.02 & 0.29 $\pm$ 0.02 & 0.46 $\pm$ 0.02 & 0.15 \\
+results (full text)         & 0.11 $\pm$ 0.03 & 0.30 $\pm$ 0.03 & 0.47 $\pm$ 0.02 & 0.15 \\
+discussion (full text)      & 0.14 $\pm$ 0.02 & 0.43 $\pm$ 0.02 & 0.68 $\pm$ 0.01 & 0.10 \\
+\midrule
+introduction (random par)   & 0.10 $\pm$ 0.02 & 0.30 $\pm$ 0.01 & 0.48 $\pm$ 0.01 & 0.07 \\
+methods (random par)        & 0.03 $\pm$ 0.02 & 0.14 $\pm$ 0.02 & 0.28 $\pm$ 0.02 & 0.20 \\
+results (random par)        & 0.08 $\pm$ 0.01 & 0.20 $\pm$ 0.01 & 0.35 $\pm$ 0.01 & 0.15 \\
+discussion (random par)     & 0.10 $\pm$ 0.02 & 0.35 $\pm$ 0.02 & 0.57 $\pm$ 0.02 & 0.10 \\
+\midrule
+full                        & 0.19 $\pm$ 0.05 & 0.52 $\pm$ 0.04 & 0.77 $\pm$ 0.02 & 0.20 \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{lrrr}
+\toprule
+ & 2023 & 2024 & 2025 \\
+\midrule
+abstract (full text)        & 0.09 $\pm$ 0.02 & 0.31 $\pm$ 0.02 & 0.53 $\pm$ 0.01\\
+\midrule
+introduction (full text)    & 0.11 $\pm$ 0.02 & 0.34 $\pm$ 0.02 & 0.50 $\pm$ 0.02\\
+methods (full text)         & 0.11 $\pm$ 0.02 & 0.29 $\pm$ 0.02 & 0.46 $\pm$ 0.02\\
+results (full text)         & 0.11 $\pm$ 0.03 & 0.30 $\pm$ 0.03 & 0.47 $\pm$ 0.02\\
+discussion (full text)      & 0.14 $\pm$ 0.02 & 0.43 $\pm$ 0.02 & 0.68 $\pm$ 0.01 \\
+\midrule
+introduction (random par)   & 0.10 $\pm$ 0.02 & 0.30 $\pm$ 0.01 & 0.48 $\pm$ 0.01\\
+methods (random par)        & 0.03 $\pm$ 0.02 & 0.14 $\pm$ 0.02 & 0.28 $\pm$ 0.02\\
+results (random par)        & 0.08 $\pm$ 0.01 & 0.20 $\pm$ 0.01 & 0.35 $\pm$ 0.01\\
+discussion (random par)     & 0.10 $\pm$ 0.02 & 0.35 $\pm$ 0.02 & 0.57 $\pm$ 0.02 \\
+\midrule
+full                        & 0.19 $\pm$ 0.05 & 0.52 $\pm$ 0.04 & 0.77 $\pm$ 0.02\\
+\bottomrule
+\end{tabular}
+\section{}
+\begin{tabular}{lrrr}
+\toprule
+ & 2023 & 2024 & 2025 \\
+\midrule
+\textcolor{abstract}{abstract (full text)} &
+\textcolor{abstract}{0.09} \unc{0.02} &
+\textcolor{abstract}{0.31} \unc{0.02} &
+\textcolor{abstract}{0.53} \unc{0.01}\\
+\midrule
+\textcolor{introduction}{introduction (full text)} &
+\textcolor{introduction}{0.11} \unc{0.02} &
+\textcolor{introduction}{0.34} \unc{0.02} &
+\textcolor{introduction}{0.50} \unc{0.02}\\
+\textcolor{methods}{methods (full text)} &
+\textcolor{methods}{0.11} \unc{0.02} &
+\textcolor{methods}{0.29} \unc{0.02} &
+\textcolor{methods}{0.46} \unc{0.02}\\
+\textcolor{results}{results (full text)} &
+\textcolor{results}{0.11} \unc{0.03} &
+\textcolor{results}{0.30} \unc{0.03} &
+\textcolor{results}{0.47} \unc{0.02}\\
+\textcolor{discussion}{discussion (full text)} &
+\textcolor{discussion}{0.14} \unc{0.02} &
+\textcolor{discussion}{0.43} \unc{0.02} &
+\textcolor{discussion}{0.68} \unc{0.01} \\
+\midrule
+\textcolor{introduction}{introduction (random par)} &
+\textcolor{introduction}{0.10} \unc{0.02} &
+\textcolor{introduction}{0.30} \unc{0.01} &
+\textcolor{introduction}{0.48} \unc{0.01}\\
+\textcolor{methods}{methods (random par)} &
+\textcolor{methods}{0.03} \unc{0.02} &
+\textcolor{methods}{0.14} \unc{0.02} &
+\textcolor{methods}{0.28} \unc{0.02}\\
+\textcolor{results}{results (random par)} &
+\textcolor{results}{0.08} \unc{0.01} &
+\textcolor{results}{0.20} \unc{0.01} &
+\textcolor{results}{0.35} \unc{0.01}\\
+\textcolor{discussion}{discussion (random par)} &
+\textcolor{discussion}{0.10} \unc{0.02} &
+\textcolor{discussion}{0.35} \unc{0.02} &
+\textcolor{discussion}{0.57} \unc{0.02} \\
+\midrule
+\textcolor{full}{full} &
+\textcolor{full}{0.19} \unc{0.05} &
+\textcolor{full}{0.52} \unc{0.04} &
+\textcolor{full}{0.77} \unc{0.02}\\
+\bottomrule
+\end{tabular}
+
+
+\begin{tabular}{lrrr}
+\toprule
+ & \multicolumn{1}{c}{2023} & \multicolumn{1}{c}{2024} & \multicolumn{1}{c}{2025}\\
+\midrule
+abstract        & 0.09 $\pm$ 0.02 & 0.31 $\pm$ 0.02 & 0.53 $\pm$ 0.01 \\
+\midrule
+introduction    & 0.11 $\pm$ 0.02 & 0.34 $\pm$ 0.02 & 0.50 $\pm$ 0.02 \\
+methods         & 0.11 $\pm$ 0.02 & 0.29 $\pm$ 0.02 & 0.46 $\pm$ 0.02 \\
+results         & 0.11 $\pm$ 0.03 & 0.30 $\pm$ 0.03 & 0.47 $\pm$ 0.02 \\
+discussion      & 0.14 $\pm$ 0.02 & 0.43 $\pm$ 0.02 & 0.68 $\pm$ 0.01 \\
+\midrule
+full            & 0.19 $\pm$ 0.05 & 0.52 $\pm$ 0.04 & 0.77 $\pm$ 0.02 \\
+\bottomrule
+\label{estimated LLM-usage per section}
+\end{tabular}
+
+\begin{sidewaystable}
+\begin{tabular}{llllll}
+\toprule
+& \multicolumn{1}{c}{2023} & \multicolumn{1}{c}{2024} & \multicolumn{1}{c}{2025}& Dataset&Authors \\
+\midrule
+\multirow{5}*{Abstract}
+& 0.09 \unc{0.02}   & 0.31 \unc{0.02}       & 0.53 \unc{0.01}   & PMC                       & us \\
+& 0.13 \dc{(08-23)} &                       &                   & arXiv, bioRxiv, medRxiv   & Bao et al. (2025)\\
+& 0.18 \dc{(01-24)} & 0.22 \dc{(09-24)}     &                   & arXiv (CS)                & \multirow{2}*{Liang et al. (2024, 2025)}\\
+& 0.06 \dc{(01-24)} & 0.09 \dc{(09-24)}     &                   & Nature portfolio          & \\
+& 0.35 \dc{(01-24)} &                       &                   & arXiv (CS)                & Geng et al. (2024)\\
+&                   & 0.14                  &                   & PubMed                    & Kobak et al. (2025)\\
+\midrule
+\multirow{4}*{Full text}
+& 0.19 \unc{0.05}   & 0.52 \unc{0.04}       & 0.77 \unc{0.02}   & PMC                       & us     \\
+& 0.02              & 0.12                  &                   & Dimensions                & Gray (2024, 2025)   \\
+&                   & \multirow{2}*{0.16}   &                   & Scopus, WoS, PubMed,      & \multirow{2}*{Kousha et al. (2025)}\\  
+&                   &                       &                   & Dimensions, OpenAlex      &\\
+\midrule
+\multirow{9}*{Surveys}
+&                   & 0.14 \dc{(03-24)}     &                   & translating               & \multirow{2}*{Mohammadi et al. (2026)}\\
+&                   & 0.13 \dc{(03-24)}     &                   & rephrasing                &\\
+&                   & \multirow{2}*{0.61 \dc{(10-24)}}  &       & editing (rephrasing,      & \multirow{4}*{Liao et al. (2024)}\\
+&                   &                       &                   & grammar, formatting)      &\\
+&                   & \multirow{2}*{0.43 \dc{(10-24)}}   &      & writing (drafting,        &\\ 
+&                   &                       &                   & rewriting, shorten)       &\\
+&                   &                       & 0.28 \dc{(03-25)} & editing                   &\multirow{3}*{Kwon (2025)} \\
+&                   &                       & 0.08 \dc{(03-25)} & translating               &\\
+&                   &                       & 0.08 \dc{(03-25)} & writing (first draft)     &\\
+\bottomrule
+\end{tabular}
+\end{sidewaystable}
+
+
+\begin{tabular}{lrrr}
+\toprule
+ & \multicolumn{1}{c}{2023} & \multicolumn{1}{c}{2024} & \multicolumn{1}{c}{2025}\\
+\midrule
+\textcolor{abstract}{abstract} &
+\textcolor{abstract}{0.09} \unc{0.02} &
+\textcolor{abstract}{0.31} \unc{0.02} &
+\textcolor{abstract}{0.53} \unc{0.01} \\
+\midrule
+\textcolor{introduction}{introduction} &
+\textcolor{introduction}{0.11} \unc{0.02} &
+\textcolor{introduction}{0.34} \unc{0.02} &
+\textcolor{introduction}{0.50} \unc{0.02} \\
+\textcolor{methods}{methods} &
+\textcolor{methods}{0.11} \unc{0.02} &
+\textcolor{methods}{0.29} \unc{0.02} &
+\textcolor{methods}{0.46} \unc{0.02} \\
+\textcolor{results}{results} &
+\textcolor{results}{0.11} \unc{0.03} &
+\textcolor{results}{0.30} \unc{0.03} &
+\textcolor{results}{0.47} \unc{0.02} \\
+\textcolor{discussion}{discussion} &
+\textcolor{discussion}{0.14} \unc{0.02} &
+\textcolor{discussion}{0.43} \unc{0.02} &
+\textcolor{discussion}{0.68} \unc{0.01} \\
+\midrule
+\textcolor{full}{full} &
+\textcolor{full}{0.19} \unc{0.05} &
+\textcolor{full}{0.52} \unc{0.04} &
+\textcolor{full}{0.77} \unc{0.02} \\
+\bottomrule
+\label{estimated LLM-usage per section}
+\end{tabular}

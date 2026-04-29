@@ -1,0 +1,39 @@
+\ProvidesPackage{settings}
+
+%packages
+\usepackage{graphicx} 
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{rotating}
+\usepackage{hyperref}
+\usepackage[backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{bookmark}
+
+% work around abstracts in citation
+\AtEveryBibitem{%
+  \clearfield{abstract}%
+}
+
+% commands for common notation
+\newcommand{\hbet}{\hat{\beta}}
+\newcommand{\hph}{\hat{p}_{human}}
+\newcommand{\ph}{p_{human}}
+\newcommand{\pl}{p_{LLM}}
+
+
+%custom colors
+\definecolor{abstract}{rgb}{0.00392156862745098, 0.45098039215686275, 0.6980392156862745}
+\definecolor{introduction}{rgb}{0.8705882352941177, 0.5607843137254902, 0.0196078431372549}
+\definecolor{methods}{rgb}{0.00784313725490196, 0.6196078431372549, 0.45098039215686275}
+\definecolor{results}{rgb}{0.8352941176470589, 0.3686274509803922, 0.0}
+\definecolor{discussion}{rgb}{0.8, 0.47058823529411764, 0.7372549019607844}
+\definecolor{full}{rgb}{0.792156862745098, 0.5686274509803921, 0.3803921568627451}
+\definecolor{dates}{RGB}{116, 161, 230}
+% Grey uncertainty macro
+\newcommand{\unc}[1]{\textcolor{lightgray}{$\pm$ #1}}
+\newcommand{\dc}[1]{\textcolor{dates}{#1}}
