@@ -1,0 +1,3141 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Akram2024}{article}{}
+      \name{author}{1}{}{%
+        {{hash=928adb231bb3826a2859067d33b13f08}{%
+           family={Akram},
+           familyi={A\bibinitperiod},
+           given={Arslan},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{928adb231bb3826a2859067d33b13f08}
+      \strng{fullhash}{928adb231bb3826a2859067d33b13f08}
+      \strng{bibnamehash}{928adb231bb3826a2859067d33b13f08}
+      \strng{authorbibnamehash}{928adb231bb3826a2859067d33b13f08}
+      \strng{authornamehash}{928adb231bb3826a2859067d33b13f08}
+      \strng{authorfullhash}{928adb231bb3826a2859067d33b13f08}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Many people are interested in ChatGPT since it has become a prominent AIGC model that provides high-quality responses in various contexts, such as software development and maintenance. Misuse of ChatGPT might cause significant issues, particularly in public safety and education, despite its immense potential. The majority of researchers choose to publish their work on Arxiv. The effectiveness and originality of future work depend on the ability to detect AI components in such contributions. To address this need, this study will analyze a method that can see purposely manufactured content that academic organizations use to post on Arxiv. For this study, a dataset was created using physics, mathematics, and computer science articles. Using the newly built dataset, the following step is to put originality.ai through its paces. The statistical analysis shows that Originality.ai is very accurate, with a rate of 98\%.}
+      \field{journaltitle}{arxiv.orgA AkramarXiv preprint arXiv:2403.13812, 2024•arxiv.org}
+      \field{note}{This was not proofread}
+      \field{title}{Quantitative analysis of AI-generated texts in academic research: A study of AI presence in Arxiv submissions using AI detection tool}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2403.13812
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2403.13812
+      \endverb
+      \keyw{AI detection,AI generated content detection,Academic Integrity,Artificial Intelligence (AI),BERT Model,Binary Classification,ChatGPT,Classification,Confusion Matrix,Machine Learning,Natural Language Processing,OriginalityAI,Text Generation,Text evaluation,arXiv,large language models}
+    \endentry
+    \entry{Alansari2026}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8334c6b83dbbc9950a7cbf36718a2ece}{%
+           family={Alansari},
+           familyi={A\bibinitperiod},
+           given={Aisha},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3c1ce4e6bba8f49720af22037dca2384}{%
+           family={Luqman},
+           familyi={L\bibinitperiod},
+           given={Hamzah},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{21b8284cc216f0e719d3f7515b7183a5}
+      \strng{fullhash}{21b8284cc216f0e719d3f7515b7183a5}
+      \strng{bibnamehash}{21b8284cc216f0e719d3f7515b7183a5}
+      \strng{authorbibnamehash}{21b8284cc216f0e719d3f7515b7183a5}
+      \strng{authornamehash}{21b8284cc216f0e719d3f7515b7183a5}
+      \strng{authorfullhash}{21b8284cc216f0e719d3f7515b7183a5}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Large language models (LLMs) have transformed natural language processing, achieving remarkable performance across diverse tasks. However, their impressive fluency often comes at the cost of producing false or fabricated information, a phenomenon known as hallucination. Hallucination refers to the generation of content by an LLM that is fluent and syntactically correct but factually inaccurate or unsupported by external evidence. Hallucinations undermine the reliability and trustworthiness of LLMs, especially in domains requiring factual accuracy. This survey provides a comprehensive review of research on hallucination in LLMs, with a focus on causes, detection, and mitigation. We first present a taxonomy of hallucination types and analyze their root causes across the entire LLM development lifecycle, from data collection and architecture design to inference. We further examine how hallucinations emerge in key natural language generation tasks. Building on this foundation, we introduce a structured taxonomy of detection approaches and another taxonomy of mitigation strategies. We also analyze the strengths and limitations of current detection and mitigation approaches and review existing evaluation benchmarks and metrics used to quantify LLMs hallucinations. Finally, we outline key open challenges and promising directions for future research, providing a foundation for the development of more truthful and trustworthy LLMs.}
+      \field{issn}{1574-0137}
+      \field{journaltitle}{Computer Science Review}
+      \field{month}{8}
+      \field{title}{Large language models hallucination: A comprehensive survey}
+      \field{volume}{61}
+      \field{year}{2026}
+      \field{pages}{100970}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.cosrev.2026.100970
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2510.06265
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2510.06265
+      \endverb
+    \endentry
+    \entry{Astarita2024}{article}{}
+      \name{author}{4}{}{%
+        {{hash=874634ce1c6fe04e12cd330470e800be}{%
+           family={Astarita},
+           familyi={A\bibinitperiod},
+           given={Simone},
+           giveni={S\bibinitperiod}}}%
+        {{hash=608794fd799f2cb52349a02915e3df01}{%
+           family={Kruk},
+           familyi={K\bibinitperiod},
+           given={Sandor},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e2530105d711545e6f71b0267d432216}{%
+           family={Reerink},
+           familyi={R\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7f8076c1e43be20c747f59dc16776e89}{%
+           family={Gómez},
+           familyi={G\bibinitperiod},
+           given={Pablo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{126ae04f6c6a597a16292175a62504d9}
+      \strng{fullhash}{69031ea9a2bf964ae283f1a673222276}
+      \strng{bibnamehash}{126ae04f6c6a597a16292175a62504d9}
+      \strng{authorbibnamehash}{126ae04f6c6a597a16292175a62504d9}
+      \strng{authornamehash}{126ae04f6c6a597a16292175a62504d9}
+      \strng{authorfullhash}{69031ea9a2bf964ae283f1a673222276}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Rapid progress in the capabilities of machine learning approaches in natural language processing has culminated in the rise of large language models over the last two years. Recent works have shown unprecedented adoption of these for academic writing, especially in some fields, but their pervasiveness in astronomy has not been studied sufficiently. To remedy this, we extract words that ChatGPT uses more often than humans when generating academic text and search a total of 1 million articles for them. This way, we assess the frequency of word occurrence in published works in astronomy tracked by the NASA Astrophysics Data System since 2000. We then perform a statistical analysis of the occurrences. We identify a list of words favoured by ChatGPT and find a statistically significant increase for these words against a control group in 2024, which matches the trend in other disciplines. These results suggest a widespread adoption of these models in the writing of astronomy papers. We encourage organisations, publishers, and researchers to work together to identify ethical and pragmatic guidelines to maximise the benefits of these systems while maintaining scientific rigour.}
+      \field{month}{9}
+      \field{title}{Delving into the Utilisation of ChatGPT in Scientific Publications in Astronomy}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.5281/zenodo.13885576
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2406.17324 http://dx.doi.org/10.5281/zenodo.13885576
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2406.17324%20http://dx.doi.org/10.5281/zenodo.13885576
+      \endverb
+    \endentry
+    \entry{Bai2022}{article}{}
+      \name{author}{31}{}{%
+        {{hash=9bf1729ae263e793ab902ed7fe6678da}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={Yuntao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=5028535158c772bff71c0631f7cce8f4}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5a51e2df8c9693c1274b429fada63fd6}{%
+           family={Ndousse},
+           familyi={N\bibinitperiod},
+           given={Kamal},
+           giveni={K\bibinitperiod}}}%
+        {{hash=1e84eff933be9f4887bf369cf181bf12}{%
+           family={Askell},
+           familyi={A\bibinitperiod},
+           given={Amanda},
+           giveni={A\bibinitperiod}}}%
+        {{hash=341ab75f3c30fad8766efdae7461653f}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0ce3f71595cd1b7dc6a8c02e16adeb45}{%
+           family={DasSarma},
+           familyi={D\bibinitperiod},
+           given={Nova},
+           giveni={N\bibinitperiod}}}%
+        {{hash=264474bce221274845000e916a53e05a}{%
+           family={Drain},
+           familyi={D\bibinitperiod},
+           given={Dawn},
+           giveni={D\bibinitperiod}}}%
+        {{hash=020854510082aaea4cd6023ea62c9387}{%
+           family={Fort},
+           familyi={F\bibinitperiod},
+           given={Stanislav},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0149c487dd40eb94cedd34313c20da77}{%
+           family={Ganguli},
+           familyi={G\bibinitperiod},
+           given={Deep},
+           giveni={D\bibinitperiod}}}%
+        {{hash=eb1d3044b466619459c76843f0e98bb9}{%
+           family={Henighan},
+           familyi={H\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=66d93da29380904e9a0d586e6afe33b4}{%
+           family={Joseph},
+           familyi={J\bibinitperiod},
+           given={Nicholas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ae50339c3e9c1418ade64e74fa002ef5}{%
+           family={Kadavath},
+           familyi={K\bibinitperiod},
+           given={Saurav},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c9c0e77cb49ab32e0fbcd8d4b0ea104e}{%
+           family={Kernion},
+           familyi={K\bibinitperiod},
+           given={Jackson},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b59a1db0850ff076abc6d1c2cc4c6f97}{%
+           family={Conerly},
+           familyi={C\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=d59c1d41ad4ed75d6d4a31323ecc849a}{%
+           family={El-Showk},
+           familyi={E\bibinithyphendelim S\bibinitperiod},
+           given={Sheer},
+           giveni={S\bibinitperiod}}}%
+        {{hash=541f016661382ea2cc54ea767573b9c3}{%
+           family={Elhage},
+           familyi={E\bibinitperiod},
+           given={Nelson},
+           giveni={N\bibinitperiod}}}%
+        {{hash=b453e963913f0d9b4b7015dcdda7fab6}{%
+           family={Hatfield-Dodds},
+           familyi={H\bibinithyphendelim D\bibinitperiod},
+           given={Zac},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=b787768e1abb6680dfb8360e81fc0b28}{%
+           family={Hernandez},
+           familyi={H\bibinitperiod},
+           given={Danny},
+           giveni={D\bibinitperiod}}}%
+        {{hash=e2328e4d29e6d57481f844919121200c}{%
+           family={Hume},
+           familyi={H\bibinitperiod},
+           given={Tristan},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1e36aabcaf3c66dbec2a0aec97a0dd98}{%
+           family={Johnston},
+           familyi={J\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6cc94a80c21f9c5b346a6f1a21e75095}{%
+           family={Kravec},
+           familyi={K\bibinitperiod},
+           given={Shauna},
+           giveni={S\bibinitperiod}}}%
+        {{hash=53e52c19d9cddefdd8622fdabf0e3b86}{%
+           family={Lovitt},
+           familyi={L\bibinitperiod},
+           given={Liane},
+           giveni={L\bibinitperiod}}}%
+        {{hash=d2f8bae99d9538a95287ac272f977fc4}{%
+           family={Nanda},
+           familyi={N\bibinitperiod},
+           given={Neel},
+           giveni={N\bibinitperiod}}}%
+        {{hash=bd24844b3abaa88e1f3c5c074ad37ab6}{%
+           family={Olsson},
+           familyi={O\bibinitperiod},
+           given={Catherine},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1e6adbf36ab730cd5fdadb838b4d2667}{%
+           family={Amodei},
+           familyi={A\bibinitperiod},
+           given={Dario},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ad9f5a3d8c696d78ce2a831ce8ac7524}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1480c861b1a73e1d1de1b227e985b179}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Jack},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b51e7c5fe92844f39ce52b8a5fa5675f}{%
+           family={McCandlish},
+           familyi={M\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=78be47e08348476a254b1217fd9041ca}{%
+           family={Olah},
+           familyi={O\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f6ea6671c0bcb1a7ebc45e1e803922bd}{%
+           family={Mann},
+           familyi={M\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+        {{hash=9e85370e215d552f72c95a2b63a37802}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={Jared},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{68a232b71f6c92d764e1477740607b54}
+      \strng{fullhash}{1ffbdaaef757253df240c6ac3a0c3385}
+      \strng{bibnamehash}{68a232b71f6c92d764e1477740607b54}
+      \strng{authorbibnamehash}{68a232b71f6c92d764e1477740607b54}
+      \strng{authornamehash}{68a232b71f6c92d764e1477740607b54}
+      \strng{authorfullhash}{1ffbdaaef757253df240c6ac3a0c3385}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We apply preference modeling and reinforcement learning from human feedback (RLHF) to finetune language models to act as helpful and harmless assistants. We find this alignment training improves performance on almost all NLP evaluations, and is fully compatible with training for specialized skills such as python coding and summarization. We explore an iterated online mode of training, where preference models and RL policies are updated on a weekly cadence with fresh human feedback data, efficiently improving our datasets and models. Finally, we investigate the robustness of RLHF training, and identify a roughly linear relation between the RL reward and the square root of the KL divergence between the policy and its initialization. Alongside our main results, we perform peripheral analyses on calibration, competing objectives, and the use of OOD detection, compare our models with human writers, and provide samples from our models using prompts appearing in recent related work.}
+      \field{title}{Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback}
+      \field{year}{2022}
+    \endentry
+    \entry{Bao2025}{article}{}
+      \name{author}{4}{}{%
+        {{hash=94f023800ad8a639de26871226daa1ff}{%
+           family={Bao},
+           familyi={B\bibinitperiod},
+           given={Tong},
+           giveni={T\bibinitperiod}}}%
+        {{hash=911df329639abb08461cf03dae8c764f}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a1105392d625ddaf5603acb531c3bc0a}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Jin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a4b4f86bd6f21a7ee1d468f183ce46eb}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Chengzhi},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature}%
+      }
+      \strng{namehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
+      \strng{fullhash}{85cbcb6c6476c00fdf295e68491bf6fc}
+      \strng{bibnamehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
+      \strng{authorbibnamehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
+      \strng{authornamehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
+      \strng{authorfullhash}{85cbcb6c6476c00fdf295e68491bf6fc}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Large Language Models (LLMs), such as ChatGPT, have prompted academic concerns about their impact on academic writing. Existing studies have primarily examined LLM usage in academic writing through quantitative approaches, such as word frequency statistics and probability-based analyses. However, few have systematically examined the potential impact of LLMs on the linguistic characteristics of academic writing. To address this gap, we conducted a large-scale analysis across 823,798 abstracts published in last decade from arXiv dataset. Through the linguistic analysis of features such as the frequency of LLM-preferred words, lexical complexity, syntactic complexity, cohesion, readability and sentiment, the results indicate a significant increase in the proportion of LLM-preferred words in abstracts, revealing the widespread influence of LLMs on academic writing. Additionally, we observed an increase in lexical complexity and sentiment in the abstracts, but a decrease in syntactic complexity, suggesting that LLMs introduce more new vocabulary and simplify sentence structure. However, the significant decrease in cohesion and readability indicates that abstracts have fewer connecting words and are becoming more difficult to read. Moreover, our analysis reveals that scholars with weaker English proficiency were more likely to use the LLMs for academic writing, and focused on improving the overall logic and fluency of the abstracts. Finally, at discipline level, we found that scholars in Computer Science showed more pronounced changes in writing style, while the changes in Mathematics were minimal.}
+      \field{issn}{15882861}
+      \field{issue}{7}
+      \field{journaltitle}{Scientometrics}
+      \field{month}{7}
+      \field{title}{Examining linguistic shifts in academic writing before and after the launch of ChatGPT: a study on preprint papers}
+      \field{volume}{130}
+      \field{year}{2025}
+      \field{pages}{3597\bibrangedash 3627}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1007/S11192-025-05341-Y/TABLES/9
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1007/s11192-025-05341-y
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s11192-025-05341-y
+      \endverb
+      \keyw{Academic writing,Large Language Models,Linguistic features,Writing style}
+    \endentry
+    \entry{Berdejo-Espinola2023}{article}{}
+      \name{author}{2}{}{%
+        {{hash=98f762614919a774f495feff06835ad6}{%
+           family={Berdejo-Espinola},
+           familyi={B\bibinithyphendelim E\bibinitperiod},
+           given={Violeta},
+           giveni={V\bibinitperiod}}}%
+        {{hash=076b3678c8887bcbf4075a965dd7c807}{%
+           family={Amano},
+           familyi={A\bibinitperiod},
+           given={Tatsuya},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{897023817eab22b131d331f1efc8aeb4}
+      \strng{fullhash}{897023817eab22b131d331f1efc8aeb4}
+      \strng{bibnamehash}{897023817eab22b131d331f1efc8aeb4}
+      \strng{authorbibnamehash}{897023817eab22b131d331f1efc8aeb4}
+      \strng{authornamehash}{897023817eab22b131d331f1efc8aeb4}
+      \strng{authorfullhash}{897023817eab22b131d331f1efc8aeb4}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{10959203}
+      \field{issue}{6636}
+      \field{journaltitle}{Science}
+      \field{month}{3}
+      \field{title}{AI tools can improve equity in science}
+      \field{volume}{379}
+      \field{year}{2023}
+      \field{pages}{991}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1126/SCIENCE.ADG9714
+      \endverb
+      \verb{urlraw}
+      \verb https://www.science.org/doi/10.1126/science.adg9714
+      \endverb
+      \verb{url}
+      \verb https://www.science.org/doi/10.1126/science.adg9714
+      \endverb
+    \endentry
+    \entry{Botes2025}{article}{}
+      \name{author}{4}{}{%
+        {{hash=86ccbf5077bde8e902383b3454beff89}{%
+           family={Botes},
+           familyi={B\bibinitperiod},
+           given={Elouise},
+           giveni={E\bibinitperiod}}}%
+        {{hash=1f17c8ca17302eb88f657ed566aca2cb}{%
+           family={Dewaele},
+           familyi={D\bibinitperiod},
+           given={Jean-Marc},
+           giveni={J\bibinithyphendelim M\bibinitperiod}}}%
+        {{hash=835c04362225f4acde3a0fddc819f63b}{%
+           family={Colling},
+           familyi={C\bibinitperiod},
+           given={Joanne},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1d94e030afff0cf85aa8f7aa348e438c}{%
+           family={Teuber},
+           familyi={T\bibinitperiod},
+           given={Ziwen},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{a922cdf375c5260d4535604b0cced5c8}
+      \strng{fullhash}{db9aa1c44094de0b8fe9235bbb64df1f}
+      \strng{bibnamehash}{a922cdf375c5260d4535604b0cced5c8}
+      \strng{authorbibnamehash}{a922cdf375c5260d4535604b0cced5c8}
+      \strng{authornamehash}{a922cdf375c5260d4535604b0cced5c8}
+      \strng{authorfullhash}{db9aa1c44094de0b8fe9235bbb64df1f}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Initial indications of generative AI writing in linguistics research publications}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.31234/osf.io/4yvbp\_v1
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/profile/Elouise-Botes/publication/394388056\_Initial\_indications\_of\_generative\_AI\_writing\_in\_linguistics\_research\_publications/links/68a5e6fe6327cf7b63d83be1/Initial-indications-of-generative-AI-writing-in-linguistics-research-publications.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/profile/Elouise-Botes/publication/394388056%5C_Initial%5C_indications%5C_of%5C_generative%5C_AI%5C_writing%5C_in%5C_linguistics%5C_research%5C_publications/links/68a5e6fe6327cf7b63d83be1/Initial-indications-of-generative-AI-writing-in-linguistics-research-publications.pdf
+      \endverb
+    \endentry
+    \entry{Brainard2023}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7570dbb14459d83e8957dec2eadc388a}{%
+           family={Brainard},
+           familyi={B\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{7570dbb14459d83e8957dec2eadc388a}
+      \strng{fullhash}{7570dbb14459d83e8957dec2eadc388a}
+      \strng{bibnamehash}{7570dbb14459d83e8957dec2eadc388a}
+      \strng{authorbibnamehash}{7570dbb14459d83e8957dec2eadc388a}
+      \strng{authornamehash}{7570dbb14459d83e8957dec2eadc388a}
+      \strng{authorfullhash}{7570dbb14459d83e8957dec2eadc388a}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{10959203}
+      \field{issue}{6634}
+      \field{journaltitle}{Science}
+      \field{month}{2}
+      \field{title}{Journals take up arms against AI-written text}
+      \field{volume}{379}
+      \field{year}{2023}
+      \field{pages}{740\bibrangedash 741}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1126/SCIENCE.ADH2762
+      \endverb
+    \endentry
+    \entry{Cheng2024}{article}{}
+      \name{author}{4}{}{%
+        {{hash=047bca20223c62dd63df002120fc8261}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Hu-Zi},
+           giveni={H\bibinithyphendelim Z\bibinitperiod}}}%
+        {{hash=981b65aa5ac8799f0619edf05af34260}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Ying-Feng},
+           giveni={Y\bibinithyphendelim F\bibinitperiod}}}%
+        {{hash=db4c301f0bef3ea1be75067bc2003b84}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Tien\bibnamedelima Yin},
+           giveni={T\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=aaa36d36465f806a01966e1e408174b9}{%
+           family={Tham},
+           familyi={T\bibinitperiod},
+           given={Yih-Chung},
+           giveni={Y\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c5fb8f8b3909bb87221818b7fb08c7cf}
+      \strng{fullhash}{859798fd4a1150e891d0ed2fdf3e7b8c}
+      \strng{bibnamehash}{c5fb8f8b3909bb87221818b7fb08c7cf}
+      \strng{authorbibnamehash}{c5fb8f8b3909bb87221818b7fb08c7cf}
+      \strng{authornamehash}{c5fb8f8b3909bb87221818b7fb08c7cf}
+      \strng{authorfullhash}{859798fd4a1150e891d0ed2fdf3e7b8c}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Since the release of ChatGPT in 2022, AI-generated texts have inevitably permeated various types of writing, sparking debates about the quality and quantity of content produced by such large language models (LLM). This study investigates a critical question: Have AI-generated texts from LLM infiltrated the realm of scientific writing, and if so, to what extent and in what setting? By analyzing a dataset comprised. CC-BY-NC-ND 4.0 International license made available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is The copyright holder for this preprint this version posted March 26, 2024. ; https://doi.org/10.1101/2024.03.25.586710 doi: bioRxiv preprint of preprint manuscripts uploaded to arXiv, bioRxiv, and medRxiv over the past two years, we confirmed and quantified the widespread influence of AI-generated texts in scientific publications using the latest LLM-text detection technique, the Binoculars LLM-detector. Further analyses with this tool reveal that: (1) the AI influence correlates with the trend of ChatGPT web searches; (2) it is widespread across many scientific domains but exhibits distinct impacts within them (highest: computer science, engineering sciences); (3) the influence varies with authors who had different language speaking backgrounds and geographic regions according to the location of their affiliations (\>5\%: Italy, China, average over countries), and (4) AI-generated texts are used in various content types in manuscripts (most significant: hypothesis formulation, conclusion summarization). Based on these findings, an AI-revision index is developed and calibrated, giving quantitative estimates about how AI is used in scientific writing. Suggestions about advantages and safe use of AI-augmented scientific writing are discussed based on our observations.}
+      \field{journaltitle}{biorxiv.orgHZ Cheng, B Sheng, A Lee, V Chaudhary, AG Atanasov, N Liu, Y Qiu, TY Wong, YC ThambioRxiv, 2024•biorxiv.org}
+      \field{title}{Have AI-generated texts from LLM infiltrated the realm of scientific writing? A large-scale analysis of preprint platforms}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1101/2024.03.25.586710
+      \endverb
+      \verb{urlraw}
+      \verb https://www.biorxiv.org/content/10.1101/2024.03.25.586710.abstract
+      \endverb
+      \verb{url}
+      \verb https://www.biorxiv.org/content/10.1101/2024.03.25.586710.abstract
+      \endverb
+    \endentry
+    \entry{Desaire2023}{article}{}
+      \name{author}{5}{}{%
+        {{hash=d5028de96009a394da417076a212b8f9}{%
+           family={Desaire},
+           familyi={D\bibinitperiod},
+           given={Heather},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d9031da923de23bff1165eb866a590a4}{%
+           family={Chua},
+           familyi={C\bibinitperiod},
+           given={Aleesa\bibnamedelima E.},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=ebc40ca5e6a69f1b6f41cb20411e842a}{%
+           family={Isom},
+           familyi={I\bibinitperiod},
+           given={Madeline},
+           giveni={M\bibinitperiod}}}%
+        {{hash=50549ddf4d0f10e2b3b9a30d92caca26}{%
+           family={Jarosova},
+           familyi={J\bibinitperiod},
+           given={Romana},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e0d536fc4b94907fae4b79232f55611e}{%
+           family={Hua},
+           familyi={H\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cell Press}%
+      }
+      \strng{namehash}{8c9c7907ba66cd95fa67a91091dde25d}
+      \strng{fullhash}{2b2e597d04f929808e39efa807533c47}
+      \strng{bibnamehash}{8c9c7907ba66cd95fa67a91091dde25d}
+      \strng{authorbibnamehash}{8c9c7907ba66cd95fa67a91091dde25d}
+      \strng{authornamehash}{8c9c7907ba66cd95fa67a91091dde25d}
+      \strng{authorfullhash}{2b2e597d04f929808e39efa807533c47}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{ChatGPT has enabled access to artificial intelligence (AI)-generated writing for the masses, initiating a culture shift in the way people work, learn, and write. The need to discriminate human writing from AI is now both critical and urgent. Addressing this need, we report a method for discriminating text generated by ChatGPT from (human) academic scientists, relying on prevalent and accessible supervised classification methods. The approach uses new features for discriminating (these) humans from AI; as examples, scientists write long paragraphs and have a penchant for equivocal language, frequently using words like “but,” “however,” and “although.” With a set of 20 features, we built a model that assigns the author, as human or AI, at over 99\% accuracy. This strategy could be further adapted and developed by others with basic skills in supervised classification, enabling access to many highly accurate and targeted models for detecting AI usage in academic writing and beyond.}
+      \field{issn}{2666-3864}
+      \field{issue}{6}
+      \field{journaltitle}{Cell Reports Physical Science}
+      \field{month}{6}
+      \field{title}{Distinguishing academic science writing from humans or ChatGPT with over 99\% accuracy using off-the-shelf machine learning tools}
+      \field{volume}{4}
+      \field{year}{2023}
+      \field{pages}{101426}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/J.XCRP.2023.101426
+      \endverb
+      \keyw{AI,ChatGPT,XGBoost,machine learing,plagiarism,text analysis}
+    \endentry
+    \entry{Doughman2025}{misc}{}
+      \name{author}{6}{}{%
+        {{hash=6dfba91127871c3535ad1bceb08b43ce}{%
+           family={Doughman},
+           familyi={D\bibinitperiod},
+           given={Jad},
+           giveni={J\bibinitperiod}}}%
+        {{hash=70292e0fe3a48f071ad8a3a45ef52919}{%
+           family={Afzal},
+           familyi={A\bibinitperiod},
+           given={Osama\bibnamedelima Mohammed},
+           giveni={O\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=8a81f12e2283a2ecddb22b6639d3c53c}{%
+           family={Toyin},
+           familyi={T\bibinitperiod},
+           given={Hawau\bibnamedelima Olamide},
+           giveni={H\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=ec487c1a26c994fbaa7967386243da22}{%
+           family={Shehata},
+           familyi={S\bibinitperiod},
+           given={Shady},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b1e0f88aae37cfd1c213a370797c03b3}{%
+           family={Nakov},
+           familyi={N\bibinitperiod},
+           given={Preslav},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2901f434f17b356413e084b3e3e2fde0}{%
+           family={Talat},
+           familyi={T\bibinitperiod},
+           given={Zeerak},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{aabb50f625d40b6b4603f254e14d4bb4}
+      \strng{fullhash}{f57036708c5080cdb43273b3878716b2}
+      \strng{bibnamehash}{aabb50f625d40b6b4603f254e14d4bb4}
+      \strng{authorbibnamehash}{aabb50f625d40b6b4603f254e14d4bb4}
+      \strng{authornamehash}{aabb50f625d40b6b4603f254e14d4bb4}
+      \strng{authorfullhash}{f57036708c5080cdb43273b3878716b2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recent improvements in the quality of the generations by large language models have spurred research into identifying machine-generated text. Such work often presents high-performing detectors. However, humans and machines can produce text in different styles and domains, yet the the performance impact of such on machine generated text detection systems remains unclear. In this paper, we audit the classification performance for detecting machine-generated text by evaluating on texts with varying writing styles. We find that classifiers are highly sensitive to stylistic changes and differences in text complexity, and in some cases degrade entirely to random classifiers. We further find that detection systems are particularly susceptible to misclassify easy-to-read texts while they have high performance for complex texts, leading to concerns about the reliability of detection systems. We recommend that future work attends to stylistic factors and reading difficulty levels of human-written and machine-generated text.}
+      \field{title}{Exploring the Limitations of Detecting Machine-Generated Text}
+      \field{year}{2025}
+      \field{pages}{4274\bibrangedash 4281}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb https://aclanthology.org/2025.coling-main.288/
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/2025.coling-main.288/
+      \endverb
+    \endentry
+    \entry{Elsevier2024}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=21abe5a91c2949aba6ef77033a5f98f3}{%
+           family={Elsevier},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{fullhash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{bibnamehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{authorbibnamehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{authornamehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{authorfullhash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Insights 2024 | Attitudes toward AI | Elsevier}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.elsevier.com/insights/attitudes-toward-ai
+      \endverb
+      \verb{url}
+      \verb https://www.elsevier.com/insights/attitudes-toward-ai
+      \endverb
+    \endentry
+    \entry{Eppler2024}{article}{}
+      \name{author}{22}{}{%
+        {{hash=42c2da91a93185fe64698736d8c06fcb}{%
+           family={Eppler},
+           familyi={E\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=43cdf4e5bda2bfca521535a3b9957879}{%
+           family={Ganjavi},
+           familyi={G\bibinitperiod},
+           given={Conner},
+           giveni={C\bibinitperiod}}}%
+        {{hash=be2a37b762ca35dcee35bc93fc7da49e}{%
+           family={Ramacciotti},
+           familyi={R\bibinitperiod},
+           given={Lorenzo\bibnamedelima Storino},
+           giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=b32d4edc96ef09287c8dcd98630c3f02}{%
+           family={Piazza},
+           familyi={P\bibinitperiod},
+           given={Pietro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=773e5a38a583854d8f51227e26b46f05}{%
+           family={Rodler},
+           familyi={R\bibinitperiod},
+           given={Severin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cd8146e65244b1eeffb2f7b6e306710d}{%
+           family={Checcucci},
+           familyi={C\bibinitperiod},
+           given={Enrico},
+           giveni={E\bibinitperiod}}}%
+        {{hash=1fb3319726bc2a295e6525fc5476698e}{%
+           family={Rivas},
+           familyi={R\bibinitperiod},
+           given={Juan\bibnamedelima Gomez},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=f6c090567efbcdc480aacc7d7bca4655}{%
+           family={Kowalewski},
+           familyi={K\bibinitperiod},
+           given={Karl\bibnamedelima F.},
+           giveni={K\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=92dabcbc03c4c981f436b2b4f7db008c}{%
+           family={Belenchón},
+           familyi={B\bibinitperiod},
+           given={Ines\bibnamedelima Rivero},
+           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=a708287c18e04627b783667b2b751564}{%
+           family={Puliatti},
+           familyi={P\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9683725f6b3a70e6156f6d5f8ed45b59}{%
+           family={Taratkin},
+           familyi={T\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a1d53fb0b1f9c943ec40c64a471b7132}{%
+           family={Veccia},
+           familyi={V\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c464b2a58f57686b61ca0a4965ecd2eb}{%
+           family={Baekelandt},
+           familyi={B\bibinitperiod},
+           given={Loïc},
+           giveni={L\bibinitperiod}}}%
+        {{hash=ddaa79ab573ffc7cbb97f96d79f47e96}{%
+           family={Teoh},
+           familyi={T\bibinitperiod},
+           given={Jeremy\bibnamedelima Y.C.},
+           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=bfa7b2aa4e512e06e9bb6a5722ec303a}{%
+           family={Somani},
+           familyi={S\bibinitperiod},
+           given={Bhaskar\bibnamedelima K.},
+           giveni={B\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=832bf1f415ca7d02922f44d11a0f8c16}{%
+           family={Wroclawski},
+           familyi={W\bibinitperiod},
+           given={Marcelo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fa0201c8d94848ecbaba710e5a49582c}{%
+           family={Abreu},
+           familyi={A\bibinitperiod},
+           given={Andre},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5eb084f7a937aeb7c0e83dd294ad89a4}{%
+           family={Porpiglia},
+           familyi={P\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+        {{hash=28c21e6c9e1139ecb6c44cd83a8c0629}{%
+           family={Gill},
+           familyi={G\bibinitperiod},
+           given={Inderbir\bibnamedelima S.},
+           giveni={I\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=aff5ce6e9522fbf9e80ee0f23a832316}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={Declan\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=b6b752af1d55262f90f511ca5f593d6c}{%
+           family={Canes},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=831cc1f2e02b2cf4aa731ca9bc0bca0f}{%
+           family={Cacciamani},
+           familyi={C\bibinitperiod},
+           given={Giovanni\bibnamedelima E.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9247a8aae263ba602ff36d13f2991fa4}
+      \strng{fullhash}{9cde0b63434cf983486859e327f96b3a}
+      \strng{bibnamehash}{9247a8aae263ba602ff36d13f2991fa4}
+      \strng{authorbibnamehash}{9247a8aae263ba602ff36d13f2991fa4}
+      \strng{authornamehash}{9247a8aae263ba602ff36d13f2991fa4}
+      \strng{authorfullhash}{9cde0b63434cf983486859e327f96b3a}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Background: Since its release in November 2022, ChatGPT has captivated society and shown potential for various aspects of health care. Objective: To investigate potential use of ChatGPT, a large language model (LLM), in urology by gathering opinions from urologists worldwide. Design, setting, and participants: An open web-based survey was distributed via social media and e-mail chains to urologists between April 20, 2023 and May 5, 2023. Participants were asked to answer questions related to their knowledge and experience with artificial intelligence, as well as their opinions of potential use of ChatGPT/LLMs in research and clinical practice. Outcome measurements and statistical analysis: Data are reported as the mean and standard deviation for continuous variables, and the frequency and percentage for categorical variables. Charts and tables are used as appropriate, with descriptions of the chart types and the measures used. The data are reported in accordance with the Checklist for Reporting Results of Internet E-Surveys (CHERRIES). Results and limitations: A total of 456 individuals completed the survey (64\% completion rate). Nearly half (47.7\%) reported that they use ChatGPT/LLMs in their academic practice, with fewer using the technology in clinical practice (19.8\%). More than half (62.2\%) believe there are potential ethical concerns when using ChatGPT for scientific or academic writing, and 53\% reported that they have experienced limitations when using ChatGPT in academic practice. Conclusions: Urologists recognise the potential of ChatGPT/LLMs in research but have concerns regarding ethics and patient acceptance. There is a desire for regulations and guidelines to ensure appropriate use. In addition, measures should be taken to establish rules and guidelines to maximise safety and efficiency when using this novel technology. Patient summary: A survey asked 456 urologists from around the world about using an artificial intelligence tool called ChatGPT in their work. Almost half of them use ChatGPT for research, but not many use it for patients care. The resonders think ChatGPT could be helpful, but they worry about problems like ethics and want rules to make sure it's used safely.}
+      \field{issn}{0302-2838}
+      \field{issue}{2}
+      \field{journaltitle}{European Urology}
+      \field{month}{2}
+      \field{title}{Awareness and Use of ChatGPT and Large Language Models: A Prospective Cross-sectional Global Survey in Urology}
+      \field{volume}{85}
+      \field{year}{2024}
+      \field{pages}{146\bibrangedash 153}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/J.EURURO.2023.10.014
+      \endverb
+      \keyw{ChatGPT,Ethics,Global,Large language models,OpenAI,Survey,Urology}
+    \endentry
+    \entry{Gall2021}{article}{}
+      \name{author}{4}{}{%
+        {{hash=15b69d10a4674c92ae5d9daa14dc9e6a}{%
+           family={Gallé},
+           familyi={G\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dbf65f5d502712f92b645fa4b6793014}{%
+           family={Rozen},
+           familyi={R\bibinitperiod},
+           given={Jos},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c8f9a92b64e8eece864795345f744b04}{%
+           family={Kruszewski},
+           familyi={K\bibinitperiod},
+           given={Germán},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1cba32d9f26ff56703a2317fbd5d67bd}{%
+           family={Elsahar},
+           familyi={E\bibinitperiod},
+           given={Hady},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{c6a0e92f85a5efd8c22df0ac133c9d53}
+      \strng{fullhash}{baa0d313ae7fa57e6d2a12502eba49ab}
+      \strng{bibnamehash}{c6a0e92f85a5efd8c22df0ac133c9d53}
+      \strng{authorbibnamehash}{c6a0e92f85a5efd8c22df0ac133c9d53}
+      \strng{authornamehash}{c6a0e92f85a5efd8c22df0ac133c9d53}
+      \strng{authorfullhash}{baa0d313ae7fa57e6d2a12502eba49ab}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The power of natural language generation models has provoked a flurry of interest in automatic methods to detect if a piece of text is human or machine-authored. The problem so far has been framed in a standard supervised way and consists in training a classifier on annotated data to predict the origin of one given new document. In this paper, we frame the problem in an unsupervised and distributional way: we assume that we have access to a large collection of unannotated documents, a big fraction of which is machine-generated. We propose a method to detect those machine-generated documents leveraging repeated higher-order n-grams, which we show over-appear in machine-generated text as compared to human ones. That weak signal is the starting point of a self-training setting where pseudo-labelled documents are used to train an ensemble of classifiers. Our experiments show that leveraging that signal allows us to rank suspicious documents accurately. Precision at 5000 is over 90\% for top-k sampling strategies, and over 80\% for nucleus sampling for the largest model we used (GPT2-large). The drop with increased size of model is small, which could indicate that the results hold for other current and future large language models.}
+      \field{month}{11}
+      \field{title}{Unsupervised and Distributional Detection of Machine-Generated Text}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2111.02878
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2111.02878
+      \endverb
+    \endentry
+    \entry{Gehrmann2019}{article}{}
+      \name{author}{3}{}{%
+        {{hash=80c831c617902a22d4fa4074948f3aff}{%
+           family={Gehrmann},
+           familyi={G\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=41ba6720e912c28e933a760f9aa28a6c}{%
+           family={Strobelt},
+           familyi={S\bibinitperiod},
+           given={Hendrik},
+           giveni={H\bibinitperiod}}}%
+        {{hash=f242a0a9b3b93ccf3879646ed9ab662f}{%
+           family={Rush},
+           familyi={R\bibinitperiod},
+           given={Alexander\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics (ACL)}%
+      }
+      \strng{namehash}{75a57d793fd7acfd16416c9a0ba8050c}
+      \strng{fullhash}{75a57d793fd7acfd16416c9a0ba8050c}
+      \strng{bibnamehash}{75a57d793fd7acfd16416c9a0ba8050c}
+      \strng{authorbibnamehash}{75a57d793fd7acfd16416c9a0ba8050c}
+      \strng{authornamehash}{75a57d793fd7acfd16416c9a0ba8050c}
+      \strng{authorfullhash}{75a57d793fd7acfd16416c9a0ba8050c}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The rapid improvement of language models has raised the specter of abuse of text generation systems. This progress motivates the development of simple methods for detecting generated text that can be used by and explained to non-experts. We develop GLTR, a tool to support humans in detecting whether a text was generated by a model. GLTR applies a suite of baseline statistical methods that can detect generation artifacts across common sampling schemes. In a human-subjects study, we show that the annotation scheme provided by GLTR improves the human detection-rate of fake text from 54\% to 72\% without any prior training. GLTR is open-source and publicly deployed, and has already been widely used to detect generated outputs.}
+      \field{isbn}{9781950737499}
+      \field{journaltitle}{ACL 2019 - 57th Annual Meeting of the Association for Computational Linguistics, Proceedings of System Demonstrations}
+      \field{title}{GLTR: Statistical Detection and Visualization of Generated Text}
+      \field{year}{2019}
+      \field{pages}{111\bibrangedash 116}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.18653/V1/P19-3019
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/P19-3019/
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/P19-3019/
+      \endverb
+    \endentry
+    \entry{Geng2025}{article}{}
+      \name{author}{2}{}{%
+        {{hash=11af3811b934077bba0b60e5f05a3a80}{%
+           family={Geng},
+           familyi={G\bibinitperiod},
+           given={Mingmeng},
+           giveni={M\bibinitperiod}}}%
+        {{hash=06ab81e4d2d92111f0b8fd179676fc97}{%
+           family={Trotta},
+           familyi={T\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics (ACL)}%
+      }
+      \strng{namehash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \strng{fullhash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \strng{bibnamehash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \strng{authorbibnamehash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \strng{authornamehash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \strng{authorfullhash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{With a statistical analysis of arXiv paper abstracts, we report a marked drop in the frequency of several words previously identified as overused by ChatGPT, such as "delve", starting soon after they were pointed out in early 2024. The frequency of certain other words favored by ChatGPT, such as "significant", has instead kept increasing. These phenomena suggest that some authors of academic papers have adapted their use of large language models (LLMs), for example, by selecting outputs or applying modifications to the LLM-generated content. Such coevolution and cooperation of humans and LLMs thus introduce additional challenges to the detection of machine-generated text in real-world scenarios. Estimating the impact of LLMs on academic writing by examining word frequency remains feasible, and more attention should be paid to words that were already frequently employed, including those that have decreased in frequency due to LLMs' disfavor.}
+      \field{month}{2}
+      \field{title}{Human-LLM Coevolution: Evidence from Academic Writing}
+      \field{year}{2025}
+      \field{pages}{12689\bibrangedash 12696}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.18653/v1/2025.findings-acl.657
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2502.09606v2
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2502.09606v2
+      \endverb
+    \endentry
+    \entry{Geng2024}{article}{}
+      \name{author}{2}{}{%
+        {{hash=11af3811b934077bba0b60e5f05a3a80}{%
+           family={Geng},
+           familyi={G\bibinitperiod},
+           given={Mingmeng},
+           giveni={M\bibinitperiod}}}%
+        {{hash=06ab81e4d2d92111f0b8fd179676fc97}{%
+           family={Trotta},
+           familyi={T\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \strng{fullhash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \strng{bibnamehash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \strng{authorbibnamehash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \strng{authornamehash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \strng{authorfullhash}{3ecfd2f5a62a2d8492192aa2a23bbe85}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Based on one million arXiv papers submitted from May 2018 to January 2024, we assess the textual density of ChatGPT's writing style in their abstracts through a statistical analysis of word frequency changes. Our model is calibrated and validated on a mixture of real abstracts and ChatGPT-modified abstracts (simulated data) after a careful noise analysis. The words used for estimation are not fixed but adaptive, including those with decreasing frequency. We find that large language models (LLMs), represented by ChatGPT, are having an increasing impact on arXiv abstracts, especially in the field of computer science, where the fraction of LLM-style abstracts is estimated to be approximately 35\%, if we take the responses of GPT-3.5 to one simple prompt, "revise the following sentences", as a baseline. We conclude with an analysis of both positive and negative aspects of the penetration of LLMs into academics' writing style.}
+      \field{journaltitle}{arxiv.orgM Geng, R TrottaarXiv preprint arXiv:2404.08627, 2024•arxiv.org}
+      \field{title}{Is ChatGPT Transforming Academics' Writing Style?}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2404.08627
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2404.08627
+      \endverb
+    \endentry
+    \entry{gonzalez2024landscape}{article}{}
+      \name{author}{5}{}{%
+        {{hash=c4b0bf3e6811fd70f388ecf8b5dc0cbb}{%
+           family={González-Márquez},
+           familyi={G\bibinithyphendelim M\bibinitperiod},
+           given={Rita},
+           giveni={R\bibinitperiod}}}%
+        {{hash=3967843833a20ceb3269f91b5a691489}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f724908656286543821677599f6fcde7}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Benjamin\bibnamedelima M},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=30f46bf5fd8b18adc9707a70cec598b6}{%
+           family={Berens},
+           familyi={B\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod}}}%
+        {{hash=85a42394eb715e476e39053e10dcf052}{%
+           family={Kobak},
+           familyi={K\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{d737e85631d502a5e7a03c4af0b10aba}
+      \strng{fullhash}{c9c92e1a3e5c5439a8273b0285c0024a}
+      \strng{bibnamehash}{d737e85631d502a5e7a03c4af0b10aba}
+      \strng{authorbibnamehash}{d737e85631d502a5e7a03c4af0b10aba}
+      \strng{authornamehash}{d737e85631d502a5e7a03c4af0b10aba}
+      \strng{authorfullhash}{c9c92e1a3e5c5439a8273b0285c0024a}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Patterns}
+      \field{number}{6}
+      \field{title}{The landscape of biomedical research}
+      \field{volume}{5}
+      \field{year}{2024}
+    \endentry
+    \entry{Gray2024}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ce2fb463a26fb08ab663ee993d68dd62}{%
+           family={Gray},
+           familyi={G\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons, Ltd}%
+      }
+      \strng{namehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{fullhash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{bibnamehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{authorbibnamehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{authornamehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{authorfullhash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The use of ChatGPT and similar Large Language Model (LLM) tools in scholarly communication and academic publishing has been widely discussed since they became easily accessible to a general audience in late 2022. This study uses keywords known to be disproportionately present in LLM-generated text to provide an overall estimate for the prevalence of LLM-assisted writing in the scholarly literature. For the publishing year 2023, it is found that several of those keywords show a distinctive and disproportionate increase in their prevalence, individually and in combination. It is estimated that at least 60,000 papers (slightly over 1\% of all articles) were LLM-assisted, though this number could be extended and refined by analysis of other characteristics of the papers or by identification of further indicative keywords. LLMs in the scholarly literature Large language model (LLM) tools provide a way to generate large amounts of reasonably high-quality text automatically, in response to human prompts. While these tools have been available for some years, the release of ChatGPT 3.5 in late 2022, offering an easy interface and wide publicity for the tool, made them available and visible to the world at large. Since then, there has been extensive discussion about their use in scholarly communications. Early over-enthusiasm that they might be able to reliably replace most forms of serious writing, including attempts to list them as authors on papers, 1 has been replaced by a more nuanced understanding of their capabilities and their-substantial-limitations. As of late 2023, surveys found that 30\% of researchers had used tools to help write manuscripts, and many publishers had begun to offer guidance on their use. 2 For example, Wiley permit the use of tools to develop content but only if the authors take full responsibility for the statements made, and where this usage is disclosed transparently in the paper-but "Tools that are used to improve spelling, grammar, and general editing are not included in the scope of these guidelines". 3}
+      \field{isbn}{4158602400592}
+      \field{issue}{6}
+      \field{journaltitle}{arxiv.orgA GrayarXiv preprint arXiv:2403.16887, 2024•arxiv.org}
+      \field{title}{ChatGPT" contamination": estimating the prevalence of LLMs in the scholarly literature}
+      \field{volume}{53}
+      \field{year}{2024}
+      \field{pages}{331\bibrangedash 333}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1002/leap.1578
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2403.16887
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2403.16887
+      \endverb
+    \endentry
+    \entry{Gray2025}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ce2fb463a26fb08ab663ee993d68dd62}{%
+           family={Gray},
+           familyi={G\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons, Ltd}%
+      }
+      \strng{namehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{fullhash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{bibnamehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{authorbibnamehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{authornamehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{authorfullhash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The use of ChatGPT and similar Large Language Model (LLM) tools in scholarly communication and academic publishing has been widely discussed since they became easily accessible to a general audience in late 2022. This study uses keywords known to be disproportionately present in LLM-generated text to provide an overall estimate for the prevalence of LLM-assisted writing in the scholarly literature. For the publishing year 2023, it is found that several of those keywords show a distinctive and disproportionate increase in their prevalence, individually and in combination. It is estimated that at least 60,000 papers (slightly over 1\% of all articles) were LLM-assisted, though this number could be extended and refined by analysis of other characteristics of the papers or by identification of further indicative keywords. LLMs in the scholarly literature Large language model (LLM) tools provide a way to generate large amounts of reasonably high-quality text automatically, in response to human prompts. While these tools have been available for some years, the release of ChatGPT 3.5 in late 2022, offering an easy interface and wide publicity for the tool, made them available and visible to the world at large. Since then, there has been extensive discussion about their use in scholarly communications. Early over-enthusiasm that they might be able to reliably replace most forms of serious writing, including attempts to list them as authors on papers, 1 has been replaced by a more nuanced understanding of their capabilities and their-substantial-limitations. As of late 2023, surveys found that 30\% of researchers had used tools to help write manuscripts, and many publishers had begun to offer guidance on their use. 2 For example, Wiley permit the use of tools to develop content but only if the authors take full responsibility for the statements made, and where this usage is disclosed transparently in the paper-but "Tools that are used to improve spelling, grammar, and general editing are not included in the scope of these guidelines". 3}
+      \field{isbn}{4158602400592}
+      \field{issue}{6}
+      \field{journaltitle}{arxiv.org}
+      \field{month}{12}
+      \field{title}{Estimating the prevalence of LLM-assisted text in scholarly writing}
+      \field{volume}{53}
+      \field{year}{2025}
+      \field{pages}{331\bibrangedash 333}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1002/leap.1578
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2512.01560
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2512.01560
+      \endverb
+    \endentry
+    \entry{Guo2023}{article}{}
+      \name{author}{8}{}{%
+        {{hash=6bfe992beb21388e4098f9644c313823}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Biyang},
+           giveni={B\bibinitperiod}}}%
+        {{hash=4f3bb1d3c7fa2a05241e353723deaf63}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=614679531730b04ba9742891ce817de3}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Ziyuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=754eae2a0a1be7bc80aeaa872bb0154f}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Minqi},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ae66d0f4230b15ea463ddc4c52bfbeb4}{%
+           family={Nie},
+           familyi={N\bibinitperiod},
+           given={Jinran},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a896e75cd739869120b2b6957885f7e7}{%
+           family={Ding},
+           familyi={D\bibinitperiod},
+           given={Yuxuan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c89c2e4fd33a9efaa29e736872972803}{%
+           family={Yue},
+           familyi={Y\bibinitperiod},
+           given={Jianwei},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d9f52fc5e5128c53775debf74a6a4260}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yupeng},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{5a8490d195cc7d1e94322d88ce86db1c}
+      \strng{fullhash}{f0145f2ee64d7d11f7f6554c19c26367}
+      \strng{bibnamehash}{5a8490d195cc7d1e94322d88ce86db1c}
+      \strng{authorbibnamehash}{5a8490d195cc7d1e94322d88ce86db1c}
+      \strng{authornamehash}{5a8490d195cc7d1e94322d88ce86db1c}
+      \strng{authorfullhash}{f0145f2ee64d7d11f7f6554c19c26367}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The introduction of ChatGPT has garnered widespread attention in both academic and industrial communities. ChatGPT is able to respond effectively to a wide range of human questions, providing fluent and comprehensive answers that significantly surpass previous public chatbots in terms of security and usefulness. On one hand, people are curious about how ChatGPT is able to achieve such strength and how far it is from human experts. On the other hand, people are starting to worry about the potential negative impacts that large language models (LLMs) like ChatGPT could have on society, such as fake news, plagiarism, and social security issues. In this work, we collected tens of thousands of comparison responses from both human experts and ChatGPT, with questions ranging from open-domain, financial, medical, legal, and psychological areas. We call the collected dataset the Human ChatGPT Comparison Corpus (HC3). Based on the HC3 dataset, we study the characteristics of ChatGPT's responses, the differences and gaps from human experts, and future directions for LLMs. We conducted comprehensive human evaluations and linguistic analyses of ChatGPT-generated content compared with that of humans, where many interesting results are revealed. After that, we conduct extensive experiments on how to effectively detect whether a certain text is generated by ChatGPT or humans. We build three different detection systems, explore several key factors that influence their effectiveness, and evaluate them in different scenarios. The dataset, code, and models are all publicly available at https://github.com/Hello-SimpleAI/chatgpt-comparison-detection.}
+      \field{month}{1}
+      \field{title}{How Close is ChatGPT to Human Experts? Comparison Corpus, Evaluation, and Detection}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2301.07597v1
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2301.07597v1
+      \endverb
+    \endentry
+    \entry{Hans2024}{article}{}
+      \name{author}{8}{}{%
+        {{hash=6b396998fba0a8b9783c549e9844b42a}{%
+           family={Hans},
+           familyi={H\bibinitperiod},
+           given={Abhimanyu},
+           giveni={A\bibinitperiod}}}%
+        {{hash=42089ddd864c3e3b4da7cb855cdd3cda}{%
+           family={Schwarzschild},
+           familyi={S\bibinitperiod},
+           given={Avi},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8443bb3211fe3ace8f21821122a81a8d}{%
+           family={Cherepanova},
+           familyi={C\bibinitperiod},
+           given={Valeriia},
+           giveni={V\bibinitperiod}}}%
+        {{hash=d46b71b02539de6e68704c430d36d878}{%
+           family={Kazemi},
+           familyi={K\bibinitperiod},
+           given={Hamid},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4407388da277b330096a51bf433603ae}{%
+           family={Saha},
+           familyi={S\bibinitperiod},
+           given={Aniruddha},
+           giveni={A\bibinitperiod}}}%
+        {{hash=60a7228eec51bdb9b0688a11bd6c8e6c}{%
+           family={Goldblum},
+           familyi={G\bibinitperiod},
+           given={Micah},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e2a6fb7ce325e06d63c45f7a73a65438}{%
+           family={Geiping},
+           familyi={G\bibinitperiod},
+           given={Jonas},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3b1fea9d27f10122cd27336b3dc68ea7}{%
+           family={Goldstein},
+           familyi={G\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ML Research Press}%
+      }
+      \strng{namehash}{48e7645821396964eb5ab0a438537799}
+      \strng{fullhash}{d70c55672b3730d62d4082df82f96eac}
+      \strng{bibnamehash}{48e7645821396964eb5ab0a438537799}
+      \strng{authorbibnamehash}{48e7645821396964eb5ab0a438537799}
+      \strng{authornamehash}{48e7645821396964eb5ab0a438537799}
+      \strng{authorfullhash}{d70c55672b3730d62d4082df82f96eac}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Detecting text generated by modern large language models is thought to be hard, as both LLMs and humans can exhibit a wide range of complex behaviors. However, we find that a score based on contrasting two closely related language models is highly accurate at separating human-generated and machine-generated text. Based on this mechanism, we propose a novel LLM detector that only requires simple calculations using a pair of pre-trained LLMs. The method, called Binoculars, achieves state-of-the-art accuracy without any training data. It is capable of spotting machine text from a range of modern LLMs without any model-specific modifications. We comprehensively evaluate Binoculars on a number of text sources and in varied situations. Over a wide range of document types, Binoculars detects over 90\% of generated samples from ChatGPT (and other LLMs) at a false positive rate of 0.01\%, despite not being trained on any ChatGPT data.}
+      \field{issn}{26403498}
+      \field{journaltitle}{Proceedings of Machine Learning Research}
+      \field{month}{1}
+      \field{title}{Spotting LLMs With Binoculars: Zero-Shot Detection of Machine-Generated Text}
+      \field{volume}{235}
+      \field{year}{2024}
+      \field{pages}{17519\bibrangedash 17537}
+      \range{pages}{19}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2401.12070v3
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2401.12070v3
+      \endverb
+    \endentry
+    \entry{Hern2024}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=cc72326ba462a1906380e3d3e68bf017}{%
+           family={Hern},
+           familyi={H\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc72326ba462a1906380e3d3e68bf017}
+      \strng{fullhash}{cc72326ba462a1906380e3d3e68bf017}
+      \strng{bibnamehash}{cc72326ba462a1906380e3d3e68bf017}
+      \strng{authorbibnamehash}{cc72326ba462a1906380e3d3e68bf017}
+      \strng{authornamehash}{cc72326ba462a1906380e3d3e68bf017}
+      \strng{authorfullhash}{cc72326ba462a1906380e3d3e68bf017}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{TechScape: How cheap, outsourced labour in Africa is shaping AI English | Technology | The Guardian}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.theguardian.com/technology/2024/apr/16/techscape-ai-gadgest-humane-ai-pin-chatgpt
+      \endverb
+      \verb{url}
+      \verb https://www.theguardian.com/technology/2024/apr/16/techscape-ai-gadgest-humane-ai-pin-chatgpt
+      \endverb
+    \endentry
+    \entry{Juzek2025}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9528654c59b4dd45db2efdd9e93485eb}{%
+           family={Juzek},
+           familyi={J\bibinitperiod},
+           given={Tom\bibnamedelima S.},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=fcc2d14fa2188556cac4419af6c12c01}{%
+           family={Ward},
+           familyi={W\bibinitperiod},
+           given={Zina\bibnamedelima B.},
+           giveni={Z\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics (ACL)}%
+      }
+      \strng{namehash}{62270e1a9fa5e5dc760a18d7a8645dc1}
+      \strng{fullhash}{62270e1a9fa5e5dc760a18d7a8645dc1}
+      \strng{bibnamehash}{62270e1a9fa5e5dc760a18d7a8645dc1}
+      \strng{authorbibnamehash}{62270e1a9fa5e5dc760a18d7a8645dc1}
+      \strng{authornamehash}{62270e1a9fa5e5dc760a18d7a8645dc1}
+      \strng{authorfullhash}{62270e1a9fa5e5dc760a18d7a8645dc1}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Scientific English is currently undergoing rapid change, with words like “delve,” “intricate,” and “underscore” appearing far more frequently than just a few years ago. It is widely assumed that scientists' use of large language models (LLMs) is responsible for such trends. We develop a formal, transferable method to characterize these linguistic changes. Application of our method yields 21 focal words whose increased occurrence in scientific abstracts is likely the result of LLM usage. We then pose “the puzzle of lexical overrepresentation”: why are such words overused by LLMs? We fail to find evidence that lexical overrepresentation is caused by model architecture, algorithm choices, or training data. To assess whether reinforcement learning from human feedback (RLHF) contributes to the overuse of focal words, we undertake comparative model testing and conduct an exploratory online study. While the model testing is consistent with RLHF playing a role, our experimental results suggest that participants may be reacting differently to “delve” than to other focal words. With LLMs quickly becoming a driver of global language change, investigating these potential sources of lexical overrepresentation is important. We note that while insights into the workings of LLMs are within reach, a lack of transparency surrounding model development remains an obstacle to such research.}
+      \field{isbn}{9798891761964}
+      \field{issn}{29512093}
+      \field{journaltitle}{Proceedings - International Conference on Computational Linguistics, COLING}
+      \field{title}{Why Does ChatGPT “Delve” So Much? Exploring the Sources of Lexical Overrepresentation in Large Language Models}
+      \field{year}{2025}
+      \field{pages}{6397\bibrangedash 6411}
+      \range{pages}{15}
+    \endentry
+    \entry{kachru1985standards}{article}{}
+      \name{author}{1}{}{%
+        {{hash=69d7f60f019b29605d49487dc8c143e9}{%
+           family={Kachru},
+           familyi={K\bibinitperiod},
+           given={Braj\bibnamedelima B},
+           giveni={B\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{69d7f60f019b29605d49487dc8c143e9}
+      \strng{fullhash}{69d7f60f019b29605d49487dc8c143e9}
+      \strng{bibnamehash}{69d7f60f019b29605d49487dc8c143e9}
+      \strng{authorbibnamehash}{69d7f60f019b29605d49487dc8c143e9}
+      \strng{authornamehash}{69d7f60f019b29605d49487dc8c143e9}
+      \strng{authorfullhash}{69d7f60f019b29605d49487dc8c143e9}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{English in the world: Teaching and learning the language and literatures/Cambridge UP}
+      \field{title}{Standards, codification and sociolinguistic realism: The English language in the outer circle}
+      \field{year}{1985}
+    \endentry
+    \entry{Kendall2024}{article}{}
+      \name{author}{2}{}{%
+        {{hash=efb6f4558def9112948d61982965294c}{%
+           family={Kendall},
+           familyi={K\bibinitperiod},
+           given={Graham},
+           giveni={G\bibinitperiod}}}%
+        {{hash=782d6c63bc0fa5043bc1384740d58350}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Jaime\bibnamedelimb A\bibnamedelimb Teixeira\bibnamedelima Da},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{cbcdd5b582f9e1e4aa872e87b8aa5d2b}
+      \strng{fullhash}{cbcdd5b582f9e1e4aa872e87b8aa5d2b}
+      \strng{bibnamehash}{cbcdd5b582f9e1e4aa872e87b8aa5d2b}
+      \strng{authorbibnamehash}{cbcdd5b582f9e1e4aa872e87b8aa5d2b}
+      \strng{authornamehash}{cbcdd5b582f9e1e4aa872e87b8aa5d2b}
+      \strng{authorfullhash}{cbcdd5b582f9e1e4aa872e87b8aa5d2b}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Key points: • Academia is already witnessing the abuse of authorship in papers with text generated by large language models (LLMs) such as ChatGPT. • LLM-generated text is testing the limits of publishing ethics as we traditionally know it. • We alert the community to imminent risks of LLM technologies, like ChatGPT, for amplifying the predatory publishing 'industry'. • The abuse of ChatGPT for the paper mill industry cannot be overemphasized. • Detection of LLM-generated text is the responsibility of editors and journals/publishers.}
+      \field{journaltitle}{Learned Publishing}
+      \field{title}{Risks of abuse of large language models, like ChatGPT, in scientific publishing: Authorship, predatory publishing, and paper mills}
+      \field{volume}{37}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1002/leap.1578
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1002/leap.1578
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1002/leap.1578
+      \endverb
+      \keyw{ChatGPT,authorship abuses,ghost authorship,large language model,paper mills,predatory publishing}
+    \endentry
+    \entry{Kobak2025}{article}{}
+      \name{author}{4}{}{%
+        {{hash=85a42394eb715e476e39053e10dcf052}{%
+           family={Kobak},
+           familyi={K\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c4b0bf3e6811fd70f388ecf8b5dc0cbb}{%
+           family={González-Márquez},
+           familyi={G\bibinithyphendelim M\bibinitperiod},
+           given={Rita},
+           giveni={R\bibinitperiod}}}%
+        {{hash=cfe6046e820138dbdcb9b7fab0d02bcc}{%
+           family={Horvát},
+           familyi={H\bibinitperiod},
+           given={Emőke\bibnamedelima Ágnes},
+           giveni={E\bibinitperiod\bibinitdelim Á\bibinitperiod}}}%
+        {{hash=cea8ebf53addf538fd931e9740b2b04c}{%
+           family={Lause},
+           familyi={L\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{bf2c812f2f89e8f98fc4d0dc0541ce4a}
+      \strng{fullhash}{b3bc1eb5ae77393b15d389efbb5bf071}
+      \strng{bibnamehash}{bf2c812f2f89e8f98fc4d0dc0541ce4a}
+      \strng{authorbibnamehash}{bf2c812f2f89e8f98fc4d0dc0541ce4a}
+      \strng{authornamehash}{bf2c812f2f89e8f98fc4d0dc0541ce4a}
+      \strng{authorfullhash}{b3bc1eb5ae77393b15d389efbb5bf071}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Large language models (LLMs) like ChatGPT can generate and revise text with human-level performance. These models come with clear limitations, can produce inaccurate information, and reinforce existing biases. Yet, many scientists use them for their scholarly writing. But how widespread is such LLM usage in the academic literature? To answer this question for the field of biomedical research, we present an unbiased, large-scale approach: We study vocabulary changes in more than 15 million biomedical abstracts from 2010 to 2024 indexed by PubMed and show how the appearance of LLMs led to an abrupt increase in the frequency of certain style words. This excess word analysis suggests that at least 13.5\% of 2024 abstracts were processed with LLMs. This lower bound differed across disciplines, countries, and journals, reaching 40\% for some subcorpora. We show that LLMs have had an unprecedented impact on scientific writing in biomedical research, surpassing the effect of major world events such as the COVID pandemic.}
+      \field{issn}{23752548}
+      \field{issue}{27}
+      \field{journaltitle}{Science Advances}
+      \field{month}{7}
+      \field{title}{Delving into LLM-assisted writing in biomedical publications through excess vocabulary}
+      \field{volume}{11}
+      \field{year}{2025}
+      \field{pages}{3813}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1126/SCIADV.ADT3813/SUPPL\_FILE/SCIADV.ADT3813\_SM.PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.science.org/doi/10.1126/sciadv.adt3813
+      \endverb
+      \verb{url}
+      \verb https://www.science.org/doi/10.1126/sciadv.adt3813
+      \endverb
+    \endentry
+    \entry{Kousha2024}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fb375eeabf29a418f2a2110dfa310b42}{%
+           family={Kousha},
+           familyi={K\bibinitperiod},
+           given={Kayvan},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Akademiai Kiado ZRt.}%
+      }
+      \strng{namehash}{fb375eeabf29a418f2a2110dfa310b42}
+      \strng{fullhash}{fb375eeabf29a418f2a2110dfa310b42}
+      \strng{bibnamehash}{fb375eeabf29a418f2a2110dfa310b42}
+      \strng{authorbibnamehash}{fb375eeabf29a418f2a2110dfa310b42}
+      \strng{authornamehash}{fb375eeabf29a418f2a2110dfa310b42}
+      \strng{authorfullhash}{fb375eeabf29a418f2a2110dfa310b42}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This study analysed the acknowledgment of ChatGPT in 1,759 academic publications indexed in Scopus and Web of Science up to August 2024. Around 80\% of acknowledgments were related to text editing and proofreading, while only 5.3\% mentioned ChatGPT for non-editorial research support, such as data analysis or programming. A small portion (3.5\%) of researchers acknowledged ChatGPT for drafting sections of manuscripts. About two-thirds of corresponding authors who acknowledged ChatGPT were from non-English-speaking countries, and 75\% of the publications with ChatGPT acknowledgments were published within January to August 2024. These findings suggest that ChatGPT was primarily acknowledged for language enhancement rather than more complex research applications, although some researchers may not have found it necessary to mention its use in their publications, highlighting the need for transparency from journals and publishers.}
+      \field{issn}{15882861}
+      \field{issue}{12}
+      \field{journaltitle}{Scientometrics}
+      \field{month}{12}
+      \field{title}{How is ChatGPT acknowledged in academic publications?}
+      \field{volume}{129}
+      \field{year}{2024}
+      \field{pages}{7959\bibrangedash 7969}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1007/S11192-024-05193-Y/FIGURES/4
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1007/s11192-024-05193-y
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s11192-024-05193-y
+      \endverb
+      \keyw{Academic publishing,Acknowledgments,ChatGPT,Large Language Models (LLMs),Scientific writing}
+    \endentry
+    \entry{Kousha2025}{article}{}
+      \name{author}{2}{}{%
+        {{hash=fb375eeabf29a418f2a2110dfa310b42}{%
+           family={Kousha},
+           familyi={K\bibinitperiod},
+           given={Kayvan},
+           giveni={K\bibinitperiod}}}%
+        {{hash=a3c232f8ebd0760b0f13b9b52ca76307}{%
+           family={Thelwall},
+           familyi={T\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{1e6662e0bff3f4ba4ea9db764982a36d}
+      \strng{fullhash}{1e6662e0bff3f4ba4ea9db764982a36d}
+      \strng{bibnamehash}{1e6662e0bff3f4ba4ea9db764982a36d}
+      \strng{authorbibnamehash}{1e6662e0bff3f4ba4ea9db764982a36d}
+      \strng{authornamehash}{1e6662e0bff3f4ba4ea9db764982a36d}
+      \strng{authorfullhash}{1e6662e0bff3f4ba4ea9db764982a36d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This study investigates how Large Language Models (LLMs) are influencing the language of academic papers by tracking 12 LLM-associated terms across six major scholarly databases (Scopus, Web of Science, PubMed, PubMed Central (PMC), Dimensions, and OpenAlex) from 2015 to 2024. Using over 2.4 million PMC open-access publications (2021-July 2025), we also analysed full texts to assess changes in the frequency and co-occurrence of these terms before and after ChatGPT's initial public release. Across databases, delve (+1,500\%), underscore (+1,000\%), and intricate (+700\%) had the largest increases between 2022 and 2024. Growth in LLM-term usage was much higher in STEM fields than in social sciences and arts and humanities. In PMC full texts, the proportion of papers using underscore six or more times increased by over 10,000\% from 2022 to 2025, followed by intricate (+5,400\%) and meticulous (+2,800\%). Nearly half of all 2024 PMC papers using any LLM term also included underscore, compared with only 3\%-14\% of papers before ChatGPT in 2022. Papers using one LLM term are now much more likely to include other terms. For example, in 2024, underscore strongly correlated with pivotal (0.449) and delve (0.311), compared with very weak associations in 2022 (0.032 and 0.018, respectively). These findings provide the first large-scale evidence based on full-text publications and multiple databases that some LLM-related terms are now being used much more frequently and together. The rapid uptake of LLMs to support scholarly publishing is a welcome development reducing the language barrier to academic publishing for non-English speakers.}
+      \field{issn}{15882861}
+      \field{journaltitle}{Scientometrics 2026}
+      \field{month}{9}
+      \field{title}{How much are LLMs changing the language of academic papers after ChatGPT? A multi-database and full text analysis}
+      \field{year}{2025}
+      \field{pages}{1\bibrangedash 21}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1007/S11192-026-05601-5/FIGURES/14
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2509.09596
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2509.09596
+      \endverb
+      \keyw{ChatGPT,Information Storage and Retrieval,Large Language Models (LLMs),Library Science,Research communication,Scholarly publishing}
+    \endentry
+    \entry{Kwon2025}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b516d72e315d3c8a232d3f94a8d347b4}{%
+           family={Kwon},
+           familyi={K\bibinitperiod},
+           given={Diana},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Research}%
+      }
+      \strng{namehash}{b516d72e315d3c8a232d3f94a8d347b4}
+      \strng{fullhash}{b516d72e315d3c8a232d3f94a8d347b4}
+      \strng{bibnamehash}{b516d72e315d3c8a232d3f94a8d347b4}
+      \strng{authorbibnamehash}{b516d72e315d3c8a232d3f94a8d347b4}
+      \strng{authornamehash}{b516d72e315d3c8a232d3f94a8d347b4}
+      \strng{authorfullhash}{b516d72e315d3c8a232d3f94a8d347b4}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Poll of 5,000 researchers finds contrasting views on when it’s acceptable to involve AI and what needs to be disclosed.}
+      \field{issn}{14764687}
+      \field{issue}{8063}
+      \field{journaltitle}{Nature}
+      \field{month}{5}
+      \field{title}{Is it OK for AI to write science papers? Nature survey shows researchers are split}
+      \field{volume}{641}
+      \field{year}{2025}
+      \field{pages}{574\bibrangedash 578}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1038/D41586-025-01463-8
+      \endverb
+      \keyw{Lab life,Machine learning,Publishing}
+    \endentry
+    \entry{Lazebnik2024}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1223d2241da5ae6da94cca15c0d91a7b}{%
+           family={Lazebnik},
+           familyi={L\bibinitperiod},
+           given={Teddy},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b92b2dfbe8389d4b6c0a96921dd7bb6f}{%
+           family={Rosenfeld},
+           familyi={R\bibinitperiod},
+           given={Ariel},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a3dd5ebead92e59c11c544bbd84af949}
+      \strng{fullhash}{a3dd5ebead92e59c11c544bbd84af949}
+      \strng{bibnamehash}{a3dd5ebead92e59c11c544bbd84af949}
+      \strng{authorbibnamehash}{a3dd5ebead92e59c11c544bbd84af949}
+      \strng{authornamehash}{a3dd5ebead92e59c11c544bbd84af949}
+      \strng{authorfullhash}{a3dd5ebead92e59c11c544bbd84af949}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Large Language Models (LLMs), exemplified by ChatGPT, have significantly reshaped text generation, particularly in the realm of writing assistance. While ethical considerations underscore the importance of transparently acknowledging LLM use, especially in scientific communication, genuine acknowledgment remains infrequent. A potential avenue to encourage accurate acknowledging of LLM-assisted writing involves employing automated detectors. Our evaluation of four cutting-edge LLM-generated text detectors reveals their suboptimal performance compared to a simple ad-hoc detector designed to identify abrupt writing style changes around the time of LLM proliferation. We contend that the development of specialized detectors exclusively dedicated to LLM-assisted writing detection is necessary. Such detectors could play a crucial role in fostering more authentic recognition of LLM involvement in scientific communication, addressing the current challenges in acknowledgment practices.}
+      \field{journaltitle}{JDIS Journal of Data and Information Science}
+      \field{title}{Detecting LLM-assisted writing in scientific communication: Are we there yet?}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.2478/jdis-2024-0020
+      \endverb
+      \verb{urlraw}
+      \verb https://sciendo.com/journal/JDIS
+      \endverb
+      \verb{url}
+      \verb https://sciendo.com/journal/JDIS
+      \endverb
+      \keyw{LLM-assisted writing,Scientific communication,Writing style}
+    \endentry
+    \entry{Liang2023}{article}{}
+      \name{author}{5}{}{%
+        {{hash=c37e00c1ca8aafe56159ff4ab1f6e040}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Weixin},
+           giveni={W\bibinitperiod}}}%
+        {{hash=fce301bcc279f3a5b856deb48042c29e}{%
+           family={Yuksekgonul},
+           familyi={Y\bibinitperiod},
+           given={Mert},
+           giveni={M\bibinitperiod}}}%
+        {{hash=aab334abee039cd263c8649e8e26dbde}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Yining},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f124b63df22b58506f900e703a70c8aa}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=1b868d50048a635fa27ffa744323fa41}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cell Press}%
+      }
+      \strng{namehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{fullhash}{eca6739e548e58b7a1d7bafeb3756d66}
+      \strng{bibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authorbibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authornamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authorfullhash}{eca6739e548e58b7a1d7bafeb3756d66}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{GPT detectors frequently misclassify non-native English writing as AI generated, raising concerns about fairness and robustness. Addressing the biases in these detectors is crucial to prevent the marginalization of non-native English speakers in evaluative and educational settings and to create a more equitable digital landscape.}
+      \field{issn}{26663899}
+      \field{issue}{7}
+      \field{journaltitle}{Patterns}
+      \field{month}{7}
+      \field{title}{GPT detectors are biased against non-native English writers}
+      \field{volume}{4}
+      \field{year}{2023}
+      \field{pages}{100779}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.patter.2023.100779
+      \endverb
+      \verb{urlraw}
+      \verb https://www.cell.com/action/showFullText?pii=S2666389923001307 https://www.cell.com/action/showAbstract?pii=S2666389923001307 https://www.cell.com/patterns/abstract/S2666-3899(23)00130-7
+      \endverb
+      \verb{url}
+      \verb https://www.cell.com/action/showFullText?pii=S2666389923001307%20https://www.cell.com/action/showAbstract?pii=S2666389923001307%20https://www.cell.com/patterns/abstract/S2666-3899(23)00130-7
+      \endverb
+    \endentry
+    \entry{Liang2024_paper}{article}{}
+      \name{author}{15}{}{%
+        {{hash=c37e00c1ca8aafe56159ff4ab1f6e040}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Weixin},
+           giveni={W\bibinitperiod}}}%
+        {{hash=8bf1aa3e35b460a972304f9dbf547d73}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yaohui},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=4505c22f12bed80892a647cf3e187121}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Zhengxuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=418b75667470ce0c73c73cea282193b7}{%
+           family={Lepp},
+           familyi={L\bibinitperiod},
+           given={Haley},
+           giveni={H\bibinitperiod}}}%
+        {{hash=cbe6eac4ed449fab470baf06df146f83}{%
+           family={Ji},
+           familyi={J\bibinitperiod},
+           given={Wenlong},
+           giveni={W\bibinitperiod}}}%
+        {{hash=96bad5d976d7449aba3894b1a31f1710}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Xuandong},
+           giveni={X\bibinitperiod}}}%
+        {{hash=65b0447a0f67deebb4e97716f67fb8f8}{%
+           family={Barbara},
+           familyi={B\bibinitperiod},
+           given={Santa},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1577f5699fcf00b2c7440ba055f315b1}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Hancheng},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b51d008c8f8b480734bdad360774940e}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Sheng},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e8e7e9d34afc1adf0156606bdc8c6bae}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Siyu},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8ed07be0cf24fb972c73ba0cb7af2582}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Zhi},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=6ff611991cba7ee48521ab941158ac2f}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Diyi},
+           giveni={D\bibinitperiod}}}%
+        {{hash=699d626ef41a1a827d623529c1a45e5a}{%
+           family={Potts},
+           familyi={P\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2214edb8305f7ccd7cdc310b3a8ae1b4}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Christopher\bibnamedelima D},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=513cf660ea55635f455cdb1b82247955}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={James\bibnamedelima Y},
+           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{fullhash}{00215e079b37bd03cfa798340281f193}
+      \strng{bibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authorbibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authornamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authorfullhash}{00215e079b37bd03cfa798340281f193}
+      \field{extraname}{2}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Scientific publishing lays the foundation of science by disseminating research findings, fostering collaboration, encouraging reproducibility, and ensuring that scientific knowledge is accessible, verifiable, and built upon over time. Recently, there has been immense speculation about how many people are using large language models (LLMs) like ChatGPT in their academic writing, and to what extent this tool might have an effect on global scientific practices. However, we lack a precise measure of the proportion of academic writing substantially modified or produced by LLMs. To address this gap, we conduct the first systematic, large-scale analysis across 950,965 papers published between January 2020 and February 2024 on the arXiv, bioRxiv, and Nature portfolio journals, using a population-level statistical framework to measure the prevalence of LLM-modified content over time. Our statistical estimation operates on the corpus level and is more robust than inference on individual instances. Our findings reveal a steady increase in LLM usage, with the largest and fastest growth observed in Computer Science papers (up to 17.5\%). In comparison, Mathematics papers and the Nature portfolio showed the least LLM modification (up to 6.3\%). Moreover, at an aggregate level, our analysis reveals that higher levels of LLM-modification are associated with papers whose first authors post preprints more frequently, papers in more crowded research areas, and papers of shorter lengths. Our findings suggests that LLMs are being broadly used in scientific writings.}
+      \field{isbn}{2404.01268v1}
+      \field{journaltitle}{arxiv.orgW Liang, Y Zhang, Z Wu, H Lepp, W Ji, X Zhao, H Cao, S Liu, S He, Z Huang, D YangarXiv preprint arXiv:2404.01268, 2024•arxiv.org}
+      \field{title}{Mapping the increasing use of LLMs in scientific papers}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2404.01268
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2404.01268
+      \endverb
+    \endentry
+    \entry{Liang2024_review}{article}{}
+      \name{author}{12}{}{%
+        {{hash=c37e00c1ca8aafe56159ff4ab1f6e040}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Weixin},
+           giveni={W\bibinitperiod}}}%
+        {{hash=55da0236b596b8739bac4dd94dfe0916}{%
+           family={Izzo},
+           familyi={I\bibinitperiod},
+           given={Zachary},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=8bf1aa3e35b460a972304f9dbf547d73}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yaohui},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=418b75667470ce0c73c73cea282193b7}{%
+           family={Lepp},
+           familyi={L\bibinitperiod},
+           given={Haley},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1577f5699fcf00b2c7440ba055f315b1}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Hancheng},
+           giveni={H\bibinitperiod}}}%
+        {{hash=96bad5d976d7449aba3894b1a31f1710}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Xuandong},
+           giveni={X\bibinitperiod}}}%
+        {{hash=4722d1c517fb1393cd8f82862ffc9746}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Lingjiao},
+           giveni={L\bibinitperiod}}}%
+        {{hash=aab7c68a1d3a18f132e6077f44c0f143}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Haotian},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b51d008c8f8b480734bdad360774940e}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Sheng},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8ed07be0cf24fb972c73ba0cb7af2582}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Zhi},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=44cd14448d00c12d5cb44248ce162e86}{%
+           family={Mcfarland},
+           familyi={M\bibinitperiod},
+           given={Daniel\bibnamedelima A},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=513cf660ea55635f455cdb1b82247955}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={James\bibnamedelima Y},
+           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{fullhash}{33d0de6f4c6dc6a4c6e4d823d7b180c6}
+      \strng{bibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authorbibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authornamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authorfullhash}{33d0de6f4c6dc6a4c6e4d823d7b180c6}
+      \field{extraname}{3}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present an approach for estimating the fraction of text in a large corpus which is likely to be substantially modified or produced by a large language model (LLM). Our maximum likelihood model leverages expert-written and AI-generated reference texts to accurately and efficiently examine real-world LLM-use at the corpus level. We apply this approach to a case study of scientific peer review in AI conferences that took place after the release of ChatGPT: ICLR 2024, NeurIPS 2023, CoRL 2023 and EMNLP 2023. Our results suggest that between 6.5\% and 16.9\% of text submitted as peer reviews to these conferences could have been substantially modified by LLMs, i.e. beyond spell-checking or minor writing updates. The circumstances in which generated text occurs offer insight into user behavior: the estimated fraction of LLM-generated text is higher in reviews which report lower confidence, were submitted close to the deadline, and from reviewers who are less likely to respond to author rebuttals. We also observe corpus-level trends in generated text which may be too subtle to detect at the individual level, and discuss the implications of such trends on peer review. We call for future interdisciplinary work to examine how LLM use is changing our information and knowledge practices.}
+      \field{journaltitle}{arxiv.orgW Liang, Z Izzo, Y Zhang, H Lepp, H Cao, X Zhao, L Chen, H Ye, S Liu, Z HuangarXiv preprint arXiv:2403.07183, 2024•arxiv.org}
+      \field{title}{Monitoring ai-modified content at scale: A case study on the impact of chatgpt on ai conference peer reviews}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2403.07183
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2403.07183
+      \endverb
+    \endentry
+    \entry{Liang2025}{article}{}
+      \name{author}{14}{}{%
+        {{hash=c37e00c1ca8aafe56159ff4ab1f6e040}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Weixin},
+           giveni={W\bibinitperiod}}}%
+        {{hash=8bf1aa3e35b460a972304f9dbf547d73}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yaohui},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=4505c22f12bed80892a647cf3e187121}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Zhengxuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=418b75667470ce0c73c73cea282193b7}{%
+           family={Lepp},
+           familyi={L\bibinitperiod},
+           given={Haley},
+           giveni={H\bibinitperiod}}}%
+        {{hash=cbe6eac4ed449fab470baf06df146f83}{%
+           family={Ji},
+           familyi={J\bibinitperiod},
+           given={Wenlong},
+           giveni={W\bibinitperiod}}}%
+        {{hash=96bad5d976d7449aba3894b1a31f1710}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Xuandong},
+           giveni={X\bibinitperiod}}}%
+        {{hash=1577f5699fcf00b2c7440ba055f315b1}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Hancheng},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b51d008c8f8b480734bdad360774940e}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Sheng},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e8e7e9d34afc1adf0156606bdc8c6bae}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Siyu},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8ed07be0cf24fb972c73ba0cb7af2582}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Zhi},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=6ff611991cba7ee48521ab941158ac2f}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Diyi},
+           giveni={D\bibinitperiod}}}%
+        {{hash=699d626ef41a1a827d623529c1a45e5a}{%
+           family={Potts},
+           familyi={P\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2214edb8305f7ccd7cdc310b3a8ae1b4}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Christopher\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=1b868d50048a635fa27ffa744323fa41}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{fullhash}{78d199864d49c6216a20fe3bb10bb777}
+      \strng{bibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authorbibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authornamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
+      \strng{authorfullhash}{78d199864d49c6216a20fe3bb10bb777}
+      \field{extraname}{4}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Scientific publishing is the primary means of disseminating research findings. There has been speculation about how extensively large language models (LLMs) are being used in academic writing. Here we conduct a systematic analysis across 1,121,912 preprints and published papers from January 2020 to September 2024 on arXiv, bioRxiv and Nature portfolio journals, using a population-level framework based on word frequency shifts to estimate the prevalence of LLM-modified content over time. Our findings suggest a steady increase in LLM usage, with the largest and fastest growth estimated for computer science papers (up to 22\%). By comparison, mathematics papers and the Nature portfolio showed lower evidence of LLM modification (up to 9\%). LLM modification estimates were higher among papers from first authors who post preprints more frequently, papers in more crowded research areas and papers of shorter lengths. Our findings suggest that LLMs are being broadly used in scientific writing. Liang et al. estimate the prevalence of text modified by large language models in recent scientific papers and preprints, finding widespread use (up to 17.5\% of papers in computer science).}
+      \field{issn}{2397-3374}
+      \field{issue}{12}
+      \field{journaltitle}{Nature Human Behaviour 2025 9:12}
+      \field{month}{8}
+      \field{title}{Quantifying large language model usage in scientific papers}
+      \field{volume}{9}
+      \field{year}{2025}
+      \field{pages}{2599\bibrangedash 2609}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1038/s41562-025-02273-8
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41562-025-02273-8
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41562-025-02273-8
+      \endverb
+      \keyw{Computer science,Scientific community}
+    \endentry
+    \entry{Liao2024}{article}{}
+      \name{author}{8}{}{%
+        {{hash=6f179c06caa523325088e42475d49990}{%
+           family={Liao},
+           familyi={L\bibinitperiod},
+           given={Zhehui},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=078a0a4b13c325965b528ce8ae3bc6cf}{%
+           family={Antoniak},
+           familyi={A\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8273a0233f6b0d4f28b3660401bf2a2e}{%
+           family={Cheong},
+           familyi={C\bibinitperiod},
+           given={Inyoung},
+           giveni={I\bibinitperiod}}}%
+        {{hash=ae30364154f58f88767093c2de0148e5}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Evie\bibnamedelima Yu-Yen},
+           giveni={E\bibinitperiod\bibinitdelim Y\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=e8bbd8458e6df876b3b3961a6c1f7895}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Ai-Heng},
+           giveni={A\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=647a3130d4b4f62c11d9a9f9a15d1af1}{%
+           family={Lo},
+           familyi={L\bibinitperiod},
+           given={Kyle},
+           giveni={K\bibinitperiod}}}%
+        {{hash=24e8efa35e619eb224da4eb6ff27997d}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Joseph\bibnamedelima Chee},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=55594ce723e5771b24852196ad6f6035}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Amy\bibnamedelima X.},
+           giveni={A\bibinitperiod\bibinitdelim X\bibinitperiod}}}%
+      }
+      \strng{namehash}{bd8caf845fd76f7a02dff732f73cb8d7}
+      \strng{fullhash}{8392f06eb8b69d5aa5120a29b8fb8989}
+      \strng{bibnamehash}{bd8caf845fd76f7a02dff732f73cb8d7}
+      \strng{authorbibnamehash}{bd8caf845fd76f7a02dff732f73cb8d7}
+      \strng{authornamehash}{bd8caf845fd76f7a02dff732f73cb8d7}
+      \strng{authorfullhash}{8392f06eb8b69d5aa5120a29b8fb8989}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The rise of large language models (LLMs) has led many researchers to consider their usage for scientific work. Some have found benefits using LLMs to augment or automate aspects of their research pipeline, while others have urged caution due to risks and ethical concerns. Yet little work has sought to quantify and characterize how researchers use LLMs and why. We present the first large-scale survey of 816 verified research article authors to understand how the research community leverages and perceives LLMs as research tools. We examine participants' self-reported LLM usage, finding that 81\% of researchers have already incorporated LLMs into different aspects of their research workflow. We also find that traditionally disadvantaged groups in academia (non-White, junior, and non-native English speaking researchers) report higher LLM usage and perceived benefits, suggesting potential for improved research equity. However, women, non-binary, and senior researchers have greater ethical concerns, potentially hindering adoption.}
+      \field{month}{10}
+      \field{title}{LLMs as Research Tools: A Large Scale Survey of Researchers' Usage and Perceptions}
+      \field{volume}{1}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1145/nnnnnnn.nnnnnnn
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2411.05025v1
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2411.05025v1
+      \endverb
+      \keyw{Demographic,LLMs,Large Language Models,Research Community,Research Support Tools,Survey}
+    \endentry
+    \entry{Liebrenz2023}{article}{}
+      \name{author}{5}{}{%
+        {{hash=e9080d63b681633310476e26203f11ea}{%
+           family={Liebrenz},
+           familyi={L\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=766abfadb3e241a906def153542d0c35}{%
+           family={Schleifer},
+           familyi={S\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod}}}%
+        {{hash=2417ffa8a078c7a29a41c39bc00e0e37}{%
+           family={Buadze},
+           familyi={B\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3177c93e3511737f46e9d281d345fdab}{%
+           family={Bhugra},
+           familyi={B\bibinitperiod},
+           given={Dinesh},
+           giveni={D\bibinitperiod}}}%
+        {{hash=33d4e88ed3579ce4d1459b82174345bb}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier Ltd}%
+      }
+      \strng{namehash}{6362489bf685f076bba4b5a0c55549e0}
+      \strng{fullhash}{fed7c84f5d79a72c1ec3d02b8685fbd7}
+      \strng{bibnamehash}{6362489bf685f076bba4b5a0c55549e0}
+      \strng{authorbibnamehash}{6362489bf685f076bba4b5a0c55549e0}
+      \strng{authornamehash}{6362489bf685f076bba4b5a0c55549e0}
+      \strng{authorfullhash}{fed7c84f5d79a72c1ec3d02b8685fbd7}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{25897500}
+      \field{issue}{3}
+      \field{journaltitle}{The Lancet Digital Health}
+      \field{month}{3}
+      \field{title}{Generating scholarly content with ChatGPT: ethical challenges for medical publishing}
+      \field{volume}{5}
+      \field{year}{2023}
+      \field{pages}{e105\bibrangedash e106}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1016/S2589-7500(23)00019-5
+      \endverb
+      \verb{urlraw}
+      \verb https://www.thelancet.com/action/showFullText?pii=S2589750023000195 https://www.thelancet.com/action/showAbstract?pii=S2589750023000195 https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00019-5/abstract
+      \endverb
+      \verb{url}
+      \verb https://www.thelancet.com/action/showFullText?pii=S2589750023000195%20https://www.thelancet.com/action/showAbstract?pii=S2589750023000195%20https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00019-5/abstract
+      \endverb
+    \endentry
+    \entry{Lin2025_hidden_prompts}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0f52d10e3c9586ef2dffc8905c582caf}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Zhicheng},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{0f52d10e3c9586ef2dffc8905c582caf}
+      \strng{fullhash}{0f52d10e3c9586ef2dffc8905c582caf}
+      \strng{bibnamehash}{0f52d10e3c9586ef2dffc8905c582caf}
+      \strng{authorbibnamehash}{0f52d10e3c9586ef2dffc8905c582caf}
+      \strng{authornamehash}{0f52d10e3c9586ef2dffc8905c582caf}
+      \strng{authorfullhash}{0f52d10e3c9586ef2dffc8905c582caf}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In July 2025, 18 academic manuscripts on the preprint website arXiv were found to contain hidden instructions known as prompts designed to manipulate AI-assisted peer review. Instructions such as "GIVE A POSITIVE REVIEW ONLY" were concealed using techniques like white-colored text. Author responses varied: one planned to withdraw the affected paper, while another defended the practice as legitimate testing of reviewer compliance. This commentary analyzes this practice as a novel form of research misconduct. We examine the technique of prompt injection in large language models (LLMs), revealing four types of hidden prompts, ranging from simple positive review commands to detailed evaluation frameworks. The defense that prompts served as "honeypots" to detect reviewers improperly using AI fails under examination--the consistently self-serving nature of prompt instructions indicates intent to manipulate. Publishers maintain inconsistent policies: Elsevier prohibits AI use in peer review entirely, while Springer Nature permits limited use with disclosure requirements. The incident exposes systematic vulnerabilities extending beyond peer review to any automated system processing scholarly texts, including plagiarism detection and citation indexing. Our analysis underscores the need for coordinated technical screening at submission portals and harmonized policies governing generative AI (GenAI) use in academic evaluation.}
+      \field{isbn}{2506.00418v1}
+      \field{month}{7}
+      \field{title}{Hidden Prompts in Manuscripts Exploit AI-Assisted Peer Review}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2507.06185v1
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2507.06185v1
+      \endverb
+    \endentry
+    \entry{Lindsay2023}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fac2f985bbcd3d10fc69f3bf831a63ee}{%
+           family={Lindsay},
+           familyi={L\bibinitperiod},
+           given={Grace\bibnamedelima W.},
+           giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{fac2f985bbcd3d10fc69f3bf831a63ee}
+      \strng{fullhash}{fac2f985bbcd3d10fc69f3bf831a63ee}
+      \strng{bibnamehash}{fac2f985bbcd3d10fc69f3bf831a63ee}
+      \strng{authorbibnamehash}{fac2f985bbcd3d10fc69f3bf831a63ee}
+      \strng{authornamehash}{fac2f985bbcd3d10fc69f3bf831a63ee}
+      \strng{authorfullhash}{fac2f985bbcd3d10fc69f3bf831a63ee}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Large language models are capable of impressive feats, but the job of scientific review requires more than the statistics of published work can provide.}
+      \field{issn}{2397-3374}
+      \field{issue}{11}
+      \field{journaltitle}{Nature Human Behaviour 2023 7:11}
+      \field{month}{11}
+      \field{title}{LLMs are not ready for editorial work}
+      \field{volume}{7}
+      \field{year}{2023}
+      \field{pages}{1814\bibrangedash 1815}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1038/s41562-023-01730-6
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41562-023-01730-6
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41562-023-01730-6
+      \endverb
+      \keyw{Learning algorithms,Peer review}
+    \endentry
+    \entry{Liu2024}{article}{}
+      \name{author}{2}{}{%
+        {{hash=23048a7504f1280f267bbc5de576ad5c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jialin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=16a2af6ba206c6f2b36255fd5fc5f887}{%
+           family={Bu},
+           familyi={B\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce03917c381f5506835586046ad9ad72}
+      \strng{fullhash}{ce03917c381f5506835586046ad9ad72}
+      \strng{bibnamehash}{ce03917c381f5506835586046ad9ad72}
+      \strng{authorbibnamehash}{ce03917c381f5506835586046ad9ad72}
+      \strng{authornamehash}{ce03917c381f5506835586046ad9ad72}
+      \strng{authorfullhash}{ce03917c381f5506835586046ad9ad72}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{AIGC tools such as ChatGPT have profoundly changed scientific research, leading to widespread attention on its use on academic writing. Leveraging preprints from large language models, this study examined the use of AIGC in manuscript writing and its correlation with author profiles. We found that: (1) since the release of ChatGPT, the likelihood of abstracts being AI-generated has gradually increased; (2) scientists from English-speaking countries are less likely to use AIGC tools for writing assistance, while those from countries with linguistic differences from English are more likely to use these tools; (3) there is weak correlation between a paper's AI-generated probability and authors' academic performance; and (4) authors who have previously published papers with high AI-generated probabilities are more likely to continue using AIGC tools. We believe that this paper provides insightful results for relevant policies and norms and in enhancing the understanding of the relationship between humans and AI.}
+      \field{month}{4}
+      \field{title}{Towards the relationship between AIGC in manuscript writing and author profiles: evidence from preprints in LLMs}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2404.15799
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2404.15799
+      \endverb
+    \endentry
+    \entry{MacClure2024}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=42bb3de035c4c12213c412de092a8e9b}{%
+           family={MacClure},
+           familyi={M\bibinitperiod},
+           given={Miles},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{42bb3de035c4c12213c412de092a8e9b}
+      \strng{fullhash}{42bb3de035c4c12213c412de092a8e9b}
+      \strng{bibnamehash}{42bb3de035c4c12213c412de092a8e9b}
+      \strng{authorbibnamehash}{42bb3de035c4c12213c412de092a8e9b}
+      \strng{authornamehash}{42bb3de035c4c12213c412de092a8e9b}
+      \strng{authorfullhash}{42bb3de035c4c12213c412de092a8e9b}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{Digital Frontier | Our new AI dialect}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://digitalfrontier.com/articles/ai-dialects-delve-chatgpt
+      \endverb
+      \verb{url}
+      \verb https://digitalfrontier.com/articles/ai-dialects-delve-chatgpt
+      \endverb
+    \endentry
+    \entry{Mak2025}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b3febd697d77b943edc5009ce6b85498}{%
+           family={Mak},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima HC},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=6087fb71dcc34330c61afedc701e6db2}{%
+           family={Walasek},
+           familyi={W\bibinitperiod},
+           given={Lukasz},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Research Square}%
+      }
+      \strng{namehash}{0b3b6fefdcfcc842289c28e212f4abd0}
+      \strng{fullhash}{0b3b6fefdcfcc842289c28e212f4abd0}
+      \strng{bibnamehash}{0b3b6fefdcfcc842289c28e212f4abd0}
+      \strng{authorbibnamehash}{0b3b6fefdcfcc842289c28e212f4abd0}
+      \strng{authornamehash}{0b3b6fefdcfcc842289c28e212f4abd0}
+      \strng{authorfullhash}{0b3b6fefdcfcc842289c28e212f4abd0}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{As generative artificial intelligence (GenAI) becomes widespread in education, its influence on students’ academic practice raises concern. We conducted pre-registered analyses of 4,820 empirical reports written by 2,000 psychology undergraduates (2016-2025). Following ChatGPT’s 2022 release, prevalence of ChatGPT-associated lexical markers (e.g., delve) surged until 2024, then declined in 2025, possibly due to students masking GenAI traces. Writing style (indexed by lexical diversity/density/sophistication, nominalisation, readability) became increasingly formal post-ChatGPT, diverging from predicted/historical trends. Consistent with GenAI’s positivity bias, sentiment also became more positive, independent of topic or result’s statistical significance, raising questions about its potential impact on students’ critical engagement. Despite the stylistic changes, writing quality (indexed by grades and feedback) showed no discernible shifts. Exploratory analysis asked GPT models to rewrite pre-ChatGPT reports, and these GPT-rewritten texts resembled post-ChatGPT reports more in style and sentiment. Finally, no students disclosed AI use despite clear guidelines, highlighting the ineffectiveness of voluntary disclosure.}
+      \field{month}{8}
+      \field{title}{Style, Sentiment, and Quality of Undergraduate Writing in the AI Era: A Cross-Sectional and Longitudinal Analysis of 4,820 Authentic Empirical Reports}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.21203/RS.3.RS-7465165/V1
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchsquare.com 'https://www.researchsquare.com/article/rs-7465165/v1
+      \endverb
+      \verb{url}
+      \verb https://www.researchsquare.com%20'https://www.researchsquare.com/article/rs-7465165/v1
+      \endverb
+      \keyw{Artiicial Intelligence (AI),Education,Sentiment,Writing Quality,Writing Style}
+    \endentry
+    \entry{Matsui2024}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0bed2009b268030301990bb4ee1cb4b1}{%
+           family={Matsui},
+           familyi={M\bibinitperiod},
+           given={Kentaro},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{0bed2009b268030301990bb4ee1cb4b1}
+      \strng{fullhash}{0bed2009b268030301990bb4ee1cb4b1}
+      \strng{bibnamehash}{0bed2009b268030301990bb4ee1cb4b1}
+      \strng{authorbibnamehash}{0bed2009b268030301990bb4ee1cb4b1}
+      \strng{authornamehash}{0bed2009b268030301990bb4ee1cb4b1}
+      \strng{authorfullhash}{0bed2009b268030301990bb4ee1cb4b1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{10.1101/2024.05.1}
+      \field{journaltitle}{medrxiv.orgK MatsuiMedRxiv, 2024•medrxiv.org}
+      \field{title}{Delving into PubMed records: Some terms in medical writing have drastically changed after the arrival of ChatGPT}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1101/2024.05.14.24307373
+      \endverb
+      \verb{urlraw}
+      \verb https://www.medrxiv.org/content/10.1101/2024.05.14.24307373.abstract
+      \endverb
+      \verb{url}
+      \verb https://www.medrxiv.org/content/10.1101/2024.05.14.24307373.abstract
+      \endverb
+    \endentry
+    \entry{pmc}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d7cc6789943153c9a06f39700821b996}{%
+           family={Medicine},
+           familyi={M\bibinitperiod},
+           given={National\bibnamedelima Library},
+           giveni={N\bibinitperiod\bibinitdelim L\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Bethesda (MD)}%
+      }
+      \strng{namehash}{d7cc6789943153c9a06f39700821b996}
+      \strng{fullhash}{d7cc6789943153c9a06f39700821b996}
+      \strng{bibnamehash}{d7cc6789943153c9a06f39700821b996}
+      \strng{authorbibnamehash}{d7cc6789943153c9a06f39700821b996}
+      \strng{authornamehash}{d7cc6789943153c9a06f39700821b996}
+      \strng{authorfullhash}{d7cc6789943153c9a06f39700821b996}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://pmc.ncbi.nlm.nih.gov/tools/openftlist/}}
+      \field{note}{[cited 2026 07 04]}
+      \field{title}{PMC Open Access Subset [Internet]}
+      \field{year}{2003}
+    \endentry
+    \entry{Mishra2024}{article}{}
+      \name{author}{9}{}{%
+        {{hash=2c24d97d1ce0d7bc6fb99e724b3d64c8}{%
+           family={Mishra},
+           familyi={M\bibinitperiod},
+           given={Tanisha},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1b908d6d2162eb122b6f9610f002013b}{%
+           family={Sutanto},
+           familyi={S\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+        {{hash=aa34861abfeb48933b0637f5d039f62c}{%
+           family={Rossanti},
+           familyi={R\bibinitperiod},
+           given={Rini},
+           giveni={R\bibinitperiod}}}%
+        {{hash=c85506f3613a223148d04aef85c5ca9e}{%
+           family={Pant},
+           familyi={P\bibinitperiod},
+           given={Nayana},
+           giveni={N\bibinitperiod}}}%
+        {{hash=46215862ba8b943f6a8e96cd65368e4d}{%
+           family={Ashraf},
+           familyi={A\bibinitperiod},
+           given={Anum},
+           giveni={A\bibinitperiod}}}%
+        {{hash=01c947e5275ffb30e29b1694ac3706f0}{%
+           family={Raut},
+           familyi={R\bibinitperiod},
+           given={Akshay},
+           giveni={A\bibinitperiod}}}%
+        {{hash=144847101d32d32bc01a03641a395b9a}{%
+           family={Uwabareze},
+           familyi={U\bibinitperiod},
+           given={Germaine},
+           giveni={G\bibinitperiod}}}%
+        {{hash=3af8dc7e5279edef417c6cc0cc4340c9}{%
+           family={Oluwatomiwa},
+           familyi={O\bibinitperiod},
+           given={Ajayi},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6885211cd48f5b11b0abe2fca2abca74}{%
+           family={Zeeshan},
+           familyi={Z\bibinitperiod},
+           given={Bushra},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{d4b636e77be097347a4c697468fd5d24}
+      \strng{fullhash}{acedeb1006dc66b8b68f46ed858d5135}
+      \strng{bibnamehash}{d4b636e77be097347a4c697468fd5d24}
+      \strng{authorbibnamehash}{d4b636e77be097347a4c697468fd5d24}
+      \strng{authornamehash}{d4b636e77be097347a4c697468fd5d24}
+      \strng{authorfullhash}{acedeb1006dc66b8b68f46ed858d5135}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Language Models (LLMs) in academic research has increased tremendously. Models such as Generative Pre-trained Transformer (GPT) are used by researchers in literature review, abstract screening, and manuscript drafting. However, these models also present the attendant challenge of providing ethically questionable scientific information. Our study provides a snapshot of global researchers' perception of current trends and future impacts of LLMs in research. Using a cross-sectional design, we surveyed 226 medical and paramedical researchers from 59 countries across 65 specialties, trained in the Global Clinical Scholars' Research Training certificate program of Harvard Medical School between 2020 and 2024. Majority (57.5\%) of these participants practiced in an academic setting with a median of 7 (2,18) PubMed Indexed published articles. 198 respondents (87.6\%) were aware of LLMs and those who were aware had higher number of publications (p \< 0.001). 18.7\% of the respondents who were aware (n = 37) had previously used LLMs in publications especially for grammatical errors and formatting (64.9\%); however, most (40.5\%) did not acknowledge its use in their papers. 50.8\% of aware respondents (n = 95) predicted an overall positive future impact of LLMs while 32.6\% were unsure of its scope. 52\% of aware respondents (n = 102) believed that LLMs would have a major impact in areas such as grammatical errors and formatting (66.3\%), revision and editing (57.2\%), writing (57.2\%) and literature review (54.2\%). 58.1\% of aware respondents were opined that journals should allow for use of AI in research and 78.3\% believed that regulations should be put in place to avoid its abuse. Seeing the perception of researchers towards LLMs and the significant association between awareness of LLMs and number of published works, we emphasize the importance of developing comprehensive guidelines and ethical framework to govern the use of AI in academic research and address the current challenges. Large Language Models (LLMs) represent a significant breakthrough in Natural Language Processing (NLP) and Artificial Intelligence (AI) 1. Prior to 2017, while NLP models could perform several language processing tasks, they were not easily accessible to non-domain experts. The introduction of the Transformer architecture in 2017 revolutionized the field, enabling NLP models to efficiently synthesize and analyze datasets using simple prompts. This allowed large-scale use by people worldwide, significantly broadening access to advanced language processing tools 2. The Transformer technology led to the development of two game changers: Bidirectional}
+      \field{journaltitle}{Scientific Reports}
+      \field{title}{Use of large language models as artificial intelligence tools in academic research and publishing among global clinical researchers}
+      \field{volume}{14}
+      \field{year}{2024}
+      \field{pages}{31672}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41598-024-81370-6
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41598-024-81370-6
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41598-024-81370-6
+      \endverb
+      \keyw{Academic writing,Artificial intelligence,Biomedical research,Large language models}
+    \endentry
+    \entry{Mitchell2023}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=b9441ad4287a1b5f251258a6fd6afb3a}{%
+           family={Mitchell},
+           familyi={M\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=b8513bf69f4e67a914a8fa28e3888b47}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Yoonho},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=05d54e07ca99a84cd684ac7a4bf02e5b}{%
+           family={Khazatsky},
+           familyi={K\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2214edb8305f7ccd7cdc310b3a8ae1b4}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Christopher\bibnamedelima D},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=058e82495825ae376c6a96a12169e6ee}{%
+           family={Finn},
+           familyi={F\bibinitperiod},
+           given={Chelsea},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{99d0e6bf4a2e97d6ad61bb8b7513143a}
+      \strng{fullhash}{37e92bc88a9cd8ba3ffbbd153f3987fb}
+      \strng{bibnamehash}{99d0e6bf4a2e97d6ad61bb8b7513143a}
+      \strng{authorbibnamehash}{99d0e6bf4a2e97d6ad61bb8b7513143a}
+      \strng{authornamehash}{99d0e6bf4a2e97d6ad61bb8b7513143a}
+      \strng{authorfullhash}{37e92bc88a9cd8ba3ffbbd153f3987fb}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The increasing fluency and widespread usage of large language models (LLMs) highlight the desirability of corresponding tools aiding detection of LLM-generated text. In this paper, we identify a property of the structure of an LLM's probability function that is useful for such detection. Specifically, we demonstrate that text sampled from an LLM tends to occupy negative curvature regions of the model's log probability function. Leveraging this observation, we then define a new curvature-based criterion for judging if a passage is generated from a given LLM. This approach, which we call DetectGPT, does not require training a separate classifier, collecting a dataset of real or generated passages, or explicitly watermarking generated text. It uses only log probabilities computed by the model of interest and random perturbations of the passage from another generic pre-trained language model (e.g., T5). We find DetectGPT is more discrimi-native than existing zero-shot methods for model sample detection, notably improving detection of fake news articles generated by 20B parameter GPT-NeoX from 0.81 AUROC for the strongest zero-shot baseline to 0.95 AUROC for Detect-GPT. See ericmitchell.ai/detectgpt for code, data, and other project information.}
+      \field{issn}{2640-3498}
+      \field{journaltitle}{Proceedings of the 40th International Conference on Machine Learning, PMLR}
+      \field{month}{7}
+      \field{title}{DetectGPT: Zero-Shot Machine-Generated Text Detection using Probability Curvature}
+      \field{year}{2023}
+      \field{pages}{24950\bibrangedash 24962}
+      \range{pages}{13}
+      \verb{urlraw}
+      \verb https://proceedings.mlr.press/v202/mitchell23a.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.mlr.press/v202/mitchell23a.html
+      \endverb
+    \endentry
+    \entry{Mohammadi2026}{article}{}
+      \name{author}{6}{}{%
+        {{hash=5be6cd4bf18341b2e12400cacad28971}{%
+           family={Mohammadi},
+           familyi={M\bibinitperiod},
+           given={Ehsan},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a3c232f8ebd0760b0f13b9b52ca76307}{%
+           family={Thelwall},
+           familyi={T\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0771ded0b491c95218115a4082ccdea9}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Yizhou},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=00838de66e9452dd17f067d2c104837a}{%
+           family={Collier},
+           familyi={C\bibinitperiod},
+           given={Taylor},
+           giveni={T\bibinitperiod}}}%
+        {{hash=863119659b4c4dbe845fad90dfbaa262}{%
+           family={Tahamtan},
+           familyi={T\bibinitperiod},
+           given={Iman},
+           giveni={I\bibinitperiod}}}%
+        {{hash=040ab5813da79780115298f791a3acb5}{%
+           family={Eftekhar},
+           familyi={E\bibinitperiod},
+           given={Azar},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pergamon}%
+      }
+      \strng{namehash}{2b468618e7de4ba45dbbe31ae28ca8ee}
+      \strng{fullhash}{9f2e4446791b890e5d8f0543c513fcdd}
+      \strng{bibnamehash}{2b468618e7de4ba45dbbe31ae28ca8ee}
+      \strng{authorbibnamehash}{2b468618e7de4ba45dbbe31ae28ca8ee}
+      \strng{authornamehash}{2b468618e7de4ba45dbbe31ae28ca8ee}
+      \strng{authorfullhash}{9f2e4446791b890e5d8f0543c513fcdd}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Although generative AI is transforming academic research and education, little is known about the role, gender, international, and disciplinary variations in uptake and use. This 20-country survey of publishing academics shows the widespread awareness and adoption of generative AI tools in academia, but with substantial international and disciplinary differences, and some role and gender differences. In particular, females were 10 \% less likely to use Gen AI frequently (daily or weekly) for research, which may exacerbate gender inequalities. Perhaps surprisingly, the highest adoption rates occurred in some non-Western nations, possibly because of a greater need for translation services. The highest awareness is in the social sciences, perhaps because of the greater need for text analysis. Across all groups, these tools were mainly used for academic writing rather than data analysis and support for critical thinking. Despite this, personalized instruction and problem-solving are among generative AI's most generally claimed benefits. However, participants in all groups were skeptical about the creativity, accuracy, and consistency of AI-generated content in academic contexts. The most significant concerns about using generative AI in academia were inaccuracy, plagiarism, discouraging critical thinking, a lack of transparency and explainability, intellectual property rights violations, and data privacy risks. For policymakers, the findings point to fields and countries that may need action to prevent falling behind, as well as the ongoing need to investigate and monitor the impacts of generative AI on research practices.}
+      \field{issn}{0306-4573}
+      \field{issue}{1}
+      \field{journaltitle}{Information Processing \& Management}
+      \field{month}{1}
+      \field{title}{Is generative AI reshaping academic practices worldwide? A survey of adoption, benefits, and concerns}
+      \field{volume}{63}
+      \field{year}{2026}
+      \field{pages}{104350}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/J.IPM.2025.104350
+      \endverb
+      \keyw{AI in higher education,AI in research,AI in teaching,Generative AI}
+    \endentry
+    \entry{VanNoorden2023}{article}{}
+      \name{author}{2}{}{%
+        {{hash=775145a602ca793a1dcfb9bc6b300d1b}{%
+           family={Noorden},
+           familyi={N\bibinitperiod},
+           given={Richard\bibnamedelima Van},
+           giveni={R\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=fceabd42825c0d61d41e323f71942d39}{%
+           family={Perkel},
+           familyi={P\bibinitperiod},
+           given={Jeffrey\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Research}%
+      }
+      \strng{namehash}{7b087d814b567d3317a6d472322264f9}
+      \strng{fullhash}{7b087d814b567d3317a6d472322264f9}
+      \strng{bibnamehash}{7b087d814b567d3317a6d472322264f9}
+      \strng{authorbibnamehash}{7b087d814b567d3317a6d472322264f9}
+      \strng{authornamehash}{7b087d814b567d3317a6d472322264f9}
+      \strng{authorfullhash}{7b087d814b567d3317a6d472322264f9}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{14764687}
+      \field{issue}{7980}
+      \field{journaltitle}{Nature}
+      \field{month}{9}
+      \field{title}{AI and science: what 1,600 researchers think}
+      \field{volume}{621}
+      \field{year}{2023}
+      \field{pages}{672\bibrangedash 675}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1038/D41586-023-02980-0
+      \endverb
+      \keyw{Computer science,Machine learning,Mathematics and computing,Technology}
+    \endentry
+    \entry{Nordling2023}{article}{}
+      \name{author}{1}{}{%
+        {{hash=94216daebe527b98c263dd95ec789609}{%
+           family={Nordling},
+           familyi={N\bibinitperiod},
+           given={Linda},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Research}%
+      }
+      \strng{namehash}{94216daebe527b98c263dd95ec789609}
+      \strng{fullhash}{94216daebe527b98c263dd95ec789609}
+      \strng{bibnamehash}{94216daebe527b98c263dd95ec789609}
+      \strng{authorbibnamehash}{94216daebe527b98c263dd95ec789609}
+      \strng{authornamehash}{94216daebe527b98c263dd95ec789609}
+      \strng{authorfullhash}{94216daebe527b98c263dd95ec789609}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Around one in three respondents to Nature’s global postdoc survey are using AI chatbots to help to refine text, generate or edit code, wrangle the literature in their field and more.}
+      \field{issn}{14764687}
+      \field{issue}{7983}
+      \field{journaltitle}{Nature}
+      \field{month}{10}
+      \field{title}{How ChatGPT is transforming the postdoc experience}
+      \field{volume}{622}
+      \field{year}{2023}
+      \field{pages}{655\bibrangedash 657}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1038/D41586-023-03235-8
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/d41586-023-03235-8
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/d41586-023-03235-8
+      \endverb
+      \keyw{Careers,Lab life,Machine learning,Scientific community}
+    \endentry
+    \entry{Perrigo2023}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=8b3aca26f5823ef0b814c10d44a8c006}{%
+           family={Perrigo},
+           familyi={P\bibinitperiod},
+           given={Billy},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b3aca26f5823ef0b814c10d44a8c006}
+      \strng{fullhash}{8b3aca26f5823ef0b814c10d44a8c006}
+      \strng{bibnamehash}{8b3aca26f5823ef0b814c10d44a8c006}
+      \strng{authorbibnamehash}{8b3aca26f5823ef0b814c10d44a8c006}
+      \strng{authornamehash}{8b3aca26f5823ef0b814c10d44a8c006}
+      \strng{authorfullhash}{8b3aca26f5823ef0b814c10d44a8c006}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{title}{OpenAI Used Kenyan Workers on Less Than \$2 Per Hour: Exclusive}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://time.com/6247678/openai-chatgpt-kenya-workers/
+      \endverb
+      \verb{url}
+      \verb https://time.com/6247678/openai-chatgpt-kenya-workers/
+      \endverb
+    \endentry
+    \entry{Picazo-Sanchez2024}{article}{}
+      \name{author}{2}{}{%
+        {{hash=09057e02f0b996fe1cf529ffb5841428}{%
+           family={Picazo-Sanchez},
+           familyi={P\bibinithyphendelim S\bibinitperiod},
+           given={Pablo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4f7f6ca5139ac8274e19fefbc02aa9a3}{%
+           family={Ortiz-Martin},
+           familyi={O\bibinithyphendelim M\bibinitperiod},
+           given={Lara},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{6884936a0789662ed68b4bff720b5ae6}
+      \strng{fullhash}{6884936a0789662ed68b4bff720b5ae6}
+      \strng{bibnamehash}{6884936a0789662ed68b4bff720b5ae6}
+      \strng{authorbibnamehash}{6884936a0789662ed68b4bff720b5ae6}
+      \strng{authornamehash}{6884936a0789662ed68b4bff720b5ae6}
+      \strng{authorfullhash}{6884936a0789662ed68b4bff720b5ae6}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Large Language Models (LLMs) are a type of machine learning that handles a wide range of Natural Language Processing (NLP) scenarios. Recently, in December 2022, a company called OpenAI released ChatGPT, a tool that, within a few months, became the most representative example of LLMs, automatically generating unique and coherent text on many topics, summarising and rewriting it, or even translating it to other languages. ChatGPT originated some controversy in academia since students can generate unique text for writing assessments being sometimes extremely difficult to distinguish whether it comes from ChatGPT or a person. In research, some journals specifically banned ChatGPT in scientific papers. However, when used correctly, it becomes a powerful tool to rewrite, for instance, scientific papers and, thus, deliver researchers’ messages in a better way. In this paper, we conduct an empirical study of the impact of ChatGPT in research. We downloaded the abstract of over 45,000 papers from over 300 journals from Dec 2022 and Feb 2023 belonging to different research editorials. We use four of the most known ChatGPT detection tools and conclude that ChatGPT played a role in around 10\% of the papers published in every editorial, showing that authors from different fields have rapidly adopted such a tool in their research.}
+      \field{issn}{15737497}
+      \field{issue}{5}
+      \field{journaltitle}{Applied Intelligence}
+      \field{month}{3}
+      \field{title}{Analysing the impact of ChatGPT in research}
+      \field{volume}{54}
+      \field{year}{2024}
+      \field{pages}{4172\bibrangedash 4188}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/S10489-024-05298-0/TABLES/8
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1007/s10489-024-05298-0
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s10489-024-05298-0
+      \endverb
+      \keyw{ChatGPT,Large language models (LLMs),Natural language processing (NLP),Research}
+    \endentry
+    \entry{Prakash2025}{article}{}
+      \name{author}{4}{}{%
+        {{hash=31d959318df41b355c901920c79e06eb}{%
+           family={Prakash},
+           familyi={P\bibinitperiod},
+           given={Arjun},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f95579fd457a42900d377970941c45df}{%
+           family={Aggarwal},
+           familyi={A\bibinitperiod},
+           given={Shruti},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2d1f60aacfc8a64ce5002119d4851772}{%
+           family={Varghese},
+           familyi={V\bibinitperiod},
+           given={Jeevan\bibnamedelima John},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=38b174de13edc80fb2d633036e538aac}{%
+           family={Varghese},
+           familyi={V\bibinitperiod},
+           given={Joel\bibnamedelima John},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Palgrave}%
+      }
+      \strng{namehash}{4cb4ee97c9775884b0253ad9a721f577}
+      \strng{fullhash}{d0abc7e1bc4ecda65f8ab69f303f9bae}
+      \strng{bibnamehash}{4cb4ee97c9775884b0253ad9a721f577}
+      \strng{authorbibnamehash}{4cb4ee97c9775884b0253ad9a721f577}
+      \strng{authornamehash}{4cb4ee97c9775884b0253ad9a721f577}
+      \strng{authorfullhash}{d0abc7e1bc4ecda65f8ab69f303f9bae}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{English has become the dominant language in global academic publishing, facilitating cross-border collaboration while reinforcing structural barriers for non-native English-speaking researchers. This study examines the evolution of academic writing quality in social sciences abstracts from 2012 to 2024, focusing on disparities across linguistic, regional, economic and gender-based classifications. Using over one million English-language abstracts retrieved from the Web of Science, the study evaluates writing complexity through readability metrics such as the Flesch-Kincaid Grade Level. A mixed generalised linear model (GLM) is employed to identify key factors influencing writing quality, with particular emphasis on internet access. To assess the potential impact of large language models (LLMs) such as ChatGPT, the analysis incorporates a lexical tracking approach that monitors the frequency of adjectives and adverbs commonly associated with AI-generated content. The findings reveal a global improvement in writing complexity, with non-native English-speaking countries showing notable advances. China, initially lagging in English writing standards, has surpassed traditional leaders such as the United States, signalling a shift in global academic communication. Enhanced digital infrastructure and the adoption of AI-assisted writing tools appear to play a contributory role in this convergence. These results offer empirical insights into how technological advancements are reshaping scholarly expression and mitigating long-standing linguistic and structural disparities. The study provides evidence-based guidance for policymakers, educators and research institutions seeking to enhance the accessibility, inclusivity and quality of academic writing across diverse global contexts.}
+      \field{issn}{2662-9992}
+      \field{issue}{1}
+      \field{journaltitle}{Humanities and Social Sciences Communications 2025 12:1}
+      \field{month}{7}
+      \field{title}{Writing without borders: AI and cross-cultural convergence in academic writing quality}
+      \field{volume}{12}
+      \field{year}{2025}
+      \field{pages}{1058\bibrangedash}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1057/s41599-025-05484-6
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41599-025-05484-6
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41599-025-05484-6
+      \endverb
+      \keyw{Development studies,Economics,Education}
+    \endentry
+    \entry{Sadasivan2025}{article}{}
+      \name{author}{5}{}{%
+        {{hash=e4194e2753f5800586791a1454a3a0f2}{%
+           family={Sadasivan},
+           familyi={S\bibinitperiod},
+           given={Vinu\bibnamedelima Sankar},
+           giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=fc5c6e837a5140059aa3f50a1dfb0e41}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Aounon},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8097ca6bcea2cf44e7f9fa7037289b78}{%
+           family={Balasubramanian},
+           familyi={B\bibinitperiod},
+           given={Sriram},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7732155c540af0f7b63a434ddb5f9c2e}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wenxiao},
+           giveni={W\bibinitperiod}}}%
+        {{hash=70032c35efbe232846bd37f5b76e36b8}{%
+           family={Feizi},
+           familyi={F\bibinitperiod},
+           given={Soheil},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{137c3db00c5bd50ee725630c6c6a6054}
+      \strng{fullhash}{c2f1914549567aa0078fedb726541336}
+      \strng{bibnamehash}{137c3db00c5bd50ee725630c6c6a6054}
+      \strng{authorbibnamehash}{137c3db00c5bd50ee725630c6c6a6054}
+      \strng{authornamehash}{137c3db00c5bd50ee725630c6c6a6054}
+      \strng{authorfullhash}{c2f1914549567aa0078fedb726541336}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Large Language Models (LLMs) can perform impressively well in various applications, such as document completion and question-answering. However, the potential for misuse of these models in activities such as plagiarism, generating fake news, and spamming has raised concerns about their responsible use. Consequently, the reliable detection of AI-generated text has become a critical area of research. Recent works have attempted to address this challenge through various methods, including the identification of model signatures in generated text outputs and the application of watermarking techniques to detect AI-generated text. These detectors have shown to be effective under their specific settings. In this paper, we stress-test the robustness of these AI text detectors in the presence of an attacker. We introduce recursive paraphrasing attack to stress test a wide range of detection schemes, including the ones using the watermarking as well as neural network-based detectors, zero-shot classifiers, and retrieval-based detectors. Our experiments conducted on passages, each approximately 300 tokens long, reveal the varying sensitivities of these detectors to our attacks. We also observe that these paraphrasing attacks add slight degradation to the text quality. We analyze the trade-offs between our attack strength and the resulting text quality, measured through human studies, perplexity scores, and accuracy on text benchmarks. Our findings indicate that while our recursive paraphrasing method can significantly reduce detection rates, it only slightly degrades text quality in many cases, highlighting potential vulnerabilities in current detection systems in the presence of an attacker. Additionally, we investigate the susceptibility of watermarked LLMs to spoofing attacks aimed at misclassifying human-written text as AI-generated. We demonstrate that an attacker can infer hidden AI text signatures without white-box access to the detection method, potentially leading to reputational risks for LLM developers. Finally, we provide a theoretical framework connecting the AUROC of the best possible detector to the Total Variation distance between human and AI text distributions. This analysis offers insights into the fundamental challenges of reliable detection as language models continue to advance. Our code is publicly available at https://github.com/vinusankars/Reliability-of-AI-text-detectors.}
+      \field{journaltitle}{arxiv.org}
+      \field{month}{1}
+      \field{title}{Can AI-generated text be reliably detected?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2303.11156
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2303.11156
+      \endverb
+    \endentry
+    \entry{Thorp2023}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3f45df63b1001740ef66e14cffd9642a}{%
+           family={Thorp},
+           familyi={T\bibinitperiod},
+           given={H.\bibnamedelimi Holden},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{3f45df63b1001740ef66e14cffd9642a}
+      \strng{fullhash}{3f45df63b1001740ef66e14cffd9642a}
+      \strng{bibnamehash}{3f45df63b1001740ef66e14cffd9642a}
+      \strng{authorbibnamehash}{3f45df63b1001740ef66e14cffd9642a}
+      \strng{authornamehash}{3f45df63b1001740ef66e14cffd9642a}
+      \strng{authorfullhash}{3f45df63b1001740ef66e14cffd9642a}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{10959203}
+      \field{issue}{6630}
+      \field{journaltitle}{Science}
+      \field{month}{1}
+      \field{title}{ChatGPT is fun, but not an author}
+      \field{volume}{379}
+      \field{year}{2023}
+      \field{pages}{313}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1126/SCIENCE.ADG7879/ASSET/E576EF79-5CF7-44F0-A6F6-8AA953C0D70F/ASSETS/IMAGES/LARGE/SCIENCE.ADG7879-F1.JPG
+      \endverb
+      \verb{urlraw}
+      \verb https://www.science.org/doi/10.1126/science.adg7879
+      \endverb
+      \verb{url}
+      \verb https://www.science.org/doi/10.1126/science.adg7879
+      \endverb
+    \endentry
+    \entry{Tulchinskii2023}{article}{}
+      \name{author}{8}{}{%
+        {{hash=922dc2a12d3387b11054d6f0694d9c8c}{%
+           family={Tulchinskii},
+           familyi={T\bibinitperiod},
+           given={Eduard},
+           giveni={E\bibinitperiod}}}%
+        {{hash=f496861f244add7181132533feced001}{%
+           family={Kuznetsov},
+           familyi={K\bibinitperiod},
+           given={Kristian},
+           giveni={K\bibinitperiod}}}%
+        {{hash=2b3641c9550ca828885db3ef1d874245}{%
+           family={Kushnareva},
+           familyi={K\bibinitperiod},
+           given={Laida},
+           giveni={L\bibinitperiod}}}%
+        {{hash=1abcb09711954dc1a9289d67278ce5a4}{%
+           family={Cherniavskii},
+           familyi={C\bibinitperiod},
+           given={Daniil},
+           giveni={D\bibinitperiod}}}%
+        {{hash=738da7086d749a435baad6f40982e77b}{%
+           family={Nikolenko},
+           familyi={N\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2b0f7cb6d0f87166c23fc14ee306f97a}{%
+           family={Burnaev},
+           familyi={B\bibinitperiod},
+           given={Evgeny},
+           giveni={E\bibinitperiod}}}%
+        {{hash=c35650989042e737d0d14069d1ca63d8}{%
+           family={Barannikov},
+           familyi={B\bibinitperiod},
+           given={Serguei},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0637f68d25d0a5d690b1a8624255bb0b}{%
+           family={Piontkovskaya},
+           familyi={P\bibinitperiod},
+           given={Irina},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{3f88bc9ad0f8b22bb3b91c140e0c9a2d}
+      \strng{fullhash}{fc79cc0749186552ba0a15937b093634}
+      \strng{bibnamehash}{3f88bc9ad0f8b22bb3b91c140e0c9a2d}
+      \strng{authorbibnamehash}{3f88bc9ad0f8b22bb3b91c140e0c9a2d}
+      \strng{authornamehash}{3f88bc9ad0f8b22bb3b91c140e0c9a2d}
+      \strng{authorfullhash}{fc79cc0749186552ba0a15937b093634}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Rapidly increasing quality of AI-generated content makes it difficult to distinguish between human and AI-generated texts, which may lead to undesirable consequences for society. Therefore, it becomes increasingly important to study the properties of human texts that are invariant over different text domains and varying proficiency of human writers, can be easily calculated for any language, and can robustly separate natural and AI-generated texts regardless of the generation model and sampling method. In this work, we propose such an invariant for human-written texts, namely the intrinsic dimensionality of the manifold underlying the set of embeddings for a given text sample. We show that the average intrinsic dimensionality of fluent texts in a natural language is hovering around the value 9 for several alphabet-based languages and around 7 for Chinese, while the average intrinsic dimensionality of AI-generated texts for each language is ≈ 1.5 lower, with a clear statistical separation between human-generated and AI-generated distributions. This property allows us to build a score-based artificial text detector. The proposed detector's accuracy is stable over text domains, generator models, and human writer proficiency levels, outperforming SOTA detectors in model-agnostic and cross-domain scenarios by a significant margin. We release code and data 1}
+      \field{journaltitle}{37th Conference on Neural Information Processing Systems (NeurIPS 2023)}
+      \field{title}{Intrinsic Dimension Estimation for Robust Detection of AI-Generated Texts}
+      \field{year}{2023}
+    \endentry
+    \entry{Uribe2024}{article}{}
+      \name{author}{2}{}{%
+        {{hash=368d9a745215ee5ff4e8842327e5664d}{%
+           family={Uribe},
+           familyi={U\bibinitperiod},
+           given={Sergio\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=657ced96e9771b00923f7f7c2dc8a145}{%
+           family={Maldupa},
+           familyi={M\bibinitperiod},
+           given={Ilze},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{25efa5ef7c6ed7bb4af2eb9599b0f9e6}
+      \strng{fullhash}{25efa5ef7c6ed7bb4af2eb9599b0f9e6}
+      \strng{bibnamehash}{25efa5ef7c6ed7bb4af2eb9599b0f9e6}
+      \strng{authorbibnamehash}{25efa5ef7c6ed7bb4af2eb9599b0f9e6}
+      \strng{authornamehash}{25efa5ef7c6ed7bb4af2eb9599b0f9e6}
+      \strng{authorfullhash}{25efa5ef7c6ed7bb4af2eb9599b0f9e6}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Introduction: Generative artificial intelligence (GenAI) Large-language models such as ChatGPT have become increasingly popular in various fields. However, the impact of ChatGPT on dental research writing has yet to be quantified. This study aimed to assess ChatGPT's usage in dental research writing and discuss potential advantages and challenges. Methods: Using a bibliometric design, we performed a keyword analysis of specific 'signaling words' indicative of ChatGPT use in the titles/abstracts of 299,695 dental research abstracts indexed PubMed 2018–2024. Statistical comparisons using normalized ratios per 10,000 dental publications compared changes in word frequency before and after the ChatGPT release on November 30, 2022. Results: Before ChatGPT's release, the frequency of abstracts with signaling words was 47.1 per 10,000 papers. After the release, this increased to 224.2 per 10,000 papers, an increase of 177.2 per 10,000 papers (p = 0.014, 95 \% CI 53.5–300.7). The word 'delve' showed the most significant usage increase (increased ratio=17.0). Conclusions: This study is among the first to systematically assess the use of GenAI, specifically ChatGPT, in dental research. We found evidence of the use and growth of ChatGPT in dental research publications. This trend indicates the widespread adoption of GenAI-assisted writing in scientific communication, consistent with other scientific fields. While GenAI can potentially increase productivity and inclusivity, it raises concerns such as bias, inaccuracy, and distortion of academic incentives. Therefore, our findings support the need for clear AI guidelines and standards for academic publishing to ensure responsible use and maintain scientific integrity.}
+      \field{issn}{0300-5712}
+      \field{journaltitle}{Journal of Dentistry}
+      \field{month}{10}
+      \field{title}{Estimating the use of ChatGPT in dental research publications}
+      \field{volume}{149}
+      \field{year}{2024}
+      \field{pages}{105275}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/J.JDENT.2024.105275
+      \endverb
+      \keyw{Artificial intelligence,ChatGPT,Dental research,Large-language model,Scientific communication}
+    \endentry
+    \entry{Walters2023}{article}{}
+      \name{author}{2}{}{%
+        {{hash=313a377c331ed76b6c51495181b6a8fd}{%
+           family={Walters},
+           familyi={W\bibinitperiod},
+           given={William\bibnamedelima H.},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=626df6ff41ad4993e4b5c02e0d590ad3}{%
+           family={Wilder},
+           familyi={W\bibinitperiod},
+           given={Esther\bibnamedelima Isabelle},
+           giveni={E\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{f7487405f83bd4ffd89e954ce59baa43}
+      \strng{fullhash}{f7487405f83bd4ffd89e954ce59baa43}
+      \strng{bibnamehash}{f7487405f83bd4ffd89e954ce59baa43}
+      \strng{authorbibnamehash}{f7487405f83bd4ffd89e954ce59baa43}
+      \strng{authornamehash}{f7487405f83bd4ffd89e954ce59baa43}
+      \strng{authorfullhash}{f7487405f83bd4ffd89e954ce59baa43}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Although chatbots such as ChatGPT can facilitate cost-effective text generation and editing, factually incorrect responses (hallucinations) limit their utility. This study evaluates one particular type of hallucination: fabricated bibliographic citations that do not represent actual scholarly works. We used ChatGPT-3.5 and ChatGPT-4 to produce short literature reviews on 42 multidisciplinary topics, compiling data on the 636 bibliographic citations (references) found in the 84 papers. We then searched multiple databases and websites to determine the prevalence of fabricated citations, to identify errors in the citations to non-fabricated papers, and to evaluate adherence to APA citation format. Within this set of documents, 55\% of the GPT-3.5 citations but just 18\% of the GPT-4 citations are fabricated. Likewise, 43\% of the real (non-fabricated) GPT-3.5 citations but just 24\% of the real GPT-4 citations include substantive citation errors. Although GPT-4 is a major improvement over GPT-3.5, problems remain.}
+      \field{isbn}{0123456789}
+      \field{issn}{2045-2322}
+      \field{issue}{1}
+      \field{journaltitle}{Scientific Reports 2023 13:1}
+      \field{month}{9}
+      \field{title}{Fabrication and errors in the bibliographic citations generated by ChatGPT}
+      \field{volume}{13}
+      \field{year}{2023}
+      \field{pages}{14045\bibrangedash}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1038/s41598-023-41032-5
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41598-023-41032-5
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41598-023-41032-5
+      \endverb
+      \keyw{Information technology,Software}
+    \endentry
+    \entry{Weber-Wulff2023}{article}{}
+      \name{author}{8}{}{%
+        {{hash=be8b95b67aa9d2283d3c09646e0efe01}{%
+           family={Weber-Wulff},
+           familyi={W\bibinithyphendelim W\bibinitperiod},
+           given={Debora},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6d11f7fb3fe51a55f95bf352710e8ed7}{%
+           family={Anohina-Naumeca},
+           familyi={A\bibinithyphendelim N\bibinitperiod},
+           given={Alla},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7e5948a1619c5e3b03c4de9eeb6d61e4}{%
+           family={Bjelobaba},
+           familyi={B\bibinitperiod},
+           given={Sonja},
+           giveni={S\bibinitperiod}}}%
+        {{hash=821b5153aab63036747b07791565e429}{%
+           family={Foltýnek},
+           familyi={F\bibinitperiod},
+           given={Tomáš},
+           giveni={T\bibinitperiod}}}%
+        {{hash=dd7b189b9bd4d39bedae37b73ed559c2}{%
+           family={Guerrero-Dib},
+           familyi={G\bibinithyphendelim D\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod}}}%
+        {{hash=730d62e8bc77156260cb6e06ab24684a}{%
+           family={Popoola},
+           familyi={P\bibinitperiod},
+           given={Olumide},
+           giveni={O\bibinitperiod}}}%
+        {{hash=a166fb03495b5f2489bf58f1ddbe8982}{%
+           family={Šigut},
+           familyi={Š\bibinitperiod},
+           given={Petr},
+           giveni={P\bibinitperiod}}}%
+        {{hash=7a446401908c09e524d2256ad72c3fdc}{%
+           family={Waddington},
+           familyi={W\bibinitperiod},
+           given={Lorna},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {BioMed Central Ltd}%
+      }
+      \strng{namehash}{10e6d7f8b88014847ea335e45ed54e45}
+      \strng{fullhash}{a193748cb2cd7c553153772d3b1a450d}
+      \strng{bibnamehash}{10e6d7f8b88014847ea335e45ed54e45}
+      \strng{authorbibnamehash}{10e6d7f8b88014847ea335e45ed54e45}
+      \strng{authornamehash}{10e6d7f8b88014847ea335e45ed54e45}
+      \strng{authorfullhash}{a193748cb2cd7c553153772d3b1a450d}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recent advances in generative pre-trained transformer large language models have emphasised the potential risks of unfair use of artificial intelligence (AI) generated content in an academic environment and intensified efforts in searching for solutions to detect such content. The paper examines the general functionality of detection tools for AI-generated text and evaluates them based on accuracy and error type analysis. Specifically, the study seeks to answer research questions about whether existing detection tools can reliably differentiate between human-written text and ChatGPT-generated text, and whether machine translation and content obfuscation techniques affect the detection of AI-generated text. The research covers 12 publicly available tools and two commercial systems (Turnitin and PlagiarismCheck) that are widely used in the academic setting. The researchers conclude that the available detection tools are neither accurate nor reliable and have a main bias towards classifying the output as human-written rather than detecting AI-generated text. Furthermore, content obfuscation techniques significantly worsen the performance of tools. The study makes several significant contributions. First, it summarises up-to-date similar scientific and non-scientific efforts in the field. Second, it presents the result of one of the most comprehensive tests conducted so far, based on a rigorous research methodology, an original document set, and a broad coverage of tools. Third, it discusses the implications and drawbacks of using detection tools for AI-generated text in academic settings.}
+      \field{issn}{18332595}
+      \field{issue}{1}
+      \field{journaltitle}{International Journal for Educational Integrity}
+      \field{month}{12}
+      \field{title}{Testing of detection tools for AI-generated text}
+      \field{volume}{19}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.1007/S40979-023-00146-Z
+      \endverb
+      \keyw{AI detectors,Academic integrity,Artificial intelligence,ChatGPT,Detection of AI-generated text,Generative pre-trained transformers,Machine-generated text}
+    \endentry
+    \entry{Wiley2025}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b509b361f8d7741155032e8ddc8e6caf}{%
+           family={Wiley},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b509b361f8d7741155032e8ddc8e6caf}
+      \strng{fullhash}{b509b361f8d7741155032e8ddc8e6caf}
+      \strng{bibnamehash}{b509b361f8d7741155032e8ddc8e6caf}
+      \strng{authorbibnamehash}{b509b361f8d7741155032e8ddc8e6caf}
+      \strng{authornamehash}{b509b361f8d7741155032e8ddc8e6caf}
+      \strng{authorfullhash}{b509b361f8d7741155032e8ddc8e6caf}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{title}{ExplanAItions: An AI study by Wiley}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.wiley.com/content/dam/wiley-com/en/pdfs/about/wiley-explanaItions-ai-study-february-2025vers3.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.wiley.com/content/dam/wiley-com/en/pdfs/about/wiley-explanaItions-ai-study-february-2025vers3.pdf
+      \endverb
+    \endentry
+    \entry{Xu2025}{article}{}
+      \name{author}{3}{}{%
+        {{hash=aa0a648585de06dc2fb1e2adbc4b7996}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Ziwei},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=1a8372a58ceed5ab43b8bebf86f5e189}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={Sanjay},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a02691416786c0fdd32147ce5485117a}{%
+           family={Kankanhalli},
+           familyi={K\bibinitperiod},
+           given={Mohan},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{19fe55f9187d9c8c079d16e01896c962}
+      \strng{fullhash}{19fe55f9187d9c8c079d16e01896c962}
+      \strng{bibnamehash}{19fe55f9187d9c8c079d16e01896c962}
+      \strng{authorbibnamehash}{19fe55f9187d9c8c079d16e01896c962}
+      \strng{authornamehash}{19fe55f9187d9c8c079d16e01896c962}
+      \strng{authorfullhash}{19fe55f9187d9c8c079d16e01896c962}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Hallucination has been widely recognized to be a significant drawback for large language models (LLMs). There have been many works that attempt to reduce the extent of hallucination. These efforts have mostly been empirical so far, which cannot answer the fundamental question whether it can be completely eliminated. In this paper, we formalize the problem and show that it is impossible to eliminate hallucination in LLMs. Specifically, we define a formal world where hallucination is defined as inconsistencies between a computable LLM and a computable ground truth function. By employing results from learning theory, we show that LLMs cannot learn all the computable functions and will therefore inevitably hallucinate if used as general problem solvers. Since the formal world is a part of the real world which is much more complicated, hallucinations are also inevitable for real world LLMs. Furthermore, for real world LLMs constrained by provable time complexity, we describe the hallucination-prone tasks and empirically validate our claims. Finally, using the formal world framework, we discuss the possible mechanisms and efficacies of existing hallucination mitigators as well as the practical implications on the safe deployment of LLMs.}
+      \field{month}{2}
+      \field{title}{Hallucination is Inevitable: An Innate Limitation of Large Language Models}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2401.11817
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2401.11817
+      \endverb
+    \endentry
+    \entry{Zheng2023}{article}{}
+      \name{author}{2}{}{%
+        {{hash=565cc07bc029ba80c9fa7b511a92b668}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Haoyi},
+           giveni={H\bibinitperiod}}}%
+        {{hash=74f69820f73b09c38b1f3be0cc8732db}{%
+           family={Zhan},
+           familyi={Z\bibinitperiod},
+           given={Huichun},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier Inc.}%
+      }
+      \strng{namehash}{f65ca8a01de1599479d80802553df00f}
+      \strng{fullhash}{f65ca8a01de1599479d80802553df00f}
+      \strng{bibnamehash}{f65ca8a01de1599479d80802553df00f}
+      \strng{authorbibnamehash}{f65ca8a01de1599479d80802553df00f}
+      \strng{authornamehash}{f65ca8a01de1599479d80802553df00f}
+      \strng{authorfullhash}{f65ca8a01de1599479d80802553df00f}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{15557162}
+      \field{issue}{8}
+      \field{journaltitle}{American Journal of Medicine}
+      \field{month}{8}
+      \field{title}{ChatGPT in Scientific Writing: A Cautionary Tale}
+      \field{volume}{136}
+      \field{year}{2023}
+      \field{pages}{725\bibrangedash 726.e6}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1016/j.amjmed.2023.02.011
+      \endverb
+      \verb{urlraw}
+      \verb https://www.amjmed.com/action/showFullText?pii=S0002934323001596 https://www.amjmed.com/action/showAbstract?pii=S0002934323001596 https://www.amjmed.com/article/S0002-9343(23)00159-6/abstract
+      \endverb
+      \verb{url}
+      \verb https://www.amjmed.com/action/showFullText?pii=S0002934323001596%20https://www.amjmed.com/action/showAbstract?pii=S0002934323001596%20https://www.amjmed.com/article/S0002-9343(23)00159-6/abstract
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

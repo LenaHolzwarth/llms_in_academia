@@ -1,1 +1,53 @@
 \section{Results}\label{sec:results}
+\subsection{Simulation}
+%comment: these plots should ideally also include the sampling distribution (or put that in the methods?)
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{../results/plots/ground_truth_simulation/500_words.png}
+    \caption{}
+    \label{fig:simulation500}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{../results/plots/ground_truth_simulation/500_words_overview.png}
+    \caption{}
+    \label{fig:simulation_overview}
+\end{figure}
+
+\subsection{Individual word estimates?}
+%comment: might be interesting to include section comparison of individual words, need the plots for that
+\subsection{Word list estimates}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/5y_2025_lower_bound_non_lemmatized_.png}
+    \caption{}
+    \label{fig:2025_optimization}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/group_freqs_time.png}
+    \caption{}
+    \label{fig:monthly_est}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f_crop255/group_freqs_time.png}
+    \caption{}
+    \label{fig:monthly_est_crop255}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/group_freqs_section_single_panel.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f_crop255/group_freqs_section_single_panel.png}
+    \end{minipage}
+    \caption{Shared caption describing both images}
+    %comment: re-do this to only have one colorbar and title referring to full sections/cropped sections, also there should be no line connecting the dots 
+    \label{fig:est_per_section}
+\end{figure}

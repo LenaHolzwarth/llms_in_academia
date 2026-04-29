@@ -7,7 +7,7 @@ Proponents of the technology praise it as a tool for accessibility and inclusivi
 However, the surge of ChatGPT's popularity is accompanied by concerns of misuse\cite{Liebrenz2023, Zheng2023}.
 Because LLMs are prone to hallucination, if their output is not thoroughly checked before using it in a paper, false or misleading statements might be published, especially if the review is also done by an LLM\cite{Alansari2026, Lindsay2023, Walters2023, Xu2025}.
 Chatbots also make scientific fraud much easier, with the possibility to fabricate entire papers at the cost of a single prompt\cite{Kendall2024}.  
-Reviewers relying on LLMs to generate their review are vulnerable to hidden prompts in the paper's text, telling the LLM to give a positive review\cite{Lin2025hiddenprompts}.
+Reviewers relying on LLMs to generate their review are vulnerable to hidden prompts in the paper's text, telling the LLM to give a positive review\cite{Lin2025_hidden_prompts}.
 In light of these concerns, many journals have issued guidelines about the disclosure of LLM-use\cite{Brainard2023}. 
 However, the perception of LLM-use leading to inaccuracies in the text, together with journals restricting or explicitly banning certain use-cases\cite{Thorp2023} may incentivize academics against disclosing.
 Consequently, when trying to find out how prevalent LLM-use is in academia, and especially in the paper-writing process, relying on self-disclosure statements will lead to underestimation\cite{Kousha2024, Kwon2025}.
@@ -43,9 +43,9 @@ Both use cases will lead to some LLM-suggested words being present in the final 
 
 Here, we expand on their work on excess word frequency as a lower bound estimate of LLM use in biomedical abstracts by making the following contributions:
 \begin{itemize}
-    \item \textbf{Widening the focus} from an analyzing only the abstract to the entire paper. By using the open-access PubMed Central (PMC) dataset instead of PubMed, the proportion of LLM-assisted text in the main part of the paper can be compared with usage in the abstract, and different sections within the body can also be compared against each other. We expect that different sections will show different usage patterns.
+    \item \textbf{Widening the focus} from an analyzing only the abstract to the entire paper. By using the open-access PubMed Central (PMC) dataset\cite{pmc} instead of PubMed, the proportion of LLM-assisted text in the main text of the paper can be compared with usage in the abstract, and different sections within the body can also be compared against each other. 
     \item Deriving a \textbf{stronger lower bound} metric going beyond excess frequency. While excess frequency is an intuitive estimate for LLM use, it severely underestimates the true proportion of LLM-assisted text, as will be shown. 
-    \item Computing \textbf{uncertainty measures} and performing tests on simulated data to increase confidence in the estimates. The disadvantage of any data-driven approach is the lack of a ground-truth set to test performance with. By simulating the data generation process in a Binomial model of word occurrence, we can evaluate our metric for several ground-truth levels of LLM use.
+    \item Computing \textbf{uncertainty measures} and performing tests on simulated data to increase confidence in the estimates. A disadvantage of the previous approach is the lack of a ground-truth set to test performance with. By simulating the data generation process in a Binomial model of word occurrence, we can evaluate our metric for several ground-truth levels of LLM use.
     \item \textbf{Comparing} the LLM use estimates with those of other approaches at estimation, as well as survey data asking researchers about their LLM use. Unlike previous studies, we find that LLM-like language has almost completely permeated academic writing.
 \end{itemize}
  
