@@ -8,7 +8,7 @@ ARTICLE_TYPE = "research-article"
 FULL_TEXT = True
 BASELINE_NAME = "baseline_2026-01-23"
 DATA_PATH = os.path.join("../data", BASELINE_NAME, "formatted")
-VERSION = ["", "crop", "sample"]
+VERSION = [""]#, "crop", "sample"]
 MAX_LEN = 255
 
 for version in VERSION:
@@ -51,13 +51,13 @@ for version in VERSION:
 
     
     #print("computing group frequency")
-    utils.compute_group_frequency(results_path=RESULTS_PATH, monthly=False)
-    utils.compute_group_frequency(results_path=RESULTS_PATH, monthly=True)
+    #utils.compute_group_frequency(results_path=RESULTS_PATH, monthly=False)
+    #utils.compute_group_frequency(results_path=RESULTS_PATH, monthly=True)
     
 
-    print("computing group frequency projection")
-    utils.compute_frequency_projection(RESULTS_PATH, group_prefix="group_", pred_range=5, end_date="2023")
-    utils.compute_frequency_projection(RESULTS_PATH, group_prefix="group_", pred_range=5*12)
+    #print("computing group frequency projection")
+    #utils.compute_frequency_projection(RESULTS_PATH, group_prefix="group_", pred_range=5, end_date="2023")
+    #utils.compute_frequency_projection(RESULTS_PATH, group_prefix="group_", pred_range=5*12)
 
 
 print("--- %s minutes ---" % ((time.time() - start_time) / 60))

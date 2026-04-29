@@ -5,10 +5,12 @@ import math
 import pandas as pd
 import numpy as np
 import scipy as sp
+import regex as re
 from tqdm import tqdm
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk.stem import WordNetLemmatizer
 from sklearn.linear_model import LinearRegression
+from collections import Counter
 
 
 def load_paper_df(
@@ -124,6 +126,8 @@ def compute_word_frequency(
     }
 
     filters_dict["all_dates"] = list(map(str, df["date"].values))
+    filters_dict["all_countries"] = df["country"].values
+    filters_dict["all_journals"] = df["journal"].values
 
     sections.append("abstract")
     if full_text:
@@ -261,9 +265,10 @@ def compute_group_frequency(results_path: str, monthly: bool = True):
             os.path.join(results_path, sec, f"words_{sec}.pkl.npy"), allow_pickle=True
         )
         words_rare = np.load(
-            os.path.join(results_path, sec, f"optimized_excess_words_{sec}.pkl.npy"), allow_pickle=True
+            os.path.join(results_path, sec, f"optimized_excess_words_{sec}.pkl.npy"),
+            allow_pickle=True,
         )
-        
+
         ind_words_common = np.isin(words, chatgptwords_common)
         ind_words_rare = np.isin(words, words_rare)
 
@@ -277,18 +282,18 @@ def compute_group_frequency(results_path: str, monthly: bool = True):
                     for k, ind_words in enumerate([ind_words_common, ind_words_rare]):
                         # count how many times any word from the selection appears in each month
                         group_counts[k, 12 * j + i] = np.sum(
-                        np.sum(X[ind, :][:, ind_words], axis=1) > 0
+                            np.sum(X[ind, :][:, ind_words], axis=1) > 0
                         )
                         # count papers per month
                         group_totals[12 * j + i] = np.sum(ind)
-            
+
             timeline = [f"{m}-{y}" for y in years for m in months]
         else:
             group_counts = np.zeros((2, years.size))
             group_totals = np.zeros(years.size)
 
             for j, year in enumerate(years):
-                ind = (dates.year == year)
+                ind = dates.year == year
                 for k, ind_words in enumerate([ind_words_common, ind_words_rare]):
                     # count how many times any word from the selection appears in each year
                     group_counts[k, j] = np.sum(
@@ -296,10 +301,9 @@ def compute_group_frequency(results_path: str, monthly: bool = True):
                     )
                     # count papers per year
                     group_totals[j] = np.sum(ind)
-            
+
             timeline = years
 
-         
         group_count_df = pd.DataFrame(
             dict(zip(timeline, list(group_counts.astype(int).T))),
             index=["common_words", "rare_words"],
@@ -312,10 +316,18 @@ def compute_group_frequency(results_path: str, monthly: bool = True):
         )
 
         group_count_df.to_csv(
-            os.path.join(results_path, sec, f"group_count_df_{"monthly" if monthly else "yearly"}.csv.gz")
+            os.path.join(
+                results_path,
+                sec,
+                f"group_count_df_{"monthly" if monthly else "yearly"}.csv.gz",
+            )
         )
         group_freqs_df.to_csv(
-            os.path.join(results_path, sec, f"group_freqs_df_{"monthly" if monthly else "yearly"}.csv.gz")
+            os.path.join(
+                results_path,
+                sec,
+                f"group_freqs_df_{"monthly" if monthly else "yearly"}.csv.gz",
+            )
         )
 
 
@@ -345,16 +357,20 @@ def compute_frequency_projection(
         group_prefix: one of "" (projections for individual words),
                       "group_" (projections for word groups)
     """
-    if pred_range < 12: #this is a bit hacky, but oh well
+    if pred_range < 12:  # this is a bit hacky, but oh well
         monthly = False
-    else: 
+    else:
         monthly = True
 
     secs = next(os.walk(results_path))[1]
     for sec in secs:
         print(f"computing projection for section {sec}")
         freqs_df = pd.read_csv(
-            os.path.join(results_path, sec, f"{group_prefix}freqs_df_{"monthly" if monthly else "yearly"}.csv.gz"),
+            os.path.join(
+                results_path,
+                sec,
+                f"{group_prefix}freqs_df_{"monthly" if monthly else "yearly"}.csv.gz",
+            ),
             compression="gzip",
             index_col=0,
         )
@@ -363,17 +379,42 @@ def compute_frequency_projection(
             freqs_df, pred_range, end_date
         )
 
-        np.save(os.path.join(results_path, sec, f"{group_prefix}freqs_predrange{pred_range}.npy"), freqs)
-        np.save(os.path.join(results_path, sec, f"{group_prefix}proj_predrange{pred_range}.npy"), proj)
-        np.save(os.path.join(results_path, sec, f"{group_prefix}ratios_predrange{pred_range}.npy"), ratios)
-        np.save(os.path.join(results_path, sec, f"{group_prefix}diffs_predrange{pred_range}.npy"), diffs)
-        np.save(os.path.join(results_path, sec, f"{group_prefix}sdev_predrange{pred_range}.npy"), sdev)
+        np.save(
+            os.path.join(
+                results_path, sec, f"{group_prefix}freqs_predrange{pred_range}.npy"
+            ),
+            freqs,
+        )
+        np.save(
+            os.path.join(
+                results_path, sec, f"{group_prefix}proj_predrange{pred_range}.npy"
+            ),
+            proj,
+        )
+        np.save(
+            os.path.join(
+                results_path, sec, f"{group_prefix}ratios_predrange{pred_range}.npy"
+            ),
+            ratios,
+        )
+        np.save(
+            os.path.join(
+                results_path, sec, f"{group_prefix}diffs_predrange{pred_range}.npy"
+            ),
+            diffs,
+        )
+        np.save(
+            os.path.join(
+                results_path, sec, f"{group_prefix}sdev_predrange{pred_range}.npy"
+            ),
+            sdev,
+        )
 
 
 def frequency_projection(
     freqs_df: pd.DataFrame, pred_range: int = 24, end_date: str = "11-2022"
 ):
-    """worker function for frequency_projection: uses linear regression
+    """worker function for compute_frequency_projection: uses linear regression
     to predict trends in monthly word frequency for a single frequency
     dataframe
 
@@ -592,6 +633,166 @@ def get_cutoff_frequency(
     return group_freqs_df
 
 
+def get_country_frequency(results_path: str, sec: str):
+    """get dataframe of frequencies (for one section) of different countries
+    Frequencies are group frequencies computed with the suboptimal word list for
+    each section. (the suboptimal word list is the word list corresponding to the
+    cutoff immediately lower than the optimal cutoff for each section. )
+
+    """
+
+    with open(os.path.join(results_path, "filters.json")) as f:
+        filters = json.load(f)
+    dates = pd.to_datetime(filters["all_dates"])
+    countries = filters["all_countries"]
+
+    results_path = os.path.join(results_path, sec)
+    freqs_path = os.path.join(results_path, f"5y_country_freqs_df.csv.gz")
+
+    if os.path.exists(freqs_path):
+        print("loading country freqs")
+        group_freqs_df = pd.read_csv(
+            freqs_path,
+            compression="gzip",
+            index_col=0,
+        )
+
+    else:
+        print("computing country freqs")
+        years = np.arange(2000, 2026)
+
+        X = sp.sparse.load_npz(os.path.join(results_path, f"count_{sec}.pkl.npz"))
+        words = np.load(
+            os.path.join(results_path, f"words_{sec}.pkl.npy"), allow_pickle=True
+        )
+        excess_words = np.load(
+            os.path.join(results_path, f"subsuboptimized_excess_words_{sec}.pkl.npy"),
+            allow_pickle=True,
+        )
+        excess_ind = np.isin(words, excess_words)
+
+        # one entry for each country, and for english- and non-english-speaking
+        country_groups = list(common_countries.keys()) + ["english", "non-english"]
+        group_counts = np.zeros((len(country_groups), years.size))
+        group_totals = np.zeros((len(country_groups), years.size))
+
+        for k, country in enumerate(country_groups):
+            if country == "english":
+                country_ind = np.isin(countries, list(english_speaking.keys()))
+            elif country == "non-english":
+                country_ind = np.isin(countries, None, invert=True) & np.isin(
+                    countries, list(english_speaking.keys()), invert=True
+                )
+            else:
+                country_ind = np.isin(countries, country)
+
+            for j, year in enumerate(years):
+
+                ind = (dates.year == year) & country_ind
+
+                group_counts[k, j] = np.sum(
+                    np.sum(X[ind, :][:, excess_ind], axis=1) > 0
+                )
+                group_totals[k, j] = np.sum(ind)
+        
+        year_str = list(map(str, years))
+        group_count_df = pd.DataFrame(
+            dict(zip(year_str, list(group_counts.astype(int).T))),
+            index=country_groups,
+        )
+        freqs = (group_counts + 1) / (group_totals + 1)
+        group_freqs_df = pd.DataFrame(
+            dict(zip(year_str, list(freqs.T))), index=group_count_df.index
+        )
+
+        freqs, proj, _, diffs, sdev = frequency_projection(
+            group_freqs_df, pred_range=5, end_date="2023"
+        )
+        usage = diffs / (1 - proj)
+        group_freqs_df = restructure_freqs(group_freqs_df, proj, diffs, usage, sdev)
+        group_freqs_df["paper_counts"] = group_totals[:,2018-2000:].T.flatten()
+        group_freqs_df.to_csv(os.path.join(freqs_path))
+    
+    return group_freqs_df
+
+def get_discipline_frequency(results_path: str, sec: str):
+    """get dataframe of frequencies (for one section) of different journal's 
+    research disciplines.
+    Frequencies are group frequencies computed with the optimal word list for
+    each section. (Optimal w.r.t. the full set of papers, probably not optimal
+    for the individual subsets)
+    """
+
+    with open(os.path.join(results_path, "filters.json")) as f:
+        filters = json.load(f)
+    dates = pd.to_datetime(filters["all_dates"])
+    journals = filters["all_journals"]
+
+    results_path = os.path.join(results_path, sec)
+    freqs_path = os.path.join(results_path, f"5y_discipline_freqs_df.csv.gz")
+
+    if os.path.exists(freqs_path):
+        print("loading discipline freqs")
+        group_freqs_df = pd.read_csv(
+            freqs_path,
+            compression="gzip",
+            index_col=0,
+        )
+    
+    else:
+        print("computing discipline freqs")
+        years = np.arange(2000, 2026)
+
+        X = sp.sparse.load_npz(os.path.join(results_path, f"count_{sec}.pkl.npz"))
+        words = np.load(
+            os.path.join(results_path, f"words_{sec}.pkl.npy"), allow_pickle=True
+        )
+        excess_words = np.load(
+            os.path.join(results_path, f"subsuboptimized_excess_words_{sec}.pkl.npy"),
+            allow_pickle=True,
+        )
+        excess_ind = np.isin(words, excess_words)
+
+        journal_names = list(set(journals))
+        journal_dict = {}
+        for j in journal_names:
+            journal_dict[j] = find_discipline(j)
+        disciplines = [journal_dict[j] for j in journals]
+        count = Counter(disciplines)
+        key_disciplines = [l for l, c in count.items() if c > 5000 and l != None]
+
+        group_counts = np.zeros((len(key_disciplines), years.size))
+        group_totals = np.zeros((len(key_disciplines), years.size))
+
+        for k, dis in enumerate(key_disciplines):
+            dis_ind = np.isin(disciplines, dis)
+            for j, year in enumerate(years):
+                ind = (dates.year == year) & dis_ind
+                group_counts[k, j] = np.sum(
+                    np.sum(X[ind, :][:, excess_ind], axis=1) > 0
+                )
+                group_totals[k, j] = np.sum(ind)
+        
+        year_str = list(map(str, years))
+        group_count_df = pd.DataFrame(
+            dict(zip(year_str, list(group_counts.astype(int).T))),
+            index=key_disciplines,
+        )
+        freqs = (group_counts + 1) / (group_totals + 1)
+        group_freqs_df = pd.DataFrame(
+            dict(zip(year_str, list(freqs.T))), index=group_count_df.index
+        )
+
+        freqs, proj, _, diffs, sdev = frequency_projection(
+            group_freqs_df, pred_range=5, end_date="2023"
+        )
+        usage = diffs / (1 - proj)
+        group_freqs_df = restructure_freqs(group_freqs_df, proj, diffs, usage, sdev)
+        group_freqs_df["paper_counts"] = group_totals[:,2018-2000:].T.flatten()
+        group_freqs_df.to_csv(os.path.join(freqs_path))
+    
+    return group_freqs_df
+
 def restructure_freqs(
     freqs_df: pd.DataFrame,
     proj: np.ndarray,
@@ -600,6 +801,7 @@ def restructure_freqs(
     sdev: np.ndarray,
     start_date: str = "2018",
     end_date: str = "2025",
+    index_name: str = "cutoff",
 ):
 
     start_i = list(freqs_df.columns.values).index(start_date)
@@ -616,7 +818,7 @@ def restructure_freqs(
     freqs_df = (
         pd.melt(freqs_df, ignore_index=False)
         .reset_index()
-        .rename(columns={"index": "cutoff", "variable": "time", "value": "frequency"})
+        .rename(columns={"index": index_name, "variable": "time", "value": "frequency"})
     )
     proj_df = pd.melt(proj_df, ignore_index=False).reset_index()
     diffs_df = pd.melt(diffs_df, ignore_index=False).reset_index()
@@ -710,11 +912,11 @@ def load_freqs(
             "functionality for time span outside of prediction range not yet implemented"
         )
     """
-    if pred_range < 12: #this is a bit hacky, but oh well
+    if pred_range < 12:  # this is a bit hacky, but oh well
         monthly = False
-    else: 
+    else:
         monthly = True
-    
+
     if monthly:
         # build continuous time axis for plotting (i.e. 2020.83 corresponds to nov-2020)
         start_split = start_date.split("-")
@@ -725,7 +927,7 @@ def load_freqs(
             1 / 12,
         )
     else:
-        dates = np.arange(int(start_date), int(end_date)+1)
+        dates = np.arange(int(start_date), int(end_date) + 1)
 
     secs = next(os.walk(data_path))[1]
 
@@ -738,11 +940,15 @@ def load_freqs(
 
     for sec in secs:
         df = pd.read_csv(
-            os.path.join(data_path, sec, f"{group_prefix}freqs_df_{"monthly" if monthly else "yearly"}.csv.gz"),
+            os.path.join(
+                data_path,
+                sec,
+                f"{group_prefix}freqs_df_{"monthly" if monthly else "yearly"}.csv.gz",
+            ),
             compression="gzip",
             index_col=0,
         )
-        #df = df[df.index.str.len() > 3]
+        # df = df[df.index.str.len() > 3]
 
         start_i = list(df.columns.values).index(start_date)
         end_i = list(df.columns.values).index(end_date) + 1
@@ -751,24 +957,40 @@ def load_freqs(
         selection_mask = [x in words for x in df.index]
         selection_i = df.iloc[selection_mask].index
 
-        proj = np.load(os.path.join(data_path, sec, f"{group_prefix}proj_predrange{pred_range}.npy"))
+        proj = np.load(
+            os.path.join(
+                data_path, sec, f"{group_prefix}proj_predrange{pred_range}.npy"
+            )
+        )
         # if the time span given here doesn't line up with the prediction span,
         # here is the place to adjust the shape of proj to match x_months
         proj_dfs[sec] = pd.DataFrame(
             proj[selection_mask, :], index=selection_i, columns=dates
         )
 
-        diff = np.load(os.path.join(data_path, sec, f"{group_prefix}diffs_predrange{pred_range}.npy"))
+        diff = np.load(
+            os.path.join(
+                data_path, sec, f"{group_prefix}diffs_predrange{pred_range}.npy"
+            )
+        )
         diff_dfs[sec] = pd.DataFrame(
             diff[selection_mask, :], index=selection_i, columns=dates
         )
 
-        ratio = np.load(os.path.join(data_path, sec, f"{group_prefix}ratios_predrange{pred_range}.npy"))
+        ratio = np.load(
+            os.path.join(
+                data_path, sec, f"{group_prefix}ratios_predrange{pred_range}.npy"
+            )
+        )
         ratio_dfs[sec] = pd.DataFrame(
             ratio[selection_mask, :], index=selection_i, columns=dates
         )
 
-        sdev = np.load(os.path.join(data_path, sec, f"{group_prefix}sdev_predrange{pred_range}.npy"))
+        sdev = np.load(
+            os.path.join(
+                data_path, sec, f"{group_prefix}sdev_predrange{pred_range}.npy"
+            )
+        )
         sdev_dfs[sec] = pd.DataFrame(
             sdev[selection_mask, :], index=selection_i, columns=dates
         )
@@ -777,7 +999,6 @@ def load_freqs(
         usage_dfs[sec] = pd.DataFrame(
             usage[selection_mask, :], index=selection_i, columns=dates
         )
-
 
     frequency_dfs = restructure_by_words(frequency_dfs, words, secs, dates)
     proj_dfs = restructure_by_words(proj_dfs, words, secs, dates)
@@ -877,6 +1098,29 @@ def sample_section(sec: str, max_len: int):
     else:
         return " ".join(random.sample(sec_words, max_len))
 
+def find_discipline(journal):
+
+    best_label = None
+
+    if not journal == None:
+        journal = journal.lower()
+        best_pos = -1
+
+        for lab in discipline_color_legend.keys():
+            pattern = re.compile(rf"\b{lab}\b")
+            for match in pattern.finditer(journal):  # catch word repetition
+                if match.start() > best_pos:
+                    best_pos = match.start()
+                    best_label = lab
+        if best_label == None:  # if label is part of a word
+            for lab in discipline_color_legend.keys():
+                pattern = re.compile(rf"{lab}")
+                for match in pattern.finditer(journal):
+                    if match.start() > best_pos:
+                        best_pos = match.start()
+                        best_label = lab
+
+    return best_label
 
 def se(
     p: float,
@@ -887,7 +1131,7 @@ def se(
     function: str = "g",
 ):
     """
-    compute the variance of a function of random variables p and q. 
+    compute the variance of a function of random variables p and q.
     q always has binomial variance determined by n, the variance of p is
     either also binomial or from a regression or both added
     """
@@ -913,14 +1157,15 @@ def se(
         var = var_g(p, var_p, q, n)[0][0]
     elif function == "delta":
         var = var_delta(var_p, q, n)
-    
+
     assert var >= 0
     return math.sqrt(var)
 
+
 def var_g(p: float, var_p: float, q: float, n: int):
     """
-    compute the variance of function g=(q-p)/(1-p) by propagating the 
-    variances of q and p. q always has binomial variance determined by n, 
+    compute the variance of function g=(q-p)/(1-p) by propagating the
+    variances of q and p. q always has binomial variance determined by n,
     the variance of p is given
     """
 
@@ -928,10 +1173,11 @@ def var_g(p: float, var_p: float, q: float, n: int):
     Sigma = np.asarray([[var_p, 0], [0, q * (1 - q) / n]])
     return grad_g.T @ Sigma @ grad_g
 
+
 def var_delta(var_p: float, q: float, n: int):
     """
-    compute the variance of function delta=(q-p) by propagating the 
-    variances of q and p. q always has binomial variance determined by n, 
+    compute the variance of function delta=(q-p) by propagating the
+    variances of q and p. q always has binomial variance determined by n,
     the variance of p is given
     """
     return var_p + q * (1 - q) / n
@@ -951,9 +1197,12 @@ def get_totals(results_path: str, start_date: str, end_date: str):
         totals_y[year] = np.sum(dates.year == year)
         totals_m[year] = {}
         for month in range(1, 13):
-            totals_m[year][month] = np.sum((dates.year == year) & (dates.month == month))
-    
+            totals_m[year][month] = np.sum(
+                (dates.year == year) & (dates.month == month)
+            )
+
     return totals_m, totals_y
+
 
 # lemmatized excess style words for 2024 pubmed abstracts
 excess_style_words_2024_lemmatized = [
@@ -2003,3 +2252,78 @@ uncertain_list = [
     "online",  # "materials available online", "online course"
     "please",  # as in "please refer to", but also "patients were pleased"
 ]
+
+common_countries = {
+    "China": 298808,
+    "United States of America": 286498,
+    "United Kingdom of Great Britain and Northern Ireland": 94145,
+    "Japan": 81175,
+    "Germany": 74549,
+    "Italy": 39332,
+    "Canada": 39320,
+    "Netherlands": 38379,
+    "France": 36364,
+    "Australia": 31890,
+    "Korea, Republic of": 31654,
+    "Spain": 30776,
+    "Brazil": 27977,
+    "India": 23392,
+    "Sweden": 22306,
+    "Switzerland": 20519,
+    "Taiwan": 16272,
+    "Iran, Islamic Republic of": 15251,
+    "Türkiye": 13516,
+    "Poland": 11998,
+}
+
+english_speaking = {
+    "United States of America": 286498,
+    "United Kingdom of Great Britain and Northern Ireland": 94145,
+    "Canada": 39320,
+    "Australia": 31890,
+    "South Africa": 4288,
+    "Ireland": 4188,
+    "New Zealand": 3932,
+}
+
+discipline_color_legend = {
+    "cancer": "black",
+    "neuroscience": "#aeaa00",
+    "cardiology": "#1CE6FF",
+    "ecology": "#FF34FF",
+    "bioinformatics": "#FF4A46",
+    "chemistry": "#008941",
+    "surgery": "#006FA6",
+    "environment": "#0089A3",
+    "material": "#0000A6",
+    "microbiology": "#B79762",
+    "pediatric": "#004D43",
+    "immunology": "#8FB0FF",
+    "psychology": "#5A0007",
+    "psychiatry": "#BA0900",
+    "genetics": "#1B4400",
+    "nutrition": "#4FC601",
+    "veterinary": "#3B5DFF",
+    "engineering": "#00C2A0",
+    "education": "#549E79",
+    "physics": "#BC23FF",
+    "optics": "#C895C5",
+    "nursing": "#FF2F80",
+    "neurology": "#009271",
+    "radiology": "#00FECF",
+    "ophthalmology": "#A4E804",
+    "gynecology": "#FFB500",
+    "rehabilitation": "#6B002C",
+    "pathology": "#FF9408",
+    "anesthesiology": "#CC0744",
+    "dermatology": "#D790FF",
+    "pharmacology": "#5B4534",
+    "physiology": "#E83000",
+    "virology": "#6F0062",
+    "biochemistry": "#b65141",
+    "computation": "#C20078",
+    "infectious": "#7A4900",
+    "healthcare": "#FF90C9",
+    "ethics": "#6508ba",
+    "dentistry": "#8e4d8a",
+}
