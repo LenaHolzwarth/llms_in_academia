@@ -1,10 +1,72 @@
 \section{Discussion}\label{sec:discussion}
 
-\begin{itemize}
-    \item advantage of not relying on ground-truth text: not vulnerable to different results stemming from different prompting strategies (Dou enhancing robustness 2024) (disadvantage is only lower bound, but as was shown, we get reasonably close to the actual value)
-    \item going beyond word frequency: other linguistic markers as LLM indicators (perplexity, sentiment, part-of-speech, vocab size and density) e.g. \cite{Guo2023}, Bao Tong 2025, or intrinsic text embedding dimensionality \cite{Tulchinskii2023}, or repeated higher-order n-grams \cite{Gall2021} (although this is for GPT2 and might be no longer true)
-    \item non-english speaking word distribution starts to assimilate to english-speaking -> ChatGPT as linguistic Equalizer (Lin 2025, Prakash 2025)
-    \item impact / normative evaluation: overcoming language barriers, science papers rely on the data that is being reported, writing style is not immediately important. However, writing is a technology to sharpen our thinking. It takes effort to write something down. In deciding how exactly to phrase something, we are forced to think very precisely about our work, a level of scrutiny which makes it more likely that leaps of logic will be adressed that could not have been caught by the LLM 
-\end{itemize}
+\subsection{The estimate $\hbet$ reliably predicts LLM-use}
+The LLM-use estimate $\hbet$ introduced in this work is a lower bound on actual LLM use derived from observed and counter-factual word frequencies. 
+It makes use of the observation that LLMs show a preference for a group of words identified by Kobak et al., which they call excess style words  \cite{Kobak2025}.
+By tracking the excess word frequency in a corpus before the wide-spread availability of Chatbots, we can estimate the frequency expected for the following years without the influence of LLMs on the writing process, $\hph$. 
+To accurately determine LLM-use $\beta$, we would also need access to the frequency in a corpus of LLM-generated or LLM-assisted text.
+Because this is not possible (without creating a curated collection of LLM-text), we replace $\pl$ with 1 in the equation for $\beta$, arriving at the lower bound $\hbet$.
+\\
+While $\hbet$ is a lower bound, it moves closer to true $\beta$ if $\pl$ gets closer to 1.
+This can be achieved by selecting a group of words with collective high frequency to base the estimates on, which we do by incrementally increasing the frequency cutoff determining which words are selected for the word list, and computing the estimate for each list.
+The danger of this approach is that if $\pl$ is very close to 1, so is $\hph$, resulting in both the numerator and denominator of the equation for $\hbet$ going towards 0, which causes strong fluctuation in the estimates, and yields division by zero errors in the worst case.
+To avoid this, we constrain the search for the optimal cutoff such that $\hph$ must be below $0.999$ and the standard deviation error must be no bigger than $0.025$.
+The simulation experiment tested the validity of this procedure.
+We were able to identify the correct underlying proportion of LLM-assisted text for every ground-truth value tested.
+This demonstrates the improvement toward the previous lower bound, $Delta$, which systematically underestimated LLM-use. 
+Notably, some cutoff values that would have lead to an overestimation were excluded from the analysis by the constraints, indicating their importance.
+The choice of $0.025$ as the maximum standard deviation is arbitrary, but has a potentially strong effect on the estimates.
+For example, the estimate for LLM-use in the results section for 2025 would have been somewhat higher, if a higher threshold would have been chosen (see Figure \ref{fig:2025_optimization}).
+Likewise, the estimates for the full paper reach their peak in the constrained regions for 2023 and 2024 (see Figures \ref{fig:2023_optimization} and \ref{fig:2023_optimization} in the Appendix).
+On the other hand, as shown in Figure \ref{fig:simulation500} in the $30\%$ panel, overestimation of the true LLM-use is possible.
+This should not happen in a lower bound metric, however, $\hbet$ is subject to some uncertainty, because it is computed with information that was empirically observed (in the case of $q$) or estimated with linear regression ($\hph$).
+%comment: maybe depletion is predicted by q=1? but then all estimates would be 1, and this is not true for all depleted metrics. it can't be ph > q, cause then the estimate would be below 0, for the same reason it cant be ph>pllm, cause that implies ph > q, so what could it be?
+The constraints on the standard deviation serve to keep this uncertainty in check, so the relatively conservative value of $0.025$ was chosen.
+\\
+Another peculiarity of the optimization curves is that they are almost always bell-shaped, and it is not clear why that should be the case.
+Intuitively, the LLM-use estimates should increase with the number of words in the word list, as more words equal more LLM-markers to potentially be detected.
+The bell shape could be an artifact of the estimates' increasing uncertainty.
+To get a clearer image of this, we would need to adapt the frequency sampling for the simulations.
+In the current version, the binomial probabilities that the simulation matrices are sampled from are distributed by a simple heuristic, such that the bulk of them have relatively low frequency with some outliers in the high-frequency region.
+%comment: get a similar plot for distribution of real frequencies
+However, in the optimization procedure, the observed and expected frequencies saturate to 1 much quicker than their empirical counterparts, such that they reach the constrained region of $\hph > 0.999$ earlier.
+A sampling procedure yielding a distribution nearer to the empirically observed ones could improve understanding of the metric when both $q$ and $\hph$ are moving towards 1.
 
+\subsection{LLM-use is continually on the rise across sections, countries and academic disciplines}
+We observe a steady increase in LLM-use over the last three years, going up to $77\%$ in the main body of papers from 2025, and $89\%$ in the main body of papers from December 2025, the last time span considered here.
+Using LLMs to edit or write certain parts of a paper has become commonplace in academia.
+As shown in Figure \ref{fig:monthly_est}, this trend starts almost immediately after the release of ChatGPT, indicating a fast adoption of the new technology by scientists.
+The rate of adoption also seems to follow a linear trend, which suggests that LLM-use is likely to continue growing in the future.
+The pattern of continually increasing LLM-use also holds for the investigated subsets of PMC.
+In all of the selected countries, language regions and academic disciplines, the highest LLM-use is observed in 2025, although the adoption is not as linear as in the combined set.
+For example, the USA, the Netherlands and Brazil only show significant signs of LLM-use starting in 2024 (see Figure \ref{fig:countries_all}).
+
+\subsection{LLMs are used more by NNES}
+In line with our expectations, LLMs are used nearly twice as much in majority NNES countries as opposed to NES countries.
+This trend has been reported in many other studies and surveys \cite{}. %comment: get citations.
+An interesting country in this context is Canada, where people are NES only in some regions.
+Accordingly, its LLM-usage is grouped between the NES and NNES countries.
+The only outlier with regard to LLM-use is France, which has the third-to-lowest usage estimate in 2025 and the second-to-lowest in 2024 out of all investigated countries.
+%how to explain? french people don't like technology?
+Interestingly, the increasing use of LLMs seems to lead to the assimilation of the word frequencies in NNES and NES text. 
+The frequencies of the selected word list was significantly higher in NES countries before the introduction of ChatGPT, but as of 2025, this gap is closed.
+Because the word list only contains style words, this means that LLMs don't only help to avoid mistakes, but help users to adapt to a NES writing style, acting as ``linguistic equalizer'' \cite{Lin2025_NES,Prakash2025}.
+
+\subsection{LLM-use estimates vary between sections}
+different cutoffs make it hard to compare sections, especially because, as previously discussed, some sections don't reach optimum within the constraints, but would reach optimum if the constraints would be slightly modified
+uncertainty and fluctuation is much bigger for full section, also exceeding the constraints, because the estimated were computed with the optimal word list for 2025, which might not be optimal for the previous years
+%comment: need section length plot!
+
+
+
+
+\subsection{Comparison to other estimation methods}
+ - advantage of not relying on ground-truth text: not vulnerable to different results stemming from different prompting strategies (Dou enhancing robustness 2024) (disadvantage is only lower bound, but as was shown, we get reasonably close to the actual value)
+- going beyond word frequency: other linguistic markers as LLM indicators (perplexity, sentiment, part-of-speech, vocab size and density) e.g. \cite{Guo2023}, Bao Tong 2025, or intrinsic text embedding dimensionality \cite{Tulchinskii2023}, or repeated higher-order n-grams \cite{Gall2021} (although this is for GPT2 and might be no longer true)
+
+
+\subsection{Limitations}
+
+\subsection{Impact}
+impact / normative evaluation: overcoming language barriers, science papers rely on the data that is being reported, writing style is not immediately important. However, writing is a technology to sharpen our thinking. It takes effort to write something down. In deciding how exactly to phrase something, we are forced to think very precisely about our work, a level of scrutiny which makes it more likely that leaps of logic will be adressed that could not have been caught by the LLM 
 

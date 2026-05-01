@@ -2081,50 +2081,6 @@
       \verb https://www.thelancet.com/action/showFullText?pii=S2589750023000195%20https://www.thelancet.com/action/showAbstract?pii=S2589750023000195%20https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00019-5/abstract
       \endverb
     \endentry
-    \entry{Lin2025_NES}{article}{}
-      \name{author}{4}{}{%
-        {{hash=3a23047d5abd8d13e06ddd448614900f}{%
-           family={Lin},
-           familyi={L\bibinitperiod},
-           given={Dingkang},
-           giveni={D\bibinitperiod}}}%
-        {{hash=1074905b39bc65674cbf11b5fcba44a9}{%
-           family={Zhao},
-           familyi={Z\bibinitperiod},
-           given={Naixuan},
-           giveni={N\bibinitperiod}}}%
-        {{hash=4031099eeb751e6c2ff3ed645198cb55}{%
-           family={Tian},
-           familyi={T\bibinitperiod},
-           given={Dan},
-           giveni={D\bibinitperiod}}}%
-        {{hash=7838d1fd402f86acdba8903425c487a1}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Jiang},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{75912466ce4f38d169035dbc678d54c0}
-      \strng{fullhash}{cb9b225b38ac32f056b208467e12c85d}
-      \strng{bibnamehash}{75912466ce4f38d169035dbc678d54c0}
-      \strng{authorbibnamehash}{75912466ce4f38d169035dbc678d54c0}
-      \strng{authornamehash}{75912466ce4f38d169035dbc678d54c0}
-      \strng{authorfullhash}{cb9b225b38ac32f056b208467e12c85d}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The advent of ChatGPT has profoundly reshaped scientific research practices, particularly in academic writing, where non-native English-speakers (NNES) historically face linguistic barriers. This study investigates whether ChatGPT mitigates these barriers and fosters equity by analyzing lexical complexity shifts across 2.8 million articles from OpenAlex (2020-2024). Using the Measure of Textual Lexical Diversity (MTLD) to quantify vocabulary sophistication and a difference-in-differences (DID) design to identify causal effects, we demonstrate that ChatGPT significantly enhances lexical complexity in NNES-authored abstracts, even after controlling for article-level controls, authorship patterns, and venue norms. Notably, the impact is most pronounced in preprint papers, technology- and biology-related fields and lower-tier journals. These findings provide causal evidence that ChatGPT reduces linguistic disparities and promotes equity in global academia.}
-      \field{month}{4}
-      \field{title}{ChatGPT as Linguistic Equalizer? Quantifying LLM-Driven Lexical Shifts in Academic Writing}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2504.12317v1
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2504.12317v1
-      \endverb
-    \endentry
     \entry{Lin2025_hidden_prompts}{article}{}
       \name{author}{1}{}{%
         {{hash=0f52d10e3c9586ef2dffc8905c582caf}{%
