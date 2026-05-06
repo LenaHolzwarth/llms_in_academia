@@ -52,13 +52,41 @@ Interestingly, the increasing use of LLMs seems to lead to the assimilation of t
 The frequencies of the selected word list was significantly higher in NES countries before the introduction of ChatGPT, but as of 2025, this gap is closed.
 Because the word list only contains style words, this means that LLMs don't only help to avoid mistakes, but help users to adapt to a NES writing style, acting as ``linguistic equalizer'' \cite{Lin2025_NES,Prakash2025}.
 
-\subsection{LLM-use estimates vary between sections}
-different cutoffs make it hard to compare sections, especially because, as previously discussed, some sections don't reach optimum within the constraints, but would reach optimum if the constraints would be slightly modified
-uncertainty and fluctuation is much bigger for full section, also exceeding the constraints, because the estimated were computed with the optimal word list for 2025, which might not be optimal for the previous years
+\subsection{LLM-use estimates vary between (some) sections}
+%comment: where to put this?: uncertainty and fluctuation is much bigger for full section, also exceeding the constraints, because the estimated were computed with the optimal word list for 2025, which might not be optimal for the previous years
 %comment: need section length plot!
 
-
-
+The LLM-use estimates of different sections were more similar than expected, with at most seven percentage-points differentiating the abstract, introduction, methods and results, with the abstract yielding the highest estimate among the four in 2025, but being second to the introduction in 2024.
+The discussion is clearly the section with highest LLM-use, with estimates up to fifteen percentage-points higher than the abstract.
+Because the estimates for the main body of the paper includes all sections except the abstract, and there are individual sections with higher estimated LLM-use than the abstract, the main body estimates are necessarily the highest, because they are an upper bound for the other sections.
+This is because we calculate word occurrence and not word frequency within a text as the basis for our frequency measure, so if a word appears in any one section, it also appears in the full text.
+\\
+The big gap between estimates for individual sections to those of the full paper indicate that it's not the case that LLMs are always used uniformly across the paper, such that a high LLM-use estimate in one section doesn't necessarily predict high LLM-use in other sections.
+Instead, many papers seem to have been written with relatively selective use of LLMs, where only certain sections were altered.
+On the other hand, the LLM-use estimates of the discussion are not much smaller than those of the full paper, indicating that if there were LLM-generated passages somewhere in a paper, it would most likely be in the discussion.
+Also, even with the gap between full paper estimate and individual sections estimates present, it is not nearly big enough to indicate that only one section per paper had been edited (this also would be a highly unlikely scenario).
+All in all, this suggests the most common use of LLMs is to edit certain paragraphs of the paper, that might or might not be in the same section, with the discussion having the highest likelihood of being edited.
+To further investigate this, sections could be grouped in the counting process, to indicate whether a marker word occurs in both sections.
+\\
+These observations alleviate a potential concern of our method, namely that the excess words identified in 2024 PubMed abstracts would be vocabulary tailored specifically to abstracts, and thus would only reliably pick up on LLM-use within abstracts.
+To guard against this, the excess word list was sorted according to the frequencies within each section during optimization, and each section was optimized separately (although, as previously discussed, the individual optimization means that some sections might be impacted more by the constraints than others).
+It could still be that LLM-use in all sections except the abstract is underestimated, but as the discussion and, for some intervals, the introduction yield higher estimates than the abstract, it is at least not the case that our method favors the abstract to the point of always attributing highest LLM-use to it.
+In fact, when looking at the results for different countries and disciplines, the main body of the text almost always yields higher estimates than the abstract, the only exceptions being Australia and France, which, as discussed previously, is an outlier in other regards as well.
+\\
+Of course, the abstract is by far the shortest of the investigated sections, and is much shorter when compared to the main body of the text.
+There are many more paragraphs that could have been rewritten with the help of an LLM, many more words that could have been replaced with marker words while editing.
+To normalize for section length and investigate how likely it is for any paragraph within a section to have been altered with the help of LLMs, we repeated the experiments with cropped versions of the sections.
+%comment: it's not really normalization
+There is barely any difference between the LLM-use estimates of the full and cropped abstracts, which is to be expected as any random crop of 255 words (the median length of the abstracts) will contain most or all of the abstract in question.
+The difference between full and cropped introductions is also very small (two percentage points, which is within one of the error margins), indicating that if an LLM was used to edit the introduction, changes were made to the entire section as opposed to single paragraphs.
+For results and discussion, the changes from full to cropped are somewhat larger, with twelve and eleven percentage points respectively.
+This indicates that while LLM-use is still relatively evenly spread among different paragraphs in these sections, there appears to be some clustering of markers.
+The biggest difference between the full and cropped versions is measured in the methods section, showing that LLM-use is most clustered here.
+However, it could also be that there are more linguistic restrictions in certain parts of the methods section, which don't allow the replacement of words with LLM markers. 
+For example, reporting the technical details of some experimental setup usually follows a typical structure that doesn't leave space for the style words we use to detect LLM-use.
+This means that LLMs might be used universally in all paragraphs of the methods section, but only change the vocabulary in some.
+\\
+Overall, a single paragraph sampled from the discussion or abstract has the highest likelihood of having been edited with an LLM, followed by the introduction, results and full text, with methods coming last.
 
 \subsection{Comparison to other estimation methods}
  - advantage of not relying on ground-truth text: not vulnerable to different results stemming from different prompting strategies (Dou enhancing robustness 2024) (disadvantage is only lower bound, but as was shown, we get reasonably close to the actual value)
@@ -66,7 +94,38 @@ uncertainty and fluctuation is much bigger for full section, also exceeding the 
 
 
 \subsection{Limitations}
+Some concerns about our method have already been discussed in previous sections of the discussion.
+The LLM-use estimate $\hbet$ behaves unreliably in the limit regions where $q$ and $\hph$ go towards one, which is critical because this is also the area in which it is most likely that $\pl=1$, thus giving the most reliable results.
+The constraints introduced to avoid unreliable estimates in the limits may lead to a disparity between sections, as the sections are optimized individually, so for some, the optimal estimate might lie in the constrained region. 
+Because suboptimal estimates are to be preferred to unreliable ones, the constraints were kept at a relatively conservative level. 
+Another limitation is our inability to perform excess word search for each section in our dataset, being limited to using the list established in prior research by Kobak et al. \cite{Kobak2025}.
+Since the excess words are domain-independent, %comment: are they?
+they should have equal validity for each section and the optimization procedure is still section-specific.
+\\
+A more severe limitation is that our estimates are, by design, dependent on changes in word frequency between human and LLM-generated text.
+By using only marker words, we are unable to detect LLM-generated text that, by using a distinct prompting strategy \cite{Geng2025} or by chance, doesn't contain any excess words.
+This is somewhat mitigated by the length of the excess word list, it is much harder to purposefully or accidentally exclude over 300 words, compared to the small selection used by other authors \cite{Gray2025, Gray2026, Kousha2025}.
+However, the main concern doesn't focus on $\pl$, but on $\ph$.
+Our estimate hinges on the central assumption that $\hph$ is a faithful estimate of $\ph$. 
+For the months immediately following the release of ChatGPT, this is a reasonable assumption, as $\ph$ follows a linear trend that can be modelled with linear regression.
+As we move away from this date, confidence in $\hph$ decreases, because the environment that academic text is produced in fundamentally changes with the introduction of LLMs.
+The more papers are written with the help of LLMs, the more people will become familiar with their writing style, and might start consciously or subconsciously copying it.
+They might also use LLMs for other tasks, thereby learning the types of suggestions LLMs typically make and adapting those into their own writing process, without repeated input from the LLM.
+LLMs have already been shown to influence human speech.
+Yakura et al. \cite{Yakura2025} investigated changes in word frequency in academic talks on YouTube and conversational podcast episodes and found increasing use of ``delve'' after November 2022 in both datasets.
+While both of these media forms rely on scripted content to some extent (the podcasts showing hints of LLM-use were educational and situated in the realms of science and technology, business and education, rather than casual conversations), the podcasts will likely also contain segments of spontaneous speech. 
+Even though there is some evidence for the influence of LLMs on human speech, it is unclear how quick and how pervasive this adaption to an LLM-style of writing will take place.
+Previously uncommon words like ``delve'' are very salient signals because their sudden appearance after relative obscurity generates more attention \cite{Geng2025}.
+This also makes them more likely to be copied, especially for NNES who might not have known the word previously and added it to their vocabulary only after coming across it in LLM-generated text.
+On the other hand, changes in the frequency of common words are much harder to pick up on.
+When reading a text, it doesn't really make a difference to the reader if the word ``these'' appears two or three times.
+Changes in high-frequency words only really register when looking at a large corpus of text, whereas humans interacting with LLMs or reading LLM-assisted papers only have access to a small selection.
+This makes it less likely for them to be copied directly.
+Geng and Trotta \cite{Geng2025} therefore argue for focussing on high-frequency words when trying to detect LLM-generated text, although with the rising influence of LLMs, it is unclear for how long this advantage will hold.
+High-frequency words might for example be part of certain phrases that LLMs prefer, which could be copied by users.
+To investigate this, the analysis could be widened to include higher-order n-grams.
+
 
 \subsection{Impact}
-impact / normative evaluation: overcoming language barriers, science papers rely on the data that is being reported, writing style is not immediately important. However, writing is a technology to sharpen our thinking. It takes effort to write something down. In deciding how exactly to phrase something, we are forced to think very precisely about our work, a level of scrutiny which makes it more likely that leaps of logic will be adressed that could not have been caught by the LLM 
+impact / normative evaluation: overcoming language barriers, science papers rely on the data that is being reported, writing style is not immediately important. However, writing is a technology to sharpen our thinking. It takes effort to write something down. In deciding how exactly to phrase something, we are forced to think very precisely about our work, a level of scrutiny which makes it more likely that leaps of logic will be addressed that would have been brushed by when only engaging with LLM outputs
 

@@ -314,62 +314,48 @@
       \field{title}{Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback}
       \field{year}{2022}
     \endentry
-    \entry{Bao2025}{article}{}
-      \name{author}{4}{}{%
-        {{hash=94f023800ad8a639de26871226daa1ff}{%
+    \entry{Bao2025_classifier}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1dfdd6e6ac2c3d9a9a752e2d08fd926b}{%
            family={Bao},
            familyi={B\bibinitperiod},
-           given={Tong},
-           giveni={T\bibinitperiod}}}%
-        {{hash=911df329639abb08461cf03dae8c764f}{%
-           family={Zhao},
-           familyi={Z\bibinitperiod},
-           given={Yi},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=a1105392d625ddaf5603acb531c3bc0a}{%
-           family={Mao},
-           familyi={M\bibinitperiod},
-           given={Jin},
-           giveni={J\bibinitperiod}}}%
-        {{hash=a4b4f86bd6f21a7ee1d468f183ce46eb}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Chengzhi},
-           giveni={C\bibinitperiod}}}%
+           given={Honglin},
+           giveni={H\bibinitperiod}}}%
+        {{hash=6d1ceb160e02d9964c12c7b2551f2293}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Mengyi},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e9c9678e502db666bd4a999e2b6efe6e}{%
+           family={Teplitskiy},
+           familyi={T\bibinitperiod},
+           given={Misha},
+           giveni={M\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {Springer Nature}%
+        {MIT Press}%
       }
-      \strng{namehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
-      \strng{fullhash}{85cbcb6c6476c00fdf295e68491bf6fc}
-      \strng{bibnamehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
-      \strng{authorbibnamehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
-      \strng{authornamehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
-      \strng{authorfullhash}{85cbcb6c6476c00fdf295e68491bf6fc}
+      \strng{namehash}{a0fa5fff460895af6348eea25ef0d479}
+      \strng{fullhash}{a0fa5fff460895af6348eea25ef0d479}
+      \strng{bibnamehash}{a0fa5fff460895af6348eea25ef0d479}
+      \strng{authorbibnamehash}{a0fa5fff460895af6348eea25ef0d479}
+      \strng{authornamehash}{a0fa5fff460895af6348eea25ef0d479}
+      \strng{authorfullhash}{a0fa5fff460895af6348eea25ef0d479}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Large Language Models (LLMs), such as ChatGPT, have prompted academic concerns about their impact on academic writing. Existing studies have primarily examined LLM usage in academic writing through quantitative approaches, such as word frequency statistics and probability-based analyses. However, few have systematically examined the potential impact of LLMs on the linguistic characteristics of academic writing. To address this gap, we conducted a large-scale analysis across 823,798 abstracts published in last decade from arXiv dataset. Through the linguistic analysis of features such as the frequency of LLM-preferred words, lexical complexity, syntactic complexity, cohesion, readability and sentiment, the results indicate a significant increase in the proportion of LLM-preferred words in abstracts, revealing the widespread influence of LLMs on academic writing. Additionally, we observed an increase in lexical complexity and sentiment in the abstracts, but a decrease in syntactic complexity, suggesting that LLMs introduce more new vocabulary and simplify sentence structure. However, the significant decrease in cohesion and readability indicates that abstracts have fewer connecting words and are becoming more difficult to read. Moreover, our analysis reveals that scholars with weaker English proficiency were more likely to use the LLMs for academic writing, and focused on improving the overall logic and fluency of the abstracts. Finally, at discipline level, we found that scholars in Computer Science showed more pronounced changes in writing style, while the changes in Mathematics were minimal.}
-      \field{issn}{15882861}
-      \field{issue}{7}
-      \field{journaltitle}{Scientometrics}
-      \field{month}{7}
-      \field{title}{Examining linguistic shifts in academic writing before and after the launch of ChatGPT: a study on preprint papers}
-      \field{volume}{130}
+      \field{abstract}{Regulating AI is a key societal challenge, but effective methods remain unclear. This study evaluates geographic restrictions on AI services, focusing on ChatGPT, which OpenAI blocks in several countries, including China and Russia. If restrictions were effective, ChatGPT usage in these countries should be minimal. We measured usage with a classifier trained to detect distinctive word choices (e.g., “delve”) typical of early ChatGPT outputs. The classifier, trained on pre- and post-ChatGPT “polished” abstracts, outperformed GPTZero and ZeroGPT on validation sets, including papers with self-reported AI use. Applying our classifier to preprints from arXiv, bioRxiv, and medRxiv revealed ChatGPT use in approximately 12.6\% of preprints by August 2023, with usage 7.7\% higher in restricted countries. This gap emerged before China’s first major domestic LLM became widely available. To address whether high demand could have driven even greater use without restrictions, we compared Asian countries with high expected demand (where English is not an official language) and found higher usage in countries with restrictions. ChatGPT use correlated with increased views and downloads but not with citations or journal placement. Overall, geographic restrictions on ChatGPT appear ineffective in science and potentially other domains, likely due to widespread workarounds.}
+      \field{journaltitle}{Quantitative Science Studies}
+      \field{month}{8}
+      \field{title}{Where there’s a will there’s a way: ChatGPT is used more for science in countries where it is prohibited}
+      \field{volume}{6}
       \field{year}{2025}
-      \field{pages}{3597\bibrangedash 3627}
-      \range{pages}{31}
+      \field{pages}{716\bibrangedash 731}
+      \range{pages}{16}
       \verb{doi}
-      \verb 10.1007/S11192-025-05341-Y/TABLES/9
+      \verb 10.1162/QSS\_A\_00368/2513665/QSS\_A\_00368.PDF
       \endverb
-      \verb{urlraw}
-      \verb https://link.springer.com/article/10.1007/s11192-025-05341-y
-      \endverb
-      \verb{url}
-      \verb https://link.springer.com/article/10.1007/s11192-025-05341-y
-      \endverb
-      \keyw{Academic writing,Large Language Models,Linguistic features,Writing style}
     \endentry
     \entry{Berdejo-Espinola2023}{article}{}
       \name{author}{2}{}{%
@@ -1036,7 +1022,7 @@
       \field{volume}{5}
       \field{year}{2024}
     \endentry
-    \entry{Gray2024}{article}{}
+    \entry{Gray2025}{article}{}
       \name{author}{1}{}{%
         {{hash=ce2fb463a26fb08ab663ee993d68dd62}{%
            family={Gray},
@@ -1061,47 +1047,6 @@
       \field{abstract}{The use of ChatGPT and similar Large Language Model (LLM) tools in scholarly communication and academic publishing has been widely discussed since they became easily accessible to a general audience in late 2022. This study uses keywords known to be disproportionately present in LLM-generated text to provide an overall estimate for the prevalence of LLM-assisted writing in the scholarly literature. For the publishing year 2023, it is found that several of those keywords show a distinctive and disproportionate increase in their prevalence, individually and in combination. It is estimated that at least 60,000 papers (slightly over 1\% of all articles) were LLM-assisted, though this number could be extended and refined by analysis of other characteristics of the papers or by identification of further indicative keywords. LLMs in the scholarly literature Large language model (LLM) tools provide a way to generate large amounts of reasonably high-quality text automatically, in response to human prompts. While these tools have been available for some years, the release of ChatGPT 3.5 in late 2022, offering an easy interface and wide publicity for the tool, made them available and visible to the world at large. Since then, there has been extensive discussion about their use in scholarly communications. Early over-enthusiasm that they might be able to reliably replace most forms of serious writing, including attempts to list them as authors on papers, 1 has been replaced by a more nuanced understanding of their capabilities and their-substantial-limitations. As of late 2023, surveys found that 30\% of researchers had used tools to help write manuscripts, and many publishers had begun to offer guidance on their use. 2 For example, Wiley permit the use of tools to develop content but only if the authors take full responsibility for the statements made, and where this usage is disclosed transparently in the paper-but "Tools that are used to improve spelling, grammar, and general editing are not included in the scope of these guidelines". 3}
       \field{isbn}{4158602400592}
       \field{issue}{6}
-      \field{journaltitle}{arxiv.orgA GrayarXiv preprint arXiv:2403.16887, 2024•arxiv.org}
-      \field{title}{ChatGPT" contamination": estimating the prevalence of LLMs in the scholarly literature}
-      \field{volume}{53}
-      \field{year}{2024}
-      \field{pages}{331\bibrangedash 333}
-      \range{pages}{3}
-      \verb{doi}
-      \verb 10.1002/leap.1578
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2403.16887
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2403.16887
-      \endverb
-    \endentry
-    \entry{Gray2025}{article}{}
-      \name{author}{1}{}{%
-        {{hash=ce2fb463a26fb08ab663ee993d68dd62}{%
-           family={Gray},
-           familyi={G\bibinitperiod},
-           given={Andrew},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {John Wiley \& Sons, Ltd}%
-      }
-      \strng{namehash}{ce2fb463a26fb08ab663ee993d68dd62}
-      \strng{fullhash}{ce2fb463a26fb08ab663ee993d68dd62}
-      \strng{bibnamehash}{ce2fb463a26fb08ab663ee993d68dd62}
-      \strng{authorbibnamehash}{ce2fb463a26fb08ab663ee993d68dd62}
-      \strng{authornamehash}{ce2fb463a26fb08ab663ee993d68dd62}
-      \strng{authorfullhash}{ce2fb463a26fb08ab663ee993d68dd62}
-      \field{extraname}{2}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The use of ChatGPT and similar Large Language Model (LLM) tools in scholarly communication and academic publishing has been widely discussed since they became easily accessible to a general audience in late 2022. This study uses keywords known to be disproportionately present in LLM-generated text to provide an overall estimate for the prevalence of LLM-assisted writing in the scholarly literature. For the publishing year 2023, it is found that several of those keywords show a distinctive and disproportionate increase in their prevalence, individually and in combination. It is estimated that at least 60,000 papers (slightly over 1\% of all articles) were LLM-assisted, though this number could be extended and refined by analysis of other characteristics of the papers or by identification of further indicative keywords. LLMs in the scholarly literature Large language model (LLM) tools provide a way to generate large amounts of reasonably high-quality text automatically, in response to human prompts. While these tools have been available for some years, the release of ChatGPT 3.5 in late 2022, offering an easy interface and wide publicity for the tool, made them available and visible to the world at large. Since then, there has been extensive discussion about their use in scholarly communications. Early over-enthusiasm that they might be able to reliably replace most forms of serious writing, including attempts to list them as authors on papers, 1 has been replaced by a more nuanced understanding of their capabilities and their-substantial-limitations. As of late 2023, surveys found that 30\% of researchers had used tools to help write manuscripts, and many publishers had begun to offer guidance on their use. 2 For example, Wiley permit the use of tools to develop content but only if the authors take full responsibility for the statements made, and where this usage is disclosed transparently in the paper-but "Tools that are used to improve spelling, grammar, and general editing are not included in the scope of these guidelines". 3}
-      \field{isbn}{4158602400592}
-      \field{issue}{6}
       \field{journaltitle}{arxiv.org}
       \field{month}{12}
       \field{title}{Estimating the prevalence of LLM-assisted text in scholarly writing}
@@ -1118,6 +1063,49 @@
       \verb{url}
       \verb https://arxiv.org/abs/2512.01560
       \endverb
+    \endentry
+    \entry{Gray2026}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ce2fb463a26fb08ab663ee993d68dd62}{%
+           family={Gray},
+           familyi={G\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Taylor}%
+        {Francis Ltd.}%
+      }
+      \strng{namehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{fullhash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{bibnamehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{authorbibnamehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{authornamehash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \strng{authorfullhash}{ce2fb463a26fb08ab663ee993d68dd62}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Since 2023, a significant number of published scholarly papers show signs of having been edited using AI tools. Many of these will have been cases where it was used for copyediting or translation, but some have been substantially or entirely generated by large language models—and readers cannot easily tell which is which. AI tools, meanwhile, are also being used to review papers and as intermediaries in search and discovery tools, in ways that are not always well understood, and academic databases are starting to show signs of being affected by AI-generated hallucinated research. These tools are placing additional stresses on the integrity of the scholarly publishing system, potentially making it more vulnerable to organized and intentional disinformation campaigns.}
+      \field{issn}{1938-3282}
+      \field{issue}{2}
+      \field{journaltitle}{Taylor \& Francis}
+      \field{title}{How AI use in scholarly publishing threatens research integrity, lessens trust, and invites misinformation}
+      \field{volume}{82}
+      \field{year}{2026}
+      \field{pages}{85\bibrangedash 88}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1080/00963402.2026.2628491
+      \endverb
+      \verb{urlraw}
+      \verb https://www.tandfonline.com/doi/abs/10.1080/00963402.2026.2628491
+      \endverb
+      \verb{url}
+      \verb https://www.tandfonline.com/doi/abs/10.1080/00963402.2026.2628491
+      \endverb
+      \keyw{AI,Artificial Intelligence,disinformation,misinformation,research fraud,scholarly publishing}
     \endentry
     \entry{Guo2023}{article}{}
       \name{author}{8}{}{%
@@ -2550,6 +2538,76 @@
       \endverb
       \keyw{AI in higher education,AI in research,AI in teaching,Generative AI}
     \endentry
+    \entry{Ng2025}{article}{}
+      \name{author}{8}{}{%
+        {{hash=eae706021c1095683e4b6debbd00f92d}{%
+           family={Ng},
+           familyi={N\bibinitperiod},
+           given={Jeremy\bibnamedelima Y.},
+           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=eb552d658035e7555d3e31673000d676}{%
+           family={Maduranayagam},
+           familyi={M\bibinitperiod},
+           given={Sharleen\bibnamedelima G.},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=00ce13c79b7909890a80e2854e1323a9}{%
+           family={Suthakar},
+           familyi={S\bibinitperiod},
+           given={Nirekah},
+           giveni={N\bibinitperiod}}}%
+        {{hash=fd40c443b87e0acf8265edfbd52d5124}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Amy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f92df9b23a01c3381ebd1c25a43a6402}{%
+           family={Lokker},
+           familyi={L\bibinitperiod},
+           given={Cynthia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=24aba5749e293fa4344869d0af4b3fe6}{%
+           family={Iorio},
+           familyi={I\bibinitperiod},
+           given={Alfonso},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7def996ddbe2554507b2a4b17c8558a0}{%
+           family={Haynes},
+           familyi={H\bibinitperiod},
+           given={R.\bibnamedelimi Brian},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=af56ff14657d1110bff4b784198b0505}{%
+           family={Moher},
+           familyi={M\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{aada870eaac6209cb5732cefae20d9fd}
+      \strng{fullhash}{bcd20f71f720440c90bb8946b547a274}
+      \strng{bibnamehash}{aada870eaac6209cb5732cefae20d9fd}
+      \strng{authorbibnamehash}{aada870eaac6209cb5732cefae20d9fd}
+      \strng{authornamehash}{aada870eaac6209cb5732cefae20d9fd}
+      \strng{authorfullhash}{bcd20f71f720440c90bb8946b547a274}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Chatbots are artificial intelligence (AI) programs designed to simulate conversations with humans that present opportunities and challenges in scientific research. Despite growing clarity from publishing organisations on the use of AI chatbots, researchers' perceptions remain less understood. In this international cross-sectional survey, we aimed to assess researchers' attitudes, familiarity, perceived benefits, and limitations related to AI chatbots. Our online survey was open from July 9 to Aug 11, 2023, with 61 560 corresponding authors identified from 122 323 articles indexed in PubMed. 2452 (4·0\%) provided responses and 2165 (94·5\%) of 2292 who met eligibility criteria completed the survey. 1161 (54·0\%) of 2149 respondents were male and 959 (44·6\%) were female. 1294 (60·5\%) of 2138 respondents were familiar with AI chatbots, and 945 (44·5\%) of 2125 had previously used AI chatbots in research. Only 244 (11·4\%) of 2137 reported institutional training on AI tools, and 211 (9·9\%) of 2131 noted institutional policies on AI chatbot use. Despite mixed opinions on the benefits, 1428 (69·7\%) of 2048 expressed interest in further training. Although many valued AI chatbots for reducing administrative workload (1299 [66·9\%] of 1941), there was insufficient understanding of the decision making process (1484 [77·2\%] of 1923). Overall, this study highlights substantial interest in AI chatbots among researchers, but also points to the need for more formal training and clarity on their use.}
+      \field{issn}{2589-7500}
+      \field{issue}{1}
+      \field{journaltitle}{The Lancet Digital Health}
+      \field{month}{1}
+      \field{title}{Attitudes and perceptions of medical researchers towards the use of artificial intelligence chatbots in the scientific process: an international cross-sectional survey}
+      \field{volume}{7}
+      \field{year}{2025}
+      \field{pages}{e94\bibrangedash e102}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1016/S2589-7500(24)00202-4
+      \endverb
+    \endentry
     \entry{VanNoorden2023}{article}{}
       \name{author}{2}{}{%
         {{hash=775145a602ca793a1dcfb9bc6b300d1b}{%
@@ -3069,6 +3127,33 @@
       \endverb
       \keyw{AI detectors,Academic integrity,Artificial intelligence,ChatGPT,Detection of AI-generated text,Generative pre-trained transformers,Machine-generated text}
     \endentry
+    \entry{Wiley2026}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b509b361f8d7741155032e8ddc8e6caf}{%
+           family={Wiley},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b509b361f8d7741155032e8ddc8e6caf}
+      \strng{fullhash}{b509b361f8d7741155032e8ddc8e6caf}
+      \strng{bibnamehash}{b509b361f8d7741155032e8ddc8e6caf}
+      \strng{authorbibnamehash}{b509b361f8d7741155032e8ddc8e6caf}
+      \strng{authornamehash}{b509b361f8d7741155032e8ddc8e6caf}
+      \strng{authorfullhash}{b509b361f8d7741155032e8ddc8e6caf}
+      \field{extraname}{1}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{title}{ExplanAItions 2025-2026: The evolution of AI in research.}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://www.wiley.com/en-de/about-us/ai-resources/ai-study/
+      \endverb
+      \verb{url}
+      \verb https://www.wiley.com/en-de/about-us/ai-resources/ai-study/
+      \endverb
+    \endentry
     \entry{Wiley2025}{misc}{}
       \name{author}{1}{}{%
         {{hash=b509b361f8d7741155032e8ddc8e6caf}{%
@@ -3081,6 +3166,7 @@
       \strng{authorbibnamehash}{b509b361f8d7741155032e8ddc8e6caf}
       \strng{authornamehash}{b509b361f8d7741155032e8ddc8e6caf}
       \strng{authorfullhash}{b509b361f8d7741155032e8ddc8e6caf}
+      \field{extraname}{2}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
       \field{labelnamesource}{author}
@@ -3134,6 +3220,60 @@
       \verb http://arxiv.org/abs/2401.11817
       \endverb
     \endentry
+    \entry{Yakura2025}{article}{}
+      \name{author}{7}{}{%
+        {{hash=0dcb59081f3e6e40d90382c480bab22e}{%
+           family={Yakura},
+           familyi={Y\bibinitperiod},
+           given={Hiromu},
+           giveni={H\bibinitperiod}}}%
+        {{hash=ab2537b427710448cd643e00279e2802}{%
+           family={Lopez-Lopez},
+           familyi={L\bibinithyphendelim L\bibinitperiod},
+           given={Ezequiel},
+           giveni={E\bibinitperiod}}}%
+        {{hash=03ac922211d2eed01504140eef5b9b1a}{%
+           family={Brinkmann},
+           familyi={B\bibinitperiod},
+           given={Levin},
+           giveni={L\bibinitperiod}}}%
+        {{hash=22769a418937f75695ac38b3232e26c0}{%
+           family={Serna},
+           familyi={S\bibinitperiod},
+           given={Ignacio},
+           giveni={I\bibinitperiod}}}%
+        {{hash=1464d6b3a8d2b3388e6a45013c518d35}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Prateek},
+           giveni={P\bibinitperiod}}}%
+        {{hash=74e96fd38c4570343181a48a2b9e2607}{%
+           family={Soraperra},
+           familyi={S\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+        {{hash=5ddd95e61c9884d4bc3c430e82855850}{%
+           family={Rahwan},
+           familyi={R\bibinitperiod},
+           given={Iyad},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b94f77bb3ff07a45f04af3bf6f3ae53d}
+      \strng{fullhash}{a1a2ba7ab713508de658ee5739296bdc}
+      \strng{bibnamehash}{b94f77bb3ff07a45f04af3bf6f3ae53d}
+      \strng{authorbibnamehash}{b94f77bb3ff07a45f04af3bf6f3ae53d}
+      \strng{authornamehash}{b94f77bb3ff07a45f04af3bf6f3ae53d}
+      \strng{authorfullhash}{a1a2ba7ab713508de658ee5739296bdc}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{From the invention of writing [1] and the printing press [2, 3], to television [4, 5] and social media [6], human history is punctuated by major innovations in communication technology, which fundamentally altered how ideas spread and reshaped our culture [7, 8]. Recent chat-bots powered by generative artificial intelligence constitute a novel medium that encodes cultural patterns in their neural representations and disseminates them in conversations with hundreds of millions of people [9]. Understanding whether these patterns transmit into human language, and ultimately shape human culture, is a fundamental question. While fully quantifying the causal impact of a chatbot like ChatGPT on human culture is very challenging, lexicographic shift in human spoken communication may offer an early indicator of such broad phenomenon. Here, we apply econometric causal inference techniques [10] to 740,249 hours of human discourse from 360,445 YouTube academic talks and 771,591 conversational podcast episodes across multiple disciplines. We detect a measurable and abrupt increase in the use of words preferentially generated by ChatGPT-such as delve, comprehend , boast, swift, and meticulous-after its release. These findings suggest a scenario where machines, originally trained on human data and subsequently exhibiting their own cultural traits, can, in turn, measurably reshape human culture. This marks the beginning of a closed cultural feedback loop in which cultural traits circulate bidirectionally between humans and machines [11]. Our results motivate further research into the evolution of human-machine culture, and raise concerns over the erosion of linguistic and cultural diversity, and the risks of scalable manipulation.}
+      \field{month}{7}
+      \field{title}{Empirical evidence of Large Language Model's influence on human spoken communication}
+      \field{year}{2025}
+      \keyw{cs.AI,cs.CL,cs.CY,cs.HC}
+    \endentry
     \entry{Zheng2023}{article}{}
       \name{author}{2}{}{%
         {{hash=565cc07bc029ba80c9fa7b511a92b668}{%
@@ -3180,6 +3320,7 @@
       \endverb
     \endentry
   \enddatalist
+  \missing{Bao2025}
 \endrefsection
 \endinput
 
