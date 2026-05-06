@@ -1,7 +1,54 @@
-\section{Survey results}
+\section{Review: Results from the literature}
+\subsection{LLM-use estimation results}
+
+\begin{sidewaystable}
+\centering
+\begin{tabular}{rllrlc}
+\toprule
+\makecell[c]{date} & \makecell[c]{section} & \makecell[c]{datasets} & \makecell[c]{usage} & \makecell[c]{estimation\\method} & \makecell[c]{source}\\
+\midrule
+\makecell[r]{12/2022\\--02/2023} & abstract & custom (CS) & 0.10 & \makecell[l]{zero-shot (content at scale,\\GPTZero, Writer AI, ZeroGPT)} & \cite{Picazo-Sanchez2024}\\
+\midrule
+08/2023 & abstract  & arXiv, bioRxiv    & 0.13 & trained detector   & \cite{Bao2025_classifier}\\
+\midrule
+11/2023 & full      & arXiv (CS)        & 0.07 & zero-shot (Originality.AI) & \cite{Akram2024}\\
+\midrule
+2023    & full      & Dimensions        & 0.02 & word frequency     & \cite{Gray2025}\\
+\midrule
+\multirow{3}{*}{2023}    & \multirow{3}{*}{abstract}  & \multirow{3}{*}{arXiv (CS-LLM)}    & 0.07 & zero-shot (GPTKIT) & \multirow{3}{*}{\cite{Liu2024}} \\
+        &           &                   & 0.04 & zero-shot (Smodin) & \\
+        &           &                   & 0.69 & zero-shot (Sapling)& \\
+\midrule
+01/2024 & abstract  & arXiv (CS)        & 0.35 & word freq. modeling & \cite{Geng2024}\\
+\midrule
+\multirow{4}{*}{02/2024} & abstract  & \multirow{2}{*}{arXiv (CS)}        & 0.18 & \multirow{4}{*}{word freq. modeling} & \multirow{4}{*}{\cite{Liang2024_paper}}\\
+        & introduction &                & 0.14 & & \\
+        & abstract  & \multirow{2}{*}{Nature portfolio}  & 0.06 & & \\
+        & introduction &                & 0.04 & & \\
+\midrule
+\multirow{4}{*}{09/2024} & abstract  & \multirow{2}{*}{arXiv (CS)}        & 0.23 & \multirow{4}{*}{word freq. modeling} & \multirow{4}{*}{\cite{Liang2025}}\\
+        & introduction &                & 0.20 & & \\
+        & abstract  & \multirow{2}{*}{Nature portfolio}  & 0.09 & & \\
+        & introduction &                & 0.09 & & \\
+\midrule
+2024    & abstract  & PubMed            & 0.14 & word frequency     & \cite{Kobak2025}\\
+\midrule
+2024    & full      & Dimensions        & 0.12 & word frequency     & \cite{Gray2026}\\
+\midrule
+2024    & full      & \makecell[l]{Dimensions, \\OpenAlex, PMC} & 0.16 & word frequency     & \cite{Kousha2025}\\
+
+\bottomrule
+\end{tabular}
+\caption{Summary of survey results on AI/LLM usage in academic and clinical research}
+\label{tab:review_estimation}
+\end{sidewaystable}
+
+
+
+\subsection{Survey results}
 In all surveys, we focused on use cases that could have an influence on the formulation if final paper, such as editing or summarizing of other papers, instead of use cases in other academic undertakings, such as writing code, or very early in the writing process, like brainstorming or writing an outline.
 Grammar checks were also excluded as a relevant use case, because while this is a very popular task for LLMs, this should have a minor influence on phrasing.
-If use cases were not part of the survey, we took the general proportion of researchers reporting LLM use in at least some part of their research. 
+Surveys that only asked about LLM use in general without listing use-cases were not considered \cite{Elsevier2024}, as well as questions regarding general LLM-use from the surveys that are included in the review. 
 an important factor in evaluating the results is the organization doing the survey.
 Researchers might be hesitant to admit LLM use in a survey done by an important academic publisher despite anonymity, especially if this publisher is known to be anti-LLM, such as Nature
 
@@ -12,24 +59,31 @@ Researchers might be hesitant to admit LLM use in a survey done by an important 
 \makecell[c]{survey\\period} & \makecell[c]{sample\\size} & \makecell[c]{sample\\specification} & \makecell[c]{question} & \makecell[c]{category} & \makecell[c]{usage} & \makecell[c]{source}\\
 \midrule
 
-\multirow{2}{*}{\makecell[l]{04/2023--\\05/2023}}
-& \multirow{2}{*}{456} 
-& \multirow{2}{*}{urologists} 
-& Do you use ChatGPT/LLMs in your academic practice? 
-& general & 48\% 
-& \multirow{2}{*}{\cite{Eppler2024}}\\
-&&& summarizing text & writing & 27\% &\\
+\makecell[l]{04/2023--\\05/2023}
+& 456
+& urologists
+& summarizing text & writing & 27\% 
+& \cite{Eppler2024}\\
+
 
 \midrule
 
-\multirow{2}{*}{\makecell[l]{06/2023--\\07/2023}} 
-& \multirow{2}{*}{3,838} 
-& \multirow{2}{*}{postdocs} 
-& Do you use AI chatbots, such as ChatGPT, in your work? 
-& general & 31\% 
-& \multirow{2}{*}{\cite{Nordling2023}}\\
-&&& \makecell[l]{What do you use AI chatbots for? Refining text} 
-& editing & 20\% &\\
+\makecell[l]{06/2023--\\07/2023}
+& 3,838
+& postdocs 
+&  \makecell[l]{What do you use AI chatbots for? Refining text} 
+& editing & 20\% 
+& \cite{Nordling2023}\\
+
+\midrule
+
+\makecell[l]{07/2023--\\08/2023} 
+& 2,165
+& \makecell[l]{PubMed authors} 
+& \makecell[l]{Writing or editing manuscripts} 
+& both & 22\% 
+& \cite{Ng2025}\\
+%comment: the study only lists 896 replies for this question, 487 of which reply yes, but this question might just have been posed to or answered by those who answered yes to having used LLMs in their research
 
 \midrule
 
@@ -52,15 +106,6 @@ Researchers might be hesitant to admit LLM use in a survey done by an important 
 &&& Shorten or summarize & writing & 23\% &\\
 &&& Draft paragraphs from ideas & writing & 21\% &\\
 &&& Direct writing (overall) & writing & 43\% &\\
-
-\midrule
-
-\makecell[l]{12/2023--\\02/2024} 
-& 2,284 
-& \makecell[l]{clinicians \&\\researchers} 
-& \makecell[l]{Have you used an AI product or AI feature\\for a specific work-related purpose?} 
-& general & 37\% 
-& \cite{Elsevier2024}\\
 
 \midrule
 
@@ -107,8 +152,18 @@ Researchers might be hesitant to admit LLM use in a survey done by an important 
 & \multirow{2}{*}{\cite{Mishra2024}}\\
 &&& Revision and editing & editing & 8\% &\\
 
+\midrule
+
+\makecell[l]{07/2025--\\08/2025}
+& 341--557 
+& \makecell[l]{academia, health-\\care \& other}
+& Writing assistance (e.g., copyediting, translation, etc.) 
+& both & 71\% 
+& \multirow{2}{*}{\cite{Wiley2026}}\\
+%comment: Using AI for research and/or publication tasks yielded 62%, which is less than the more specific use case here? total number of replies are 2,118–2,430, but use cases were only randomly shown to some researchers, so this random selection might have created a biased subset
+
 \bottomrule
 \end{tabular}
 \caption{Summary of survey results on AI/LLM usage in academic and clinical research}
-\label{tab:placeholder}
+\label{tab:review_surveys}
 \end{sidewaystable}

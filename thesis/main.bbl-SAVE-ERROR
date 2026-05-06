@@ -2538,76 +2538,6 @@
       \endverb
       \keyw{AI in higher education,AI in research,AI in teaching,Generative AI}
     \endentry
-    \entry{Ng2025}{article}{}
-      \name{author}{8}{}{%
-        {{hash=eae706021c1095683e4b6debbd00f92d}{%
-           family={Ng},
-           familyi={N\bibinitperiod},
-           given={Jeremy\bibnamedelima Y.},
-           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-        {{hash=eb552d658035e7555d3e31673000d676}{%
-           family={Maduranayagam},
-           familyi={M\bibinitperiod},
-           given={Sharleen\bibnamedelima G.},
-           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-        {{hash=00ce13c79b7909890a80e2854e1323a9}{%
-           family={Suthakar},
-           familyi={S\bibinitperiod},
-           given={Nirekah},
-           giveni={N\bibinitperiod}}}%
-        {{hash=fd40c443b87e0acf8265edfbd52d5124}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Amy},
-           giveni={A\bibinitperiod}}}%
-        {{hash=f92df9b23a01c3381ebd1c25a43a6402}{%
-           family={Lokker},
-           familyi={L\bibinitperiod},
-           given={Cynthia},
-           giveni={C\bibinitperiod}}}%
-        {{hash=24aba5749e293fa4344869d0af4b3fe6}{%
-           family={Iorio},
-           familyi={I\bibinitperiod},
-           given={Alfonso},
-           giveni={A\bibinitperiod}}}%
-        {{hash=7def996ddbe2554507b2a4b17c8558a0}{%
-           family={Haynes},
-           familyi={H\bibinitperiod},
-           given={R.\bibnamedelimi Brian},
-           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-        {{hash=af56ff14657d1110bff4b784198b0505}{%
-           family={Moher},
-           familyi={M\bibinitperiod},
-           given={David},
-           giveni={D\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{aada870eaac6209cb5732cefae20d9fd}
-      \strng{fullhash}{bcd20f71f720440c90bb8946b547a274}
-      \strng{bibnamehash}{aada870eaac6209cb5732cefae20d9fd}
-      \strng{authorbibnamehash}{aada870eaac6209cb5732cefae20d9fd}
-      \strng{authornamehash}{aada870eaac6209cb5732cefae20d9fd}
-      \strng{authorfullhash}{bcd20f71f720440c90bb8946b547a274}
-      \field{sortinit}{N}
-      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Chatbots are artificial intelligence (AI) programs designed to simulate conversations with humans that present opportunities and challenges in scientific research. Despite growing clarity from publishing organisations on the use of AI chatbots, researchers' perceptions remain less understood. In this international cross-sectional survey, we aimed to assess researchers' attitudes, familiarity, perceived benefits, and limitations related to AI chatbots. Our online survey was open from July 9 to Aug 11, 2023, with 61 560 corresponding authors identified from 122 323 articles indexed in PubMed. 2452 (4·0\%) provided responses and 2165 (94·5\%) of 2292 who met eligibility criteria completed the survey. 1161 (54·0\%) of 2149 respondents were male and 959 (44·6\%) were female. 1294 (60·5\%) of 2138 respondents were familiar with AI chatbots, and 945 (44·5\%) of 2125 had previously used AI chatbots in research. Only 244 (11·4\%) of 2137 reported institutional training on AI tools, and 211 (9·9\%) of 2131 noted institutional policies on AI chatbot use. Despite mixed opinions on the benefits, 1428 (69·7\%) of 2048 expressed interest in further training. Although many valued AI chatbots for reducing administrative workload (1299 [66·9\%] of 1941), there was insufficient understanding of the decision making process (1484 [77·2\%] of 1923). Overall, this study highlights substantial interest in AI chatbots among researchers, but also points to the need for more formal training and clarity on their use.}
-      \field{issn}{2589-7500}
-      \field{issue}{1}
-      \field{journaltitle}{The Lancet Digital Health}
-      \field{month}{1}
-      \field{title}{Attitudes and perceptions of medical researchers towards the use of artificial intelligence chatbots in the scientific process: an international cross-sectional survey}
-      \field{volume}{7}
-      \field{year}{2025}
-      \field{pages}{e94\bibrangedash e102}
-      \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1016/S2589-7500(24)00202-4
-      \endverb
-    \endentry
     \entry{VanNoorden2023}{article}{}
       \name{author}{2}{}{%
         {{hash=775145a602ca793a1dcfb9bc6b300d1b}{%
@@ -3127,33 +3057,6 @@
       \endverb
       \keyw{AI detectors,Academic integrity,Artificial intelligence,ChatGPT,Detection of AI-generated text,Generative pre-trained transformers,Machine-generated text}
     \endentry
-    \entry{Wiley2026}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=b509b361f8d7741155032e8ddc8e6caf}{%
-           family={Wiley},
-           familyi={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{b509b361f8d7741155032e8ddc8e6caf}
-      \strng{fullhash}{b509b361f8d7741155032e8ddc8e6caf}
-      \strng{bibnamehash}{b509b361f8d7741155032e8ddc8e6caf}
-      \strng{authorbibnamehash}{b509b361f8d7741155032e8ddc8e6caf}
-      \strng{authornamehash}{b509b361f8d7741155032e8ddc8e6caf}
-      \strng{authorfullhash}{b509b361f8d7741155032e8ddc8e6caf}
-      \field{extraname}{1}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{2}
-      \field{title}{ExplanAItions 2025-2026: The evolution of AI in research.}
-      \field{year}{2026}
-      \verb{urlraw}
-      \verb https://www.wiley.com/en-de/about-us/ai-resources/ai-study/
-      \endverb
-      \verb{url}
-      \verb https://www.wiley.com/en-de/about-us/ai-resources/ai-study/
-      \endverb
-    \endentry
     \entry{Wiley2025}{misc}{}
       \name{author}{1}{}{%
         {{hash=b509b361f8d7741155032e8ddc8e6caf}{%
@@ -3166,7 +3069,6 @@
       \strng{authorbibnamehash}{b509b361f8d7741155032e8ddc8e6caf}
       \strng{authornamehash}{b509b361f8d7741155032e8ddc8e6caf}
       \strng{authorfullhash}{b509b361f8d7741155032e8ddc8e6caf}
-      \field{extraname}{2}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
       \field{labelnamesource}{author}
