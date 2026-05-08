@@ -155,7 +155,7 @@ France and Australia are the only countries in which LLM-use in the abstract exc
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/countries_2024v2025_subsubopt.png}
+    \includegraphics[width=0.7\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/countries_2024v2025_subsubopt.png}
     \caption{LLM-use estimates of 2024 (x-axis) and 2025 (y-axis) for different countries and language regions. Countries with a majority of NES are shown in blue, NNES countries in orange.}
     \label{fig:countries_all}
     %comment: legend needs to go, there is a point labeled english and a legend entry labeled english, super confusing
@@ -164,4 +164,35 @@ France and Australia are the only countries in which LLM-use in the abstract exc
 
 
 \subsection{Overview of other studies}
-kommt noch
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/study_comparison_all.png}
+    \caption{Estimates from different studies and surveys investigating LLM-use in academia. The results from this study are plotted as lines, focussing on estimates for the abstract and main body of the paper. Results from other estimation methods are plotted in a blue-green color scale with empty markers, survey results are plotted in a yellow-red color scale with colored-in markers. Each individual color corresponds to estimates from the same study (estimates from the same study can also be identified by their vertical alignment, as they were all recorded at the same time). Different marker styles identify different methodologies to derive estimates, or different ways of using LLMs reported in the surveys.}
+    %comment: check years of citations! they are sometimes wrong e.g. Geng
+    %comment: remove abstract from here? only clutters the plot
+    \label{fig:comparison_all}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/study_comparison_sections.png}
+    \caption{LLM-use estimates for different sections within a paper from different estimation methods. The results from this study are plotted as lines, focussing on estimates for the abstract, introduction and main body of the paper, as these are the only sections with specific estimates reported in the Literature. Results from other estimation methods are colored in accordance with the investigated section (note that this leads to some estimates from the same paper being colored differently, because estimates for different sections were reported. Estimates from the same study can be found by their vertical alignment). Different marker styles identify different methodologies to derive estimates.}
+    \label{fig:comparison_secs}
+\end{figure}
+
+In the literature, there are a plethora of approaches to investigate LLM-use in academia, either via the indirect route of deriving estimates from published papers, or directly by surveying researchers about their experiences with the technology.
+Figure \ref{fig:comparison_all} offers an overview of their results, to put into context the estimates reported in this thesis.
+The variance between results reported by different studies is very high, but on average, the surveys yield higher estimates than the indirect approaches.
+The majority of indirect methods also report much lower estimates than those reported in this study, especially considering the full paper.
+The estimates by Picazo-Sanchez and Ortiz-Martin \cite{Picazo-Sanchez2024} and Geng and Trotta \cite{Geng2024} are exceptions to this trend, with the former slightly above, and the latter within the uncertainty bounds of our estimate. 
+The highest estimate from Liu and Bu \cite{Liu2024} is a clear outlier and can be removed from analysis, as the detector used for it also reported LLM-use of over 60\% for years before the release of ChatGPT. 
+On the other hand, many of the survey results fall into the error margin of our estimates.
+
+When comparing different estimation methods, the results based on word frequency are very similar to each other (i.e. Gray \cite{Gray2026}, Kobak et al. \cite{Kobak2025} and Kousha and Thelwall\cite{Kousha2025}), while the two approaches utilizing word frequency modeling (Geng and Trotta \cite{Geng2024} and Liang et al. \cite{Liang2024_paper,Liang2025}) yield very different results despite both using computer science papers from arXiv and having very little temporal offset.
+The studies using commercial LLM-detectors (Picazo-Sanchez and Ortiz-Martin \cite{Picazo-Sanchez2024}, Liu and Bu \cite{Liu2024}, and Akram \cite{Akram2024}) to derive estimates also report relatively similar estimates, but are distributed along a wider time-span than the word-frequency studies.
+
+As can be seen in Figure \ref{fig:comparison_secs}, most studies base their estimates on analyzing abstracts. 
+The only studies directly comparing estimates from different sections are from Liang et al. \cite{Liang2024_paper,Liang2025}, where the LLM-use in the abstract is estimated to be higher than in the introduction, while we find no difference between the two sections for the beginning of 2024, and the opposite pattern for the end of 2024.
+Studies estimating LLM-use in the full text of the paper mostly base their estimates on word frequencies (i.e. Gray \cite{Gray2025, Gray2026} and Kousha and Thelwall \cite{Kousha2025}).
+Even when considering the section that each estimate is based on, a majority of studies with varying approaches report much lower LLM-use estimates than those derived in this thesis.
+However, we can now see that the estimates from Bao et al. \cite{Bao2025_classifier}, as well as one of the commercial LLM-detectors used by Liu and Bu \cite{Liu2024} lie within the error margin of our estimates for the abstract specifically.
+Also, the estimate reported by Geng and Trotta \cite{Geng2024}, while being within the uncertainty bounds of our estimate of LLM-use in the full paper, is higher than our estimate of the abstract, which is the section analyzed by them. 

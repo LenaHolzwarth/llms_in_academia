@@ -89,9 +89,42 @@ This means that LLMs might be used universally in all paragraphs of the methods 
 Overall, a single paragraph sampled from the discussion or abstract has the highest likelihood of having been edited with an LLM, followed by the introduction, results and full text, with methods coming last.
 
 \subsection{Comparison to other estimation methods}
- - advantage of not relying on ground-truth text: not vulnerable to different results stemming from different prompting strategies (Dou enhancing robustness 2024) (disadvantage is only lower bound, but as was shown, we get reasonably close to the actual value)
-- going beyond word frequency: other linguistic markers as LLM indicators (perplexity, sentiment, part-of-speech, vocab size and density) e.g. \cite{Guo2023}, Bao Tong 2025, or intrinsic text embedding dimensionality \cite{Tulchinskii2023}, or repeated higher-order n-grams \cite{Gall2021} (although this is for GPT2 and might be no longer true)
-
+Given the increasing popularity and performance abilities of Chatbots, the question of usage prevalence among scientists naturally arises.
+Science relies on written communication, the production of which is the core competency of these models.
+Accordingly, many different approaches to estimate LLM-use in academia have been brought forward in the past few years, this thesis being one of them.
+Crucially, there is no ground-truth value as a goal for estimation, because the quantity to be estimated, the prevalence of LLM-use specifically for writing scientific papers, is unknown.
+This makes the comparison of different approaches hard to do, especially considering that the studies reported here vary both in their estimation method and datasets used.
+As a result of this heterogeneity, the estimated LLM-use varies drastically between studies. 
+For example, in the beginning of 2024, the estimates range from 4\% in Liang et al. \cite{Liang2024_paper}, who performed word frequency modeling on papers from the Nature portfolio, to 50\% of scientists surveyed by Liao et al. \cite{Liao2024} reporting to use LLMs to ``fix grammar or rephrase'' certain paragraphs.
+While this gap is the highest difference of results (at least those observed within a similar time span), it is indicative of an overall trend: Surveys on average seem to report higher estimates than indirect estimation methods who try to infer LLM-use from the text of published papers.
+This might seem counter-intuitive, because amid concerns of using LLMs for scientific fraud, %comment: citation
+researchers are likely more incentivized to lie about or downplay their LLM-use, especially when the survey is done by publishing houses such as Wiley, Elsevier or Nature \cite{Elsevier2024,Kwon2025,VanNoorden2023,Nordling2023,Wiley2026,Wiley2025}.
+This might be somewhat mediated by the anonymity of the surveys.
+On the other hand, researchers are probably unlikely to exaggerate their use of LLMs.
+Also, some of the use-cases are highly specific and thus offer no reliable estimate of overall LLM-use in science.
+For example, 28\% of respondents of a Nature study \cite{Kwon2025} say they use LLMs to edit their paper, while 8\% say they use them to write the first draft, but since response overlap is not reported, the total percentage of researchers in the sample using LLMs for either of these tasks could be as high as 36\% if there is no overlap of use-cases, and this doesn't even take into account that people might use LLMs in their paper-writing process for other purposes, such as re-writing paragraphs to adapt the tone or style.
+Given all of this, we can think of the survey results as a lower bound on LLM-use in academia, which points to the unreliability of indirect estimation methods, which frequently yield lower estimates than the surveys. %comment: really not sure about this 
+In some way, this is unavoidable, because not every use of LLMs will be detectable in the textual output, even though survey questions reported here were pre-selected to as best as possible only include use cases that influence the text.
+\\
+The estimation methods relying on word frequency (Gray \cite{Gray2025,Gray2026}, Kobak et al. \cite{Kobak2025} and Kousha and Thelwall\cite{Kousha2025}) differences all yield similar estimates that are lower than those reported in this thesis.
+This is not surprising, because as we have shown in the case of Kobak at al., using an unnormalized frequency difference systematically underestimates the true proportion of LLM-assisted text.
+Other approaches lead to less coherent results.
+While Geng and Trotta \cite{Geng2024} and Liang et al. \cite{Liang2024_paper} both use word frequency modeling on computer science papers from arXiv only a month apart, the estimate reported by Geng and Trotta, 35\%, is nearly twice as high as that of Liang et al. with 18\%.
+This illustrates the disadvantage of relying on an artificially curated training set of LLM-assisted text, because the types of prompts and models used in the creation of the set have a high influence on the outcome \cite{Dou2024}.
+Unless a wide variety of prompts and models is used in the creation, the training set will likely misrepresent the actual distribution of LLM-modulated text, thus biasing the estimates.
+Geng and Trotta are also among the few studies with indirect estimates that are higher than those reported in this thesis, which is plausible considering the different dataset they used: while PMC also contains some preprints, %comment: verify
+the majority is published work, which means that there is a longer gap between writing and publishing, so arXiv is likely to have a higher proportion of recent research, which, assuming increasing adoption of LLMs into the academic writing process, will translate to higher usage rates.
+Also, they limited their sample to papers from computer science, which is the field most likely to quickly adapt to new AI technology. %citation?
+\\
+The estimates from commercial LLM detectors who evaluate LLM-use on a case-by-case basis are harder to evaluate, because it is unclear how the models are assembled and trained.
+Despite potential differences in training procedure, most of them yield relatively low estimates, with the exception of an outlier in the study by Liu and Bu \cite{Liu2024}.
+On the other hand, the estimates of Picazo-Sanchez and Ortiz-Martin \cite{Picazo-Sanchez2024} are higher than those reported in this thesis, and one of the models in Liu and Bu's study produces an estimate that lies within the error bounds of our estimate.
+However, Bao et al. \cite{Bao2025_classifier} evaluate two of the commercial detectors also used by Picazo-Sanchez and Ortiz-Martin, and find them to perform worse than their custom classifier.
+A similar observation was made by Weber-Wulff et al. \cite{Weber-Wulff2023}, who conclude that publicly avaliable LLM-detectors are neither accurate nor reliable.
+The comparably high estimates by Picazo-Sanchez and Ortiz-Martin could be explained by the observation that LLM-detectors tend to discriminate against NNES, disproportionately flagging text written by them as AI-generated \cite{Liang2023}.
+That being said, since the publications of these studies there have been considerable improvements in LLM-detectors, for example by training models to not only be able to detect fully machine-generated text, but also text revised or edited in parts by LLMs \cite{Chen2025_revise}, which is much closer to the way LLMs are used in academia.
+While newer detectors still struggle with out-of-distribution samples with distinct writing styles \cite{Doughman2025}, this might not be so relevant for detecting LLM-use in academic writing, as there are certain stylistic constraints that both human-written and machine-generated text has to adhere to.
+Given these improvements, it would be interesting to compare the estimates of those newer models to the results of our word frequency metric.
 
 \subsection{Limitations}
 Some concerns about our method have already been discussed in previous sections of the discussion.
@@ -123,9 +156,26 @@ Changes in high-frequency words only really register when looking at a large cor
 This makes it less likely for them to be copied directly.
 Geng and Trotta \cite{Geng2025} therefore argue for focussing on high-frequency words when trying to detect LLM-generated text, although with the rising influence of LLMs, it is unclear for how long this advantage will hold.
 High-frequency words might for example be part of certain phrases that LLMs prefer, which could be copied by users.
-To investigate this, the analysis could be widened to include higher-order n-grams.
-
+To investigate this, the analysis could be expanded to include higher-order n-grams \cite{Gall2021}.
 
 \subsection{Impact}
-impact / normative evaluation: overcoming language barriers, science papers rely on the data that is being reported, writing style is not immediately important. However, writing is a technology to sharpen our thinking. It takes effort to write something down. In deciding how exactly to phrase something, we are forced to think very precisely about our work, a level of scrutiny which makes it more likely that leaps of logic will be addressed that would have been brushed by when only engaging with LLM outputs
-
+What does the increasing influence of LLMs on academic work mean for scientists?
+It is undeniable that they are a tool for increasing equity by overcoming language barriers \cite{Berdejo-Espinola2023}.
+Besides researchers reporting that LLMs help them with translation \cite{Kwon2025, Mohammadi2026,Wiley2025}, there is also empirical evidence to support this claim.
+For example, Lin et al. find an increase in lexical complexity of papers written by NNES authors after the introduction of ChatGPT \cite{Lin2025_NES}, while Prakash et al. report an increase in readability \cite{Prakash2025}.
+Also, in this thesis we made the observation of excess word frequencies in NNES countries getting more similar to those of NES countries.
+\\
+It could also be argued that LLMs make academic writing more efficient, allowing the scientist to focus on experiments or produce more papers \cite{Filimonovic2025}.
+Indeed, the introduction of LLMs into the scientific process seems to have lead to an increasing speed of submission and revision cycles \cite{Qi2025}. 
+However, the emphasis on efficiency and output seems to suggest that a scientist's most important task is the conducting of experiments, while the distilling of this research into a paper is a menial and somewhat annoying task that can be delegated to an LLM without loss. %comment: zu stark formuliert?
+This neglects the influence that the process of writing has on our thinking. %comment:citation
+While it takes effort to put an idea into words, in deciding how exactly to phrase something, we are forced to think very precisely about our work.
+This level of scrutiny makes it more likely that leaps of logic will be addressed that would have been brushed by when only proofreading LLM outputs, a passive mode of interacting with text that can lead to ``illusions of understanding'' \cite{messeri2024artificial,Tang2025}.
+There is also some evidence that relying on LLMs for text production will introduce a dependency on these models that comes with a loss of creativity when no longer having access to the model \cite{Zhou2026_creative}.
+On a global scale, the dependency on LLMs is thought to have a homogenizing effect on language and reasoning, threatening diversity as a source of innovation \cite{Sourati2026,Zhou2026_creative}.
+Lastly, an increase in efficiency and output will likely reduce the overall quality of research by putting even stronger strains on the review process \cite{Gray2026} and amplifying already existing publish-or-perish biases \cite{Kendall2024}.
+Notably, these downsides of using LLMs are an issue despite (theoretically) being compatible with ethical LLM-use guidelines requiring that LLM-assisted text should be controlled by authors to avoid false statements and the disclosure of the extent of LLM-use \cite{kim2024research}. 
+In reality, most researchers do not disclose their LLM-use \cite{Kousha2024,Kwon2025}, and an ever-increasing trend of fake citations implies that scientists either neglect the verification of LLM output or use them to perform scientific fraud at a previously unknown scale \cite{Kendall2024, Walters2023, lancet study}.
+These developments give bad actors an excuse to undermine scientific institutions and could reduce trust in the process of science.
+As Andrew Gray put it, any appeal to empirical evidence can now be countered with ``Oh, you can’t trust that anyway, don’t you know it’s all AI rubbish now?'' \cite{Gray2026}.
+As these examples illustrate, the emerging technology of LLMs poses challenges to academia that need to be addressed both on an institutional level with guidelines and increased safeguards against fraud, as well as on an individual level by critically monitoring ones dependency on the technology.
