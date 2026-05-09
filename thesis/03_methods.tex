@@ -9,6 +9,7 @@
 \end{figure}
 \emph{Pubmed Central}
 \\
+%comment: check the contents of pmc, is there also biorxiv? are papers listed double, once as preprint and once as published version, add information about most important journals in the set, 
 Pubmed Central (PMC) is a collection of open-access biomedical literature curated by the U.S. National Institutes of Health's National Library of Medicine \cite{pmc}. 
 It provides machine-readable versions of the articles in XML format, which can be accessed individually or downloaded in bulk.
 There are three open-access subsets available for bulk download with different licensing: commercial, non-commercial and other.
@@ -140,6 +141,9 @@ A stronger lower bound, denoted $\hbet$ is also possible:
         \beta &\ge \frac{q -  \hph}{1-\hph} = \hbet
     \end{split}
 \end{equation}
+%comment: write a paragraph about limiting factors/behaviors of this formula
+%comment: consider case for p_llm = 1
+%comment: beta hat is not technically an estimate but a lower bound, but we can call it an estimate after optimization because we approximate p_llm = 1 
 In dividing by $1-\hph$, this lower bound readjusts the estimate by focusing only on the fraction of papers for which no human use of the word is to be expected.
 In the above example with $p_{human}=60\%$ and excess frequency of $\Delta=10\%$, $1-\hph=40\%$ of papers wouldn't contain the word if there were no LLM-authored texts, but only $1-q=30\%$ actually don't, so the remaining $\frac{10\%}{40\%}=25\%$ must be LLM-authored.  
 
