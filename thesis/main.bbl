@@ -357,6 +357,63 @@
       \verb 10.1162/QSS\_A\_00368/2513665/QSS\_A\_00368.PDF
       \endverb
     \endentry
+    \entry{Bao2025_linguistic}{article}{}
+      \name{author}{4}{}{%
+        {{hash=94f023800ad8a639de26871226daa1ff}{%
+           family={Bao},
+           familyi={B\bibinitperiod},
+           given={Tong},
+           giveni={T\bibinitperiod}}}%
+        {{hash=911df329639abb08461cf03dae8c764f}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a1105392d625ddaf5603acb531c3bc0a}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Jin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a4b4f86bd6f21a7ee1d468f183ce46eb}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Chengzhi},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature}%
+      }
+      \strng{namehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
+      \strng{fullhash}{85cbcb6c6476c00fdf295e68491bf6fc}
+      \strng{bibnamehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
+      \strng{authorbibnamehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
+      \strng{authornamehash}{f90f3ae141141b9dbb2012bac5cfc1a1}
+      \strng{authorfullhash}{85cbcb6c6476c00fdf295e68491bf6fc}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Large Language Models (LLMs), such as ChatGPT, have prompted academic concerns about their impact on academic writing. Existing studies have primarily examined LLM usage in academic writing through quantitative approaches, such as word frequency statistics and probability-based analyses. However, few have systematically examined the potential impact of LLMs on the linguistic characteristics of academic writing. To address this gap, we conducted a large-scale analysis across 823,798 abstracts published in last decade from arXiv dataset. Through the linguistic analysis of features such as the frequency of LLM-preferred words, lexical complexity, syntactic complexity, cohesion, readability and sentiment, the results indicate a significant increase in the proportion of LLM-preferred words in abstracts, revealing the widespread influence of LLMs on academic writing. Additionally, we observed an increase in lexical complexity and sentiment in the abstracts, but a decrease in syntactic complexity, suggesting that LLMs introduce more new vocabulary and simplify sentence structure. However, the significant decrease in cohesion and readability indicates that abstracts have fewer connecting words and are becoming more difficult to read. Moreover, our analysis reveals that scholars with weaker English proficiency were more likely to use the LLMs for academic writing, and focused on improving the overall logic and fluency of the abstracts. Finally, at discipline level, we found that scholars in Computer Science showed more pronounced changes in writing style, while the changes in Mathematics were minimal.}
+      \field{issn}{15882861}
+      \field{issue}{7}
+      \field{journaltitle}{Scientometrics}
+      \field{month}{7}
+      \field{title}{Examining linguistic shifts in academic writing before and after the launch of ChatGPT: a study on preprint papers}
+      \field{volume}{130}
+      \field{year}{2025}
+      \field{pages}{3597\bibrangedash 3627}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1007/S11192-025-05341-Y/TABLES/9
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1007/s11192-025-05341-y
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s11192-025-05341-y
+      \endverb
+      \keyw{Academic writing,Large Language Models,Linguistic features,Writing style}
+    \endentry
     \entry{Berdejo-Espinola2023}{article}{}
       \name{author}{2}{}{%
         {{hash=98f762614919a774f495feff06835ad6}{%
@@ -2884,6 +2941,106 @@
       \endverb
       \keyw{Careers,Lab life,Machine learning,Scientific community}
     \endentry
+    \entry{scikit-learn}{article}{}
+      \name{author}{16}{}{%
+        {{hash=6e96fec0d63277626bb324bd28cdecb7}{%
+           family={Pedregosa},
+           familyi={P\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b99c2df2144dc5ee09317a7833dea42d}{%
+           family={Varoquaux},
+           familyi={V\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=955f19cea89ae97bb7936078898e6255}{%
+           family={Gramfort},
+           familyi={G\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2787869c9954c1d4e9891098995feb75}{%
+           family={Michel},
+           familyi={M\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=86d47ab9ca1a9dae108b4d4a0418c679}{%
+           family={Thirion},
+           familyi={T\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d42f9e9cec95da1dad2232eac74982ab}{%
+           family={Grisel},
+           familyi={G\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+        {{hash=8bd8ef25258dd2311f92df23fe71ecf7}{%
+           family={Blondel},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a5ee41fa92b9e425806e1773853f1932}{%
+           family={Prettenhofer},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=0c808557734e8929976d1f06f99c4ff2}{%
+           family={Weiss},
+           familyi={W\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9662a6ea01596c6dd450817ccac81c4a}{%
+           family={Dubourg},
+           familyi={D\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=39e81a3e2193b954680a0ab847a0bb55}{%
+           family={Vanderplas},
+           familyi={V\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=14c4a498c032f77d0b83f86c710dd50e}{%
+           family={Passos},
+           familyi={P\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=dc075b18fb4710a1a37b258804c57efe}{%
+           family={Cournapeau},
+           familyi={C\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=67ec0e8add781665a43010c9559111e9}{%
+           family={Brucher},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dcb3918f09eb8785e6b212a907cc37cf}{%
+           family={Perrot},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ab20fcf381cd45daa82417c6fc595051}{%
+           family={Duchesnay},
+           familyi={D\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{fullhash}{7a67607c66e4af944b5f16461d6d0a87}
+      \strng{bibnamehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{authorbibnamehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{authornamehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{authorfullhash}{7a67607c66e4af944b5f16461d6d0a87}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{title}{Scikit-learn: Machine Learning in {P}ython}
+      \field{volume}{12}
+      \field{year}{2011}
+      \field{pages}{2825\bibrangedash 2830}
+      \range{pages}{6}
+    \endentry
     \entry{Perrigo2023}{misc}{}
       \name{author}{1}{}{%
         {{hash=8b3aca26f5823ef0b814c10d44a8c006}{%
@@ -3648,7 +3805,6 @@
       \keyw{Content homogeneity,Generative artificial intelligence (AI),Laboratory experiment,Natural experiment,Sustained innovation}
     \endentry
   \enddatalist
-  \missing{Bao2025}
   \missing{lancet study}
 \endrefsection
 \endinput

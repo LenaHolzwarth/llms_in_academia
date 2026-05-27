@@ -121,17 +121,20 @@ The LLM-use in the results and discussion is somewhat lower in the cropped secti
 
 \begin{figure}[htbp]
     \centering
-    \begin{minipage}[t]{0.48\textwidth}
+    \begin{minipage}[t]{0.495\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/group_freqs_section_single_panel.png}
+        \includegraphics[height=5.3cm,
+            keepaspectratio]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/group_freqs_section_single_panel.png}
+            
     \end{minipage}
     \hfill
-    \begin{minipage}[t]{0.48\textwidth}
+    \begin{minipage}[t]{0.495\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f_crop255/group_freqs_section_single_panel.png}
+        \includegraphics[height=5.3cm,
+            keepaspectratio]{../results/plots/baseline_2026-01-23/research-article_aimrd_f_crop255/group_freqs_section_single_panel.png}
     \end{minipage}
     \caption{Shared caption describing both images}
-    %comment: re-do this to only have one colorbar and title referring to full sections/cropped sections, also there should be no line connecting the dots 
+    %comment: there should be no line connecting the dots 
     \label{fig:est_per_section}
 \end{figure}
 
@@ -166,7 +169,7 @@ France and Australia are the only countries in which LLM-use in the abstract exc
 \subsection{Overview of other studies}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/study_comparison_all.png}
+    \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/study_comparison_all_v2.png}
     \caption{Estimates from different studies and surveys investigating LLM-use in academia. The results from this study are plotted as lines, focussing on estimates for the abstract and main body of the paper. Results from other estimation methods are plotted in a blue-green color scale with empty markers, survey results are plotted in a yellow-red color scale with colored-in markers. Each individual color corresponds to estimates from the same study (estimates from the same study can also be identified by their vertical alignment, as they were all recorded at the same time). Different marker styles identify different methodologies to derive estimates, or different ways of using LLMs reported in the surveys.}
     %comment: check years of citations! they are sometimes wrong e.g. Geng
     %comment: remove abstract from here? only clutters the plot
