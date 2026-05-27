@@ -25,17 +25,17 @@ The baseline was downloaded via FTP, which is since deprecated\footnote{https://
 \\
 From the XML files in the baseline, each corresponding to one paper, the following information was extracted:
 \begin{itemize}
-    \item Article type: specifies whether the article is a research paper, a review, a comment, etc.
-    \item Date
-    \item Language: only specified for a minority of papers, but is inferred later during preprocessing 
-    \item Country
-    \item PMC-ID: unique identifier for every paper in PMC
-    \item PMID: unique identifier for PubMed, not available for every paper in PMC
-    \item Journal name
-    \item Title
-    \item Abstract
-    \item Sections
-    \item Section titles
+    \item \textbf{Article type}: specifies whether the article is a research paper, a review, a comment, etc.
+    \item \textbf{Date}
+    \item \textbf{Language}: only specified for a minority of papers, but is inferred later during preprocessing 
+    \item \textbf{Country}: country of first affiliated author, or first affiliated institution. Only available for 80.2\% of entries (after preprocessing)
+    \item \textbf{PMC-ID}: unique identifier for every paper in PMC. This is a way to prevent papers being listed twice (e.g. once as preprint, once as published version)
+    \item \textbf{PMID}: unique identifier for PubMed, not available for every paper in PMC
+    \item \textbf{Journal name}
+    \item \textbf{Title}
+    \item \textbf{Abstract}
+    \item \textbf{Sections}
+    \item \textbf{Section titles}
 \end{itemize}
 The sections and section titles are parsed from the main body of the XML file.
 In general, individual sections are tagged as \texttt{$<$sec$>$} and assigned a title.
@@ -64,7 +64,8 @@ For example, ``data'' and ``experimental methods'' would first both be renamed a
 Originally, we planned to investigate different article types and article structures, but in the end we focused only on research articles that have exactly the sections introduction, methods, results, and discussion, since papers with this article structure were the majority in the dataset. 
 Conversely, all papers with article types other than ``research-article'' or with more, fewer or different sections were discarded.
 Finally, all sections, including the abstract, were required to have a length of at least 250 characters.
-These preprocessing steps reduce the dataset from 7,125,722 to 1,602,404 papers, 1,194,287 of which are dated 2017 or later.
+These preprocessing steps reduce the dataset from 7,125,722 to 1,602,404 papers, 1,194,287 of which are dated 2017 or later 
+(2017 is the earliest time used in our analyses).
 \\
 While these preprocessing steps strongly reduce sample size, the resulting dataset can be used to compare LLM-usage in the abstract to LLM-usage in the entire body of the paper, as well as to compare different sections within the body with each other.
 For this purpose, all analyses detailed in the following subsections were performed on the abstract, introduction, methods, results and discussion of the paper, as well as the full paper, which refers to the four sections from the body without the abstract.
@@ -249,7 +250,7 @@ Since we are not interested in the excess words on a semantic level and use them
 To get the optimal list for each section, we sort the 2024 excess words by their individual frequency in 2024.
 This leads to a somewhat different order for each section.
 Like in the previous work, we then use different cutoff values to create subsets of excess words, which serve as a basis for computing the lower bound for LLM-use, $\beta_{lb}$.
-We started with x cutoffs spaced evenly on a log-scale between 0 and 1 and later added intermediate values in the high-interest region around the maximum, resulting in y cutoffs. %comment: look up number of cutoffs
+We started with 12 cutoffs spaced evenly on a log-scale between 0 and 1 and later added intermediate values in the high-interest region around the maximum, resulting in 19 cutoffs.
 The highest value of $\beta_{lb}$ is used as our estimate for $\beta$ and denoted $\hbet$.
 It can be read as the lower bound on LLM-use for the optimal word list.
 However, in some cases, the maximum occurs at one of the highest cutoff value, leading to nearly the full excess word list being used for the estimate.
@@ -258,33 +259,34 @@ As a consequence, both numerator and denominator of the fraction $\frac{q - \hph
 Figure \ref{fig:erratic} gives an example of this, showing smoothly increasing lower bounds for lower cutoffs and erratic behavior for the highest few.
 To prevent this, any cutoff that leads to estimates of $\hph \ge 0.999$ was excluded as candidate for creating optimal excess word lists.
 %comment: check this number and include plot that shows oscillation of estimates that go too close to 1
-
 \\
 In optimizing $\beta_{lb}$, we also indirectly optimize for a word list that has $p_{LLM}$ very close to 1, because the more frequent a selection of words is in LLM-assisted text, the more useful it should be as LLM marker, therefore yielding higher values for $\beta_{lb}$.
 Based on this reasoning, we call $\hbet$ an estimate for $\beta$, instead of its lower bound.
 \\
 The optimization was performed on yearly frequency data separately.
 This means that the optimal cutoff for 2024 could be different to that of 2025.
-For the main analysis, the optimal cutoff values for 2025 were used for all time points to simplify procedure and have more easily comparable results.
-Notably, the main analysis was performed on monthly data with the word lists optimized for the year 2025, instead of optimizing each month individually, for simplicity.
+For the main analysis, the optimal cutoff values for 2025 were used for all time-points to simplify procedure and have more easily comparable results.
+The main analysis was performed on monthly data with the word lists optimized for the year 2025, instead of optimizing each month individually.
 A possible approach with optimizing on monthly intervals of the data would be to take the majority optimum as the list for all estimates.
-The end result would be the same: Some time intervals would be estimated with the optimal word list, while others wouldn't.
-\\
-To better judge the reliability of the estimates, we computed the standard error and performed sanity checks using simulated frequency data.
+The consequence would be the same: Some time intervals would be estimated with the optimal word list, while others wouldn't.
 
 \subsection{Method validation}
 \emph{Standard error for LLM-use estimates}
+\\
+To better judge the reliability of the estimates, we computed the standard error and performed sanity checks using simulated frequency data.
 Since the LLM-use estimate $\hbet=\frac{q -  \hph}{1-\hph}$ depends on $\hph$ and $q$, we first need to determine their respective errors, before propagating them to obtain the error for $\hbet$.
-We conceptualize $q$ as the maximum likelihood estimate (MLE) for the binomial probability of a word from the excess word list to appear in a paper.
-As such, the MLE's variance is $SE_q^2=\frac{q(1-q)}{n}$, with $n$ as the number of papers in the current month or year.
+We conceptualize $q$ as the MLE for the binomial probability of an excess word to appear in a paper.
+The binomial MLE is equal to the number of successes divided by the number of Bernoulli trials.
+Here, we define a trial as a paper, and a success occurs if an excess word appears in the paper. 
+As such, the MLE's variance is $Var(q)=\frac{q(1-q)}{n}$, with $n$ as the number of papers in the current month or year.
 $\hph$ is the regression estimate of a binomial probability. 
 Since $\hph$ is not an empirical estimate, the binomal MLE variance doesn't apply and we focus on the regression variance.
 Technically, the data points that the regression was trained on are empirical estimates (since training was done on $q$ values in the time span before the release of ChatGPT).
 To factor in this binomial maximum likelihood uncertainty, it should be included in the regression formula.
-However, because the MLE variance is very small due to the large number of papers each month, this was omitted for simplicity.
-The regression variance for design matrix $X$ (including only points on which the regression is fit, corresponding to the time before the release of ChatGPT), predictor matrix $x$ (including all points that are to be predicted, including pre- and post-ChatGPT frequencies) and response vector $y$ is computed with the following formula:
+However, this was omitted for simplicity.
+The regression variance for the design matrix $X$ (including only values of $q$ on which the regression is fit, corresponding to the time before the release of ChatGPT), predictor matrix $x$ (including all time-points that are to be predicted, with pre- and post-ChatGPT frequencies) and response vector $y$ is computed with the following formula:
 \begin{equation}
-    SE_{\hph}^2= \hat{\sigma}^2 x(X^TX)^{-1}x^T + \hat{\sigma^2}
+    Var(\hph)= \hat{\sigma}^2 x(X^TX)^{-1}x^T + \hat{\sigma^2}
 \end{equation}
 with $\hat{b}=(X^TX)^{-1}X^Ty$ as the estimated regression coefficients\footnote{As per common convention, the estimated regression coefficients are normally denoted $\hbet$, which was changed to $\hat{b}$ to avoid confusion with the LLM-use estimate $\hbet$}
 and $\hat{\sigma}^2=\frac{\|y-X\hat{b}\|^2}{n-2}$ the unbiased estimate of the noise variance, where $n$ refers to the number of papers, of which the number of predictors, 2, is subtracted.
@@ -293,6 +295,7 @@ To this, an additional $\hat{\sigma}$-term is added to estimate how far the pred
 \\
 The variance of $\hbet$, as a nonlinear function of $q$ and $\hph$, is not trivial to determine.
 We can apply the Delta method, which uses Taylor series approximation, to do so.
+%comment: citation
 We assume $q$ and $\hph$ to be the means of random variables $Q$ and $P$, respectively.
 First, we approximate $\hbet((Q,P))$ around the mean $\mu=(q, \hph)$ with a first-order Taylor expansion:
 \begin{equation}
@@ -311,8 +314,9 @@ We can use this to compute the variance of $\hbet$:
         &= \nabla\hbet(\mu)^T\Sigma\nabla\hbet(\mu)
     \end{split}
 \end{equation}
-We assume independence of the two random variables $Q$ and $P$, so that the covariance matrix $\Sigma$ only has the diagonal entries of the estimate variances $SE_q^2$ and $SE_{\hph}^2$ derived above. 
-We excluded all estimates with a standard error of $SE_{\hbet}\ge 0.025$.
+We assume independence of the two random variables $Q$ and $P$, so that the covariance matrix $\Sigma$ only has the diagonal entries of the estimate variances $Var(q)$ and $Var(\hph)$ derived above. 
+%comment: is assumption of independence valid?
+We excluded all estimates with a standard error of $Var(\hbet)\ge 0.025$.
 %comment: the error bars don't work if p is 1 (or veryvery close to 1), because in that case, binomial error is 0
 \\\\
 \emph{Sanity check simulation}
@@ -321,15 +325,16 @@ We excluded all estimates with a standard error of $SE_{\hbet}\ge 0.025$.
     \centering
     \includegraphics[width=0.9\linewidth]{../results/plots/misc/intuition_simulation_v2.png}
     \caption{Illustration of the sampling procedure for the creation of an artificial dataset to test the LLM-use estimate $\hbet$ for varying levels of $\beta$}
+    %comment: more detail in caption
     \label{fig:intution_simulation}
 \end{figure}
-To better gauge how well the procedure of finding the optimal excess word list to get the best possible lower bound works, we performed the same analysis on simulated data with known $\pl$ and $\ph$ and varying $\beta$.
-We simulated data for 100,000 texts, approximating the number of papers per year in our sample.
-In our simulation, there were 500 words, all of which were treated as excess words.
-We created two matrices, $M_{pre}$ and $M_{post}$, each with dimensions (\emph{number of texts, number of words}), corresponding to data before and after the release of ChatGPT, respectively.
+We assess the procedure of finding the optimal excess word list to get the best possible lower bound by performing the same analysis on simulated data with known $\pl$ and $\ph$ and varying $\beta$.
+We simulated data for $n=100,000$ texts, approximating the number of papers per year in our sample.
+In our simulation, there were $m=500$ words, all of which were treated as excess words.
+We created two matrices, $M_{pre}$ and $M_{post}$, each with dimensions $(n,m)$, corresponding to data before and after the release of ChatGPT, respectively.
 For $M_{pre}$, each word $w$ was randomly assigned a probability $\ph(w)$. 
 The probabilities were sampled from a gamma distribution with shape parameter $2$ and scale parameter $0.02$.
-Then, 100,000 binomial samples were drawn with $\ph(w)$ as probability of success for each word.
+Then, $n$ binomial samples were drawn with $\ph(w)$ as probability of success for each word.
 For $M_{post}$, a fraction of $\beta$ texts were selected as being LLM-generated.
 As one of the assumptions posits that $\ph\le\pl$, the probabilities for words to occur in LLM-assisted text were sampled as $\pl(w)=\ph(w)(1+\delta)$, with $\delta \sim U(0.5,5)$.
 In cases where $\ph(w)(1+\delta)>1$, $\delta$ was newly sampled until the resulting $\pl(w)$ was in the range $[0,1]$.
