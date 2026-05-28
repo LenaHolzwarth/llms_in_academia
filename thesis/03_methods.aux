@@ -3,36 +3,38 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3}Methods}{9}{section.3}\protected@file@percent }
 \newlabel{sec:methods}{{3}{9}{Methods}{section.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Dataset and Preprocessing}{9}{subsection.3.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \relax }}{9}{figure.caption.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the PMC dataset after preprocessing. Panel \textbf  {a} shows the number of papers in PMC published in each month starting in 2017 (1,194,287 in total). The mean number of papers published per month is 11,085, with a clear upwards trend. Panel \textbf  {b} shows the distribution of journals after preprocessing. All journals with less than 4000 papers are listed as ``other'' for reasons of legibility. The journal \emph  {Proceedings of the National Academy of Sciences of the United States of America} was abbreviated to ``NAS proceedings''.}}{9}{figure.caption.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:papercount}{{1}{9}{\relax }{figure.caption.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Excess Frequency and LLM-use lower bound estimates}{11}{subsection.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Shared caption describing both images}}{11}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:these}{{2}{11}{Shared caption describing both images}{figure.caption.2}{}}
-\newlabel{eq:beta}{{2}{12}{Excess Frequency and LLM-use lower bound estimates}{equation.3.2}{}}
+\newlabel{fig:papercount}{{1}{9}{Overview of the PMC dataset after preprocessing. Panel \textbf {a} shows the number of papers in PMC published in each month starting in 2017 (1,194,287 in total). The mean number of papers published per month is 11,085, with a clear upwards trend. Panel \textbf {b} shows the distribution of journals after preprocessing. All journals with less than 4000 papers are listed as ``other'' for reasons of legibility. The journal \emph {Proceedings of the National Academy of Sciences of the United States of America} was abbreviated to ``NAS proceedings''}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Excess Frequency and LLM-use lower bound estimates}{12}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Example of using excess frequency to determine lower bounds for LLM-use. Panel \textbf  {a} shows the frequency for the word ``these'' in PMC abstracts. The observed frequency $q$ (solid line) diverges strongly from the expected frequency $\hat  {p}_{human}$ based on the years before the release of ChatGPT. This difference corresponds to the frequency gap $Delta$ in panel \textbf  {b} (dashed line), which can be interpreted as a lower bound on LLM-use. A stronger lower bound $\beta _{lb}$ is also possible (solid line), which increases the estimated lower bound by over 0.1.}}{12}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:these}{{2}{12}{Example of using excess frequency to determine lower bounds for LLM-use. Panel \textbf {a} shows the frequency for the word ``these'' in PMC abstracts. The observed frequency $q$ (solid line) diverges strongly from the expected frequency $\hph $ based on the years before the release of ChatGPT. This difference corresponds to the frequency gap $Delta$ in panel \textbf {b} (dashed line), which can be interpreted as a lower bound on LLM-use. A stronger lower bound $\beta _{lb}$ is also possible (solid line), which increases the estimated lower bound by over 0.1}{figure.caption.2}{}}
+\newlabel{eq:beta}{{2}{13}{Excess Frequency and LLM-use lower bound estimates}{equation.3.2}{}}
 \newlabel{eq:delta}{{3}{13}{Excess Frequency and LLM-use lower bound estimates}{equation.3.3}{}}
-\newlabel{eq:beta_hat}{{4}{13}{Excess Frequency and LLM-use lower bound estimates}{equation.3.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Grouped word frequencies}{13}{subsection.3.3}\protected@file@percent }
-\newlabel{subsec:wordlist}{{3.3}{13}{Grouped word frequencies}{subsection.3.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \relax }}{14}{figure.caption.3}\protected@file@percent }
-\newlabel{fig:intution_estimates}{{3}{14}{\relax }{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Fix title for delve estimates!}}{14}{figure.caption.4}\protected@file@percent }
-\newlabel{fig:potential_delve}{{4}{14}{Fix title for delve estimates!}{figure.caption.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax }}{15}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:excess_words_18_24}{{5}{15}{\relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Method validation}{17}{subsection.3.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Illustration of the sampling procedure for the creation of an artificial dataset to test the LLM-use estimate $\hat  {\beta }$ for varying levels of $\beta $}}{19}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:intution_simulation}{{6}{19}{Illustration of the sampling procedure for the creation of an artificial dataset to test the LLM-use estimate $\hbet $ for varying levels of $\beta $}{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Section length}{19}{subsection.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Subgroup analysis}{20}{subsection.3.6}\protected@file@percent }
+\newlabel{eq:beta_hat}{{4}{14}{Excess Frequency and LLM-use lower bound estimates}{equation.3.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Grouped word frequencies}{14}{subsection.3.3}\protected@file@percent }
+\newlabel{subsec:wordlist}{{3.3}{14}{Grouped word frequencies}{subsection.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Illustration of the frequency gap as a lower bound for LLM-use and why it (strongly) underestimates true LLM-use. In this example, we assume an underlying distribution that is shown in the top bar. Humans are assumed to use a word in 60\% of texts, so $p_{human}=0.6$. This proportion is shown by the blue bar. We further assume that LLMs use a word in 80\% of texts ($p_{LLM}=0.8$), which is indicated by the green bar. LLM-use $\beta $ is assumed to be 0.5, meaning that half of the texts in the sample are LLM-assisted. When sampling from this distribution in the second row, we observe that in total, 70\% of texts use this word. This observation is the word frequency $q$ that we measure for PMC. In this example, we know that the 70\% of overall usage can be explained by $p_{human}\cdot (1-\beta )= 60\% \cdot 0.5 = 30\%$ of humans using the word, plus $p_{LLM}\cdot \beta = 80\% \cdot 0.5 = 40\%$ of LLMs using the word. However, when trying to estimate LLM-use, we only have access to $p_{human}$ (indirectly, via regression). Since we don't know $\beta $, the most conservative estimate is $\beta =0$, i.e. no texts are written with the help of LLMs. This means that we expect $p_{human}\cdot (1-\beta )= 60\% \cdot 1 = 60\%$ of papers to include a term if all texts were written by humans, meaning the remaining $\Delta = q - p_{human}= 10\%$ of word occurrences must have been written by an LLM and therefore the rate of LLM-use must at least be 10\%. This method of lower-bounding the LLM-use thus underestimates the true proportion of LLM-assisted text by 40 percentage points.}}{15}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:intution_estimates}{{3}{15}{Illustration of the frequency gap as a lower bound for LLM-use and why it (strongly) underestimates true LLM-use. In this example, we assume an underlying distribution that is shown in the top bar. Humans are assumed to use a word in 60\% of texts, so $\ph =0.6$. This proportion is shown by the blue bar. We further assume that LLMs use a word in 80\% of texts ($\pl =0.8$), which is indicated by the green bar. LLM-use $\beta $ is assumed to be 0.5, meaning that half of the texts in the sample are LLM-assisted. When sampling from this distribution in the second row, we observe that in total, 70\% of texts use this word. This observation is the word frequency $q$ that we measure for PMC. In this example, we know that the 70\% of overall usage can be explained by $\ph \cdot (1-\beta )= 60\% \cdot 0.5 = 30\%$ of humans using the word, plus $\pl \cdot \beta = 80\% \cdot 0.5 = 40\%$ of LLMs using the word. However, when trying to estimate LLM-use, we only have access to $\ph $ (indirectly, via regression). Since we don't know $\beta $, the most conservative estimate is $\beta =0$, i.e. no texts are written with the help of LLMs. This means that we expect $\ph \cdot (1-\beta )= 60\% \cdot 1 = 60\%$ of papers to include a term if all texts were written by humans, meaning the remaining $\Delta = q - \ph = 10\%$ of word occurrences must have been written by an LLM and therefore the rate of LLM-use must at least be 10\%. This method of lower-bounding the LLM-use thus underestimates the true proportion of LLM-assisted text by 40 percentage points}{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Examples of words with noticeable frequency changes in abstracts from PMC after the release of ChatGPT. The left column shows the word's observed frequency $q$, the right column shows the resulting lower bound estimates. While ``potential'' has a strong increase in frequency (Panel \textbf  {a}), this only yields a lower bound estimate of below 10\% (Panel \textbf  {b}). ``Delve'' has a very strong increase in frequency up to mid-2024, followed by a steep decrease (Panel \textbf  {c})}}{16}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:potential_delve}{{4}{16}{Examples of words with noticeable frequency changes in abstracts from PMC after the release of ChatGPT. The left column shows the word's observed frequency $q$, the right column shows the resulting lower bound estimates. While ``potential'' has a strong increase in frequency (Panel \textbf {a}), this only yields a lower bound estimate of below 10\% (Panel \textbf {b}). ``Delve'' has a very strong increase in frequency up to mid-2024, followed by a steep decrease (Panel \textbf {c})}{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Frequency ratios for all words in PubMed abstracts in 2018 (panel \textbf  {a}) and 2024 (panel \textbf  {b}). The frequency ratio is computed by dividing the frequency in the target year by the predicted frequency of the target year, based on linear predictions from two and three years prior. All words above the threshold (dashed line) are marked as excess words, i.e. words with notable change in frequency. Excess words are manually labeled as \emph  {content words} (blue dots) and \emph  {style words} (orange dots). In 2024, there are many more excess style words than in 2018. The Figure is taken from Kobak et al. \blx@tocontentsinit {0}\cite {Kobak2025}}}{16}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:excess_words_18_24}{{5}{16}{Frequency ratios for all words in PubMed abstracts in 2018 (panel \textbf {a}) and 2024 (panel \textbf {b}). The frequency ratio is computed by dividing the frequency in the target year by the predicted frequency of the target year, based on linear predictions from two and three years prior. All words above the threshold (dashed line) are marked as excess words, i.e. words with notable change in frequency. Excess words are manually labeled as \emph {content words} (blue dots) and \emph {style words} (orange dots). In 2024, there are many more excess style words than in 2018. The Figure is taken from Kobak et al. \cite {Kobak2025}}{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Behavior of different cutoff values and their corresponding excess word lists for PMC abstracts. Cutoffs are marked by color. Panel \textbf  {a} shows the word list frequency $q$ as solid lines and the expected frequency $\hat  {p}_{human}$ as dashed lines. Panel \textbf  {b} shows the lower bound estimates $\beta _{lb}$. For the highest cutoff values, both $q$ and $\hat  {p}_{human}$ are very close or equal to 1, leading to unreliable values.}}{19}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:erratic}{{6}{19}{Behavior of different cutoff values and their corresponding excess word lists for PMC abstracts. Cutoffs are marked by color. Panel \textbf {a} shows the word list frequency $q$ as solid lines and the expected frequency $\hph $ as dashed lines. Panel \textbf {b} shows the lower bound estimates $\beta _{lb}$. For the highest cutoff values, both $q$ and $\hph $ are very close or equal to 1, leading to unreliable values}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Method validation}{19}{subsection.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Illustration of the sampling procedure for the creation of an artificial dataset to test the LLM-use estimate $\hat  {\beta }$ for varying levels of $\beta $. The dataset is modeled by a matrix with $n$ columns corresponding to documents and $m$ rows corresponding to excess words. The binary matrix entries tell us whether a word $w_i$ appears in document $d_j$. The matrix on the left, $M_{pre}$, corresponds to the pre-ChatGPT word frequencies. Here, the binary entries for word $w_i$ are drawn from a binomial distribution with probability $p_{human}(w_i)$. This probability is drawn from a gamma distribution. The matrix on the right, $M_{post}$, models post-ChatGPT word frequencies, meaning that some of the documents were written by humans (indicated in blue), while a fraction indicated by $\beta $ were written with the help of LLMs (green). For the blue part of the matrix, the matrix entries for word $w_i$ are drawn from the same binomial distribution as in $M_{pre}$, with probability $p_{human}(w_i)$. For the green part, the probability $p_{human}(w_i)$ is increased by $p_{human}(w_i)\delta _i$ with $\delta _i \sim U(0.5,5)$.}}{21}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:intution_simulation}{{7}{21}{Illustration of the sampling procedure for the creation of an artificial dataset to test the LLM-use estimate $\hbet $ for varying levels of $\beta $. The dataset is modeled by a matrix with $n$ columns corresponding to documents and $m$ rows corresponding to excess words. The binary matrix entries tell us whether a word $w_i$ appears in document $d_j$. The matrix on the left, $M_{pre}$, corresponds to the pre-ChatGPT word frequencies. Here, the binary entries for word $w_i$ are drawn from a binomial distribution with probability $\ph (w_i)$. This probability is drawn from a gamma distribution. The matrix on the right, $M_{post}$, models post-ChatGPT word frequencies, meaning that some of the documents were written by humans (indicated in blue), while a fraction indicated by $\beta $ were written with the help of LLMs (green). For the blue part of the matrix, the matrix entries for word $w_i$ are drawn from the same binomial distribution as in $M_{pre}$, with probability $\ph (w_i)$. For the green part, the probability $\ph (w_i)$ is increased by $\ph (w_i)\delta _i$ with $\delta _i \sim U(0.5,5)$}{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Section length}{22}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Subgroup analysis}{22}{subsection.3.6}\protected@file@percent }
 \@setckpt{03_methods}{
-\setcounter{page}{22}
+\setcounter{page}{25}
 \setcounter{equation}{8}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{15}
+\setcounter{footnote}{17}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{section}{3}
@@ -40,7 +42,7 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{6}
+\setcounter{figure}{7}
 \setcounter{table}{0}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
@@ -50,7 +52,7 @@
 \setcounter{r@tfl@t}{0}
 \setcounter{section@level}{2}
 \setcounter{Item}{0}
-\setcounter{Hfootnote}{15}
+\setcounter{Hfootnote}{17}
 \setcounter{bookmark@seq@number}{0}
 \setcounter{tabx@nest}{0}
 \setcounter{listtotal}{0}
@@ -61,7 +63,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{75}
+\setcounter{instcount}{78}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
