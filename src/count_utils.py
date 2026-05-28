@@ -633,11 +633,13 @@ def get_cutoff_frequency(
     return group_freqs_df
 
 
-def get_country_frequency(results_path: str, sec: str):
+def get_country_frequency(results_path: str, sec: str, version: str = "opt"):
     """get dataframe of frequencies (for one section) of different countries
-    Frequencies are group frequencies computed with the suboptimal word list for
-    each section. (the suboptimal word list is the word list corresponding to the
-    cutoff immediately lower than the optimal cutoff for each section. )
+    Frequencies are group frequencies computed with an excess word list for
+    each section. The word list is chosen by the version parameter:
+    - "opt": the optimal word list for each section, based on the optimal cutoff
+    - "subopt": the wordlist with cutoff once removed / one lower to the optimal
+    - "subsubopt": twice removed / two steps lower to the optimal cutoff
 
     """
 
@@ -647,7 +649,7 @@ def get_country_frequency(results_path: str, sec: str):
     countries = filters["all_countries"]
 
     results_path = os.path.join(results_path, sec)
-    freqs_path = os.path.join(results_path, f"5y_country_freqs_df.csv.gz")
+    freqs_path = os.path.join(results_path, f"5y_country_freqs_df_{version}.csv.gz")
 
     if os.path.exists(freqs_path):
         print("loading country freqs")
@@ -666,7 +668,7 @@ def get_country_frequency(results_path: str, sec: str):
             os.path.join(results_path, f"words_{sec}.pkl.npy"), allow_pickle=True
         )
         excess_words = np.load(
-            os.path.join(results_path, f"subsuboptimized_excess_words_{sec}.pkl.npy"),
+            os.path.join(results_path, f"{version}imized_excess_words_{sec}.pkl.npy"),
             allow_pickle=True,
         )
         excess_ind = np.isin(words, excess_words)
