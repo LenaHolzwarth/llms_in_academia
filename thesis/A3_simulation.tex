@@ -2,12 +2,26 @@
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/ground_truth_simulation/100_words.png}
-    \caption{}
+    \caption{Detailed view of the optimization process on simulated data with 100 excess words. Different cutoff values are plotted along the x-axis. Each panel, made up of two plots, corresponds to samples drawn from a distribution with a fixed proportion of LLM-generated text. The left plot in each panel shows the expected frequency computed on $M_{pre}$ and the observed frequency computed on $M_{post}$. The right plot shows the LLM-use estimates derived from these frequencies. The cutoff yielding the highest LLM-use estimate is deemed optimal. Estimates for $\hbet$ are only shown if the expected frequency is below $0.999$, and are only considered as candidates for optimality if their standard deviation is below $0.025$, otherwise they are displayed in gray. The dashed line indicates the true LLM-use.}
     \label{fig:simulation100}
 \end{figure}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/ground_truth_simulation/1000_words.png}
-    \caption{}
+    \caption{Detailed view of the optimization process on simulated data with 1000 excess words. Different cutoff values are plotted along the x-axis. Each panel, made up of two plots, corresponds to samples drawn from a distribution with a fixed proportion of LLM-generated text. The left plot in each panel shows the expected frequency computed on $M_{pre}$ and the observed frequency computed on $M_{post}$. The right plot shows the LLM-use estimates derived from these frequencies. The cutoff yielding the highest LLM-use estimate is deemed optimal. Estimates for $\hbet$ are only shown if the expected frequency is below $0.999$, and are only considered as candidates for optimality if their standard deviation is below $0.025$, otherwise they are displayed in gray. The dashed line indicates the true LLM-use.}
     \label{fig:simulation1000}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../results/plots/ground_truth_simulation/100_words_overview.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../results/plots/ground_truth_simulation/1000_words_overview.png}
+    \end{minipage}
+    \caption{Overview of the optimal LLM-use estimates on the y-axis plotted against each ground-truth level of simulated LLM-use on the x-axis. The dashed line indicates the ideal estimate. The left panel shows results for the simulation with 100 excess words, the right panel for 1000 excess words. In both cases, the estimation procedure succeeds at retrieving the correct LLM-use.}
+    \label{fig:simultion_100_1000_overview}
 \end{figure}

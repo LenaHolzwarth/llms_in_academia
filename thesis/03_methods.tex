@@ -28,8 +28,10 @@ Since PMC also includes preprints, some of the ``journals'' are preprint platfor
 For example, 1.4\% of papers are from bioRxiv.
 There are also preprints from medRxiv, arXiv and Research Square.
 PMC doesn't include all papers from preprint platforms, only those that have received NIH funding.
-Once a preprint is published in a journal, it is replaced with its published version in PMC\footnote{This is an assumption based on the observation that there are no papers with the same PMC-ID }.
 Overall, there are 22,470 preprints in the dataset after preprocessing, making up 1.8\% of all papers.
+Once a preprint is published in a journal that is part of PMC, the preprint is not replaced, such that two versions of the same paper can exist in PMC. 
+This is not ideal, because it means that some papers are weighed double in the analysis.
+However, not all preprints will get published in an open-access journal, which means that at most 1.8\% of the dataset are sampled twice.
 \\\\
 \emph{XML parsing}
 \\
@@ -39,7 +41,7 @@ From the XML files in the baseline, each corresponding to one paper, the followi
     \item \textbf{Date}
     \item \textbf{Language}: only specified for a minority of papers, but is inferred later during preprocessing 
     \item \textbf{Country}: country of first affiliated author, or first affiliated institution. Only available for 80.2\% of entries (after preprocessing)
-    \item \textbf{PMC-ID}: unique identifier for every paper in PMC. This is a way to prevent papers being listed twice (e.g. once as preprint, once as published version)
+    \item \textbf{PMC-ID}: unique identifier for every paper in PMC. Note that different versions of a paper (for example a preprint and its published version) are assigned different PMC-IDs.
     \item \textbf{PMID}: unique identifier for PubMed, not available for every paper in PMC
     \item \textbf{Journal name}
     \item \textbf{Title}
