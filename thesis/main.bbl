@@ -38,7 +38,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Many people are interested in ChatGPT since it has become a prominent AIGC model that provides high-quality responses in various contexts, such as software development and maintenance. Misuse of ChatGPT might cause significant issues, particularly in public safety and education, despite its immense potential. The majority of researchers choose to publish their work on Arxiv. The effectiveness and originality of future work depend on the ability to detect AI components in such contributions. To address this need, this study will analyze a method that can see purposely manufactured content that academic organizations use to post on Arxiv. For this study, a dataset was created using physics, mathematics, and computer science articles. Using the newly built dataset, the following step is to put originality.ai through its paces. The statistical analysis shows that Originality.ai is very accurate, with a rate of 98\%.}
-      \field{journaltitle}{arxiv.orgA AkramarXiv preprint arXiv:2403.13812, 2024•arxiv.org}
+      \field{journaltitle}{arXiv preprint arXiv:2403.13812}
       \field{note}{This was not proofread}
       \field{title}{Quantitative analysis of AI-generated texts in academic research: A study of AI presence in Arxiv submissions using AI detection tool}
       \field{year}{2024}
@@ -1057,50 +1057,6 @@
       \endverb
       \keyw{econ.GN,q-fin.EC}
     \endentry
-    \entry{Gall2021}{article}{}
-      \name{author}{4}{}{%
-        {{hash=15b69d10a4674c92ae5d9daa14dc9e6a}{%
-           family={Gallé},
-           familyi={G\bibinitperiod},
-           given={Matthias},
-           giveni={M\bibinitperiod}}}%
-        {{hash=dbf65f5d502712f92b645fa4b6793014}{%
-           family={Rozen},
-           familyi={R\bibinitperiod},
-           given={Jos},
-           giveni={J\bibinitperiod}}}%
-        {{hash=c8f9a92b64e8eece864795345f744b04}{%
-           family={Kruszewski},
-           familyi={K\bibinitperiod},
-           given={Germán},
-           giveni={G\bibinitperiod}}}%
-        {{hash=1cba32d9f26ff56703a2317fbd5d67bd}{%
-           family={Elsahar},
-           familyi={E\bibinitperiod},
-           given={Hady},
-           giveni={H\bibinitperiod}}}%
-      }
-      \strng{namehash}{c6a0e92f85a5efd8c22df0ac133c9d53}
-      \strng{fullhash}{baa0d313ae7fa57e6d2a12502eba49ab}
-      \strng{bibnamehash}{c6a0e92f85a5efd8c22df0ac133c9d53}
-      \strng{authorbibnamehash}{c6a0e92f85a5efd8c22df0ac133c9d53}
-      \strng{authornamehash}{c6a0e92f85a5efd8c22df0ac133c9d53}
-      \strng{authorfullhash}{baa0d313ae7fa57e6d2a12502eba49ab}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The power of natural language generation models has provoked a flurry of interest in automatic methods to detect if a piece of text is human or machine-authored. The problem so far has been framed in a standard supervised way and consists in training a classifier on annotated data to predict the origin of one given new document. In this paper, we frame the problem in an unsupervised and distributional way: we assume that we have access to a large collection of unannotated documents, a big fraction of which is machine-generated. We propose a method to detect those machine-generated documents leveraging repeated higher-order n-grams, which we show over-appear in machine-generated text as compared to human ones. That weak signal is the starting point of a self-training setting where pseudo-labelled documents are used to train an ensemble of classifiers. Our experiments show that leveraging that signal allows us to rank suspicious documents accurately. Precision at 5000 is over 90\% for top-k sampling strategies, and over 80\% for nucleus sampling for the largest model we used (GPT2-large). The drop with increased size of model is small, which could indicate that the results hold for other current and future large language models.}
-      \field{month}{11}
-      \field{title}{Unsupervised and Distributional Detection of Machine-Generated Text}
-      \field{year}{2021}
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/2111.02878
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/2111.02878
-      \endverb
-    \endentry
     \entry{Gehrmann2019}{article}{}
       \name{author}{3}{}{%
         {{hash=80c831c617902a22d4fa4074948f3aff}{%
@@ -1591,16 +1547,16 @@
            familyi={K\bibinitperiod},
            given={Dmitry},
            giveni={D\bibinitperiod}}}%
-        {{hash=c4b0bf3e6811fd70f388ecf8b5dc0cbb}{%
-           family={González-Márquez},
+        {{hash=cd349a1ebfac973d899c52636d09841c}{%
+           family={Gonzalez-Marquez},
            familyi={G\bibinithyphendelim M\bibinitperiod},
            given={Rita},
            giveni={R\bibinitperiod}}}%
-        {{hash=cfe6046e820138dbdcb9b7fab0d02bcc}{%
+        {{hash=1ac4a34ff875bf591fc4dc790c0ec0c3}{%
            family={Horvát},
            familyi={H\bibinitperiod},
-           given={Emőke\bibnamedelima Ágnes},
-           giveni={E\bibinitperiod\bibinitdelim Á\bibinitperiod}}}%
+           given={Emoke\bibnamedelima Agnes},
+           giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
         {{hash=cea8ebf53addf538fd931e9740b2b04c}{%
            family={Lause},
            familyi={L\bibinitperiod},
@@ -1611,11 +1567,11 @@
         {American Association for the Advancement of Science}%
       }
       \strng{namehash}{bf2c812f2f89e8f98fc4d0dc0541ce4a}
-      \strng{fullhash}{b3bc1eb5ae77393b15d389efbb5bf071}
+      \strng{fullhash}{39d86555a7b44f8819a9b7eeea0bd3c6}
       \strng{bibnamehash}{bf2c812f2f89e8f98fc4d0dc0541ce4a}
       \strng{authorbibnamehash}{bf2c812f2f89e8f98fc4d0dc0541ce4a}
       \strng{authornamehash}{bf2c812f2f89e8f98fc4d0dc0541ce4a}
-      \strng{authorfullhash}{b3bc1eb5ae77393b15d389efbb5bf071}
+      \strng{authorfullhash}{39d86555a7b44f8819a9b7eeea0bd3c6}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
@@ -1630,9 +1586,6 @@
       \field{year}{2025}
       \field{pages}{3813}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1126/SCIADV.ADT3813/SUPPL\_FILE/SCIADV.ADT3813\_SM.PDF
-      \endverb
       \verb{urlraw}
       \verb https://www.science.org/doi/10.1126/sciadv.adt3813
       \endverb
@@ -3405,6 +3358,55 @@
       \verb https://www.science.org/doi/10.1126/science.adg7879
       \endverb
     \endentry
+    \entry{topaz2026fabricated}{article}{}
+      \name{author}{5}{}{%
+        {{hash=5d6bc1cfa25262589f0f906bc295b427}{%
+           family={Topaz},
+           familyi={T\bibinitperiod},
+           given={Maxim},
+           giveni={M\bibinitperiod}}}%
+        {{hash=df8d619d4592937fb9d09e2bb9efd3e5}{%
+           family={Roguin},
+           familyi={R\bibinitperiod},
+           given={Nir},
+           giveni={N\bibinitperiod}}}%
+        {{hash=7cdc20167270824cc2f927d1c6d1c70b}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Pallavi},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f6862918de72ae33b5ff43ff16164254}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zhihong},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=86a2ebc3a47480eaced36f13bb7832de}{%
+           family={Peltonen},
+           familyi={P\bibinitperiod},
+           given={Laura-Maria},
+           giveni={L\bibinithyphendelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{df5439392e803f7bb0f82a52a250be41}
+      \strng{fullhash}{4a7a9dc31907b04a71acf2929e862852}
+      \strng{bibnamehash}{df5439392e803f7bb0f82a52a250be41}
+      \strng{authorbibnamehash}{df5439392e803f7bb0f82a52a250be41}
+      \strng{authornamehash}{df5439392e803f7bb0f82a52a250be41}
+      \strng{authorfullhash}{4a7a9dc31907b04a71acf2929e862852}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Lancet}
+      \field{number}{10541}
+      \field{title}{Fabricated citations: an audit across 2{·} 5 million biomedical papers}
+      \field{volume}{407}
+      \field{year}{2026}
+      \field{pages}{1779\bibrangedash 1781}
+      \range{pages}{3}
+    \endentry
     \entry{Uribe2024}{article}{}
       \name{author}{2}{}{%
         {{hash=368d9a745215ee5ff4e8842327e5664d}{%
@@ -3805,7 +3807,6 @@
       \keyw{Content homogeneity,Generative artificial intelligence (AI),Laboratory experiment,Natural experiment,Sustained innovation}
     \endentry
   \enddatalist
-  \missing{lancet study}
 \endrefsection
 \endinput
 

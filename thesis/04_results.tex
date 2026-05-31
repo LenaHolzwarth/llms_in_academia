@@ -1,35 +1,29 @@
-\section{Results}\label{sec:results}
-\subsection{Method validation}
+\chapter{Results}\label{sec:results}
+\section{Method validation}
 %comment: these plots should ideally also include the sampling distribution (or put that in the methods?)
 %comment: use results from 300 words
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/ground_truth_simulation/500_words.png}
-    \caption{Detailed view of the optimization process on simulated data with 500 excess words. Different cutoff values are plotted along the x-axis. Each panel, made up of two plots, corresponds to samples drawn from a distribution with a fixed proportion of LLM-generated text. The left plot in each panel shows the expected frequency computed on $M_{pre}$ and the observed frequency computed on $M_{post}$. The right plot shows the LLM-use estimates derived from these frequencies. The cutoff yielding the highest LLM-use estimate is deemed optimal. Estimates for $\hbet$ are only shown if the expected frequency is below $0.999$, and are only considered as candidates for optimality if their standard deviation is below $0.025$, otherwise they are displayed in gray. The dashed line indicates the true LLM-use.}
-    %comment: change label to beta hat instead of beta lb and 
-    %comment: change y axis to (0,1), also 
-    %comment: say cutoff instead of threshold, also 
-    %comment: check 0.999, also 
-    %comment: change labels to M_pre and M_post instead of q and p-human
-    %comment: don't forget to do all of this for the plots in the appendix!
+    \caption{Detailed view of the optimization process on simulated data with 500 excess words. Different cutoff values are plotted along the x-axis. Each panel, made up of two plots, corresponds to samples drawn from a distribution with a fixed proportion of LLM-generated text. The left plot in each panel shows the expected frequency computed on $M_{pre}$ and the observed frequency computed on $M_{post}$. The right plot shows the LLM-use estimates $\Delta$ and $\hbet$ derived from these frequencies. The cutoff yielding the highest LLM-use estimate is deemed optimal. Values of $\hbet$ are only shown if the expected frequency is below $0.999$, and are only considered as candidates for optimality if their standard deviation is below $0.025$, otherwise they are displayed in gray. The dashed line indicates the true LLM-use $\beta$. The maxima of $\hbet$ (within the considered region) always coincide with $\beta$, while $\Delta$ underestimates the true LLM-use.}
     \label{fig:simulation500}
 \end{figure}
-A simulation of word frequencies was intended to test the empirical validity of the mathematically derived lower bound LLM-use metric $\hbet$.
-Two matrices, $M_{pre}$ and $M_{post}$, representing $n=100000$ hypothetical documents and $m=500$ hypothetical words were created by sampling from a range of $m$ binomial distributions, where in a subset of documents equal to some fixed proportion of LLM-use, the binomial distribution was shifted to a higher probability in $M_{post}$.
-After sampling, the word frequencies were computed.
-In $M_{pre}$, the frequencies should correspond to the binomial probability that the matrix entries were sampled from.
-In $M_{post}$, they should be a mixture between the probabilities of $M_{pre}$ and the respective shifted distributions.
-The goal of the validation was to retrieve the proportion of documents in $M_{post}$ that were drawn from an altered distribution, which represents the proportion of LLM-use in the sample.
-%This is based on the observation that excess words (which all of the $m$ words in this example are, because non-excess words do not factor into the metrics, so they can be ignored for this simulation) appear in a higher-frequency in LLM-generated text.%comment: this maybe should go in the methods part
+The simulation of word frequencies is intended to test the empirical validity of the mathematically derived LLM-use estimate $\hbet$.
+Two matrices, $M_{pre}$ and $M_{post}$, representing $n=100,000$ hypothetical documents and $m=500$ hypothetical words are created by sampling from a range of $m$ binomial distributions, where in a subset of documents equal to some fixed proportion of LLM-use, the binomial distribution is shifted to a higher probability in $M_{post}$.
+After sampling, the word frequencies are computed.
+In $M_{pre}$, the frequencies correspond to the binomial probability that the matrix entries are sampled from.
+In $M_{post}$, they are a mixture between the probabilities of $M_{pre}$ and the respective shifted distributions.
+The goal of the validation is to retrieve the proportion of documents in $M_{post}$ that are drawn from an altered distribution, which represents the proportion of LLM-use in the sample.
 To retrieve the most accurate estimate $\hbet$, we perform optimization on the word list used to calculate the frequencies which the LLM-use estimates $\hbet$ and $\Delta$ are based on.
 Each tested word list is based on a cutoff value and includes all words whose frequency in $M_{pre}$ don't exceed the cutoff.
 Figure \ref{fig:simulation500} shows the optimization process for each ground-truth value of LLM-use.
 For each trial, the estimate $\hbet$ rises monotonically to the point of true LLM-use, after which it either rises, such as for 30\% LLM-use (top right panel), sinks (60\% LLM-use; middle right panel) or stagnates.
-However, because of the restriction on the estimates' error margin, any estimates exceeding the true usage are discarded. 
-The estimate based on frequency differences, $\Delta$, has an optimal cutoff slightly before $\hbet$, but always strongly underestimates the true LLM-use.
+However, because of the restriction on the estimates' error margin, which must be $<0.025$ any estimates exceeding the true usage are discarded.
+As a result, all maxima coincide with the true proportion of LLM-assisted text. 
+The estimate based on frequency differences, $\Delta$, has an optimal cutoff slightly lower than $\hbet$, but always strongly underestimates the true LLM-use.
 \\
 The two metrics $\hbet$ and $\Delta$ can also be compared in Figure \ref{fig:simulation_overview}, where the estimated LLM-use is plotted against the ground-truth value.
-The estimates $\hbet$ lie almost perfectly on the plot's diagonal, while $\Delta$ systematically underestimates.
+The estimates $\hbet$ lie almost perfectly on the plot's diagonal, while $\Delta$ systematically underestimates $\beta$.
 
 \begin{figure}[htbp]
     \centering
@@ -42,21 +36,20 @@ The estimates $\hbet$ lie almost perfectly on the plot's diagonal, while $\Delta
 Changing the number of words in this simulation to 100 or 1000 slightly changed the pattern of observed and expected frequencies, with the expected frequency stagnating before reaching the observed frequency in the case of 100 words, and both observed and expected frequency very quickly saturating to 1 in the case of 1000 words.
 However, in both simulations, the optimal estimate $\hbet$ was nearly identical to the underlying value of LLM-use (see Appendix \ref{ap:opt} for detailed results).
 
-%\subsection{Individual word estimates?}
-%comment: might be interesting to include section comparison of individual words, need the plots for that
-\subsection{Word list estimates}\label{subsec:results_full}
+\section{Word list estimates}\label{subsec:results_full}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/5y_2025_lower_bound_non_lemmatized_.png}
-    \caption{Detailed view of the optimization process on 2025 word frequency data (for full-length sections). Different cutoff values are plotted along the x-axis. Each panel, made up of two plots, corresponds to a different section. The left plot in each panel shows the expected frequency $\hph$ if all texts were written by humans and the observed frequency $q$. The right plot shows the LLM-use estimates derived from these frequencies. The cutoff yielding the highest LLM-use estimate is deemed optimal. Estimates for $\hbet$ are only shown if the expected frequency $\hph$ is below $0.999$, and are only considered as candidates for optimality if their standard deviation is below $0.025$, otherwise they are displayed in gray.}
+    \caption{Detailed view of the optimization process on 2025 word frequency data (for full-length sections). Different cutoff values are plotted along the x-axis. Each panel, made up of two plots, corresponds to a different section. The left plot in each panel shows the expected frequency $\hph$ (if all texts were written by humans) and the observed frequency $q$. The right plot shows the LLM-use estimates derived from these frequencies. The cutoff yielding the highest LLM-use estimate is deemed optimal. Estimates for $\hbet$ are only shown if the expected frequency $\hph$ is below $0.999$, and are only considered as candidates for optimality if their standard deviation is below $0.025$, otherwise they are displayed in gray.}
     \label{fig:2025_optimization}
-    %comment: they could also be color-coded by section!
 \end{figure}
 To get the best possible estimates of LLM-use in the PMC dataset, we determined for each section the optimal selection from all 2024 excess style words by repeating the estimate for several cutoff values, each corresponding to a subset of excess words. 
 Figure \ref{fig:2025_optimization} shows the results of this procedure.
 For all sections, $\hbet$ rises monotonically before reaching optimality, although in the case of results and discussion, the highest $\hbet$ estimate is reached in the region that was excluded because of too high error margins.
 Similar to what was observed in the simulation results, the $\Delta$ estimate peaks at a lower cutoff compared to $\hbet$, and yields much smaller estimates than $\hbet$.
-The optimal cutoff values, as well as their corresponding estimates for the years 2023 to 2025 are listed in Table \ref{tab:results}.
+The optimal cutoff values for the year 2025, as well as their corresponding estimates for the years 2023 to 2025 are listed in Table \ref{tab:results}.
+Because we use the cutoff values optimized for 2025 for all years, the estimates from previous years might not be computed with the cutoff optimal to them.
+Table \ref{tab:llm-use-individual-cutoff} in the Appendix shows the results with every year optimized individually.
 
 The list corresponding to the highest-performing cutoff value in 2025 was used to compute the monthly estimates of the different sections, which are displayed in Figure \ref{fig:monthly_est}.
 Both the observed word frequencies, as well as the LLM-use estimates for all sections show an increasing, if not monotonous, trend starting with the release of ChatGPT.
@@ -75,6 +68,7 @@ The estimates for the remaining sections -- abstract ($0.68$), introduction ($0.
 \end{figure}
 
 \begin{table}
+\centering
 \begin{tabular}{llrrrr}
     \toprule
     && 2023 & 2024 & 2025 & cutoff \\
@@ -96,28 +90,26 @@ The estimates for the remaining sections -- abstract ($0.68$), introduction ($0.
     &full                        & 0.07 \unc{0.02} & 0.21 \unc{0.02} & 0.36 \unc{0.01} & 0.15 \\
     \bottomrule
 \end{tabular}
-\caption{}
+\caption{Yearly LLM-use estimates for all sections computed on full-length or cropped samples. The estimates for all years were computed with the optimal cutoff for 2025.}
 \label{tab:results}
-%comment: maybe also add full estimates and abstract for cropped
 \end{table}
 
-\subsection{Cropped sections}
+\section{Cropped sections}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f_crop255/group_freqs_time.png}
     \caption{LLM-use estimates for sections cropped to 255 words. The upper panel shows monthly frequencies corresponding to the word list selected by the optimal cutoff for each section. Observed frequencies $q$ (solid lines) diverge from predicted frequencies $\hph$ (dotted lines) after the release of ChatGPT (dashed vertical line). In the lower panel, the corresponding LLM-use estimate $\hbet$ is depicted.}
     \label{fig:monthly_est_crop255}
 \end{figure}
-The same procedure that was done to get the overall use estimates detailed in Section \ref{subsec:results_full} was repeated randomly selected paragraphs within each section of each paper. 
-All sections were cropped to 255 consecutive words placed in a randomly determined part of the text.
-The optimization procedure can be seen in Appendix \ref{ap:opt}, while the optimal cutoff is given in Table \ref{tab:results}.
-The resulting estimates, plotted in Figure \ref{fig:monthly_est_crop255} are quite different to those of the full sections in Figure \ref{fig:monthly_est}.
-Here, the discussion and abstract have the highest proportion of estimated LLM-use, with $\hbet$ in December 2025 equal to $x.x$ and $x.x$, respectively.
-%comment: look up values for dec 25
-This is followed by the introduction with $x.x$, as well as the results ($x.x$) and main body (``full''; $x.x$).
-The lowest LLM-use, with $x.x$, is in the methods section.
+The procedure to get the overall use estimates detailed in Section \ref{subsec:results_full} is repeated on randomly selected paragraphs within each section of each paper. 
+All section samples are cropped to 255 consecutive words placed in a randomly determined part of the text.
+The optimization procedure can be seen in Appendix \ref{ap:opt}, while the optimal cutoffs and their corresponding estimates $\hbet$ are given in Table \ref{tab:results}.
+The resulting estimates, plotted in Figure \ref{fig:monthly_est_crop255}, are quite different to those of the full sections in Figure \ref{fig:monthly_est}.
+Here, the discussion and abstract have the highest proportion of estimated LLM-use, with $\hbet$ in December 2025 equal to $0.68$ and $0.67$, respectively.
+This is followed by the introduction with $0.59$, as well as the results ($0.46$) and main body (``full''; $0.4$).
+The lowest LLM-use, with $0.32$, is in the methods section.
 \\
-The estimates for the full and cropped sections are compared in Figure \ref{fig:est_per_section}.
+The yearly estimates for the full and cropped sections are compared in Figure \ref{fig:est_per_section}.
 For abstract and introduction, both versions yield similar estimates in 2025.
 The LLM-use in the results and discussion is somewhat lower in the cropped sections, while for the methods, there is a marked drop from $0.46$ for the full section to $0.28$ in the cropped.
 
@@ -140,7 +132,7 @@ The LLM-use in the results and discussion is somewhat lower in the cropped secti
     \label{fig:est_per_section}
 \end{figure}
 
-\subsection{Country and English proficiency}
+\section{Country and English proficiency}
 
 \begin{figure}[htbp]
     \centering
@@ -157,6 +149,8 @@ This is not always true when looking at countries individually.
 For example, France with $0.41$ has a lower maximum than Canada with $0.46$, which is comparable to Sweden's $0.47$.
 Overall, South Korea shows the highest LLM-use with $0.85$, followed by China ($0.82$) and Taiwan ($0.80$).
 France and Australia are the only countries in which LLM-use in the abstract exceeds LLM-use in the main body of the paper.
+Figure \ref{fig:countries_all} shows the LLM-use estimates for all countries together.
+NES countries form a cluster in the region with lower LLM-use, while highest LLM-use is recorded for countries from East Asia.
 
 \begin{figure}[htbp]
     \centering
@@ -168,7 +162,7 @@ France and Australia are the only countries in which LLM-use in the abstract exc
 \end{figure}
 
 
-\subsection{Overview of other studies}
+\section{Overview of other studies}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/study_comparison_all_v2.png}
@@ -184,16 +178,16 @@ France and Australia are the only countries in which LLM-use in the abstract exc
     \label{fig:comparison_secs}
 \end{figure}
 
-In the literature, there are a plethora of approaches to investigate LLM-use in academia, either via the indirect route of deriving estimates from published papers, or directly by surveying researchers about their experiences with the technology.
+In the literature, there is a plethora of approaches to investigate LLM-use in academia, either via the indirect route of deriving estimates from published papers, or directly by surveying researchers about their experiences with the technology.
 Figure \ref{fig:comparison_all} offers an overview of their results, to put into context the estimates reported in this thesis.
 The variance between results reported by different studies is very high, but on average, the surveys yield higher estimates than the indirect approaches.
 The majority of indirect methods also report much lower estimates than those reported in this study, especially considering the full paper.
 The estimates by Picazo-Sanchez and Ortiz-Martin \cite{Picazo-Sanchez2024} and Geng and Trotta \cite{Geng2024} are exceptions to this trend, with the former slightly above, and the latter within the uncertainty bounds of our estimate. 
 The highest estimate from Liu and Bu \cite{Liu2024} is a clear outlier and can be removed from analysis, as the detector used for it also reported LLM-use of over 60\% for years before the release of ChatGPT. 
-On the other hand, many of the survey results fall into the error margin of our estimates.
+On the other hand, many of the survey results fall within the error margin of our estimates.
 
 When comparing different estimation methods, the results based on word frequency are very similar to each other (i.e. Gray \cite{Gray2026}, Kobak et al. \cite{Kobak2025} and Kousha and Thelwall\cite{Kousha2025}), while the two approaches utilizing word frequency modeling (Geng and Trotta \cite{Geng2024} and Liang et al. \cite{Liang2024_paper,Liang2025}) yield very different results despite both using computer science papers from arXiv and having very little temporal offset.
-The studies using commercial LLM-detectors (Picazo-Sanchez and Ortiz-Martin \cite{Picazo-Sanchez2024}, Liu and Bu \cite{Liu2024}, and Akram \cite{Akram2024}) to derive estimates also report relatively similar estimates, but are distributed along a wider time-span than the word-frequency studies.
+The studies using commercial LLM-detectors to derive estimates (Picazo-Sanchez and Ortiz-Martin \cite{Picazo-Sanchez2024}, Liu and Bu \cite{Liu2024}, and Akram \cite{Akram2024}) also report relatively similar estimates, but are distributed along a wider time-span than the word-frequency studies.
 
 As can be seen in Figure \ref{fig:comparison_secs}, most studies base their estimates on analyzing abstracts. 
 The only studies directly comparing estimates from different sections are from Liang et al. \cite{Liang2024_paper,Liang2025}, where the LLM-use in the abstract is estimated to be higher than in the introduction, while we find no difference between the two sections for the beginning of 2024, and the opposite pattern for the end of 2024.

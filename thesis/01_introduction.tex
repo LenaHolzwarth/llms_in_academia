@@ -1,9 +1,9 @@
-\section{Introduction}\label{sec:intro}
+\chapter{Introduction}\label{sec:intro}
 
 Since the release of OpenAI's ChatGPT\footnote{https://chatgpt.com/} in November 2022, chatbots based on Large language models (LLMs) have become ubiquitous in the public consciousness.
 Due to their continued improvement, going from simple chat interfaces to fully integrated agentic systems like Anthropic's Claude Code\footnote{https://claude.com/product/claude-code}, they are increasingly helpful in any workplace dealing with writing, programming, or project planning.
 One such workplace is academia, and it is not surprising that researchers across disciplines have begun to adopt LLMs for editing or writing papers, peer reviews, or grant applications \cite{Kwon2025}.
-Proponents of the technology praise it as a tool for accessibility and inclusivity \cite{Bao2025_linguistic, Berdejo-Espinola2023, Prakash2025}, arguing that it enables non-native English speakers (NNES) to overcome language barriers by translating or performing grammar checks \cite{Kousha2025}.
+Proponents of the technology praise it as a tool for accessibility and inclusivity \cite{Bao2025_linguistic, Berdejo-Espinola2023, Prakash2025}, arguing that it enables non-native English speakers (NNES) to overcome language barriers by translating drafts or performing grammar checks \cite{Kousha2025}.
 However, the surge of ChatGPT's popularity is accompanied by concerns of misuse \cite{Liebrenz2023, Zheng2023}.
 LLMs are prone to hallucination, so if their output is not thoroughly checked before using it in a paper, false or misleading statements might be published, especially if the review is also delegated to an LLM \cite{Alansari2026, Lindsay2023, Walters2023, Xu2025}.
 Chatbots also make scientific fraud much easier, with the possibility of fabricating entire papers at the cost of a single prompt \cite{Kendall2024}.  
@@ -39,7 +39,7 @@ While these words appear more frequently in LLM outputs, some of them still have
 There are texts by human authors that include them, and LLM-generated texts that don't.
 \\
 Using the combined excess frequencies of a selection of excess style words, Kobak et al. derive a lower bound for LLM-use estimates.
-Their reasoning is quite intuitive: all instances of using one of the relevant words that go beyond the predicted frequency must have been caused by LLM-use.
+Their reasoning is quite intuitive: all instances of papers including one of the relevant words that go beyond the predicted frequency must have been caused by LLM-use.
 Excess frequency as a metric has the advantage of not needing to distinguish between using an LLM write a whole paragraph, or suggesting changes on previously written text.
 Both use-cases will lead to some LLM-suggested words being present in the final product.
 \\

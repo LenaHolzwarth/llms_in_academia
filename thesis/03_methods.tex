@@ -1,24 +1,22 @@
-\section{Methods}\label{sec:methods}
-\subsection{Dataset and Preprocessing}
+\chapter{Methods}\label{sec:methods}
+\section{Dataset and Preprocessing}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/papers_journals_overview.png}
     \caption{Overview of the PMC dataset after preprocessing. Panel \textbf{a} shows the number of papers in PMC published in each month starting in 2017 (1,194,287 in total). The mean number of papers published per month is 11,085, with a clear upwards trend. Panel \textbf{b} shows the distribution of journals after preprocessing. All journals with less than 4000 papers are listed as ``other'' for reasons of legibility. The journal \emph{Proceedings of the National Academy of Sciences of the United States of America} was abbreviated to ``NAS proceedings''.}
     \label{fig:papercount}
 \end{figure}
-\emph{Pubmed Central}
-\\
-%comment: follow up on inquiry to nih
-Pubmed Central (PMC) is a collection of open-access biomedical literature curated by the U.S. National Institutes of Health's National (NIH) Library of Medicine \cite{pmc}. 
+\subsection{Pubmed Central}
+Pubmed Central (PMC) is a collection of open-access biomedical literature curated by the U.S. National Institutes of Health's (NIH) National Library of Medicine \cite{pmc}. 
 It provides machine-readable versions of the articles in XML format, which can be accessed individually or downloaded in bulk.
-There are three open-access subsets available for bulk download with different licensing: commercial, non-commercial and other.
-The latter set includes non-machine readable licenses and was therefore not used.
+There are three open-access subsets available for bulk download, each  with different licensing: \emph{commercial}, \emph{non-commercial} and \emph{other}.
+The latter set includes non machine-readable licenses and was therefore not used.
 PMC publishes a baseline twice a year containing all papers in the collection up to shortly before the baseline's release date. 
 Incremental updates are published daily in separate files.
 When a new baseline is released, the previous baseline and all incremental files are replaced.
-Here, we used the baseline published on January 23, 2026 containing papers dated December 31, 2025 and before.\footnote{Since work on this thesis started earlier, initial analyses used the previous baseline released June 26, 2025. These were repeated with the January 2026 baseline, so that everything reported here is based on the newer baseline}
+Here, we used the baseline published on January 23, 2026 containing papers dated December 31, 2025 and before.\footnote{Since work on this thesis started earlier, initial analyses used the previous baseline released June 26, 2025. These were repeated with the January 2026 baseline, so that everything reported here is based on the newer baseline. Exceptions to this are clearly marked in the text.}
 The daily updates published after the baseline were not considered.
-The baseline was downloaded via FTP, which is since deprecated\footnote{https://ftp.ncbi.nlm.nih.gov/pub/pmc/deprecated/oa\_bulk/}.
+The baseline was downloaded via FTP, which is no longer supported, but is available via other channels\footnote{https://ftp.ncbi.nlm.nih.gov/pub/pmc/deprecated/oa\_bulk/}.
 \\
 Figure \ref{fig:papercount} offers an overview of the dataset after preprocessing.
 It shows that the top three journals with most papers in PMC are \emph{Scientific Reports} (8.1\%), \emph{Nature Communications} (4.7\%) and \emph{PLoS ONE} (3.9\%), all of which are multidisciplinary publications covering a wide range of topics in the natural sciences. 
@@ -33,12 +31,11 @@ Once a preprint is published in a journal that is part of PMC, the preprint is n
 This is not ideal, because it means that some papers are weighed double in the analysis.
 However, not all preprints will get published in an open-access journal, which means that at most 1.8\% of the dataset are sampled twice.
 \\\\
-\emph{XML parsing}
-\\
+\subsection{XML parsing}
 From the XML files in the baseline, each corresponding to one paper, the following information was extracted:
 \begin{itemize}
     \item \textbf{Article type}: specifies whether the article is a research paper, a review, a comment, etc.
-    \item \textbf{Date}
+    \item \textbf{Date}: refers to the date of publication, not the date of incorporation to PMC
     \item \textbf{Language}: only specified for a minority of papers, but is inferred later during preprocessing 
     \item \textbf{Country}: country of first affiliated author, or first affiliated institution. Only available for 80.2\% of entries (after preprocessing)
     \item \textbf{PMC-ID}: unique identifier for every paper in PMC. Note that different versions of a paper (for example a preprint and its published version) are assigned different PMC-IDs.
@@ -59,8 +56,7 @@ Any other untitled sections are discarded.
 Similarly, if there is text at the beginning of the body outside of a sec tag, it is assumed to be the introduction. 
 This heuristic is not ideal, because the unnamed text contains abbreviations or keywords instead of the introduction in some cases, but since the Introduction is among the sections this study wants to focus on, it strongly increases the number of usable papers.
 \\\\
-\emph{Preprocessing}
-\\
+\subsection{Preprocessing}
 After parsing all relevant information from the XML files, the extracted papers were filtered to fit the required criteria.
 While some XML files specify the paper's language, this is not the case for the majority.
 Since the focus here is on English text, we determine each paper's language using polyglot's detector module\footnote{https://polyglot.readthedocs.io/}.
@@ -80,11 +76,10 @@ These preprocessing steps reduce the dataset from 7,125,722 to 1,602,404 papers,
 (2017 is the earliest time used in our analyses).
 \\
 While these preprocessing steps strongly reduce sample size, the resulting dataset can be used to compare LLM-usage in the abstract to LLM-usage in the entire body of the paper, as well as to compare different sections within the body with each other.
-For this purpose, all analyses detailed in the following subsections were performed on the abstract, introduction, methods, results and discussion of the paper, as well as the full paper, which refers to the four sections from the body without the abstract.
-With the finished dataset, we can turn to the methods used to estimate the proportion of LLM-generated text in it.
+For this purpose, all analyses detailed in the following sections were performed on the abstract, introduction, methods, results and discussion of the paper, as well as the full paper, which refers to the four sections from the body without the abstract.
+With the finished dataset, we can turn to the methods used to estimate its proportion of LLM-generated text.
 
-\subsection{Excess Frequency and LLM-use lower bound estimates}
-
+\section{Excess Frequency and LLM-use lower bound estimates}
 \begin{figure}[htbp]
     \centering
     \begin{minipage}[t]{0.48\textwidth}
@@ -101,18 +96,20 @@ With the finished dataset, we can turn to the methods used to estimate the propo
     \label{fig:these}
 \end{figure}
 Excess frequency, referring to the difference between the observed and predicted frequencies for some word $w$, can be thought of as an intuitive lower bound for LLM-use.
+It was introduced by Kobak et al. \cite{Kobak2025}, upon whose work this thesis expands.
 To compute it, we first determine the observed frequency of $w$.
 We use scikit-learn's binary CountVectorizer to count the number of papers in each month or year in which $w$ occurs \cite{scikit-learn}.
 Because it is a binary count, it doesn't matter how often $w$ appears in each paper.
-The vectorizer only considers words with 4 or more letters, all of which must be part of the English alphabet.
+The vectorizer only considers words with four or more letters, all of which must be part of the English alphabet.
 When counting word occurrence, lemmatization is an important consideration: one has to determine whether to treat different inflections of $w$ as the same or as individual words.
 With lemmatization, it makes no difference if a paper contains ``delves'', ``delved'' or ``delving'', they are all treated as an instance of ``delve''.
 It is not immediately clear if lemmatization is helpful in this use-case.
 As has been mentioned in Section \ref{sec:intro}, LLMs prefer certain words.
-This could imply that LLMs use all inflections of a word at a higher frequency, or that it has a strong preference for that word in a specific grammatical context (e.g. third-person singular), while using every other inflection at the same frequency in which they occur in human-written text.
+This could imply that LLMs use all inflections of a word at a higher frequency, or that they have a strong preference for that word in a specific grammatical context (e.g. third-person singular), while using every other inflection at the same frequency in which it occurs in human-written text.
 As will be detailed in Section \ref{subsec:wordlist}, for the overall LLM-usage estimates, this does not matter. 
 For the plots showing results for individual words, such as Figures \ref{fig:these} and \ref{fig:potential_delve}, all word variants are included in the counts.
 The frequencies $q$ are computed by dividing the monthly or yearly counts by the total number of papers in each respective time frame.
+While monthly intervals offer a more detailed look into the data, for some computations it makes more sense to do them in yearly intervals to save resources.
 On a conceptual level, the observed frequencies $q$ are an estimate for the probability of a positive outcome in the Bernoulli trial of whether a word is present in some paper.
 For dates prior to the release of ChatGPT in November 2022, marking the beginning of easily accessible LLMs, $q$ corresponds to the frequency of a word in human-written text, $p_{human}$.
 After the widespread availability of Chatbots, the observed word frequency can be thought of as the product of a mixture distribution between the probability of a word to appear in human-authored and LLM-assisted text, respectively: 
@@ -124,6 +121,7 @@ After the widespread availability of Chatbots, the observed word frequency can b
     \end{cases}
 \end{equation}
 The mixture component $\beta$ in the lower case indicates the proportion of papers that were written with the help of LLMs.
+This is the LLM-use rate that this work aims to investigate.
 We can transform this equation to obtain an expression for $\beta$:
 
 \begin{equation}\label{eq:beta}
@@ -153,7 +151,7 @@ Note that this metric will lead to a strong under-estimation of the actual LLM u
 This is because a human-use frequency of $60\%$ will only translate to $60\%$ of observed use, if all texts in the sample are in fact written by humans ($\beta=0$).
 In reality, some papers were written with the help of LLMs, such that the fraction of word-occurrence that can be explained by human usage is not $60\%$ of all papers, but $60\%$ of the papers with human authorship.
 This under-estimation is necessary, because $\beta$ is unknown and the most conservative assumption is $\beta=0$.
-%comment:more detail? this under-estimation is too large to be an estimate?
+This makes $\Delta$ an accurate, but relatively weak lower bound.
 A stronger lower bound, denoted $\beta_{lb}$ is also possible:
 \begin{equation}\label{eq:beta_hat}
     \begin{split}
@@ -165,15 +163,20 @@ A stronger lower bound, denoted $\beta_{lb}$ is also possible:
 %comment: consider case for p_llm = 1
 Here, we replace the unknown $p_{LLM}$ with its upper bound 1, thereby increasing the denominator, which creates a lower bound for $\beta$.
 Note that in cases where $p_{LLM}=1$, such that a word or group of words appear in every LLM-assisted text, the lower bound $\beta_{lb}$ is identical to $\beta$.
+There are certain limitations of this formula.
+First, it requires $p_{LLM}$ to be strictly larger than $\ph$, otherwise the lower bound will be zero or negative.
+This disqualifies words that occur less frequent post-2022, because they are less likely to be used in LLM-generated text, from being useful marker words for this metric.
+Second, as stated before, $\beta_{lb}$ depends on the assumption that $\hph$ accurately predicts $\ph$ after the release of ChatGPT.
+This requires $\ph$ to follow a linear trend and to be independent of $p_{LLM}$, meaning that human authors don't let their writing style be influenced by LLM word choices.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\linewidth]{../results/plots/misc/intuition_estimate_v3.png}
-    \caption{Illustration of the frequency gap as a lower bound for LLM-use and why it (strongly) underestimates true LLM-use. In this example, we assume an underlying distribution that is shown in the top bar. Humans are assumed to use a word in 60\% of texts, so $\ph=0.6$. This proportion is shown by the blue bar. We further assume that LLMs use a word in 80\% of texts ($\pl=0.8$), which is indicated by the green bar. LLM-use $\beta$ is assumed to be 0.5, meaning that half of the texts in the sample are LLM-assisted. When sampling from this distribution in the second row, we observe that in total, 70\% of texts use this word. This observation is the word frequency $q$ that we measure for PMC. In this example, we know that the 70\% of overall usage can be explained by $\ph\cdot(1-\beta)= 60\% \cdot 0.5 = 30\%$ of humans using the word, plus $\pl\cdot\beta= 80\% \cdot 0.5 = 40\%$ of LLMs using the word. However, when trying to estimate LLM-use, we only have access to $\ph$ (indirectly, via regression). Since we don't know $\beta$, the most conservative estimate is $\beta=0$, i.e. no texts are written with the help of LLMs. This means that we expect $\ph\cdot(1-\beta)= 60\% \cdot 1 = 60\%$ of papers to include a term if all texts were written by humans, meaning the remaining $\Delta = q - \ph = 10\%$ of word occurrences must have been written by an LLM and therefore the rate of LLM-use must at least be 10\%. This method of lower-bounding the LLM-use thus underestimates the true proportion of LLM-assisted text by 40 percentage points.} 
+    \caption{Illustration of the frequency gap as a lower bound for LLM-use and why it (strongly) underestimates true LLM-use. In this example, we assume an underlying distribution that is shown in the top row. Humans are assumed to use a word in 60\% of texts, so $\ph=0.6$. This proportion is shown by the blue bar. We further assume that LLMs use a word in 80\% of texts ($\pl=0.8$), which is indicated by the green bar. LLM-use $\beta$ is assumed to be 0.5, meaning that half of the texts in the sample are LLM-assisted. When sampling from this distribution in the second row, we observe that in total, 70\% of texts use this word. This observation is the word frequency $q$ that we measure for PMC. In this example, we know that the 70\% of overall usage can be explained by a combination of humans and LLMs using this word. In particular, $\ph\cdot(1-\beta)= 60\% \cdot 0.5 = 30\%$ is explained by humans using the word, and $\pl\cdot\beta= 80\% \cdot 0.5 = 40\%$ is caused by LLMs using the word. However, when trying to estimate LLM-use, we only have access to $\ph$ (indirectly, via regression). Since we don't know $\beta$, the most conservative estimate is $\beta=0$, i.e. no texts are written with the help of LLMs. This means that we would expect $\ph\cdot(1-\beta)= 60\% \cdot 1 = 60\%$ of papers to include a term if all texts were written by humans, so the remaining $\Delta = q - \ph = 10\%$ of word occurrences must have been written by an LLM. Therefore the rate of LLM-use must at least be 10\%. This method of lower-bounding the LLM-use thus underestimates the true proportion of LLM-assisted text by 40 percentage points.} 
     \label{fig:intution_estimates}
 \end{figure}
 
-\subsection{Grouped word frequencies}\label{subsec:wordlist}
+\section{Grouped word frequencies}\label{subsec:wordlist}
 \begin{figure}[htbp]
     \centering
 
@@ -205,15 +208,15 @@ Note that in cases where $p_{LLM}=1$, such that a word or group of words appear 
 \end{figure}
 
 While single words are useful to illustrate the concept of excess frequency, they are suboptimal as a basis for an accurate estimate of overall LLM-use.
-The reason for this is obvious: while LLMs might use a word such as ``potentially'' at a higher frequency than humans would, ``potentially'' doesn't fit in every context, so there will potentially be a lot of LLM texts not containing it.
+The reason for this is illustrated in Figure \ref{fig:potential_delve}: while LLMs might use a word such as ``potentially'' at a higher frequency than humans would, ``potentially'' doesn't fit in every context, so there will potentially be a lot of LLM texts not containing it.
+Accordingly, the lower bound for ``potential'' is much lower than that for the relatively frequent word ``these'' in Figure \ref{fig:these}.
 Also, the observed frequencies of some words might be unreliable.
 The word ``delve'', used as the titular example of excess vocabulary by Kobak et al., has experienced a sharp decline in popularity starting around mid-2024, when it was widely reported as an example of LLM-generated language \cite{Geng2025}.
-To protect against these fluctuations, we replace individual words with word lists.
-The method of computing the frequencies doesn't change, but instead of counting in how many papers a single word appears, we count in how many papers at least one of the words in the list appears.
+To protect against these fluctuations, Kobak et al. replace individual words with word lists.
+The method of computing the frequencies doesn't change, but instead of counting in how many papers a single word appears, they count in how many papers at least one of the words in the list appears.
 The most systematic way to create a list of words indicative of LLM-use is to use a data-driven approach, which doesn't require a manually selected list.
-\\\\
-\emph{Excess words for 2024 PubMed}
-\\ 
+
+\subsection{Excess words for 2024 PubMed}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/misc/exess_words_18_24.png}
@@ -224,8 +227,10 @@ Kobak et al. determine the excess words for 2024 by computing the frequency gap 
 The frequency gap is the same metric as $\Delta$ in Equation \ref{eq:delta}, although they only use the yearly frequencies of 2021 and 2022 to predict $\hph$.
 The frequency ratio is computed as $\frac{q}{\hph}$.
 An excess word is defined as any word with frequency gap or frequency ratio above a certain threshold.
-The thresholds were chosen in such a way that the majority of words in texts from the years 2012 - 2023 were excluded
+The thresholds were chosen in such a way that the majority of words in texts from the years 2012 - 2022 were excluded
 (the gaps for previous years were also computed by comparing observed values to $\hph$ computed based on two and three years prior).
+For example, in Figure \ref{fig:excess_words_18_24}, the frequency ratio of all words in Pubmed abstracts from 2018 are compared to those of 2024. 
+There are only a few words with frequency ratios higher than the threshold in 2018, whereas there are many in 2024.
 Using both metrics as inclusion criteria serves to increase the number of excess words.
 For instance, a word whose usage increases from 0.0001 to 0.001 will have a relatively small gap but a large ratio, while a word whose prior frequency of 0.3 rises to 0.4 has a large gap with a relatively small ratio. 
 Both changes mark a notable difference in usage and should therefore be candidates for marker words.
@@ -234,46 +239,54 @@ All words above the threshold were then manually annotated as \emph{style words}
 Their excess use can be attributed to new inventions or research trends.
 Examples include ``RNN'' in 2018, ``Covid'' in 2020, and ``ChatGPT'' in 2024.
 \emph{Style words}, on the other hand, are not related to research topics and could be found in any discipline: ``these'', ``potentially'', ``delve'', etc.
-Excess words of 2024 were defined as all style words with frequency gap or ratio gap above the respective thresholds.
+Because they are independent of the subject of research, and no previous year showed such a strong increase in the frequency of style words, it is reasonable to assume that their unexpectedly high frequency in 2024 by the large-scale introduction of LLMs into the academic writing process.
+All style words with frequency gap or ratio gap above the respective thresholds in 2024 were selected as marker words for LLM-use.
 This resulted in a list of 379 words, which are listed in the Appendix \ref{ap:wordlist}.
-\\\\
-\emph{Optimal word lists}
-\\
+For simplicity, this list will be referred to as the excess word list from here on out, even though it could be more accurately referred to as a list of excess style words from 2024 Pubmed abstracts.
+
+\subsection{Optimal word lists}
 The excess word list can be used to create the optimal list of marker words to detect LLM-use.
 It might be counter-intuitive to not just use the whole list: if any of the words can act as a marker for LLM-use, then using as many words as possible should yield the most accurate result.
-However, one has to keep in mind that all excess words also appear in human-written text.
-If there are too many words in the list, their cumulative frequency will be close to 1 even for $p_{human}$.
-For Kobak et al., who use the frequency gap $\Delta$ as a lower bound for LLM-use, this is suboptimal because the closer $\hph$ is to 1, the smaller the potential gap.
-When using $\beta_{lb}$ as the metric, the highest lower bound would be achieved by getting $p_{LLM}$ as close to 1 as possible, which would in turn move $\beta_{lb}$ closer to the true value $\beta$.
+The metric $\beta_{lb}$ yields the highest lower bound by getting $p_{LLM}$ as close to $1.0$ as possible, which would in turn move $\beta_{lb}$ closer to the true value $\beta$.
 While $p_{LLM}$ isn't observable, it can be manipulated by increasing the number of words in the excess list.
-However, this includes the caveat that $\hph$ must remain smaller than 1, otherwise, Equation \ref{eq:beta_hat} yields division by zero.
+The longer the list, the more likely it is for all LLM-assisted text to contain at least one of the words in it.
+However, one has to keep in mind that all excess words also appear in human-written text.
+A long list of excess words could thus result in $\hph = 1.0$, which leads to division by zero in Equation \ref{eq:beta_hat}.
+A high value of $\ph$ is also suboptimal for using $\Delta$ as the lower bound, because the closer $\ph$ is to $1.0$, the smaller the potential gap.
 This means that for both lower bounds, $\Delta$ and $\beta_{lb}$, a subset of the 2024 excess words needs to be determined.
-Because brute-forcing the decision on an optimal list by trying all possible combinations is not feasible, \cite{Kobak2025} sorted the excess words by their individual frequencies in 2024 (lowest to highest), and then used different cutoff values to create subsets of all words whose individual frequencies were below the cutoff. 
-Each resulting list was used to compute the LLM-use estimate $\Delta$ and the highest $\Delta$ was used as the final estimate.
-\\\\
-\emph{Adaptation to PMC data}\\
-Initially, we planned to repeat the procedure of finding excess words for the PMC dataset.
+Because brute-forcing the decision on an optimal list by trying all possible combinations is not feasible, Kobak et al. sort the excess words by their individual frequencies in 2024 (lowest to highest), and then use different cutoff values to create subsets of all words whose individual frequencies are below the cutoff. 
+Each resulting list is used to compute the LLM-use estimate $\Delta$ and the highest $\Delta$ is used as the final estimate.
+
+\subsection{Adaptation to PMC data}
+Initially, we planned to repeat the previous authors' procedure to find excess words for the PMC dataset.
 This turned out to be non-feasible, because the length of the full papers lead to finding a very large number of excess words for the different sections, which would all have to be manually annotated to filter them for style words.
 Instead, we used the previous study's 2024 excess word list.
 This is permissible because, first, PMC is a subset of the PubMed data used by Kobak et al., so the domain is similar, and second, the point of using style words is to have marker words that are domain-independent
 (although it is likely that when searching for excess words in a different domain, such as news articles, the resulting list would be somewhat different).
 The 2024 excess word list is not lemmatized, so that ``delving'' and ``delves'' are treated as different words.
 Since we are not interested in the excess words on a semantic level and use them only as indicator of LLM-use, it does not matter if two words on the list are variations of the same verb, or if a third variation of the verb is not included.
-To get the optimal list for each section, we sort the 2024 excess words by their individual frequency in 2024.
+\\
+To get the optimal list for each section, we sort the 2024 excess words by their individual frequency in that section in 2024.
 This leads to a somewhat different order for each section.
 Like in the previous work, we then use different cutoff values to create subsets of excess words, which serve as a basis for computing the lower bound for LLM-use, $\beta_{lb}$.
 We started with 12 cutoffs spaced evenly on a log-scale between 0 and 1 and later added intermediate values in the high-interest region around the maximum, resulting in 19 cutoffs.
 The highest value of $\beta_{lb}$ is used as our estimate for $\beta$ and denoted $\hbet$.
-It can be read as the lower bound on LLM-use for the optimal word list.
 However, in some cases, the maximum occurs at one of the highest cutoff value, leading to nearly the full excess word list being used for the estimate.
 This results in values for $q$ and $\hph$ that are extremely close to 1, sometimes with $\hph$ being larger than $q$, which contradicts the assumption $p_{human} < p_{LLM}$.
 As a consequence, both numerator and denominator of the fraction $\frac{q - \hph}{1-\hph}$ are very close to 0, which can lead to unstable behavior.
 Figure \ref{fig:erratic} gives an example of this, showing smoothly increasing lower bounds for lower cutoffs and erratic behavior for the highest few.
-To prevent this, any cutoff that leads to estimates of $\hph \ge 0.999$ was excluded as candidate for creating optimal excess word lists.
+For example, when using all excess words (corresponding to a cutoff of $1.0$), the metric estimates 100\% LLM-use in the years 2019, 2020, 2023 and 2025. 
+This happens when $q=1.0$, which leads to the numerator and denominator of $\beta_{lb}$ being identical.
+In theory, $q=1.0$ is a valid observation, which logically entails that $\beta=1.0$, if $\hph<1.0$.
+The problem is that $q$ is an empirical estimate measured with some uncertainty.
+Consider a situation where $q=1.0$ and $\hph=0.9998$, which leads to an estimate of $\beta_{lb}=\frac{q-\hph}{1-\hph} = \frac{1-0.9998}{1-0.9998}=1$.
+If we minimally adjust $q$ to $q=0.9999$, the estimate is $\beta_{lb}= \frac{0.9999-0.9998}{1-0.9998}=0.5$ instead.
+To avoid fluctuations like this, any cutoff that leads to estimates of $\hph \ge 0.999$ is excluded from optimization.
+This removes all cases of $q=1.0$.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/5y_all_cutoffs_full_lower_bound_non_lemmatized_.png}
-    \caption{Behavior of different cutoff values and their corresponding excess word lists for PMC abstracts. Cutoffs are marked by color. Panel \textbf{a} shows the word list frequency $q$ as solid lines and the expected frequency $\hph$ as dashed lines. Panel \textbf{b} shows the lower bound estimates $\beta_{lb}$. For the highest cutoff values, both $q$ and $\hph$ are very close or equal to 1, leading to unreliable values.}
+    \caption{Behavior of different cutoff values and their corresponding excess word lists for PMC abstracts. Cutoffs are marked by color. Panel \textbf{a} shows the word list frequency $q$ as solid lines and the expected frequency $\hph$ as dashed lines. Panel \textbf{b} shows the lower bound estimates $\beta_{lb}$. For the highest cutoff values, both $q$ and $\hph$ are very close or equal to 1, leading to unreliable values with high fluctuation.}
     \label{fig:erratic}
 \end{figure} 
 \\
@@ -284,22 +297,21 @@ The optimization was performed on yearly frequency data separately.
 This means that the optimal cutoff for 2024 could be different to that of 2025.
 For the main analysis, the optimal cutoff values for 2025 were used for all time-points to simplify procedure and have more easily comparable results.
 The main analysis was performed on monthly data with the word lists optimized for the year 2025, instead of optimizing each month individually.
-A possible approach with optimizing on monthly intervals of the data would be to take the majority optimum as the list for all estimates.
+A possible approach with optimizing for monthly intervals of the data would be to take the majority optimum as the cutoff for all estimates.
 The consequence would be the same: Some time intervals would be estimated with the optimal word list, while others wouldn't.
 
-\subsection{Method validation}
-\emph{Standard error for LLM-use estimates}
-\\
+\section{Method validation}
+\subsection{Standard error for LLM-use estimates}
 To better judge the reliability of the estimates, we computed the standard error and performed sanity checks using simulated frequency data.
 Since the LLM-use estimate $\hbet=\frac{q -  \hph}{1-\hph}$ depends on $\hph$ and $q$, we first need to determine their respective errors, before propagating them to obtain the error for $\hbet$.
-We conceptualize $q$ as the MLE for the binomial probability of an excess word to appear in a paper.
+We conceptualize $q$ as the empirical MLE (maximum likelihood estimate) for the binomial probability of an excess word to appear in a paper.
 The binomial MLE is equal to the number of successes divided by the number of Bernoulli trials.
 Here, we define a trial as a paper, and a success occurs if an excess word appears in the paper. 
 As such, the MLE's variance is $Var(q)=\frac{q(1-q)}{n}$, with $n$ as the number of papers in the current month or year.
 $\hph$ is the regression estimate of a binomial probability. 
 Since $\hph$ is not an empirical estimate, the binomal MLE variance doesn't apply and we focus on the regression variance.
 Technically, the data points that the regression was trained on are empirical estimates (since training was done on $q$ values in the time span before the release of ChatGPT).
-To factor in this binomial maximum likelihood uncertainty, it should be included in the regression formula.
+To factor in this binomial maximum likelihood uncertainty, it could be included in the regression formula.
 However, this was omitted for simplicity.
 The regression variance for the design matrix $X$ (including only values of $q$ on which the regression is fit, corresponding to the time before the release of ChatGPT), predictor matrix $x$ (including all time-points that are to be predicted, with pre- and post-ChatGPT frequencies) and response vector $y$ is computed with the following formula:
 \begin{equation}
@@ -332,12 +344,10 @@ We can use this to compute the variance of $\hbet$:
     \end{split}
 \end{equation}
 We assume independence of the two random variables $Q$ and $P$, so that the covariance matrix $\Sigma$ only has the diagonal entries of the estimate variances $Var(q)$ and $Var(\hph)$ derived above. 
-%comment: is assumption of independence valid?
 We excluded all estimates with a standard error of $Var(\hbet)\ge 0.025$.
-%comment: the error bars don't work if p is 1 (or veryvery close to 1), because in that case, binomial error is 0
-\\\\
-\emph{Sanity check simulation}
-\\
+Note that the previously introduced constraint on $\hph<0.999$ is not made obsolete by the introduction of bounds on the standard error, because in situations where $q=1.0$, the binomial error is $\frac{1(1-1)}{n}=0$, which propagates through to the error on $\hbet$.
+
+\subsection{Sanity check simulation}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\linewidth]{../results/plots/misc/intuition_simulation_v2.png}
@@ -345,51 +355,56 @@ We excluded all estimates with a standard error of $Var(\hbet)\ge 0.025$.
     \label{fig:intution_simulation}
 \end{figure}
 We assess the procedure of finding the optimal excess word list to get the best possible lower bound by performing the same analysis on simulated data with known $\pl$ and $\ph$ and varying $\beta$.
-We simulated data for $n=100,000$ texts, approximating the number of papers per year in our sample.
-In our simulation, there were $m=500$ words, all of which were treated as excess words.
-We created two matrices, $M_{pre}$ and $M_{post}$, each with dimensions $(n,m)$, corresponding to data before and after the release of ChatGPT, respectively.
-For $M_{pre}$, each word $w$ was randomly assigned a probability $\ph(w)$. 
-The probabilities were sampled from a gamma distribution with shape parameter $2$ and scale parameter $0.02$.
-Then, $n$ binomial samples were drawn with $\ph(w)$ as probability of success for each word.
-For $M_{post}$, a fraction of $\beta$ texts were selected as being LLM-generated.
-As our assumptions require that $\ph\le\pl$ (because we define excess words to have a frequency increase after the release of ChatGPT), the probabilities for words to occur in LLM-assisted text were sampled as $\pl(w)=\ph(w)(1+\delta)$, with $\delta \sim U(0.5,5)$.
+We simulate data for $n=100,000$ texts, approximating the number of papers per year in our sample.
+In our simulation, there are $m=500$ words, all of which are treated as excess words.
+We create two matrices, $M_{pre}$ and $M_{post}$, each with dimensions $(n,m)$, corresponding to data before and after the release of ChatGPT, respectively.
+For $M_{pre}$, each word $w$ is randomly assigned a probability $\ph(w)$. 
+The probabilities are sampled from a gamma distribution with shape parameter $2$ and scale parameter $0.02$.
+Then, $n$ binomial samples are drawn with $\ph(w)$ as probability of success for each word.
+For $M_{post}$, a fraction of $\beta$ texts are selected as being LLM-generated.
+As our assumptions require that $\ph<\pl$, the probabilities for words to occur in LLM-assisted text are sampled in Bernoulli trials with probability $\pl(w)=\ph(w)(1+\delta)$, with $\delta \sim U(0.5,5)$.
 In cases where $\ph(w)(1+\delta)>1$, $\delta$ was newly sampled until the resulting $\pl(w)$ was in the range $[0,1]$.
-In the sampling process $n\cdot \beta$ binomial samples were drawn with probability $\pl(w)$, and $n\cdot (1-\beta)$ were drawn with probability $\ph(w)$.
+In the sampling process, $n\cdot \beta$ binomial samples are drawn with probability $\pl(w)$, and $n\cdot (1-\beta)$ are drawn with probability $\ph(w)$.
 \\
-For the following analyses, the word frequencies in $M_{pre}$ were treated as analogous to $\hph$, and those in $M_{post}$ as the observed frequencies $q$.
-The words in $M_{pre}$ were ordered by frequency, and excess lists were formed of words with frequencies lower than those of several different cutoffs. 
-For each excess list corresponding to one of the cutoffs, the LLM-use estimates $\Delta$ and $\hbet$ were computed.
-The only difference w.r.t. the procedure on the real data was during variance computation: $M_{pre}$, as opposed to $\hph$, is not the result of a regression, but, similar to $q$ the result of a binomial sampling procedure. 
-Thus, the variance for frequencies based on $M_{pre}$ was computed as the variance of a binomial estimator, $Var(M_{pre}) = \frac{p(1-p)}{n}$ with $p$ the observed frequency and $n=(1-\beta)\cdot n_{texts}$.
-As with the real data, we exclude cutoffs yielding frequencies $\ge0.999$ for $M_{pre}$, as well as estimates with error bars $\ge0.025$.
+For the following analyses, the word frequencies in $M_{pre}$ are treated as analogous to $\hph$, and those in $M_{post}$ as the observed frequencies $q$.
+The words in $M_{pre}$ are ordered by frequency, and excess lists are formed of words with frequencies lower than those of several different cutoffs. 
+For each excess list corresponding to one of the cutoffs, the LLM-use estimates $\Delta$ and $\hbet$ are computed.
+The only difference w.r.t. the procedure on the real data is during variance computation: $M_{pre}$, as opposed to $\hph$, is not the result of a regression, but, similar to $q$, the result of a binomial sampling procedure. 
+Thus, the variance for frequencies for $M_{pre}$ are computed as the variance of a binomial estimator, $Var(M_{pre}) = \frac{p(1-p)}{n_{trials}}$ with $p$ the observed frequency and $n_{trials}=(1-\beta)\cdot n$.
+As with the real data, we exclude cutoffs yielding frequencies $\ge0.999$ for $M_{pre}$, as well as estimates with standard error $\ge0.025$.
 
 
-\subsection{Section length}
+\section{Section length}
+
+%\begin{figure}[htbp]
+%   \centering
+%    \includegraphics[width=0.9\linewidth]{../results/plots/baseline_2026-01-23/section_length.png}
+%    \caption{}
+%    \label{fig:section_length}
+%\end{figure}
 One of the goals of this project was to compare the estimated LLM-use of different sections of the paper with each other.
 This might seem like an unfair comparison: When using word occurrence as LLM-marker, longer texts are at an advantage - there is simply more space for words to appear in.
-%comment: Figure here shows the different section lengths
 For example, if an LLM produced some word once every 500 words on average, it would appear in the majority of 1000-word sections, but only in about half of 250-word sections, despite all of them being written by an LLM.
 Since the word counts are binary, there is no correction for section length in the estimate.
 This is a further argument for using section specific word lists instead of single words.
-The longer the word list, and the higher their aggregated frequency, the less likely it is for an LLM-generated text, however short, to not contain at least one of them.
+Optimizing the excess word list for a given section could balance out the disadvantage of shorter text length.
+The longer the word list, and the higher its aggregated frequency, the less likely it is for an LLM-generated text, however short, to not contain at least one of its words.
 However, when authors use LLMs, it is likely that they focus their usage on specific paragraphs that they wish to rephrase.
 A longer section contains more paragraphs that might warrant re-working.
-One way to address this issue is to slightly shift the question from \emph{How high is LLM-use in this section?} to \emph{How high is LLM-use in a random paragraph of this section?}
+We can thus slightly shift the question from \emph{How high is LLM-use in this section?} to \emph{How high is LLM-use in a random paragraph of this section?}
 % By focusing on paragraphs instead of full sections, the section length can be controlled for. 
-This was implemented by cropping each section sample to a length of 255 words, which corresponds to the median length of the abstracts\footnote{This was computed with the previous baseline, for the current baseline the median abstract length is 248}.
-The cropped part was placed randomly within the section by sampling a starting position ranging between the first and 255th-to-last words in the text.
+This was implemented by cropping each section sample to a length of 255 words, which corresponds to the median length of the abstracts\footnote{This was computed with the previous baseline, for the current baseline the median abstract length is 248 words}.
+The cropped part was placed randomly within each section sample by randomly drawing a starting position ranging between the first and 255th-to-last words in the text.
 Note that the LLM-use estimate based on the cropped sections can't be used to determine the full fraction of papers that were written with some LLM participation.
 Since we are interested in identifying not only those papers that are wholly written by an LLM, using only one paragraph per section will underestimate the number of papers written with the help of LLMs, because this paragraph might not include the parts of the paper where LLMs were used. 
 However, by comparing the results from the full and cropped sections, we can check whether LLMs are used universally across the entire paper or whether their use is concentrated on some paragraphs.
 
-
-
-\subsection{Subgroup analysis}
+\section{Subgroup analysis}
 %comment: add plot with number of paper per country (barplot for ind country counts, say 2017 to 2025, pie chart with entries "english-speaking", "non-english speaking", "unknown country")
 Another point of interest is how LLM-use differs across subsets of the data.
 It is, for instance, plausible to assume that majority English-speaking countries will show different usage patterns than countries where English is learned as a second language.
 Likewise, there might be differences between academic disciplines, with some being quicker to adopt a new technology.
-Previous studies typically reported higher usage estimates for research areas related to computer science \cite{Liang2024_paper, Liang2025}.
+Previous studies typically reported higher usage estimates for research areas related to computer science (CS) \cite{Liang2024_paper, Liang2025}.
 To compare these categories, we repeated the experiments on different subsets of papers.
 \\\\
 \emph{Countries}
@@ -398,11 +413,11 @@ The most salient criterion to compare countries with each other when it comes to
 Since English is the de facto lingua franca of academia, one of the key capabilities of LLMs is their ability to translate or proofread text from authors uncertain of their English proficiency.
 As this use-case is irrelevant for native English speakers (NES), it stands to reason that LLM-usage would be smaller for NES countries.
 \\
-To categorize countries into NES and NNES, we used the \emph{Three circles of English model}\cite{kachru1985standards}, which sorts the United States, the United Kingdom and Ireland, Australia and New Zealand, South Africa, and the majority of Canada into the ``inner circle'', where English is the native language of the majority of inhabitants and primarily used in their day-to-day lives.
+To categorize countries into NES and NNES (non-native English speakers), we used the \emph{Three circles of English model}\cite{kachru1985standards}, which sorts the United States, the United Kingdom and Ireland, Australia and New Zealand, South Africa, and the majority of Canada into the ``inner circle'', where English is the native language of the majority of inhabitants and primarily used in their day-to-day lives.
 All other countries were classified as NNES. 
 Additionally to comparing English to non-English speaking countries, we also analyzed the LLM-use of individual countries.
 We selected the 18 countries with highest paper counts in the years 2017 to 2025.
-The list of countries and their respective paper counts can be found in the Appendix. %comment: this is missing, delete the sentence if don't have time to add
+The list of countries and their respective paper counts can be found in Appendix \ref{ap:countries}. 
 \\
 We originally planned to use the excess word lists that are optimal for each section with regards to the full dataset, as determined in the optimization procedure detailed in Section \ref{subsec:wordlist}. 
 However, this lead to observations of $q=1.0$ for several years and countries (pre- and post-release of ChatGPT), which automatically means $\hbet=1.0$. %comment: put in appendix?
@@ -416,7 +431,7 @@ This was done for all sections and countries, not only those with problematic ob
 \\\\
 \emph{Research disciplines}
 \\
-Papers were sorted into different research areas based on the titles of journals in which they were published in a procedure based on González-Márquez et al. \cite{gonzalez2024landscape}.
+Papers were sorted into different research areas by the titles of journals in which they were published, in a procedure based on a paper by González-Márquez et al. \cite{gonzalez2024landscape}.
 The research areas are subfields of the biomedical domain, for example radiology or nursing, that were specified in the previous work.
 Journals were sorted into a category via keyword search with the category titles, and were assigned no label in case of no match.
 This is a relatively crude but simple approach that ignores many potential matches, e.g., the (hypothetical) \emph{Journal of Neurology} would be assigned the label ``neurology'', while the \emph{Neurological Journal} would not. 
@@ -426,5 +441,7 @@ For example, the \emph{Journal of Cancer Biochemistry} would be sorted into the 
 This procedure resulted in 23\% of papers being labeled.
 Only labels with more than 5000 papers were selected for further analysis.
 Using the optimal excess word lists to compute frequencies lead to similar problems as detailed above, which is why we also used the cutoff twice removed from the optimal one.
-%comment: write explanation why the results are in appendix
+The main point of interest in comparing different academic disciplines with regard to their LLM-use are fields related to CS, because researchers in these areas are expected to adapt to new LLM technology more quickly.
+The category of interest in PMC are journals related to computation.
+However, the word frequencies for computation papers have a clear outlier, which distorts the prediction $\hph$ and thus leads to unreliable $\hbet$ estimates.
 Because of this, the results are not discussed further in the main part, but can be found in Appendix \ref{ap:disciplines}.

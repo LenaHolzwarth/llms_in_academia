@@ -1,15 +1,91 @@
-\documentclass{article}
+\documentclass[12pt,a4paper]{report}
+
+% Packages
 \usepackage{settings}
 
-\title{LLM-use in biomedical publications - an estimation}
-\author{Lena Holzwarth}
-\date{March 2026}
 
 \addbibresource{references.bib} %Import the bibliography file
 
-\begin{document}
-\maketitle
+% Page setup
+\geometry{a4paper, margin=1in}
+\setstretch{1.5} % Line spacing
 
+%%%%%%%%%%%%%%%%%%
+
+% Title page information
+\title{\textbf{LLM-Use in Academic Writing -- An Estimation}}
+\author{Lena Holzwarth\\MSc Kognitionswissenschaft}
+\date{Month Year}
+
+%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%
+
+\selectlanguage{english} 
+
+%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+ \begin{center}
+  {\LARGE University of T\"ubingen}\\
+  {\large Faculty of Science \\
+    Wilhelm Schickard Institute for Computer Science\\[4cm]}
+  {\huge Master Thesis Cognitive Science\\[2cm]}
+  {\Large\textbf{LLM-Use in Academic Writing -- An Estimation}\\[1.5cm]}
+  {\large Lena Holzwarth\\MSc Kognitionswissenschaft}\\[0.5cm]
+  May 2026\\[3cm]
+  {\small\bf Reviewers}\\[0.5cm]
+  \parbox{7cm}{\begin{center}{\large Prof. Dr. Dmitry Kobak}\\
+  {\footnotesize Department of
+Mathematics, \\Computer Science, and Statistics\\
+	Ghent University}\end{center}}\hfill\parbox{7cm}{\begin{center}
+  {\large Prof. Dr. Michael Franke}\\
+  General Linguistics \& Pragmatics\\
+  {\footnotesize Department of Linguistics\\
+	University of T\"ubingen}\end{center}
+ }
+  \end{center}
+\end{titlepage}
+
+
+% Title page
+
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{minipage}{11.2cm}
+\textbf{Holzwarth, Lena:}\\
+\emph{LLM-Use in Academic Writing -- An Estimation}\\ Master Thesis Cognitive Science\\
+University of T\"ubingen\\
+Thesis period: 09.01.2026 -- 08.07.2026
+\end{minipage}
+\newpage
+
+
+
+%%%%%%%%%%%%%%%%%%
+\chapter*{Abstract}
+In the past years, LLM-powered Chatbots have grown from relative obscurity to wide-spread usage. Their ability to generate high-quality text makes them a valuable tool for researchers. The use of LLMs to write or edit papers has been argued to remove language barriers for non-natively English speaking (NNES) scholars but also inspires concerns about misuse and fraud.  Because of this, attempts have been made at estimating the prevalence of LLM-altered text in scientific publications. Kobak et al. (2025) use word frequencies to track LLM-use in biomedical abstracts, showing that certain style words occurred at much higher rates after the release of ChatGPT. By calculating the difference between the observed and counter-factual frequency based on predictions from pre-2023, they obtain a lower bound for LLM-use. This thesis expands on their work by introducing a stronger lower bound, yielding estimates of up to 89\% of papers in Pubmed Central (PMC) being written with the help of LLMs. In tests on simulated data, the metric was found to accurately retrieve the underlying fraction of LLM-use. LLMs were more likely to be used in the body of a paper than in the abstract, but different sections within the body showed few differences in usage, except for the discussion, which yielded the highest estimates among the different sections. LLM-use was found to be relatively uniform in the introduction and discussion sections, and more clustered in the methods. In accordance with prior research, papers from NNES were more likely to have been processed with LLMs. Our estimation method yielded higher usage rates than most of the previous literature, although many surveys among scientists report LLM-use close to our estimates. 
+
+
+
+%%%%%%%%%%%%%%%%%%
+\selectlanguage{ngerman} 
+\chapter*{Zusammenfassung}
+
+In den letzten Jahren haben sich LLM-gestützte Chatbots von relativer Unbekanntheit zu einer weit verbreiteten Nutzung entwickelt. Ihre Fähigkeit, qualitativ hochwertigen Text zu generieren, macht sie zu einem wertvollen Werkzeug, u. A. für Forschende. Der Einsatz von LLMs zum Verfassen oder Bearbeiten wissenschaftlicher Arbeiten kann Sprachbarrieren für nicht-englischsprachige Wissenschaftler (NNES) beseitigen, weckt jedoch auch Bedenken hinsichtlich Missbrauch und Betrug.  Deshalb wurden Versuche unternommen, das Ausmaß durch LLMs veränderter wissenschaftlicher Publikationen abzuschätzen. Kobak et al.(2025) nutzen Wortfrequenzen, um die LLM-Nutzung in biomedizinischen Abstracts nachzuverfolgen, und zeigen, dass bestimmte Stilwörter nach der Veröffentlichung von ChatGPT deutlich häufiger vorkommen. Durch die Berechnung der Differenz der beobachteten und der kontrafaktischen Häufigkeit auf der Grundlage von Vorhersagen aus der Zeit vor 2023 erhalten sie eine Untergrenze der LLM-Nutzung. Diese Arbeit baut auf ihren Ergebnissen auf, indem sie eine strengere Untergrenze einführt, die zu Schätzungen führt, wonach bis zu 89\% der Artikel in Pubmed Central (PMC) mithilfe von LLMs verfasst wurden. In Tests mit simulierten Daten zeigt sich, dass die Metrik den zugrunde liegenden Anteil der LLM-Nutzung genau schätzt. LLMs wurden eher im Hauptteil einer Arbeit als im Abstract verwendet, doch zeigten die verschiedenen Abschnitte innerhalb des Hauptteils kaum Unterschiede in der Nutzung, mit Ausnahme der Diskussion, die unter den verschiedenen Abschnitten die höchsten Schätzwerte ergab. Die LLM-Nutzung erwies sich in den Abschnitten ``Einleitung'' und ``Diskussion'' als relativ gleichmäßig und war im Abschnitt ``Methoden'' stärker konzentriert. In Übereinstimmung mit früheren Untersuchungen wurden Artikel von NNES mit höherer Wahrscheinlichkeit mit LLMs bearbeitet. Unsere Schätzmethode ergab höhere Nutzungsraten als die meisten vorherigen Veröffentlichungen, obwohl viele Umfragen unter Wissenschaftler*Innen eine LLM-Nutzung melden, die nahe an unseren Schätzungen liegt. 
+
+
+\selectlanguage{english} 
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\newpage
+
+
+
+%%%%%%%%%%%%%%%%%%
 \include{01_introduction}
 \include{02_related_work}
 \include{03_methods}
@@ -26,4 +102,34 @@
 \include{A5_subgroups}
 
 \end{document}
+
+
+%\documentclass{article}
+%\usepackage{settings}
+
+%\title{LLM-use in biomedical publications - an estimation}
+%\author{Lena Holzwarth}
+%\date{March 2026}
+
+%\addbibresource{references.bib} %Import the bibliography file
+
+%\begin{document}
+%\maketitle
+
+%\include{01_introduction}
+%\include{02_related_work}
+%\include{03_methods}
+%\include{04_results}
+%\include{05_discussion}
+
+%\printbibliography
+
+%\appendix
+%\include{A1_surveys}
+%\include{A2_excesswords}
+%\include{A3_simulation}
+%\include{A4_optimization}
+%\include{A5_subgroups}
+
+%\end{document}
 

@@ -1,15 +1,16 @@
-\section{Related Work}\label{sec:related}
+\chapter{Related Work}\label{sec:related}
 
 Since the wide-spread proliferation of LLMs, many techniques to identify traces of LLM-use have been suggested.
-As this work is focused on LLM-use in academia, the approaches detailed here have been selected accordingly with no claim of exhaustiveness.
+As this work is focused on LLM-use specifically in academic writing, the approaches detailed here have been selected accordingly with no claim of exhaustiveness.
 
-\subsection{Word frequency measures}
-Most closely related to our method, approaches working with word frequency measures make use of the distinct word choices separating LLM and human text production.
+\section{Word frequency measures}
+Most closely related to our method, word frequency measures make use of the distinct word choices separating LLM and human text production.
 While not immediately visible in individual samples, these patterns emerge when looking at word distributions on the corpus level.
 Reports of certain words appearing with disproportionate frequency after the introduction of ChatGPT in November 2022 have been made for publications from a wide array of scientific disciplines, ranging from linguistics \cite{Botes2025} or astronomy \cite{Astarita2024}, to medicine \cite{Matsui2024} or dentistry \cite{Uribe2024}.
 \\
 These observations of increased word frequency can be used to derive estimates for the prevalence of LLM-use in a given corpus, using the words with the most pronounced frequency changes as markers.
-For example, Gray \cite{Gray2025} computed the relative yearly change of word frequency in papers from the Dimensions database, both for single words and word groups of up to twelve terms, which were selected from a list of LLM marker words identified by Liang et al. \cite{Liang2024_review}.
+For example, Gray \cite{Gray2025} computed the relative yearly change of word frequency in papers from the Dimensions database, both for single words and word groups of up to twelve terms.
+The terms were selected from a list of LLM marker words identified by Liang et al. \cite{Liang2024_review}.
 Their LLM-use estimate is based the frequency change of these excess words or word groups.
 The word frequencies of 2022 are multiplied with the highest frequency increase between two consecutive pre-ChatGPT years to obtain a conservatively estimated counterfactual baseline of human word frequency. 
 The number of papers with at least one of the marker words in 2023 exceeding the amount explained for by the baseline divided by the total number of papers serves as their LLM estimate.
@@ -20,17 +21,17 @@ They selected some of the marker words reported in previous research, followed b
 While they observe strong increases in marker word frequency between the years 2022 and 2024, they don't use this to estimate the prevalence of LLM-use in their data.
 However, based on their results, Gray \cite{Gray2025} derives an estimate by comparing the frequency of the word "underscore" in observed 2022 directly to its frequency in 2024 (not taking into account that human usage of the word is also subject to yearly changes).
 
-\subsection{Word distribution modeling}\label{subsec:freq_model}
+\section{Word distribution modeling}\label{subsec:freq_model}
 Similarly to the approaches detailed in the previous section, word distribution modeling makes use of distinctive word frequency patterns in LLM-generated text.
 However, instead of relying only on observed frequencies in the target corpus, they model word frequencies in scientific writing as a mixture distribution of human-written and LLM-assisted text.
 \\
 Using a technique they call ``distributional GPT quantification'', Liang et al. \cite{Liang2024_review} analyze peer reviews of AI conference papers.
-Their work is based on observation the fraction of LLM text in the sample can be estimated via maximum likelihood estimation (MLE) on the corpus, if the probability distributions for human and LLM-generated text are known. 
+Their work is based on the observation that the fraction of LLM text in the sample can be estimated via maximum likelihood estimation (MLE) on the corpus, if the probability distributions for human and LLM-generated text are known. 
 The probability distribution for human text can be estimated by counting word occurrence in texts from pre-LLM years.
 To obtain the probability distribution of words in LLM-generated text, the authors prompt ChatGPT to generate alternative reviews of the conference papers from before 2023.
 The authors modeled the distribution of all adjectives instead of relying only on marker words associated with LLM-use.
 As a validation of their method, a corpus with a known fraction of LLM-generated text was constructed by sampling from the original and generated reviews. 
-By computing the MLE for this corpus, the researchers were able to retrieve the correct proportion, while using publicly available AI text detection models yielded much worse results.
+By computing the MLE for this corpus, the researchers were able to retrieve the correct proportion.
 \\
 The authors applied the same method to abstracts and introductions of scientific papers sourced from arXiv, bioRxiv and Nature portfolio journals \cite{Liang2024_paper, Liang2025}. 
 LLM text was sampled by tasking ChatGPT to create a summarization outline of a paragraph from an existing, pre-ChatGPT paper, which was then given to the LLM with a prompt to generate a full paragraph based on this outline.
@@ -46,17 +47,17 @@ The mean of the estimates is taken as the preliminary result.
 The estimates are then repeated with the three word lists optimized for the LLM-use proportions closest to the preliminary result.
 \\
 The validation procedure with ground-truth LLM-generated text is a marked advantage of these studies, compared to the frequency-based estimates, where no validation set with known distribution is available. 
-However, this validation is strongly dependent upon the exact model and prompt that were used to create the LLM corpus, and the estimated distribution based on this corpus might differ drastically from the true LLM distribution created from a multitude of prompts and models.
+However, this validation is strongly dependent upon the exact model and prompt that were used to create the LLM corpus, and the estimated distribution based on this corpus might differ drastically from the true LLM distribution, which is likely to have been created from a multitude of prompts and models.
 To illustrate this point, Geng and Trotta perform validations on papers edited with a minimally different prompt than the one used to derive the frequency change rate, which leads to a systematic overestimation of true LLM-use.
 While the true value is still within the error bounds, stronger alterations to the prompt or the use of a different model are likely to have a stronger impact on the estimates.
 
-\subsection{LLM-detectors}
+\section{LLM-detectors}
 A more fine-grained approach to observing or modeling word distributions across entire corpora is to train classifiers on identifying LLM-use in individual texts. 
 \\
 \textbf{Zero-shot LLM detection} or model self detection uses properties of the model's idiosyncratic text generation process to determine how likely it is for a text sample to have been generated by the LLM.
 An early example of this approach is \textbf{GLTR} \cite{Gehrmann2019}, which determines for every word in the text which ranking it has among the LLM's suggestions given its position in the text.
 The lower the average ranking of the selected words, the more likely it is for the text to have been written by a human author.
-\textbf{Detect-GPT} \cite{Mitchell2023} uses a separate LLM to generate perturbed versions of the sample and computes the log-likelihood of the original and perturbed versions under the target model, building on the observation that the log-likelihood of a text sample generated by the target LLM will be higher than that of the perturbed variants, while the same is not true for human-written text.
+\textbf{Detect-GPT} \cite{Mitchell2023} uses a separate LLM to generate perturbed versions of the sample and computes the log-likelihood of the original and perturbed versions under the target model. The log-likelihood of a text sample generated by the target LLM will be higher than that of the perturbed variants, while the same is not true for human-written text.
 \textbf{Binoculars} \cite{Hans2024} uses a similar approach by normalizing the perplexity of a sample text under one model by the cross-perplexity of the re-generation of the sample text by a different model.
 The perplexity is the negative log-likelihood of a text and can be thought of as the model's surprise, i.e. how far the text diverges from something the model would have produced. 
 Binoculars has been used to check papers from the preprint platforms arXiv, bioRxiv and medRxiv \cite{Cheng2024}.
@@ -69,18 +70,18 @@ As an alternative to zero-shot detection, they circumvent the need for access to
 Their performance is, however, critically dependent on the prompts and models used to generate the training corpus \cite{Liu2024}.
 A common approach is to fine-tune a pretrained language model to distinguish between LLM-generated and human-written text.
 Another possibility is to train conventional classifiers such as XGBoost or support vector machines on embedded representations of training text \cite{Bao2025_classifier}.
-\textbf{Feature-based detectors} use linguistic features, such as the variation in sentence length as indicators of LLM-use \cite{Desaire2023}. 
+\textbf{Feature-based detectors} use linguistic features, such as the variation in sentence length, as indicators of LLM-use \cite{Desaire2023}. 
 The classifier is then trained not on the texts themselves but on the features extracted from them.
 
 There is also a plethora of proprietary LLM detectors on the market (some of which are free-to-use).
-Most of them not disclose their model architecture or training procedure.
+Most of them don't disclose their model architecture or training procedure.
 Because of their relative convenience, many researchers investigating LLM-use in academia opt for these models to generate estimates \cite{Akram2024, Liu2024, Picazo-Sanchez2024}.
 Among the models used are originality AI\footnote{https://originality.ai/}, GPTzero\footnote{https://gptzero.me/}, zeroGPT\footnote{https://www.zerogpt.com/}, GPTKit\footnote{https://gptkit.ai/}, Smodin\footnote{https://smodin.io/}, Sapling\footnote{https://sapling.ai/ai-content-detector}, Content at scale AI detector\footnote{Renamed to brandwell: https://brandwell.ai/ai-content-detector/} and Writer AI content detector\footnote{This seems to have been discontinued, the link given by the paper using it redirects to a sales pitch for the company's AI agent}.
 
 Many concerns have been raised about current LLM-detectors' lack of accuracy \cite{Doughman2025, Lazebnik2024, Weber-Wulff2023}, going so far as to dispute even the possibility of reliable LLM-detectors \cite{Sadasivan2025}.
 Early methods have been found to discriminate against non-native English speakers, disproportionately flagging their work as AI-generated, and to be unable to adjust to slight prompt changes \cite{Liang2023}.
 
-\subsection{Surveying scientists}
+\section{Surveying scientists}
 Perhaps the most straightforward approach to evaluating the prevalence of LLM-use in academia is to ask the researchers themselves. 
 Several surveys on scientists' use of AI have been conducted by publishing houses \cite{Elsevier2024, Kwon2025, Nordling2023, VanNoorden2023, Wiley2025} and independent researchers \cite{Eppler2024, Liao2024, Mishra2024, Mohammadi2026}.
 These studies can be hard to compare because of different sampling pools and phrasing of questions.
