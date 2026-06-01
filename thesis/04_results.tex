@@ -1,7 +1,5 @@
 \chapter{Results}\label{sec:results}
 \section{Method validation}
-%comment: these plots should ideally also include the sampling distribution (or put that in the methods?)
-%comment: use results from 300 words
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/ground_truth_simulation/500_words.png}
@@ -33,8 +31,8 @@ The estimates $\hbet$ lie almost perfectly on the plot's diagonal, while $\Delta
     %comment: need to change beta lb, maybe remove "llm-use estimate" alltogether, maybe try to put caption next to image?
     %comment: also make this plot for 100 and 500 words
 \end{figure}
-Changing the number of words in this simulation to 100 or 1000 slightly changed the pattern of observed and expected frequencies, with the expected frequency stagnating before reaching the observed frequency in the case of 100 words, and both observed and expected frequency very quickly saturating to 1 in the case of 1000 words.
-However, in both simulations, the optimal estimate $\hbet$ was nearly identical to the underlying value of LLM-use (see Appendix \ref{ap:opt} for detailed results).
+Changing the number of words in this simulation to 100 or 1000 slightly changes the pattern of observed and expected frequencies, with the expected frequency stagnating before reaching the observed frequency in the case of 100 words, and both observed and expected frequency very quickly saturating to 1 in the case of 1000 words.
+However, in both simulations, the optimal estimate $\hbet$ is nearly identical to the underlying value of LLM-use (see Appendix \ref{ap:opt} for detailed results).
 
 \section{Word list estimates}\label{subsec:results_full}
 \begin{figure}[htbp]
@@ -43,19 +41,18 @@ However, in both simulations, the optimal estimate $\hbet$ was nearly identical 
     \caption{Detailed view of the optimization process on 2025 word frequency data (for full-length sections). Different cutoff values are plotted along the x-axis. Each panel, made up of two plots, corresponds to a different section. The left plot in each panel shows the expected frequency $\hph$ (if all texts were written by humans) and the observed frequency $q$. The right plot shows the LLM-use estimates derived from these frequencies. The cutoff yielding the highest LLM-use estimate is deemed optimal. Estimates for $\hbet$ are only shown if the expected frequency $\hph$ is below $0.999$, and are only considered as candidates for optimality if their standard deviation is below $0.025$, otherwise they are displayed in gray.}
     \label{fig:2025_optimization}
 \end{figure}
-To get the best possible estimates of LLM-use in the PMC dataset, we determined for each section the optimal selection from all 2024 excess style words by repeating the estimate for several cutoff values, each corresponding to a subset of excess words. 
+To get the best possible estimates of LLM-use in the PMC dataset, we determine for each section the optimal selection from all 2024 excess style words by repeating the estimate for several cutoff values, each corresponding to a subset of excess words. 
 Figure \ref{fig:2025_optimization} shows the results of this procedure.
-For all sections, $\hbet$ rises monotonically before reaching optimality, although in the case of results and discussion, the highest $\hbet$ estimate is reached in the region that was excluded because of too high error margins.
+For all sections, $\hbet$ rises monotonically before reaching optimality, although in the case of results and discussion, the highest $\hbet$ estimate is reached in the region that is excluded because of too high error margins.
 Similar to what was observed in the simulation results, the $\Delta$ estimate peaks at a lower cutoff compared to $\hbet$, and yields much smaller estimates than $\hbet$.
 The optimal cutoff values for the year 2025, as well as their corresponding estimates for the years 2023 to 2025 are listed in Table \ref{tab:results}.
 Because we use the cutoff values optimized for 2025 for all years, the estimates from previous years might not be computed with the cutoff optimal to them.
 Table \ref{tab:llm-use-individual-cutoff} in the Appendix shows the results with every year optimized individually.
-
-The list corresponding to the highest-performing cutoff value in 2025 was used to compute the monthly estimates of the different sections, which are displayed in Figure \ref{fig:monthly_est}.
+\\
+The list corresponding to the highest-performing cutoff value in 2025 is used to compute the monthly estimates of the different sections, which are displayed in Figure \ref{fig:monthly_est}.
 Both the observed word frequencies, as well as the LLM-use estimates for all sections show an increasing, if not monotonous, trend starting with the release of ChatGPT.
-Overall, the body of the paper (labelled ``full'' in the legend) showed the most usage, coming up to $0.89$ in December 2025, followed by the discussion section with $0.78$ as the last recorded value.
-The estimates for the remaining sections -- abstract ($0.68$), introduction ($0.63$), methods ($0.54$) and results ($0.58$) -- are harder to disentangle, although the estimates for the abstract were consistently higher than those of the remaining sections for at least the year 2025. 
-%discussion: uncertainty for full is much larger than 0.025, explain why!
+Overall, the body of the paper (labelled ``full'' in the legend) shows the most usage, coming up to $0.89$ in December 2025, followed by the discussion section with $0.78$ as the last recorded value.
+The estimates for the remaining sections -- abstract ($0.68$), introduction ($0.63$), methods ($0.54$) and results ($0.58$) -- are harder to disentangle, although the estimates for the abstract are consistently higher than those of the remaining sections for at least the year 2025. 
 
 
 \begin{figure}[htbp]
@@ -90,7 +87,7 @@ The estimates for the remaining sections -- abstract ($0.68$), introduction ($0.
     &full                        & 0.07 \unc{0.02} & 0.21 \unc{0.02} & 0.36 \unc{0.01} & 0.15 \\
     \bottomrule
 \end{tabular}
-\caption{Yearly LLM-use estimates for all sections computed on full-length or cropped samples. The estimates for all years were computed with the optimal cutoff for 2025.}
+\caption{Yearly LLM-use estimates for all sections computed on full-length or cropped samples. The estimates for all years are computed with the optimal cutoff for 2025.}
 \label{tab:results}
 \end{table}
 
@@ -111,7 +108,7 @@ The lowest LLM-use, with $0.32$, is in the methods section.
 \\
 The yearly estimates for the full and cropped sections are compared in Figure \ref{fig:est_per_section}.
 For abstract and introduction, both versions yield similar estimates in 2025.
-The LLM-use in the results and discussion is somewhat lower in the cropped sections, while for the methods, there is a marked drop from $0.46$ for the full section to $0.28$ in the cropped.
+The LLM-use in the results and discussion is somewhat lower in the cropped sections, while for the methods, there is a marked drop from $0.46$ for the full section to $0.28$ in the cropped version.
 
 
 \begin{figure}[htbp]
@@ -142,7 +139,7 @@ The LLM-use in the results and discussion is somewhat lower in the cropped secti
     %comment: there should be a plot in the appendix showing subopt and opt results, and accompanying freqs, also for disciplines, maybe combine the two?
 \end{figure}
 
-Because LLM-use likely varies across countries and language contexts, we sorted papers into their first authors' affiliated country and grouped all NES countries and NNES countries together, respectively.
+Because LLM-use likely varies across countries and language contexts, we sort papers into their first authors' affiliated country and group all NES countries and NNES countries together, respectively.
 The LLM-use estimates for the countries are shown in Figure \ref{fig:countries_ind}.
 Most notably, starting from 2024, there is a marked difference between estimates for NES and NNES, as can be seen in the panels at the lower right.
 This is not always true when looking at countries individually.
@@ -157,8 +154,6 @@ NES countries form a cluster in the region with lower LLM-use, while highest LLM
     \includegraphics[width=0.7\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/countries_2024v2025_subsubopt.png}
     \caption{LLM-use estimates of 2024 (x-axis) and 2025 (y-axis) for different countries and language regions, based on the body of the papers. Countries with a majority of NES are shown in blue, NNES countries in orange.}
     \label{fig:countries_all}
-    %comment: legend needs to go, there is a point labeled english and a legend entry labeled english, super confusing
-    %comment: which section is this for?
 \end{figure}
 
 
@@ -166,15 +161,13 @@ NES countries form a cluster in the region with lower LLM-use, while highest LLM
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/study_comparison_all_v2.png}
-    \caption{Estimates from different studies and surveys investigating LLM-use in academia. The results from this study are plotted as lines, focussing on estimates for the abstract and main body of the paper. Results from other estimation methods are plotted in a blue-green color scale with empty markers, survey results are plotted in a yellow-red color scale with colored-in markers. Each individual color corresponds to estimates from the same study (estimates from the same study can also be identified by their vertical alignment, as they were all recorded at the same time). Different marker styles identify different methodologies to derive estimates, or different ways of using LLMs reported in the surveys.}
-    %comment: check years of citations! they are sometimes wrong e.g. Geng
-    %comment: remove abstract from here? only clutters the plot
+    \caption{Estimates from different studies and surveys investigating LLM-use in academia. The results from this study are plotted as lines, focussing on estimates for the main body of the paper. Results from other estimation methods are plotted in a yellow-red color scale, survey results are plotted in a blue-green color scale. Each individual color corresponds to estimates from the same study (estimates from the same study can also be identified by their vertical alignment, as they were all recorded at the same time). Different marker styles identify different methodologies to derive estimates, or different ways of using LLMs reported in the surveys.}
     \label{fig:comparison_all}
 \end{figure}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/study_comparison_sections.png}
-    \caption{LLM-use estimates for different sections within a paper from different estimation methods. The results from this study are plotted as lines, focussing on estimates for the abstract, introduction and main body of the paper, as these are the only sections with specific estimates reported in the Literature. Results from other estimation methods are colored in accordance with the investigated section (note that this leads to some estimates from the same paper being colored differently, because estimates for different sections were reported. Estimates from the same study can be found by their vertical alignment). Different marker styles identify different methodologies to derive estimates.}
+    \caption{LLM-use estimates for different sections within a paper from different estimation methods. The results from this study are plotted as lines, focussing on estimates for the abstract, introduction and main body of the paper, as these are the only sections with specific estimates reported in the literature. Results from other estimation methods are colored in accordance with the investigated section (note that this leads to some estimates from the same paper being colored differently, because estimates for different sections were reported. Estimates from the same study can be found by their vertical alignment). Different marker styles identify different methodologies to derive estimates.}
     \label{fig:comparison_secs}
 \end{figure}
 
@@ -183,15 +176,15 @@ Figure \ref{fig:comparison_all} offers an overview of their results, to put into
 The variance between results reported by different studies is very high, but on average, the surveys yield higher estimates than the indirect approaches.
 The majority of indirect methods also report much lower estimates than those reported in this study, especially considering the full paper.
 The estimates by Picazo-Sanchez and Ortiz-Martin \cite{Picazo-Sanchez2024} and Geng and Trotta \cite{Geng2024} are exceptions to this trend, with the former slightly above, and the latter within the uncertainty bounds of our estimate. 
-The highest estimate from Liu and Bu \cite{Liu2024} is a clear outlier and can be removed from analysis, as the detector used for it also reported LLM-use of over 60\% for years before the release of ChatGPT. 
+The highest estimate from Liu and Bu \cite{Liu2024_profiles} is a clear outlier and can be removed from analysis, as the detector used for it also reported LLM-use of over 60\% for years before the release of ChatGPT. 
 On the other hand, many of the survey results fall within the error margin of our estimates.
 
 When comparing different estimation methods, the results based on word frequency are very similar to each other (i.e. Gray \cite{Gray2026}, Kobak et al. \cite{Kobak2025} and Kousha and Thelwall\cite{Kousha2025}), while the two approaches utilizing word frequency modeling (Geng and Trotta \cite{Geng2024} and Liang et al. \cite{Liang2024_paper,Liang2025}) yield very different results despite both using computer science papers from arXiv and having very little temporal offset.
-The studies using commercial LLM-detectors to derive estimates (Picazo-Sanchez and Ortiz-Martin \cite{Picazo-Sanchez2024}, Liu and Bu \cite{Liu2024}, and Akram \cite{Akram2024}) also report relatively similar estimates, but are distributed along a wider time-span than the word-frequency studies.
+The studies using commercial LLM-detectors to derive estimates (Picazo-Sanchez and Ortiz-Martin \cite{Picazo-Sanchez2024}, Liu and Bu \cite{Liu2024_profiles}, and Akram \cite{Akram2024}) also report relatively similar estimates, but are distributed along a wider time-span than the word-frequency studies.
 
 As can be seen in Figure \ref{fig:comparison_secs}, most studies base their estimates on analyzing abstracts. 
 The only studies directly comparing estimates from different sections are from Liang et al. \cite{Liang2024_paper,Liang2025}, where the LLM-use in the abstract is estimated to be higher than in the introduction, while we find no difference between the two sections for the beginning of 2024, and the opposite pattern for the end of 2024.
 Studies estimating LLM-use in the full text of the paper mostly base their estimates on word frequencies (i.e. Gray \cite{Gray2025, Gray2026} and Kousha and Thelwall \cite{Kousha2025}).
 Even when considering the section that each estimate is based on, a majority of studies with varying approaches report much lower LLM-use estimates than those derived in this thesis.
-However, we can now see that the estimates from Bao et al. \cite{Bao2025_classifier}, as well as one of the commercial LLM-detectors used by Liu and Bu \cite{Liu2024} lie within the error margin of our estimates for the abstract specifically.
+However, we can now see that the estimates from Bao et al. \cite{Bao2025_classifier}, as well as one of the commercial LLM-detectors used by Liu and Bu \cite{Liu2024_profiles} lie within the error margin of our estimates for the abstract specifically.
 Also, the estimate reported by Geng and Trotta \cite{Geng2024}, while being within the uncertainty bounds of our estimate of LLM-use in the full paper, is higher than our estimate of the abstract, which is the section analyzed by them. 

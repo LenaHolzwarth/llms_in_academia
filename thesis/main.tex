@@ -33,15 +33,14 @@
   {\huge Master Thesis Cognitive Science\\[2cm]}
   {\Large\textbf{LLM-Use in Academic Writing -- An Estimation}\\[1.5cm]}
   {\large Lena Holzwarth\\MSc Kognitionswissenschaft}\\[0.5cm]
-  May 2026\\[3cm]
+  June 2026\\[3cm]
   {\small\bf Reviewers}\\[0.5cm]
   \parbox{7cm}{\begin{center}{\large Prof. Dr. Dmitry Kobak}\\
   {\footnotesize Department of
 Mathematics, \\Computer Science, and Statistics\\
 	Ghent University}\end{center}}\hfill\parbox{7cm}{\begin{center}
   {\large Prof. Dr. Michael Franke}\\
-  General Linguistics \& Pragmatics\\
-  {\footnotesize Department of Linguistics\\
+  {\footnotesize General Linguistics \& Pragmatics\\Department of Linguistics\\
 	University of T\"ubingen}\end{center}
  }
   \end{center}
@@ -64,7 +63,7 @@ Thesis period: 09.01.2026 -- 08.07.2026
 
 %%%%%%%%%%%%%%%%%%
 \chapter*{Abstract}
-In the past years, LLM-powered Chatbots have grown from relative obscurity to wide-spread usage. Their ability to generate high-quality text makes them a valuable tool for researchers. The use of LLMs to write or edit papers has been argued to remove language barriers for non-natively English speaking (NNES) scholars but also inspires concerns about misuse and fraud.  Because of this, attempts have been made at estimating the prevalence of LLM-altered text in scientific publications. Kobak et al. (2025) use word frequencies to track LLM-use in biomedical abstracts, showing that certain style words occurred at much higher rates after the release of ChatGPT. By calculating the difference between the observed and counter-factual frequency based on predictions from pre-2023, they obtain a lower bound for LLM-use. This thesis expands on their work by introducing a stronger lower bound, yielding estimates of up to 89\% of papers in Pubmed Central (PMC) being written with the help of LLMs. In tests on simulated data, the metric was found to accurately retrieve the underlying fraction of LLM-use. LLMs were more likely to be used in the body of a paper than in the abstract, but different sections within the body showed few differences in usage, except for the discussion, which yielded the highest estimates among the different sections. LLM-use was found to be relatively uniform in the introduction and discussion sections, and more clustered in the methods. In accordance with prior research, papers from NNES were more likely to have been processed with LLMs. Our estimation method yielded higher usage rates than most of the previous literature, although many surveys among scientists report LLM-use close to our estimates. 
+In the past years, LLM-powered Chatbots have grown from relative obscurity to wide-spread usage. Their ability to generate high-quality text makes them a valuable tool for researchers. The use of LLMs to write or edit papers has been argued to remove language barriers for non-natively English speaking (NNES) scholars but also inspires concerns about misuse and fraud.  Because of this, attempts have been made at estimating the prevalence of LLM-altered text in scientific publications. Kobak et al. (2025) use word frequencies to track LLM-use in biomedical abstracts, showing that certain style words occurred at much higher rates after the release of ChatGPT. By calculating the difference between the observed and counter-factual frequency based on predictions from pre-2023, they obtain a lower bound for LLM-use. This thesis expands on their work by introducing a stronger lower bound, yielding estimates of up to 89\% of papers in Pubmed Central (PMC) being written with the help of LLMs. In tests on simulated data, the metric accurately retrieves the underlying fraction of LLM-use. LLMs are more likely to be used in the body of a paper than in the abstract, but different sections within the body show few differences in usage rates, except for the discussion, which yields the highest estimates among the different sections. LLM-use is found to be relatively uniform in the introduction, and more sparse in the methods. In accordance with prior research, papers from NNES are more likely to have been processed with LLMs. Our estimation method yields higher usage rates than most of the previous literature, although many surveys among scientists report LLM-use close to our estimates. 
 
 
 
@@ -72,7 +71,7 @@ In the past years, LLM-powered Chatbots have grown from relative obscurity to wi
 \selectlanguage{ngerman} 
 \chapter*{Zusammenfassung}
 
-In den letzten Jahren haben sich LLM-gestützte Chatbots von relativer Unbekanntheit zu einer weit verbreiteten Nutzung entwickelt. Ihre Fähigkeit, qualitativ hochwertigen Text zu generieren, macht sie zu einem wertvollen Werkzeug, u. A. für Forschende. Der Einsatz von LLMs zum Verfassen oder Bearbeiten wissenschaftlicher Arbeiten kann Sprachbarrieren für nicht-englischsprachige Wissenschaftler (NNES) beseitigen, weckt jedoch auch Bedenken hinsichtlich Missbrauch und Betrug.  Deshalb wurden Versuche unternommen, das Ausmaß durch LLMs veränderter wissenschaftlicher Publikationen abzuschätzen. Kobak et al.(2025) nutzen Wortfrequenzen, um die LLM-Nutzung in biomedizinischen Abstracts nachzuverfolgen, und zeigen, dass bestimmte Stilwörter nach der Veröffentlichung von ChatGPT deutlich häufiger vorkommen. Durch die Berechnung der Differenz der beobachteten und der kontrafaktischen Häufigkeit auf der Grundlage von Vorhersagen aus der Zeit vor 2023 erhalten sie eine Untergrenze der LLM-Nutzung. Diese Arbeit baut auf ihren Ergebnissen auf, indem sie eine strengere Untergrenze einführt, die zu Schätzungen führt, wonach bis zu 89\% der Artikel in Pubmed Central (PMC) mithilfe von LLMs verfasst wurden. In Tests mit simulierten Daten zeigt sich, dass die Metrik den zugrunde liegenden Anteil der LLM-Nutzung genau schätzt. LLMs wurden eher im Hauptteil einer Arbeit als im Abstract verwendet, doch zeigten die verschiedenen Abschnitte innerhalb des Hauptteils kaum Unterschiede in der Nutzung, mit Ausnahme der Diskussion, die unter den verschiedenen Abschnitten die höchsten Schätzwerte ergab. Die LLM-Nutzung erwies sich in den Abschnitten ``Einleitung'' und ``Diskussion'' als relativ gleichmäßig und war im Abschnitt ``Methoden'' stärker konzentriert. In Übereinstimmung mit früheren Untersuchungen wurden Artikel von NNES mit höherer Wahrscheinlichkeit mit LLMs bearbeitet. Unsere Schätzmethode ergab höhere Nutzungsraten als die meisten vorherigen Veröffentlichungen, obwohl viele Umfragen unter Wissenschaftler*Innen eine LLM-Nutzung melden, die nahe an unseren Schätzungen liegt. 
+In den letzten Jahren sind Chatbots auf Basis von LLMs immer populärer geworden. Ihre Fähigkeit, qualitativ hochwertigen Text zu generieren, macht sie zu einem wertvollen Werkzeug, u. A. für Forschende. Der Einsatz von LLMs zum Verfassen oder Bearbeiten wissenschaftlicher Arbeiten kann Sprachbarrieren für nicht-englischsprachige Forschende (NNES) beseitigen, weckt jedoch auch Bedenken hinsichtlich Missbrauch und Betrug.  Deshalb werden Versuche unternommen, die Anzahl an durch LLMs bearbeiteten wissenschaftlichen Publikationen abzuschätzen. Kobak et al.(2025) nutzen Wortfrequenzen, um die LLM-Nutzung in biomedizinischen Abstracts nachzuverfolgen, und zeigen, dass bestimmte Stilwörter nach der Veröffentlichung von ChatGPT deutlich häufiger vorkommen. Durch die Berechnung der Differenz der beobachteten und der erwarteten Wortfrequenz erhalten sie eine Untergrenze der LLM-Nutzung. Diese Arbeit baut auf ihren Ergebnissen auf, indem sie eine strengere Untergrenze einführt. Diese erhält Schätzungen, wonach bis zu 89\% der Artikel in Pubmed Central (PMC) mithilfe von LLMs verfasst wurden. In Tests mit simulierten Daten zeigt sich, dass die Metrik den zugrunde liegenden Anteil der LLM-Nutzung genau schätzt. LLMs werden eher im Hauptteil einer Arbeit als im Abstract verwendet, doch zeigen die verschiedenen Abschnitte innerhalb des Hauptteils kaum Unterschiede in der Nutzung, mit Ausnahme der Diskussion, die unter den verschiedenen Abschnitten die höchsten Schätzwerte ergibt. Die LLM-Nutzung ist in der Einleitung relativ gleichmäßig verteilt und ist im Abschnitt ``Methoden'' stärker konzentriert. Artikel von NNES sind mit höherer Wahrscheinlichkeit mit LLMs bearbeitet. Unsere Schätzmethode ergibt höhere Nutzungsraten als die meisten vorherigen Veröffentlichungen, obwohl viele Umfragen unter Forschenden LLM-Nutzungen melden, die nahe an unseren Schätzungen liegen\footnote{The abstract was translated from English to German with the help of DeepL. Edits have been made to the translation by the author}. 
 
 
 \selectlanguage{english} 
@@ -92,6 +91,7 @@ In den letzten Jahren haben sich LLM-gestützte Chatbots von relativer Unbekannt
 \include{04_results}
 \include{05_discussion}
 
+
 \printbibliography
 
 \appendix
@@ -100,6 +100,29 @@ In den letzten Jahren haben sich LLM-gestützte Chatbots von relativer Unbekannt
 \include{A3_simulation}
 \include{A4_optimization}
 \include{A5_subgroups}
+\chapter*{Acknowledgements}
+\begin{table}
+  \centering
+  \begin{tabular}{llll}
+    \toprule
+    task&model&version&page\\
+    \midrule
+    \makecell[l]{translation \\(English to German)} & \makecell[l]{DeepL\\Translator} & \makecell[l]{free online version\\(accessed on 29.06.2026)}& p. 3\\
+    \midrule
+    coding assistance & \makecell[l]{ChatGPT \\(free tier)} & \makecell[l]{GPT-5 \\(Fallback GPT-5 Instant Mini), \\GPT-5.1 Instant \\(Fallback GPT-5 Instant Mini), \\GPT-5.3 Instant \\(Fallback GPT-5.3 Instant Mini), \\GPT-5.5 Instant \\(Fallback GPT-5.3 Instant Mini)}& -\\
+    \bottomrule
+  \end{tabular}
+  \caption{Overview of LLM-use in this Thesis}
+  \label{tab:my_llm_use}
+\end{table}
+\section*{LLM-use in this thesis}
+The Abstract was translated from English to German using the free version of DeepL\footnote{https://www.deepl.com/de/translator}.
+Edits have been made to the machine-translated version by the Author for brevity and clarity.
+Some code was done with the assistance of ChatGPT (using the free-tier version)\footnote{https://chatgpt.com}.
+No LLMs were used in any other part of this Thesis. 
+Table \ref{tab:my_llm_use} shows an overview of all LLM-use for this work.
+Since ChatGPT's interface in the free version doesn't show which models are being used to answer a prompt, the model versions given in Table \ref{tab:my_llm_use} are inferred based on Open AI's release notes in the time-span that this Thesis was worked on (October 2025 to May 2026)\footnote{https://help.openai.com/en/articles/6825453-chatgpt-release-notes}
+
 
 \end{document}
 

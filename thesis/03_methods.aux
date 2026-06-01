@@ -32,14 +32,19 @@
 \newlabel{fig:erratic}{{3.6}{29}{Behavior of different cutoff values and their corresponding excess word lists for PMC abstracts. Cutoffs are marked by color. Panel \textbf {a} shows the word list frequency $q$ as solid lines and the expected frequency $\hph $ as dashed lines. Panel \textbf {b} shows the lower bound estimates $\beta _{lb}$. For the highest cutoff values, both $q$ and $\hph $ are very close or equal to 1, leading to unreliable values with high fluctuation}{figure.caption.9}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Method validation}{30}{section.3.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Standard error for LLM-use estimates}{30}{subsection.3.4.1}\protected@file@percent }
+\newlabel{eq:var}{{3.8}{31}{Standard error for LLM-use estimates}{equation.3.4.8}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Sanity check simulation}{32}{subsection.3.4.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Illustration of the sampling procedure for the creation of an artificial dataset to test the LLM-use estimate $\hat  {\beta }$ for varying levels of $\beta $. The dataset is modeled by a matrix with $n$ columns corresponding to documents and $m$ rows corresponding to excess words. The binary matrix entries tell us whether a word $w_i$ appears in document $d_j$. The matrix on the left, $M_{pre}$, corresponds to the pre-ChatGPT word frequencies. Here, the binary entries for word $w_i$ are drawn from a binomial distribution with probability $p_{human}(w_i)$. This probability is drawn from a gamma distribution. The matrix on the right, $M_{post}$, models post-ChatGPT word frequencies, meaning that some of the documents were written by humans (indicated in blue), while a fraction indicated by $\beta $ were written with the help of LLMs (green). For the blue part of the matrix, the matrix entries for word $w_i$ are drawn from the same binomial distribution as in $M_{pre}$, with probability $p_{human}(w_i)$. For the green part, the probability $p_{human}(w_i)$ is increased by $p_{human}(w_i)\delta _i$ with $\delta _i \sim U(0.5,5)$.}}{32}{figure.caption.10}\protected@file@percent }
 \newlabel{fig:intution_simulation}{{3.7}{32}{Illustration of the sampling procedure for the creation of an artificial dataset to test the LLM-use estimate $\hbet $ for varying levels of $\beta $. The dataset is modeled by a matrix with $n$ columns corresponding to documents and $m$ rows corresponding to excess words. The binary matrix entries tell us whether a word $w_i$ appears in document $d_j$. The matrix on the left, $M_{pre}$, corresponds to the pre-ChatGPT word frequencies. Here, the binary entries for word $w_i$ are drawn from a binomial distribution with probability $\ph (w_i)$. This probability is drawn from a gamma distribution. The matrix on the right, $M_{post}$, models post-ChatGPT word frequencies, meaning that some of the documents were written by humans (indicated in blue), while a fraction indicated by $\beta $ were written with the help of LLMs (green). For the blue part of the matrix, the matrix entries for word $w_i$ are drawn from the same binomial distribution as in $M_{pre}$, with probability $\ph (w_i)$. For the green part, the probability $\ph (w_i)$ is increased by $\ph (w_i)\delta _i$ with $\delta _i \sim U(0.5,5)$}{figure.caption.10}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}Section length}{33}{section.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Subgroup analysis}{34}{section.3.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Comparison of the number of words per section. The whiskers extend to the 5th and 95th percentile, respectively. Outliers are only shown for sections up to 15,000 words.}}{34}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:section_length}{{3.8}{34}{Comparison of the number of words per section. The whiskers extend to the 5th and 95th percentile, respectively. Outliers are only shown for sections up to 15,000 words}{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Subgroup analysis}{35}{section.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Countries}{35}{subsection.3.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}Research disciplines}{36}{subsection.3.6.2}\protected@file@percent }
 \@setckpt{03_methods}{
-\setcounter{page}{37}
-\setcounter{equation}{8}
+\setcounter{page}{38}
+\setcounter{equation}{9}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -49,11 +54,11 @@
 \setcounter{part}{0}
 \setcounter{chapter}{3}
 \setcounter{section}{6}
-\setcounter{subsection}{0}
+\setcounter{subsection}{2}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{7}
+\setcounter{figure}{8}
 \setcounter{table}{0}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
@@ -61,9 +66,9 @@
 \setcounter{subtable}{0}
 \setcounter{nlinenum}{0}
 \setcounter{r@tfl@t}{0}
-\setcounter{section@level}{1}
+\setcounter{section@level}{2}
 \setcounter{Item}{0}
-\setcounter{Hfootnote}{16}
+\setcounter{Hfootnote}{17}
 \setcounter{bookmark@seq@number}{0}
 \setcounter{tabx@nest}{0}
 \setcounter{listtotal}{0}
@@ -74,7 +79,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{78}
+\setcounter{instcount}{79}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}

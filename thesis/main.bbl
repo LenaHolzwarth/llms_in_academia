@@ -37,18 +37,9 @@
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Many people are interested in ChatGPT since it has become a prominent AIGC model that provides high-quality responses in various contexts, such as software development and maintenance. Misuse of ChatGPT might cause significant issues, particularly in public safety and education, despite its immense potential. The majority of researchers choose to publish their work on Arxiv. The effectiveness and originality of future work depend on the ability to detect AI components in such contributions. To address this need, this study will analyze a method that can see purposely manufactured content that academic organizations use to post on Arxiv. For this study, a dataset was created using physics, mathematics, and computer science articles. Using the newly built dataset, the following step is to put originality.ai through its paces. The statistical analysis shows that Originality.ai is very accurate, with a rate of 98\%.}
       \field{journaltitle}{arXiv preprint arXiv:2403.13812}
-      \field{note}{This was not proofread}
       \field{title}{Quantitative analysis of AI-generated texts in academic research: A study of AI presence in Arxiv submissions using AI detection tool}
       \field{year}{2024}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2403.13812
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2403.13812
-      \endverb
-      \keyw{AI detection,AI generated content detection,Academic Integrity,Artificial Intelligence (AI),BERT Model,Binary Classification,ChatGPT,Classification,Confusion Matrix,Machine Learning,Natural Language Processing,OriginalityAI,Text Generation,Text evaluation,arXiv,large language models}
     \endentry
     \entry{Alansari2026}{article}{}
       \name{author}{2}{}{%
@@ -77,7 +68,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Large language models (LLMs) have transformed natural language processing, achieving remarkable performance across diverse tasks. However, their impressive fluency often comes at the cost of producing false or fabricated information, a phenomenon known as hallucination. Hallucination refers to the generation of content by an LLM that is fluent and syntactically correct but factually inaccurate or unsupported by external evidence. Hallucinations undermine the reliability and trustworthiness of LLMs, especially in domains requiring factual accuracy. This survey provides a comprehensive review of research on hallucination in LLMs, with a focus on causes, detection, and mitigation. We first present a taxonomy of hallucination types and analyze their root causes across the entire LLM development lifecycle, from data collection and architecture design to inference. We further examine how hallucinations emerge in key natural language generation tasks. Building on this foundation, we introduce a structured taxonomy of detection approaches and another taxonomy of mitigation strategies. We also analyze the strengths and limitations of current detection and mitigation approaches and review existing evaluation benchmarks and metrics used to quantify LLMs hallucinations. Finally, we outline key open challenges and promising directions for future research, providing a foundation for the development of more truthful and trustworthy LLMs.}
-      \field{issn}{1574-0137}
       \field{journaltitle}{Computer Science Review}
       \field{month}{8}
       \field{title}{Large language models hallucination: A comprehensive survey}
@@ -85,15 +75,6 @@
       \field{year}{2026}
       \field{pages}{100970}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/j.cosrev.2026.100970
-      \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/2510.06265
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/2510.06265
-      \endverb
     \endentry
     \entry{Astarita2024}{article}{}
       \name{author}{4}{}{%
@@ -128,22 +109,14 @@
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Rapid progress in the capabilities of machine learning approaches in natural language processing has culminated in the rise of large language models over the last two years. Recent works have shown unprecedented adoption of these for academic writing, especially in some fields, but their pervasiveness in astronomy has not been studied sufficiently. To remedy this, we extract words that ChatGPT uses more often than humans when generating academic text and search a total of 1 million articles for them. This way, we assess the frequency of word occurrence in published works in astronomy tracked by the NASA Astrophysics Data System since 2000. We then perform a statistical analysis of the occurrences. We identify a list of words favoured by ChatGPT and find a statistically significant increase for these words against a control group in 2024, which matches the trend in other disciplines. These results suggest a widespread adoption of these models in the writing of astronomy papers. We encourage organisations, publishers, and researchers to work together to identify ethical and pragmatic guidelines to maximise the benefits of these systems while maintaining scientific rigour.}
-      \field{month}{9}
-      \field{title}{Delving into the Utilisation of ChatGPT in Scientific Publications in Astronomy}
+      \field{journaltitle}{arXiv preprint arXiv:2406.17324}
+      \field{title}{Delving into the utilisation of ChatGPT in scientific publications in astronomy}
       \field{year}{2024}
-      \verb{doi}
-      \verb 10.5281/zenodo.13885576
-      \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/2406.17324 http://dx.doi.org/10.5281/zenodo.13885576
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/2406.17324%20http://dx.doi.org/10.5281/zenodo.13885576
-      \endverb
     \endentry
     \entry{Bai2022}{article}{}
-      \name{author}{31}{}{%
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
         {{hash=9bf1729ae263e793ab902ed7fe6678da}{%
            family={Bai},
            familyi={B\bibinitperiod},
@@ -194,124 +167,19 @@
            familyi={H\bibinitperiod},
            given={Tom},
            giveni={T\bibinitperiod}}}%
-        {{hash=66d93da29380904e9a0d586e6afe33b4}{%
-           family={Joseph},
-           familyi={J\bibinitperiod},
-           given={Nicholas},
-           giveni={N\bibinitperiod}}}%
-        {{hash=ae50339c3e9c1418ade64e74fa002ef5}{%
-           family={Kadavath},
-           familyi={K\bibinitperiod},
-           given={Saurav},
-           giveni={S\bibinitperiod}}}%
-        {{hash=c9c0e77cb49ab32e0fbcd8d4b0ea104e}{%
-           family={Kernion},
-           familyi={K\bibinitperiod},
-           given={Jackson},
-           giveni={J\bibinitperiod}}}%
-        {{hash=b59a1db0850ff076abc6d1c2cc4c6f97}{%
-           family={Conerly},
-           familyi={C\bibinitperiod},
-           given={Tom},
-           giveni={T\bibinitperiod}}}%
-        {{hash=d59c1d41ad4ed75d6d4a31323ecc849a}{%
-           family={El-Showk},
-           familyi={E\bibinithyphendelim S\bibinitperiod},
-           given={Sheer},
-           giveni={S\bibinitperiod}}}%
-        {{hash=541f016661382ea2cc54ea767573b9c3}{%
-           family={Elhage},
-           familyi={E\bibinitperiod},
-           given={Nelson},
-           giveni={N\bibinitperiod}}}%
-        {{hash=b453e963913f0d9b4b7015dcdda7fab6}{%
-           family={Hatfield-Dodds},
-           familyi={H\bibinithyphendelim D\bibinitperiod},
-           given={Zac},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=b787768e1abb6680dfb8360e81fc0b28}{%
-           family={Hernandez},
-           familyi={H\bibinitperiod},
-           given={Danny},
-           giveni={D\bibinitperiod}}}%
-        {{hash=e2328e4d29e6d57481f844919121200c}{%
-           family={Hume},
-           familyi={H\bibinitperiod},
-           given={Tristan},
-           giveni={T\bibinitperiod}}}%
-        {{hash=1e36aabcaf3c66dbec2a0aec97a0dd98}{%
-           family={Johnston},
-           familyi={J\bibinitperiod},
-           given={Scott},
-           giveni={S\bibinitperiod}}}%
-        {{hash=6cc94a80c21f9c5b346a6f1a21e75095}{%
-           family={Kravec},
-           familyi={K\bibinitperiod},
-           given={Shauna},
-           giveni={S\bibinitperiod}}}%
-        {{hash=53e52c19d9cddefdd8622fdabf0e3b86}{%
-           family={Lovitt},
-           familyi={L\bibinitperiod},
-           given={Liane},
-           giveni={L\bibinitperiod}}}%
-        {{hash=d2f8bae99d9538a95287ac272f977fc4}{%
-           family={Nanda},
-           familyi={N\bibinitperiod},
-           given={Neel},
-           giveni={N\bibinitperiod}}}%
-        {{hash=bd24844b3abaa88e1f3c5c074ad37ab6}{%
-           family={Olsson},
-           familyi={O\bibinitperiod},
-           given={Catherine},
-           giveni={C\bibinitperiod}}}%
-        {{hash=1e6adbf36ab730cd5fdadb838b4d2667}{%
-           family={Amodei},
-           familyi={A\bibinitperiod},
-           given={Dario},
-           giveni={D\bibinitperiod}}}%
-        {{hash=ad9f5a3d8c696d78ce2a831ce8ac7524}{%
-           family={Brown},
-           familyi={B\bibinitperiod},
-           given={Tom},
-           giveni={T\bibinitperiod}}}%
-        {{hash=1480c861b1a73e1d1de1b227e985b179}{%
-           family={Clark},
-           familyi={C\bibinitperiod},
-           given={Jack},
-           giveni={J\bibinitperiod}}}%
-        {{hash=b51e7c5fe92844f39ce52b8a5fa5675f}{%
-           family={McCandlish},
-           familyi={M\bibinitperiod},
-           given={Sam},
-           giveni={S\bibinitperiod}}}%
-        {{hash=78be47e08348476a254b1217fd9041ca}{%
-           family={Olah},
-           familyi={O\bibinitperiod},
-           given={Chris},
-           giveni={C\bibinitperiod}}}%
-        {{hash=f6ea6671c0bcb1a7ebc45e1e803922bd}{%
-           family={Mann},
-           familyi={M\bibinitperiod},
-           given={Ben},
-           giveni={B\bibinitperiod}}}%
-        {{hash=9e85370e215d552f72c95a2b63a37802}{%
-           family={Kaplan},
-           familyi={K\bibinitperiod},
-           given={Jared},
-           giveni={J\bibinitperiod}}}%
       }
       \strng{namehash}{68a232b71f6c92d764e1477740607b54}
-      \strng{fullhash}{1ffbdaaef757253df240c6ac3a0c3385}
+      \strng{fullhash}{6a89e1c883f4b89a9de8b73ecd272137}
       \strng{bibnamehash}{68a232b71f6c92d764e1477740607b54}
       \strng{authorbibnamehash}{68a232b71f6c92d764e1477740607b54}
       \strng{authornamehash}{68a232b71f6c92d764e1477740607b54}
-      \strng{authorfullhash}{1ffbdaaef757253df240c6ac3a0c3385}
+      \strng{authorfullhash}{6a89e1c883f4b89a9de8b73ecd272137}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{We apply preference modeling and reinforcement learning from human feedback (RLHF) to finetune language models to act as helpful and harmless assistants. We find this alignment training improves performance on almost all NLP evaluations, and is fully compatible with training for specialized skills such as python coding and summarization. We explore an iterated online mode of training, where preference models and RL policies are updated on a weekly cadence with fresh human feedback data, efficiently improving our datasets and models. Finally, we investigate the robustness of RLHF training, and identify a roughly linear relation between the RL reward and the square root of the KL divergence between the policy and its initialization. Alongside our main results, we perform peripheral analyses on calibration, competing objectives, and the use of OOD detection, compare our models with human writers, and provide samples from our models using prompts appearing in recent related work.}
-      \field{title}{Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback}
+      \field{journaltitle}{arXiv preprint arXiv:2204.05862}
+      \field{title}{Training a helpful and harmless assistant with reinforcement learning from human feedback}
       \field{year}{2022}
     \endentry
     \entry{Bao2025_classifier}{article}{}
@@ -353,9 +221,6 @@
       \field{year}{2025}
       \field{pages}{716\bibrangedash 731}
       \range{pages}{16}
-      \verb{doi}
-      \verb 10.1162/QSS\_A\_00368/2513665/QSS\_A\_00368.PDF
-      \endverb
     \endentry
     \entry{Bao2025_linguistic}{article}{}
       \name{author}{4}{}{%
@@ -394,8 +259,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Large Language Models (LLMs), such as ChatGPT, have prompted academic concerns about their impact on academic writing. Existing studies have primarily examined LLM usage in academic writing through quantitative approaches, such as word frequency statistics and probability-based analyses. However, few have systematically examined the potential impact of LLMs on the linguistic characteristics of academic writing. To address this gap, we conducted a large-scale analysis across 823,798 abstracts published in last decade from arXiv dataset. Through the linguistic analysis of features such as the frequency of LLM-preferred words, lexical complexity, syntactic complexity, cohesion, readability and sentiment, the results indicate a significant increase in the proportion of LLM-preferred words in abstracts, revealing the widespread influence of LLMs on academic writing. Additionally, we observed an increase in lexical complexity and sentiment in the abstracts, but a decrease in syntactic complexity, suggesting that LLMs introduce more new vocabulary and simplify sentence structure. However, the significant decrease in cohesion and readability indicates that abstracts have fewer connecting words and are becoming more difficult to read. Moreover, our analysis reveals that scholars with weaker English proficiency were more likely to use the LLMs for academic writing, and focused on improving the overall logic and fluency of the abstracts. Finally, at discipline level, we found that scholars in Computer Science showed more pronounced changes in writing style, while the changes in Mathematics were minimal.}
-      \field{issn}{15882861}
-      \field{issue}{7}
       \field{journaltitle}{Scientometrics}
       \field{month}{7}
       \field{title}{Examining linguistic shifts in academic writing before and after the launch of ChatGPT: a study on preprint papers}
@@ -403,16 +266,6 @@
       \field{year}{2025}
       \field{pages}{3597\bibrangedash 3627}
       \range{pages}{31}
-      \verb{doi}
-      \verb 10.1007/S11192-025-05341-Y/TABLES/9
-      \endverb
-      \verb{urlraw}
-      \verb https://link.springer.com/article/10.1007/s11192-025-05341-y
-      \endverb
-      \verb{url}
-      \verb https://link.springer.com/article/10.1007/s11192-025-05341-y
-      \endverb
-      \keyw{Academic writing,Large Language Models,Linguistic features,Writing style}
     \endentry
     \entry{Berdejo-Espinola2023}{article}{}
       \name{author}{2}{}{%
@@ -440,8 +293,6 @@
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{10959203}
-      \field{issue}{6636}
       \field{journaltitle}{Science}
       \field{month}{3}
       \field{title}{AI tools can improve equity in science}
@@ -449,9 +300,6 @@
       \field{year}{2023}
       \field{pages}{991}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1126/SCIENCE.ADG9714
-      \endverb
       \verb{urlraw}
       \verb https://www.science.org/doi/10.1126/science.adg9714
       \endverb
@@ -459,7 +307,7 @@
       \verb https://www.science.org/doi/10.1126/science.adg9714
       \endverb
     \endentry
-    \entry{Botes2025}{article}{}
+    \entry{Botes2025}{misc}{}
       \name{author}{4}{}{%
         {{hash=86ccbf5077bde8e902383b3454beff89}{%
            family={Botes},
@@ -482,6 +330,9 @@
            given={Ziwen},
            giveni={Z\bibinitperiod}}}%
       }
+      \list{publisher}{1}{%
+        {PsyArXiv. https://doi. org/10.31234/osf. io/4yvbp\_v1}%
+      }
       \strng{namehash}{a922cdf375c5260d4535604b0cced5c8}
       \strng{fullhash}{db9aa1c44094de0b8fe9235bbb64df1f}
       \strng{bibnamehash}{a922cdf375c5260d4535604b0cced5c8}
@@ -494,15 +345,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Initial indications of generative AI writing in linguistics research publications}
       \field{year}{2025}
-      \verb{doi}
-      \verb 10.31234/osf.io/4yvbp\_v1
-      \endverb
-      \verb{urlraw}
-      \verb https://www.researchgate.net/profile/Elouise-Botes/publication/394388056\_Initial\_indications\_of\_generative\_AI\_writing\_in\_linguistics\_research\_publications/links/68a5e6fe6327cf7b63d83be1/Initial-indications-of-generative-AI-writing-in-linguistics-research-publications.pdf
-      \endverb
-      \verb{url}
-      \verb https://www.researchgate.net/profile/Elouise-Botes/publication/394388056%5C_Initial%5C_indications%5C_of%5C_generative%5C_AI%5C_writing%5C_in%5C_linguistics%5C_research%5C_publications/links/68a5e6fe6327cf7b63d83be1/Initial-indications-of-generative-AI-writing-in-linguistics-research-publications.pdf
-      \endverb
     \endentry
     \entry{Brainard2023}{article}{}
       \name{author}{1}{}{%
@@ -513,7 +355,7 @@
            giveni={J\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {American Association for the Advancement of Science}%
+        {American Association for the Advancement of Science (AAAS)}%
       }
       \strng{namehash}{7570dbb14459d83e8957dec2eadc388a}
       \strng{fullhash}{7570dbb14459d83e8957dec2eadc388a}
@@ -525,21 +367,18 @@
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{10959203}
-      \field{issue}{6634}
       \field{journaltitle}{Science}
-      \field{month}{2}
+      \field{number}{6634}
       \field{title}{Journals take up arms against AI-written text}
       \field{volume}{379}
       \field{year}{2023}
       \field{pages}{740\bibrangedash 741}
       \range{pages}{2}
-      \verb{doi}
-      \verb 10.1126/SCIENCE.ADH2762
-      \endverb
     \endentry
-    \entry{Chen2025_revise}{article}{}
-      \name{author}{14}{}{%
+    \entry{Chen2025_revise}{inproceedings}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
         {{hash=cafe64f078339999e9287b71f1a14f29}{%
            family={Chen},
            familyi={C\bibinitperiod},
@@ -590,61 +429,62 @@
            familyi={Z\bibinitperiod},
            given={Lei},
            giveni={L\bibinitperiod}}}%
-        {{hash=b86989ffcabd5bac441031597e56d86f}{%
-           family={Yan},
-           familyi={Y\bibinitperiod},
-           given={Chenyu},
-           giveni={C\bibinitperiod}}}%
-        {{hash=037ab3715d453cdd5ec2690730c826ba}{%
-           family={Mei},
-           familyi={M\bibinitperiod},
-           given={Guanghao},
-           giveni={G\bibinitperiod}}}%
-        {{hash=2f4cc163c8766d4437008ea260208de8}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Jie},
-           giveni={J\bibinitperiod}}}%
-        {{hash=d9c014f4a443c9a8c5d4dc51fb7c3a77}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Lefei},
-           giveni={L\bibinitperiod}}}%
       }
       \strng{namehash}{e22e8003bf798efbf436243fdd9bcf7c}
-      \strng{fullhash}{6020103afa7e239eddaf84aad00746e7}
+      \strng{fullhash}{a0ad9aa73ccd080eea2fa9adc15fad1b}
       \strng{bibnamehash}{e22e8003bf798efbf436243fdd9bcf7c}
       \strng{authorbibnamehash}{e22e8003bf798efbf436243fdd9bcf7c}
       \strng{authornamehash}{e22e8003bf798efbf436243fdd9bcf7c}
-      \strng{authorfullhash}{6020103afa7e239eddaf84aad00746e7}
+      \strng{authorfullhash}{a0ad9aa73ccd080eea2fa9adc15fad1b}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Large Language Models (LLMs) have revolutionized text generation , making detecting machine-generated text increasingly challenging. Although past methods have achieved good performance on detecting pure machine-generated text, those detectors have poor performance on distinguishing machine-revised text (rewriting, expansion, and polishing), which can have only minor changes from its original human prompt. As the content of text may originate from human prompts, detecting machine-revised text often involves identifying distinctive machine styles, e.g., worded favored by LLMs. However, existing methods struggle to detect machine-style phrasing hidden within the content contributed by humans. We propose the "Imitate Before Detect" (ImBD) approach, which first imitates the machine-style token distribution, and then compares the distribution of the text to be tested with the machine-style distribution to determine whether the text has been machine-revised. To this end, we introduce style preference optimization (SPO), which aligns a scoring LLM model to the preference of text styles generated by machines. The aligned scoring model is then used to calculate the style-conditional probability curvature (Style-CPC), quantifying the log probability difference between the original and conditionally sampled texts for effective detection. We conduct extensive comparisons across various scenarios, encompassing text revisions by six LLMs, four distinct text domains, and three machine revision types. Compared to existing state-of-the-art methods, our method yields a 13\% increase in AUC for detecting text revised by open-source LLMs, and improves performance by 5\% and 19\% for detecting GPT-3.5 and GPT-4o revised text, respectively. Notably, our method surpasses the commercially trained GPT-Zero with just 1, 000 samples and five minutes of SPO, demonstrating its efficiency and effectiveness.}
-      \field{journaltitle}{ojs.aaai.orgJ Chen, X Zhu, T Liu, Y Chen, C Xinhui, Y Yuan, CT Leong, Z Li, L Tang, L Zhang, C YanProceedings of the AAAI Conference on Artificial Intelligence, 2025•ojs.aaai.org}
+      \field{booktitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
+      \field{number}{22}
       \field{title}{Imitate before detect: Aligning machine stylistic preference for machine-revised text detection}
+      \field{volume}{39}
       \field{year}{2025}
-      \verb{urlraw}
-      \verb https://ojs.aaai.org/index.php/AAAI/article/view/34525
-      \endverb
-      \verb{url}
-      \verb https://ojs.aaai.org/index.php/AAAI/article/view/34525
-      \endverb
-      \keyw{Application Domains (APP): APP: Security,Natural Language Processing (NLP): NLP: (Large) Language Models,Natural Language Processing (NLP): NLP: Text Classification}
+      \field{pages}{23559\bibrangedash 23567}
+      \range{pages}{9}
     \endentry
     \entry{Cheng2024}{article}{}
-      \name{author}{4}{}{%
+      \name{author}{10}{}{%
         {{hash=047bca20223c62dd63df002120fc8261}{%
            family={Cheng},
            familyi={C\bibinitperiod},
            given={Hu-Zi},
            giveni={H\bibinithyphendelim Z\bibinitperiod}}}%
-        {{hash=981b65aa5ac8799f0619edf05af34260}{%
-           family={Zheng},
-           familyi={Z\bibinitperiod},
-           given={Ying-Feng},
-           giveni={Y\bibinithyphendelim F\bibinitperiod}}}%
+        {{hash=96234dda53598ba5ccb58ad58a2b0204}{%
+           family={Sheng},
+           familyi={S\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=6da399443bec67faffeae4578f9312ba}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bd0a18750bd351067487f95350a5a13c}{%
+           family={Chaudhary},
+           familyi={C\bibinitperiod},
+           given={Varun},
+           giveni={V\bibinitperiod}}}%
+        {{hash=69d6e37fe67e43aaaf3a4b4874717437}{%
+           family={Atanasov},
+           familyi={A\bibinitperiod},
+           given={Atanas\bibnamedelima G},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=ae12d7ceeacb5b7ceff7115af0984cfc}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Nan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=86969dc6f0a15b4fd948fc0bb56d9171}{%
+           family={Qiu},
+           familyi={Q\bibinitperiod},
+           given={Yue},
+           giveni={Y\bibinitperiod}}}%
         {{hash=db4c301f0bef3ea1be75067bc2003b84}{%
            family={Wong},
            familyi={W\bibinitperiod},
@@ -655,30 +495,30 @@
            familyi={T\bibinitperiod},
            given={Yih-Chung},
            giveni={Y\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=981b65aa5ac8799f0619edf05af34260}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Ying-Feng},
+           giveni={Y\bibinithyphendelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cold Spring Harbor Laboratory}%
       }
       \strng{namehash}{c5fb8f8b3909bb87221818b7fb08c7cf}
-      \strng{fullhash}{859798fd4a1150e891d0ed2fdf3e7b8c}
+      \strng{fullhash}{5af568f4d2f8902430ffe44ab1d86229}
       \strng{bibnamehash}{c5fb8f8b3909bb87221818b7fb08c7cf}
       \strng{authorbibnamehash}{c5fb8f8b3909bb87221818b7fb08c7cf}
       \strng{authornamehash}{c5fb8f8b3909bb87221818b7fb08c7cf}
-      \strng{authorfullhash}{859798fd4a1150e891d0ed2fdf3e7b8c}
+      \strng{authorfullhash}{5af568f4d2f8902430ffe44ab1d86229}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Since the release of ChatGPT in 2022, AI-generated texts have inevitably permeated various types of writing, sparking debates about the quality and quantity of content produced by such large language models (LLM). This study investigates a critical question: Have AI-generated texts from LLM infiltrated the realm of scientific writing, and if so, to what extent and in what setting? By analyzing a dataset comprised. CC-BY-NC-ND 4.0 International license made available under a (which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is The copyright holder for this preprint this version posted March 26, 2024. ; https://doi.org/10.1101/2024.03.25.586710 doi: bioRxiv preprint of preprint manuscripts uploaded to arXiv, bioRxiv, and medRxiv over the past two years, we confirmed and quantified the widespread influence of AI-generated texts in scientific publications using the latest LLM-text detection technique, the Binoculars LLM-detector. Further analyses with this tool reveal that: (1) the AI influence correlates with the trend of ChatGPT web searches; (2) it is widespread across many scientific domains but exhibits distinct impacts within them (highest: computer science, engineering sciences); (3) the influence varies with authors who had different language speaking backgrounds and geographic regions according to the location of their affiliations (\>5\%: Italy, China, average over countries), and (4) AI-generated texts are used in various content types in manuscripts (most significant: hypothesis formulation, conclusion summarization). Based on these findings, an AI-revision index is developed and calibrated, giving quantitative estimates about how AI is used in scientific writing. Suggestions about advantages and safe use of AI-augmented scientific writing are discussed based on our observations.}
-      \field{journaltitle}{biorxiv.orgHZ Cheng, B Sheng, A Lee, V Chaudhary, AG Atanasov, N Liu, Y Qiu, TY Wong, YC ThambioRxiv, 2024•biorxiv.org}
+      \field{journaltitle}{bioRxiv}
       \field{title}{Have AI-generated texts from LLM infiltrated the realm of scientific writing? A large-scale analysis of preprint platforms}
       \field{year}{2024}
-      \verb{doi}
-      \verb 10.1101/2024.03.25.586710
-      \endverb
-      \verb{urlraw}
-      \verb https://www.biorxiv.org/content/10.1101/2024.03.25.586710.abstract
-      \endverb
-      \verb{url}
-      \verb https://www.biorxiv.org/content/10.1101/2024.03.25.586710.abstract
-      \endverb
+      \field{pages}{2024\bibrangedash 03}
+      \range{pages}{0}
     \endentry
     \entry{Desaire2023}{article}{}
       \name{author}{5}{}{%
@@ -722,8 +562,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{ChatGPT has enabled access to artificial intelligence (AI)-generated writing for the masses, initiating a culture shift in the way people work, learn, and write. The need to discriminate human writing from AI is now both critical and urgent. Addressing this need, we report a method for discriminating text generated by ChatGPT from (human) academic scientists, relying on prevalent and accessible supervised classification methods. The approach uses new features for discriminating (these) humans from AI; as examples, scientists write long paragraphs and have a penchant for equivocal language, frequently using words like “but,” “however,” and “although.” With a set of 20 features, we built a model that assigns the author, as human or AI, at over 99\% accuracy. This strategy could be further adapted and developed by others with basic skills in supervised classification, enabling access to many highly accurate and targeted models for detecting AI usage in academic writing and beyond.}
-      \field{issn}{2666-3864}
-      \field{issue}{6}
       \field{journaltitle}{Cell Reports Physical Science}
       \field{month}{6}
       \field{title}{Distinguishing academic science writing from humans or ChatGPT with over 99\% accuracy using off-the-shelf machine learning tools}
@@ -731,12 +569,8 @@
       \field{year}{2023}
       \field{pages}{101426}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/J.XCRP.2023.101426
-      \endverb
-      \keyw{AI,ChatGPT,XGBoost,machine learing,plagiarism,text analysis}
     \endentry
-    \entry{Dou2024}{article}{}
+    \entry{Dou2024}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=9501b60d1d2fd8acf8b7d5f83111ba57}{%
            family={Dou},
@@ -748,15 +582,15 @@
            familyi={G\bibinitperiod},
            given={Yuchen},
            giveni={Y\bibinitperiod}}}%
-        {{hash=8cc2c354b267b8b326515aa6ff24bc9c}{%
+        {{hash=ac68a9d56d481c49b25c2234318e751d}{%
            family={Chang},
            familyi={C\bibinitperiod},
-           given={Ching\bibnamedelima Chun},
-           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+           given={Ching-Chun},
+           giveni={C\bibinithyphendelim C\bibinitperiod}}}%
         {{hash=e252be346de37dfd84c9c35a849ea1ea}{%
            family={Nguyen},
            familyi={N\bibinitperiod},
-           given={Huy\bibnamedelima H.},
+           given={Huy\bibnamedelima H},
            giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
         {{hash=4bd4efa8761f727d2d99c07ae71f37cd}{%
            family={Echizen},
@@ -764,39 +598,26 @@
            given={Isao},
            giveni={I\bibinitperiod}}}%
       }
-      \list{publisher}{2}{%
-        {Springer Science}%
-        {Business Media Deutschland GmbH}%
+      \list{organization}{1}{%
+        {Springer}%
       }
       \strng{namehash}{633c559be816c578640b7c1a59ce04d0}
-      \strng{fullhash}{8e8bda64e20b0a2b996f78ebfd2a7c98}
+      \strng{fullhash}{2a934a0420f9dff85f3dbe3414c763f8}
       \strng{bibnamehash}{633c559be816c578640b7c1a59ce04d0}
       \strng{authorbibnamehash}{633c559be816c578640b7c1a59ce04d0}
       \strng{authornamehash}{633c559be816c578640b7c1a59ce04d0}
-      \strng{authorfullhash}{8e8bda64e20b0a2b996f78ebfd2a7c98}
+      \strng{authorfullhash}{2a934a0420f9dff85f3dbe3414c763f8}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The emergence of large language models (LLMs), such as Generative Pre-trained Transformer 4 (GPT-4) used by ChatGPT, has profoundly impacted the academic and broader community. While these models offer numerous advantages in terms of revolutionizing work and study methods, they have also garnered significant attention due to their potential negative consequences. One example is generating academic reports or papers with little to no human contribution. Consequently, researchers have focused on developing detectors to address the misuse of LLMs. However, most existing methods prioritize achieving higher accuracy on restricted datasets, neglecting the crucial aspect of generalizability. This limitation hinders their practical application in real-life scenarios where reliability is paramount. In this paper, we present a comprehensive analysis of the impact of prompts on the text generated by LLMs and highlight the potential lack of robustness in one of the current state-of-the-art GPT detectors. To mitigate these issues concerning the misuse of LLMs in academic writing, we propose a reference-based Siamese detector named Synthetic-Siamese which takes a pair of texts, one as the inquiry and the other as the reference. Our method effectively addresses the lack of robustness of previous detectors (OpenAI detector and DetectGPT) and significantly improves the baseline performances in realistic academic writing scenarios by approximately 67\% to 95\%.}
-      \field{issn}{23674520}
-      \field{journaltitle}{Lecture Notes on Data Engineering and Communications Technologies}
-      \field{title}{Enhancing Robustness of LLM-Synthetic Text Detectors for Academic Writing: A Comprehensive Analysis}
-      \field{volume}{202}
+      \field{booktitle}{International Conference on Advanced Information Networking and Applications}
+      \field{title}{Enhancing robustness of LLM-synthetic text detectors for academic writing: A comprehensive analysis}
       \field{year}{2024}
       \field{pages}{266\bibrangedash 277}
       \range{pages}{12}
-      \verb{doi}
-      \verb 10.1007/978-3-031-57916-5\_23/TABLES/4
-      \endverb
-      \verb{urlraw}
-      \verb https://link.springer.com/chapter/10.1007/978-3-031-57916-5\_23
-      \endverb
-      \verb{url}
-      \verb https://link.springer.com/chapter/10.1007/978-3-031-57916-5%5C_23
-      \endverb
     \endentry
-    \entry{Doughman2025}{misc}{}
+    \entry{Doughman2025}{inproceedings}{}
       \name{author}{6}{}{%
         {{hash=6dfba91127871c3535ad1bceb08b43ce}{%
            family={Doughman},
@@ -839,17 +660,11 @@
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Recent improvements in the quality of the generations by large language models have spurred research into identifying machine-generated text. Such work often presents high-performing detectors. However, humans and machines can produce text in different styles and domains, yet the the performance impact of such on machine generated text detection systems remains unclear. In this paper, we audit the classification performance for detecting machine-generated text by evaluating on texts with varying writing styles. We find that classifiers are highly sensitive to stylistic changes and differences in text complexity, and in some cases degrade entirely to random classifiers. We further find that detection systems are particularly susceptible to misclassify easy-to-read texts while they have high performance for complex texts, leading to concerns about the reliability of detection systems. We recommend that future work attends to stylistic factors and reading difficulty levels of human-written and machine-generated text.}
-      \field{title}{Exploring the Limitations of Detecting Machine-Generated Text}
+      \field{booktitle}{Proceedings of the 31st International Conference on Computational Linguistics}
+      \field{title}{Exploring the limitations of detecting machine-generated text}
       \field{year}{2025}
       \field{pages}{4274\bibrangedash 4281}
       \range{pages}{8}
-      \verb{urlraw}
-      \verb https://aclanthology.org/2025.coling-main.288/
-      \endverb
-      \verb{url}
-      \verb https://aclanthology.org/2025.coling-main.288/
-      \endverb
     \endentry
     \entry{Elsevier2024}{misc}{}
       \name{author}{1}{}{%
@@ -1003,8 +818,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Background: Since its release in November 2022, ChatGPT has captivated society and shown potential for various aspects of health care. Objective: To investigate potential use of ChatGPT, a large language model (LLM), in urology by gathering opinions from urologists worldwide. Design, setting, and participants: An open web-based survey was distributed via social media and e-mail chains to urologists between April 20, 2023 and May 5, 2023. Participants were asked to answer questions related to their knowledge and experience with artificial intelligence, as well as their opinions of potential use of ChatGPT/LLMs in research and clinical practice. Outcome measurements and statistical analysis: Data are reported as the mean and standard deviation for continuous variables, and the frequency and percentage for categorical variables. Charts and tables are used as appropriate, with descriptions of the chart types and the measures used. The data are reported in accordance with the Checklist for Reporting Results of Internet E-Surveys (CHERRIES). Results and limitations: A total of 456 individuals completed the survey (64\% completion rate). Nearly half (47.7\%) reported that they use ChatGPT/LLMs in their academic practice, with fewer using the technology in clinical practice (19.8\%). More than half (62.2\%) believe there are potential ethical concerns when using ChatGPT for scientific or academic writing, and 53\% reported that they have experienced limitations when using ChatGPT in academic practice. Conclusions: Urologists recognise the potential of ChatGPT/LLMs in research but have concerns regarding ethics and patient acceptance. There is a desire for regulations and guidelines to ensure appropriate use. In addition, measures should be taken to establish rules and guidelines to maximise safety and efficiency when using this novel technology. Patient summary: A survey asked 456 urologists from around the world about using an artificial intelligence tool called ChatGPT in their work. Almost half of them use ChatGPT for research, but not many use it for patients care. The resonders think ChatGPT could be helpful, but they worry about problems like ethics and want rules to make sure it's used safely.}
-      \field{issn}{0302-2838}
-      \field{issue}{2}
       \field{journaltitle}{European Urology}
       \field{month}{2}
       \field{title}{Awareness and Use of ChatGPT and Large Language Models: A Prospective Cross-sectional Global Survey in Urology}
@@ -1012,10 +825,6 @@
       \field{year}{2024}
       \field{pages}{146\bibrangedash 153}
       \range{pages}{8}
-      \verb{doi}
-      \verb 10.1016/J.EURURO.2023.10.014
-      \endverb
-      \keyw{ChatGPT,Ethics,Global,Large language models,OpenAI,Survey,Urology}
     \endentry
     \entry{Filimonovic2025}{article}{}
       \name{author}{3}{}{%
@@ -1045,17 +854,9 @@
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{This paper estimates the effect of Generative AI (GenAI) adoption on scientific productivity and quality in the social and behavioral sciences. Using matched author-level panel data and a difference-in-differences design, we find that GenAI adoption is associated with sizable increases in research productivity, measured by the number of published papers. It also leads to moderate gains in publication quality, based on journal impact factors. These effects are most pronounced among early-career researchers, authors working in technically complex subfields, and those from non-English-speaking countries. The results suggest that GenAI tools may help lower some structural barriers in academic publishing and promote more inclusive participation in research.}
-      \field{month}{10}
-      \field{title}{Can GenAI Improve Academic Performance? Evidence from the Social and Behavioral Sciences}
+      \field{journaltitle}{arXiv preprint arXiv:2510.02408}
+      \field{title}{Can GenAI improve academic performance? Evidence from the social and behavioral sciences}
       \field{year}{2025}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2510.02408v1
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2510.02408v1
-      \endverb
-      \keyw{econ.GN,q-fin.EC}
     \endentry
     \entry{Gehrmann2019}{article}{}
       \name{author}{3}{}{%
@@ -1095,9 +896,6 @@
       \field{year}{2019}
       \field{pages}{111\bibrangedash 116}
       \range{pages}{6}
-      \verb{doi}
-      \verb 10.18653/V1/P19-3019
-      \endverb
       \verb{urlraw}
       \verb https://aclanthology.org/P19-3019/
       \endverb
@@ -1138,15 +936,6 @@
       \field{year}{2025}
       \field{pages}{12689\bibrangedash 12696}
       \range{pages}{8}
-      \verb{doi}
-      \verb 10.18653/v1/2025.findings-acl.657
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2502.09606v2
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2502.09606v2
-      \endverb
     \endentry
     \entry{Geng2024}{article}{}
       \name{author}{2}{}{%
@@ -1172,16 +961,9 @@
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Based on one million arXiv papers submitted from May 2018 to January 2024, we assess the textual density of ChatGPT's writing style in their abstracts through a statistical analysis of word frequency changes. Our model is calibrated and validated on a mixture of real abstracts and ChatGPT-modified abstracts (simulated data) after a careful noise analysis. The words used for estimation are not fixed but adaptive, including those with decreasing frequency. We find that large language models (LLMs), represented by ChatGPT, are having an increasing impact on arXiv abstracts, especially in the field of computer science, where the fraction of LLM-style abstracts is estimated to be approximately 35\%, if we take the responses of GPT-3.5 to one simple prompt, "revise the following sentences", as a baseline. We conclude with an analysis of both positive and negative aspects of the penetration of LLMs into academics' writing style.}
-      \field{journaltitle}{arxiv.orgM Geng, R TrottaarXiv preprint arXiv:2404.08627, 2024•arxiv.org}
+      \field{journaltitle}{arXiv preprint arXiv:2404.08627}
       \field{title}{Is ChatGPT Transforming Academics' Writing Style?}
       \field{year}{2024}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2404.08627
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2404.08627
-      \endverb
     \endentry
     \entry{gonzalez2024landscape}{article}{}
       \name{author}{5}{}{%
@@ -1238,9 +1020,6 @@
            given={Andrew},
            giveni={A\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {John Wiley \& Sons, Ltd}%
-      }
       \strng{namehash}{ce2fb463a26fb08ab663ee993d68dd62}
       \strng{fullhash}{ce2fb463a26fb08ab663ee993d68dd62}
       \strng{bibnamehash}{ce2fb463a26fb08ab663ee993d68dd62}
@@ -1252,25 +1031,9 @@
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The use of ChatGPT and similar Large Language Model (LLM) tools in scholarly communication and academic publishing has been widely discussed since they became easily accessible to a general audience in late 2022. This study uses keywords known to be disproportionately present in LLM-generated text to provide an overall estimate for the prevalence of LLM-assisted writing in the scholarly literature. For the publishing year 2023, it is found that several of those keywords show a distinctive and disproportionate increase in their prevalence, individually and in combination. It is estimated that at least 60,000 papers (slightly over 1\% of all articles) were LLM-assisted, though this number could be extended and refined by analysis of other characteristics of the papers or by identification of further indicative keywords. LLMs in the scholarly literature Large language model (LLM) tools provide a way to generate large amounts of reasonably high-quality text automatically, in response to human prompts. While these tools have been available for some years, the release of ChatGPT 3.5 in late 2022, offering an easy interface and wide publicity for the tool, made them available and visible to the world at large. Since then, there has been extensive discussion about their use in scholarly communications. Early over-enthusiasm that they might be able to reliably replace most forms of serious writing, including attempts to list them as authors on papers, 1 has been replaced by a more nuanced understanding of their capabilities and their-substantial-limitations. As of late 2023, surveys found that 30\% of researchers had used tools to help write manuscripts, and many publishers had begun to offer guidance on their use. 2 For example, Wiley permit the use of tools to develop content but only if the authors take full responsibility for the statements made, and where this usage is disclosed transparently in the paper-but "Tools that are used to improve spelling, grammar, and general editing are not included in the scope of these guidelines". 3}
-      \field{isbn}{4158602400592}
-      \field{issue}{6}
-      \field{journaltitle}{arxiv.org}
-      \field{month}{12}
+      \field{journaltitle}{arXiv preprint arXiv:2512.01560}
       \field{title}{Estimating the prevalence of LLM-assisted text in scholarly writing}
-      \field{volume}{53}
       \field{year}{2025}
-      \field{pages}{331\bibrangedash 333}
-      \range{pages}{3}
-      \verb{doi}
-      \verb 10.1002/leap.1578
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2512.01560
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2512.01560
-      \endverb
     \endentry
     \entry{Gray2026}{article}{}
       \name{author}{1}{}{%
@@ -1296,17 +1059,12 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Since 2023, a significant number of published scholarly papers show signs of having been edited using AI tools. Many of these will have been cases where it was used for copyediting or translation, but some have been substantially or entirely generated by large language models—and readers cannot easily tell which is which. AI tools, meanwhile, are also being used to review papers and as intermediaries in search and discovery tools, in ways that are not always well understood, and academic databases are starting to show signs of being affected by AI-generated hallucinated research. These tools are placing additional stresses on the integrity of the scholarly publishing system, potentially making it more vulnerable to organized and intentional disinformation campaigns.}
-      \field{issn}{1938-3282}
-      \field{issue}{2}
       \field{journaltitle}{Taylor \& Francis}
       \field{title}{How AI use in scholarly publishing threatens research integrity, lessens trust, and invites misinformation}
       \field{volume}{82}
       \field{year}{2026}
       \field{pages}{85\bibrangedash 88}
       \range{pages}{4}
-      \verb{doi}
-      \verb 10.1080/00963402.2026.2628491
-      \endverb
       \verb{urlraw}
       \verb https://www.tandfonline.com/doi/abs/10.1080/00963402.2026.2628491
       \endverb
@@ -1372,7 +1130,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Detecting text generated by modern large language models is thought to be hard, as both LLMs and humans can exhibit a wide range of complex behaviors. However, we find that a score based on contrasting two closely related language models is highly accurate at separating human-generated and machine-generated text. Based on this mechanism, we propose a novel LLM detector that only requires simple calculations using a pair of pre-trained LLMs. The method, called Binoculars, achieves state-of-the-art accuracy without any training data. It is capable of spotting machine text from a range of modern LLMs without any model-specific modifications. We comprehensively evaluate Binoculars on a number of text sources and in varied situations. Over a wide range of document types, Binoculars detects over 90\% of generated samples from ChatGPT (and other LLMs) at a false positive rate of 0.01\%, despite not being trained on any ChatGPT data.}
-      \field{issn}{26403498}
       \field{journaltitle}{Proceedings of Machine Learning Research}
       \field{month}{1}
       \field{title}{Spotting LLMs With Binoculars: Zero-Shot Detection of Machine-Generated Text}
@@ -1380,12 +1137,6 @@
       \field{year}{2024}
       \field{pages}{17519\bibrangedash 17537}
       \range{pages}{19}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2401.12070v3
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2401.12070v3
-      \endverb
     \endentry
     \entry{Hern2024}{misc}{}
       \name{author}{1}{}{%
@@ -1443,7 +1194,6 @@
       \field{labeltitlesource}{title}
       \field{abstract}{Scientific English is currently undergoing rapid change, with words like “delve,” “intricate,” and “underscore” appearing far more frequently than just a few years ago. It is widely assumed that scientists' use of large language models (LLMs) is responsible for such trends. We develop a formal, transferable method to characterize these linguistic changes. Application of our method yields 21 focal words whose increased occurrence in scientific abstracts is likely the result of LLM usage. We then pose “the puzzle of lexical overrepresentation”: why are such words overused by LLMs? We fail to find evidence that lexical overrepresentation is caused by model architecture, algorithm choices, or training data. To assess whether reinforcement learning from human feedback (RLHF) contributes to the overuse of focal words, we undertake comparative model testing and conduct an exploratory online study. While the model testing is consistent with RLHF playing a role, our experimental results suggest that participants may be reacting differently to “delve” than to other focal words. With LLMs quickly becoming a driver of global language change, investigating these potential sources of lexical overrepresentation is important. We note that while insights into the workings of LLMs are within reach, a lack of transparency surrounding model development remains an obstacle to such research.}
       \field{isbn}{9798891761964}
-      \field{issn}{29512093}
       \field{journaltitle}{Proceedings - International Conference on Computational Linguistics, COLING}
       \field{title}{Why Does ChatGPT “Delve” So Much? Exploring the Sources of Lexical Overrepresentation in Large Language Models}
       \field{year}{2025}
@@ -1500,9 +1250,6 @@
       \field{title}{Risks of abuse of large language models, like ChatGPT, in scientific publishing: Authorship, predatory publishing, and paper mills}
       \field{volume}{37}
       \field{year}{2024}
-      \verb{doi}
-      \verb 10.1002/leap.1578
-      \endverb
       \verb{urlraw}
       \verb https://onlinelibrary.wiley.com/doi/10.1002/leap.1578
       \endverb
@@ -1577,8 +1324,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Large language models (LLMs) like ChatGPT can generate and revise text with human-level performance. These models come with clear limitations, can produce inaccurate information, and reinforce existing biases. Yet, many scientists use them for their scholarly writing. But how widespread is such LLM usage in the academic literature? To answer this question for the field of biomedical research, we present an unbiased, large-scale approach: We study vocabulary changes in more than 15 million biomedical abstracts from 2010 to 2024 indexed by PubMed and show how the appearance of LLMs led to an abrupt increase in the frequency of certain style words. This excess word analysis suggests that at least 13.5\% of 2024 abstracts were processed with LLMs. This lower bound differed across disciplines, countries, and journals, reaching 40\% for some subcorpora. We show that LLMs have had an unprecedented impact on scientific writing in biomedical research, surpassing the effect of major world events such as the COVID pandemic.}
-      \field{issn}{23752548}
-      \field{issue}{27}
       \field{journaltitle}{Science Advances}
       \field{month}{7}
       \field{title}{Delving into LLM-assisted writing in biomedical publications through excess vocabulary}
@@ -1615,8 +1360,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This study analysed the acknowledgment of ChatGPT in 1,759 academic publications indexed in Scopus and Web of Science up to August 2024. Around 80\% of acknowledgments were related to text editing and proofreading, while only 5.3\% mentioned ChatGPT for non-editorial research support, such as data analysis or programming. A small portion (3.5\%) of researchers acknowledged ChatGPT for drafting sections of manuscripts. About two-thirds of corresponding authors who acknowledged ChatGPT were from non-English-speaking countries, and 75\% of the publications with ChatGPT acknowledgments were published within January to August 2024. These findings suggest that ChatGPT was primarily acknowledged for language enhancement rather than more complex research applications, although some researchers may not have found it necessary to mention its use in their publications, highlighting the need for transparency from journals and publishers.}
-      \field{issn}{15882861}
-      \field{issue}{12}
       \field{journaltitle}{Scientometrics}
       \field{month}{12}
       \field{title}{How is ChatGPT acknowledged in academic publications?}
@@ -1624,16 +1367,12 @@
       \field{year}{2024}
       \field{pages}{7959\bibrangedash 7969}
       \range{pages}{11}
-      \verb{doi}
-      \verb 10.1007/S11192-024-05193-Y/FIGURES/4
-      \endverb
       \verb{urlraw}
       \verb https://link.springer.com/article/10.1007/s11192-024-05193-y
       \endverb
       \verb{url}
       \verb https://link.springer.com/article/10.1007/s11192-024-05193-y
       \endverb
-      \keyw{Academic publishing,Acknowledgments,ChatGPT,Large Language Models (LLMs),Scientific writing}
     \endentry
     \entry{Kousha2025}{article}{}
       \name{author}{2}{}{%
@@ -1662,23 +1401,12 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This study investigates how Large Language Models (LLMs) are influencing the language of academic papers by tracking 12 LLM-associated terms across six major scholarly databases (Scopus, Web of Science, PubMed, PubMed Central (PMC), Dimensions, and OpenAlex) from 2015 to 2024. Using over 2.4 million PMC open-access publications (2021-July 2025), we also analysed full texts to assess changes in the frequency and co-occurrence of these terms before and after ChatGPT's initial public release. Across databases, delve (+1,500\%), underscore (+1,000\%), and intricate (+700\%) had the largest increases between 2022 and 2024. Growth in LLM-term usage was much higher in STEM fields than in social sciences and arts and humanities. In PMC full texts, the proportion of papers using underscore six or more times increased by over 10,000\% from 2022 to 2025, followed by intricate (+5,400\%) and meticulous (+2,800\%). Nearly half of all 2024 PMC papers using any LLM term also included underscore, compared with only 3\%-14\% of papers before ChatGPT in 2022. Papers using one LLM term are now much more likely to include other terms. For example, in 2024, underscore strongly correlated with pivotal (0.449) and delve (0.311), compared with very weak associations in 2022 (0.032 and 0.018, respectively). These findings provide the first large-scale evidence based on full-text publications and multiple databases that some LLM-related terms are now being used much more frequently and together. The rapid uptake of LLMs to support scholarly publishing is a welcome development reducing the language barrier to academic publishing for non-English speakers.}
-      \field{issn}{15882861}
       \field{journaltitle}{Scientometrics 2026}
       \field{month}{9}
       \field{title}{How much are LLMs changing the language of academic papers after ChatGPT? A multi-database and full text analysis}
       \field{year}{2025}
       \field{pages}{1\bibrangedash 21}
       \range{pages}{21}
-      \verb{doi}
-      \verb 10.1007/S11192-026-05601-5/FIGURES/14
-      \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/2509.09596
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/2509.09596
-      \endverb
-      \keyw{ChatGPT,Information Storage and Retrieval,Large Language Models (LLMs),Library Science,Research communication,Scholarly publishing}
     \endentry
     \entry{Kwon2025}{article}{}
       \name{author}{1}{}{%
@@ -1702,8 +1430,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Poll of 5,000 researchers finds contrasting views on when it’s acceptable to involve AI and what needs to be disclosed.}
-      \field{issn}{14764687}
-      \field{issue}{8063}
       \field{journaltitle}{Nature}
       \field{month}{5}
       \field{title}{Is it OK for AI to write science papers? Nature survey shows researchers are split}
@@ -1711,9 +1437,6 @@
       \field{year}{2025}
       \field{pages}{574\bibrangedash 578}
       \range{pages}{5}
-      \verb{doi}
-      \verb 10.1038/D41586-025-01463-8
-      \endverb
       \keyw{Lab life,Machine learning,Publishing}
     \endentry
     \entry{Lazebnik2024}{article}{}
@@ -1743,15 +1466,6 @@
       \field{journaltitle}{JDIS Journal of Data and Information Science}
       \field{title}{Detecting LLM-assisted writing in scientific communication: Are we there yet?}
       \field{year}{2024}
-      \verb{doi}
-      \verb 10.2478/jdis-2024-0020
-      \endverb
-      \verb{urlraw}
-      \verb https://sciendo.com/journal/JDIS
-      \endverb
-      \verb{url}
-      \verb https://sciendo.com/journal/JDIS
-      \endverb
       \keyw{LLM-assisted writing,Scientific communication,Writing style}
     \endentry
     \entry{Liang2023}{article}{}
@@ -1797,8 +1511,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{GPT detectors frequently misclassify non-native English writing as AI generated, raising concerns about fairness and robustness. Addressing the biases in these detectors is crucial to prevent the marginalization of non-native English speakers in evaluative and educational settings and to create a more equitable digital landscape.}
-      \field{issn}{26663899}
-      \field{issue}{7}
       \field{journaltitle}{Patterns}
       \field{month}{7}
       \field{title}{GPT detectors are biased against non-native English writers}
@@ -1806,18 +1518,11 @@
       \field{year}{2023}
       \field{pages}{100779}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/j.patter.2023.100779
-      \endverb
-      \verb{urlraw}
-      \verb https://www.cell.com/action/showFullText?pii=S2666389923001307 https://www.cell.com/action/showAbstract?pii=S2666389923001307 https://www.cell.com/patterns/abstract/S2666-3899(23)00130-7
-      \endverb
-      \verb{url}
-      \verb https://www.cell.com/action/showFullText?pii=S2666389923001307%20https://www.cell.com/action/showAbstract?pii=S2666389923001307%20https://www.cell.com/patterns/abstract/S2666-3899(23)00130-7
-      \endverb
     \endentry
     \entry{Liang2024_paper}{article}{}
-      \name{author}{15}{}{%
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
         {{hash=c37e00c1ca8aafe56159ff4ab1f6e040}{%
            family={Liang},
            familyi={L\bibinitperiod},
@@ -1848,11 +1553,6 @@
            familyi={Z\bibinitperiod},
            given={Xuandong},
            giveni={X\bibinitperiod}}}%
-        {{hash=65b0447a0f67deebb4e97716f67fb8f8}{%
-           family={Barbara},
-           familyi={B\bibinitperiod},
-           given={Santa},
-           giveni={S\bibinitperiod}}}%
         {{hash=1577f5699fcf00b2c7440ba055f315b1}{%
            family={Cao},
            familyi={C\bibinitperiod},
@@ -1873,52 +1573,26 @@
            familyi={H\bibinitperiod},
            given={Zhi},
            giveni={Z\bibinitperiod}}}%
-        {{hash=6ff611991cba7ee48521ab941158ac2f}{%
-           family={Yang},
-           familyi={Y\bibinitperiod},
-           given={Diyi},
-           giveni={D\bibinitperiod}}}%
-        {{hash=699d626ef41a1a827d623529c1a45e5a}{%
-           family={Potts},
-           familyi={P\bibinitperiod},
-           given={Christopher},
-           giveni={C\bibinitperiod}}}%
-        {{hash=2214edb8305f7ccd7cdc310b3a8ae1b4}{%
-           family={Manning},
-           familyi={M\bibinitperiod},
-           given={Christopher\bibnamedelima D},
-           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=513cf660ea55635f455cdb1b82247955}{%
-           family={Zou},
-           familyi={Z\bibinitperiod},
-           given={James\bibnamedelima Y},
-           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
       }
       \strng{namehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
-      \strng{fullhash}{00215e079b37bd03cfa798340281f193}
+      \strng{fullhash}{ae12f354f91248dbc66cbbfd358748f8}
       \strng{bibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
       \strng{authorbibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
       \strng{authornamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
-      \strng{authorfullhash}{00215e079b37bd03cfa798340281f193}
+      \strng{authorfullhash}{ae12f354f91248dbc66cbbfd358748f8}
       \field{extraname}{2}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Scientific publishing lays the foundation of science by disseminating research findings, fostering collaboration, encouraging reproducibility, and ensuring that scientific knowledge is accessible, verifiable, and built upon over time. Recently, there has been immense speculation about how many people are using large language models (LLMs) like ChatGPT in their academic writing, and to what extent this tool might have an effect on global scientific practices. However, we lack a precise measure of the proportion of academic writing substantially modified or produced by LLMs. To address this gap, we conduct the first systematic, large-scale analysis across 950,965 papers published between January 2020 and February 2024 on the arXiv, bioRxiv, and Nature portfolio journals, using a population-level statistical framework to measure the prevalence of LLM-modified content over time. Our statistical estimation operates on the corpus level and is more robust than inference on individual instances. Our findings reveal a steady increase in LLM usage, with the largest and fastest growth observed in Computer Science papers (up to 17.5\%). In comparison, Mathematics papers and the Nature portfolio showed the least LLM modification (up to 6.3\%). Moreover, at an aggregate level, our analysis reveals that higher levels of LLM-modification are associated with papers whose first authors post preprints more frequently, papers in more crowded research areas, and papers of shorter lengths. Our findings suggests that LLMs are being broadly used in scientific writings.}
-      \field{isbn}{2404.01268v1}
-      \field{journaltitle}{arxiv.orgW Liang, Y Zhang, Z Wu, H Lepp, W Ji, X Zhao, H Cao, S Liu, S He, Z Huang, D YangarXiv preprint arXiv:2404.01268, 2024•arxiv.org}
+      \field{journaltitle}{arXiv preprint arXiv:2404.01268}
       \field{title}{Mapping the increasing use of LLMs in scientific papers}
       \field{year}{2024}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2404.01268
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2404.01268
-      \endverb
     \endentry
     \entry{Liang2024_review}{article}{}
-      \name{author}{12}{}{%
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
         {{hash=c37e00c1ca8aafe56159ff4ab1f6e040}{%
            family={Liang},
            familyi={L\bibinitperiod},
@@ -1969,38 +1643,21 @@
            familyi={H\bibinitperiod},
            given={Zhi},
            giveni={Z\bibinitperiod}}}%
-        {{hash=44cd14448d00c12d5cb44248ce162e86}{%
-           family={Mcfarland},
-           familyi={M\bibinitperiod},
-           given={Daniel\bibnamedelima A},
-           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=513cf660ea55635f455cdb1b82247955}{%
-           family={Zou},
-           familyi={Z\bibinitperiod},
-           given={James\bibnamedelima Y},
-           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
       }
       \strng{namehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
-      \strng{fullhash}{33d0de6f4c6dc6a4c6e4d823d7b180c6}
+      \strng{fullhash}{c8517b5a821c02bbee07685136e109da}
       \strng{bibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
       \strng{authorbibnamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
       \strng{authornamehash}{06c1e5706aa51eb07db0d8ab5fdb50f1}
-      \strng{authorfullhash}{33d0de6f4c6dc6a4c6e4d823d7b180c6}
+      \strng{authorfullhash}{c8517b5a821c02bbee07685136e109da}
       \field{extraname}{3}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{We present an approach for estimating the fraction of text in a large corpus which is likely to be substantially modified or produced by a large language model (LLM). Our maximum likelihood model leverages expert-written and AI-generated reference texts to accurately and efficiently examine real-world LLM-use at the corpus level. We apply this approach to a case study of scientific peer review in AI conferences that took place after the release of ChatGPT: ICLR 2024, NeurIPS 2023, CoRL 2023 and EMNLP 2023. Our results suggest that between 6.5\% and 16.9\% of text submitted as peer reviews to these conferences could have been substantially modified by LLMs, i.e. beyond spell-checking or minor writing updates. The circumstances in which generated text occurs offer insight into user behavior: the estimated fraction of LLM-generated text is higher in reviews which report lower confidence, were submitted close to the deadline, and from reviewers who are less likely to respond to author rebuttals. We also observe corpus-level trends in generated text which may be too subtle to detect at the individual level, and discuss the implications of such trends on peer review. We call for future interdisciplinary work to examine how LLM use is changing our information and knowledge practices.}
-      \field{journaltitle}{arxiv.orgW Liang, Z Izzo, Y Zhang, H Lepp, H Cao, X Zhao, L Chen, H Ye, S Liu, Z HuangarXiv preprint arXiv:2403.07183, 2024•arxiv.org}
+      \field{journaltitle}{arXiv preprint arXiv:2403.07183}
       \field{title}{Monitoring ai-modified content at scale: A case study on the impact of chatgpt on ai conference peer reviews}
       \field{year}{2024}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2403.07183
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2403.07183
-      \endverb
     \endentry
     \entry{Liang2025}{article}{}
       \name{author}{14}{}{%
@@ -2090,18 +1747,13 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Scientific publishing is the primary means of disseminating research findings. There has been speculation about how extensively large language models (LLMs) are being used in academic writing. Here we conduct a systematic analysis across 1,121,912 preprints and published papers from January 2020 to September 2024 on arXiv, bioRxiv and Nature portfolio journals, using a population-level framework based on word frequency shifts to estimate the prevalence of LLM-modified content over time. Our findings suggest a steady increase in LLM usage, with the largest and fastest growth estimated for computer science papers (up to 22\%). By comparison, mathematics papers and the Nature portfolio showed lower evidence of LLM modification (up to 9\%). LLM modification estimates were higher among papers from first authors who post preprints more frequently, papers in more crowded research areas and papers of shorter lengths. Our findings suggest that LLMs are being broadly used in scientific writing. Liang et al. estimate the prevalence of text modified by large language models in recent scientific papers and preprints, finding widespread use (up to 17.5\% of papers in computer science).}
-      \field{issn}{2397-3374}
-      \field{issue}{12}
-      \field{journaltitle}{Nature Human Behaviour 2025 9:12}
+      \field{journaltitle}{Nature Human Behaviour}
       \field{month}{8}
       \field{title}{Quantifying large language model usage in scientific papers}
       \field{volume}{9}
       \field{year}{2025}
       \field{pages}{2599\bibrangedash 2609}
       \range{pages}{11}
-      \verb{doi}
-      \verb 10.1038/s41562-025-02273-8
-      \endverb
       \verb{urlraw}
       \verb https://www.nature.com/articles/s41562-025-02273-8
       \endverb
@@ -2150,7 +1802,7 @@
         {{hash=55594ce723e5771b24852196ad6f6035}{%
            family={Zhang},
            familyi={Z\bibinitperiod},
-           given={Amy\bibnamedelima X.},
+           given={Amy\bibnamedelima X},
            giveni={A\bibinitperiod\bibinitdelim X\bibinitperiod}}}%
       }
       \strng{namehash}{bd8caf845fd76f7a02dff732f73cb8d7}
@@ -2163,21 +1815,9 @@
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The rise of large language models (LLMs) has led many researchers to consider their usage for scientific work. Some have found benefits using LLMs to augment or automate aspects of their research pipeline, while others have urged caution due to risks and ethical concerns. Yet little work has sought to quantify and characterize how researchers use LLMs and why. We present the first large-scale survey of 816 verified research article authors to understand how the research community leverages and perceives LLMs as research tools. We examine participants' self-reported LLM usage, finding that 81\% of researchers have already incorporated LLMs into different aspects of their research workflow. We also find that traditionally disadvantaged groups in academia (non-White, junior, and non-native English speaking researchers) report higher LLM usage and perceived benefits, suggesting potential for improved research equity. However, women, non-binary, and senior researchers have greater ethical concerns, potentially hindering adoption.}
-      \field{month}{10}
-      \field{title}{LLMs as Research Tools: A Large Scale Survey of Researchers' Usage and Perceptions}
-      \field{volume}{1}
+      \field{journaltitle}{arXiv preprint arXiv:2411.05025}
+      \field{title}{Llms as research tools: A large scale survey of researchers' usage and perceptions}
       \field{year}{2024}
-      \verb{doi}
-      \verb 10.1145/nnnnnnn.nnnnnnn
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2411.05025v1
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2411.05025v1
-      \endverb
-      \keyw{Demographic,LLMs,Large Language Models,Research Community,Research Support Tools,Survey}
     \endentry
     \entry{Liebrenz2023}{article}{}
       \name{author}{5}{}{%
@@ -2220,8 +1860,6 @@
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{25897500}
-      \field{issue}{3}
       \field{journaltitle}{The Lancet Digital Health}
       \field{month}{3}
       \field{title}{Generating scholarly content with ChatGPT: ethical challenges for medical publishing}
@@ -2229,15 +1867,6 @@
       \field{year}{2023}
       \field{pages}{e105\bibrangedash e106}
       \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1016/S2589-7500(23)00019-5
-      \endverb
-      \verb{urlraw}
-      \verb https://www.thelancet.com/action/showFullText?pii=S2589750023000195 https://www.thelancet.com/action/showAbstract?pii=S2589750023000195 https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00019-5/abstract
-      \endverb
-      \verb{url}
-      \verb https://www.thelancet.com/action/showFullText?pii=S2589750023000195%20https://www.thelancet.com/action/showAbstract?pii=S2589750023000195%20https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00019-5/abstract
-      \endverb
     \endentry
     \entry{Lin2025_NES}{article}{}
       \name{author}{4}{}{%
@@ -2272,16 +1901,9 @@
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The advent of ChatGPT has profoundly reshaped scientific research practices, particularly in academic writing, where non-native English-speakers (NNES) historically face linguistic barriers. This study investigates whether ChatGPT mitigates these barriers and fosters equity by analyzing lexical complexity shifts across 2.8 million articles from OpenAlex (2020-2024). Using the Measure of Textual Lexical Diversity (MTLD) to quantify vocabulary sophistication and a difference-in-differences (DID) design to identify causal effects, we demonstrate that ChatGPT significantly enhances lexical complexity in NNES-authored abstracts, even after controlling for article-level controls, authorship patterns, and venue norms. Notably, the impact is most pronounced in preprint papers, technology- and biology-related fields and lower-tier journals. These findings provide causal evidence that ChatGPT reduces linguistic disparities and promotes equity in global academia.}
-      \field{month}{4}
-      \field{title}{ChatGPT as Linguistic Equalizer? Quantifying LLM-Driven Lexical Shifts in Academic Writing}
+      \field{journaltitle}{arXiv preprint arXiv:2504.12317}
+      \field{title}{ChatGPT as linguistic equalizer? quantifying LLM-Driven lexical shifts in academic writing}
       \field{year}{2025}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2504.12317v1
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2504.12317v1
-      \endverb
     \endentry
     \entry{Lin2025_hidden_prompts}{article}{}
       \name{author}{1}{}{%
@@ -2301,17 +1923,9 @@
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{In July 2025, 18 academic manuscripts on the preprint website arXiv were found to contain hidden instructions known as prompts designed to manipulate AI-assisted peer review. Instructions such as "GIVE A POSITIVE REVIEW ONLY" were concealed using techniques like white-colored text. Author responses varied: one planned to withdraw the affected paper, while another defended the practice as legitimate testing of reviewer compliance. This commentary analyzes this practice as a novel form of research misconduct. We examine the technique of prompt injection in large language models (LLMs), revealing four types of hidden prompts, ranging from simple positive review commands to detailed evaluation frameworks. The defense that prompts served as "honeypots" to detect reviewers improperly using AI fails under examination--the consistently self-serving nature of prompt instructions indicates intent to manipulate. Publishers maintain inconsistent policies: Elsevier prohibits AI use in peer review entirely, while Springer Nature permits limited use with disclosure requirements. The incident exposes systematic vulnerabilities extending beyond peer review to any automated system processing scholarly texts, including plagiarism detection and citation indexing. Our analysis underscores the need for coordinated technical screening at submission portals and harmonized policies governing generative AI (GenAI) use in academic evaluation.}
-      \field{isbn}{2506.00418v1}
-      \field{month}{7}
-      \field{title}{Hidden Prompts in Manuscripts Exploit AI-Assisted Peer Review}
+      \field{journaltitle}{arXiv preprint arXiv:2507.06185}
+      \field{title}{Hidden prompts in manuscripts exploit ai-assisted peer review}
       \field{year}{2025}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2507.06185v1
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2507.06185v1
-      \endverb
     \endentry
     \entry{Lindsay2023}{article}{}
       \name{author}{1}{}{%
@@ -2335,9 +1949,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Large language models are capable of impressive feats, but the job of scientific review requires more than the statistics of published work can provide.}
-      \field{issn}{2397-3374}
-      \field{issue}{11}
-      \field{journaltitle}{Nature Human Behaviour 2023 7:11}
+      \field{journaltitle}{Nature Human Behaviour}
       \field{month}{11}
       \field{title}{LLMs are not ready for editorial work}
       \field{volume}{7}
@@ -2355,7 +1967,7 @@
       \endverb
       \keyw{Learning algorithms,Peer review}
     \endentry
-    \entry{Liu2024}{article}{}
+    \entry{Liu2024_profiles}{article}{}
       \name{author}{2}{}{%
         {{hash=23048a7504f1280f267bbc5de576ad5c}{%
            family={Liu},
@@ -2378,16 +1990,9 @@
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{AIGC tools such as ChatGPT have profoundly changed scientific research, leading to widespread attention on its use on academic writing. Leveraging preprints from large language models, this study examined the use of AIGC in manuscript writing and its correlation with author profiles. We found that: (1) since the release of ChatGPT, the likelihood of abstracts being AI-generated has gradually increased; (2) scientists from English-speaking countries are less likely to use AIGC tools for writing assistance, while those from countries with linguistic differences from English are more likely to use these tools; (3) there is weak correlation between a paper's AI-generated probability and authors' academic performance; and (4) authors who have previously published papers with high AI-generated probabilities are more likely to continue using AIGC tools. We believe that this paper provides insightful results for relevant policies and norms and in enhancing the understanding of the relationship between humans and AI.}
-      \field{month}{4}
+      \field{journaltitle}{arXiv preprint arXiv:2404.15799}
       \field{title}{Towards the relationship between AIGC in manuscript writing and author profiles: evidence from preprints in LLMs}
       \field{year}{2024}
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/2404.15799
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/2404.15799
-      \endverb
     \endentry
     \entry{MacClure2024}{misc}{}
       \name{author}{1}{}{%
@@ -2430,8 +2035,8 @@
            given={Lukasz},
            giveni={L\bibinitperiod}}}%
       }
-      \list{institution}{1}{%
-        {Research Square}%
+      \list{publisher}{1}{%
+        {Elsevier}%
       }
       \strng{namehash}{0b3b6fefdcfcc842289c28e212f4abd0}
       \strng{fullhash}{0b3b6fefdcfcc842289c28e212f4abd0}
@@ -2443,20 +2048,11 @@
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{As generative artificial intelligence (GenAI) becomes widespread in education, its influence on students’ academic practice raises concern. We conducted pre-registered analyses of 4,820 empirical reports written by 2,000 psychology undergraduates (2016-2025). Following ChatGPT’s 2022 release, prevalence of ChatGPT-associated lexical markers (e.g., delve) surged until 2024, then declined in 2025, possibly due to students masking GenAI traces. Writing style (indexed by lexical diversity/density/sophistication, nominalisation, readability) became increasingly formal post-ChatGPT, diverging from predicted/historical trends. Consistent with GenAI’s positivity bias, sentiment also became more positive, independent of topic or result’s statistical significance, raising questions about its potential impact on students’ critical engagement. Despite the stylistic changes, writing quality (indexed by grades and feedback) showed no discernible shifts. Exploratory analysis asked GPT models to rewrite pre-ChatGPT reports, and these GPT-rewritten texts resembled post-ChatGPT reports more in style and sentiment. Finally, no students disclosed AI use despite clear guidelines, highlighting the ineffectiveness of voluntary disclosure.}
-      \field{month}{8}
-      \field{title}{Style, Sentiment, and Quality of Undergraduate Writing in the AI Era: A Cross-Sectional and Longitudinal Analysis of 4,820 Authentic Empirical Reports}
+      \field{journaltitle}{Computers and Education: Artificial Intelligence}
+      \field{title}{Style, sentiment, and quality of undergraduate writing in the AI era: A cross-sectional and longitudinal analysis of 4,820 authentic empirical reports}
       \field{year}{2025}
-      \verb{doi}
-      \verb 10.21203/RS.3.RS-7465165/V1
-      \endverb
-      \verb{urlraw}
-      \verb https://www.researchsquare.com 'https://www.researchsquare.com/article/rs-7465165/v1
-      \endverb
-      \verb{url}
-      \verb https://www.researchsquare.com%20'https://www.researchsquare.com/article/rs-7465165/v1
-      \endverb
-      \keyw{Artiicial Intelligence (AI),Education,Sentiment,Writing Quality,Writing Style}
+      \field{pages}{100507}
+      \range{pages}{1}
     \endentry
     \entry{Matsui2024}{article}{}
       \name{author}{1}{}{%
@@ -2465,6 +2061,9 @@
            familyi={M\bibinitperiod},
            given={Kentaro},
            giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cold Spring Harbor Laboratory Press}%
       }
       \strng{namehash}{0bed2009b268030301990bb4ee1cb4b1}
       \strng{fullhash}{0bed2009b268030301990bb4ee1cb4b1}
@@ -2476,19 +2075,11 @@
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{10.1101/2024.05.1}
-      \field{journaltitle}{medrxiv.orgK MatsuiMedRxiv, 2024•medrxiv.org}
+      \field{journaltitle}{MedRxiv}
       \field{title}{Delving into PubMed records: Some terms in medical writing have drastically changed after the arrival of ChatGPT}
       \field{year}{2024}
-      \verb{doi}
-      \verb 10.1101/2024.05.14.24307373
-      \endverb
-      \verb{urlraw}
-      \verb https://www.medrxiv.org/content/10.1101/2024.05.14.24307373.abstract
-      \endverb
-      \verb{url}
-      \verb https://www.medrxiv.org/content/10.1101/2024.05.14.24307373.abstract
-      \endverb
+      \field{pages}{2024\bibrangedash 05}
+      \range{pages}{2}
     \endentry
     \entry{pmc}{misc}{}
       \name{author}{1}{}{%
@@ -2617,9 +2208,6 @@
       \field{year}{2024}
       \field{pages}{31672}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1038/s41598-024-81370-6
-      \endverb
       \verb{urlraw}
       \verb https://www.nature.com/articles/s41598-024-81370-6
       \endverb
@@ -2667,7 +2255,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The increasing fluency and widespread usage of large language models (LLMs) highlight the desirability of corresponding tools aiding detection of LLM-generated text. In this paper, we identify a property of the structure of an LLM's probability function that is useful for such detection. Specifically, we demonstrate that text sampled from an LLM tends to occupy negative curvature regions of the model's log probability function. Leveraging this observation, we then define a new curvature-based criterion for judging if a passage is generated from a given LLM. This approach, which we call DetectGPT, does not require training a separate classifier, collecting a dataset of real or generated passages, or explicitly watermarking generated text. It uses only log probabilities computed by the model of interest and random perturbations of the passage from another generic pre-trained language model (e.g., T5). We find DetectGPT is more discrimi-native than existing zero-shot methods for model sample detection, notably improving detection of fake news articles generated by 20B parameter GPT-NeoX from 0.81 AUROC for the strongest zero-shot baseline to 0.95 AUROC for Detect-GPT. See ericmitchell.ai/detectgpt for code, data, and other project information.}
-      \field{issn}{2640-3498}
       \field{journaltitle}{Proceedings of the 40th International Conference on Machine Learning, PMLR}
       \field{month}{7}
       \field{title}{DetectGPT: Zero-Shot Machine-Generated Text Detection using Probability Curvature}
@@ -2728,8 +2315,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Although generative AI is transforming academic research and education, little is known about the role, gender, international, and disciplinary variations in uptake and use. This 20-country survey of publishing academics shows the widespread awareness and adoption of generative AI tools in academia, but with substantial international and disciplinary differences, and some role and gender differences. In particular, females were 10 \% less likely to use Gen AI frequently (daily or weekly) for research, which may exacerbate gender inequalities. Perhaps surprisingly, the highest adoption rates occurred in some non-Western nations, possibly because of a greater need for translation services. The highest awareness is in the social sciences, perhaps because of the greater need for text analysis. Across all groups, these tools were mainly used for academic writing rather than data analysis and support for critical thinking. Despite this, personalized instruction and problem-solving are among generative AI's most generally claimed benefits. However, participants in all groups were skeptical about the creativity, accuracy, and consistency of AI-generated content in academic contexts. The most significant concerns about using generative AI in academia were inaccuracy, plagiarism, discouraging critical thinking, a lack of transparency and explainability, intellectual property rights violations, and data privacy risks. For policymakers, the findings point to fields and countries that may need action to prevent falling behind, as well as the ongoing need to investigate and monitor the impacts of generative AI on research practices.}
-      \field{issn}{0306-4573}
-      \field{issue}{1}
       \field{journaltitle}{Information Processing \& Management}
       \field{month}{1}
       \field{title}{Is generative AI reshaping academic practices worldwide? A survey of adoption, benefits, and concerns}
@@ -2737,10 +2322,6 @@
       \field{year}{2026}
       \field{pages}{104350}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/J.IPM.2025.104350
-      \endverb
-      \keyw{AI in higher education,AI in research,AI in teaching,Generative AI}
     \endentry
     \entry{Ng2025}{article}{}
       \name{author}{8}{}{%
@@ -2799,8 +2380,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Chatbots are artificial intelligence (AI) programs designed to simulate conversations with humans that present opportunities and challenges in scientific research. Despite growing clarity from publishing organisations on the use of AI chatbots, researchers' perceptions remain less understood. In this international cross-sectional survey, we aimed to assess researchers' attitudes, familiarity, perceived benefits, and limitations related to AI chatbots. Our online survey was open from July 9 to Aug 11, 2023, with 61 560 corresponding authors identified from 122 323 articles indexed in PubMed. 2452 (4·0\%) provided responses and 2165 (94·5\%) of 2292 who met eligibility criteria completed the survey. 1161 (54·0\%) of 2149 respondents were male and 959 (44·6\%) were female. 1294 (60·5\%) of 2138 respondents were familiar with AI chatbots, and 945 (44·5\%) of 2125 had previously used AI chatbots in research. Only 244 (11·4\%) of 2137 reported institutional training on AI tools, and 211 (9·9\%) of 2131 noted institutional policies on AI chatbot use. Despite mixed opinions on the benefits, 1428 (69·7\%) of 2048 expressed interest in further training. Although many valued AI chatbots for reducing administrative workload (1299 [66·9\%] of 1941), there was insufficient understanding of the decision making process (1484 [77·2\%] of 1923). Overall, this study highlights substantial interest in AI chatbots among researchers, but also points to the need for more formal training and clarity on their use.}
-      \field{issn}{2589-7500}
-      \field{issue}{1}
       \field{journaltitle}{The Lancet Digital Health}
       \field{month}{1}
       \field{title}{Attitudes and perceptions of medical researchers towards the use of artificial intelligence chatbots in the scientific process: an international cross-sectional survey}
@@ -2808,9 +2387,6 @@
       \field{year}{2025}
       \field{pages}{e94\bibrangedash e102}
       \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1016/S2589-7500(24)00202-4
-      \endverb
     \endentry
     \entry{VanNoorden2023}{article}{}
       \name{author}{2}{}{%
@@ -2874,8 +2450,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Around one in three respondents to Nature’s global postdoc survey are using AI chatbots to help to refine text, generate or edit code, wrangle the literature in their field and more.}
-      \field{issn}{14764687}
-      \field{issue}{7983}
       \field{journaltitle}{Nature}
       \field{month}{10}
       \field{title}{How ChatGPT is transforming the postdoc experience}
@@ -2883,9 +2457,6 @@
       \field{year}{2023}
       \field{pages}{655\bibrangedash 657}
       \range{pages}{3}
-      \verb{doi}
-      \verb 10.1038/D41586-023-03235-8
-      \endverb
       \verb{urlraw}
       \verb https://www.nature.com/articles/d41586-023-03235-8
       \endverb
@@ -3049,8 +2620,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Large Language Models (LLMs) are a type of machine learning that handles a wide range of Natural Language Processing (NLP) scenarios. Recently, in December 2022, a company called OpenAI released ChatGPT, a tool that, within a few months, became the most representative example of LLMs, automatically generating unique and coherent text on many topics, summarising and rewriting it, or even translating it to other languages. ChatGPT originated some controversy in academia since students can generate unique text for writing assessments being sometimes extremely difficult to distinguish whether it comes from ChatGPT or a person. In research, some journals specifically banned ChatGPT in scientific papers. However, when used correctly, it becomes a powerful tool to rewrite, for instance, scientific papers and, thus, deliver researchers’ messages in a better way. In this paper, we conduct an empirical study of the impact of ChatGPT in research. We downloaded the abstract of over 45,000 papers from over 300 journals from Dec 2022 and Feb 2023 belonging to different research editorials. We use four of the most known ChatGPT detection tools and conclude that ChatGPT played a role in around 10\% of the papers published in every editorial, showing that authors from different fields have rapidly adopted such a tool in their research.}
-      \field{issn}{15737497}
-      \field{issue}{5}
       \field{journaltitle}{Applied Intelligence}
       \field{month}{3}
       \field{title}{Analysing the impact of ChatGPT in research}
@@ -3058,16 +2627,12 @@
       \field{year}{2024}
       \field{pages}{4172\bibrangedash 4188}
       \range{pages}{17}
-      \verb{doi}
-      \verb 10.1007/S10489-024-05298-0/TABLES/8
-      \endverb
       \verb{urlraw}
       \verb https://link.springer.com/article/10.1007/s10489-024-05298-0
       \endverb
       \verb{url}
       \verb https://link.springer.com/article/10.1007/s10489-024-05298-0
       \endverb
-      \keyw{ChatGPT,Large language models (LLMs),Natural language processing (NLP),Research}
     \endentry
     \entry{Prakash2025}{article}{}
       \name{author}{4}{}{%
@@ -3106,8 +2671,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{English has become the dominant language in global academic publishing, facilitating cross-border collaboration while reinforcing structural barriers for non-native English-speaking researchers. This study examines the evolution of academic writing quality in social sciences abstracts from 2012 to 2024, focusing on disparities across linguistic, regional, economic and gender-based classifications. Using over one million English-language abstracts retrieved from the Web of Science, the study evaluates writing complexity through readability metrics such as the Flesch-Kincaid Grade Level. A mixed generalised linear model (GLM) is employed to identify key factors influencing writing quality, with particular emphasis on internet access. To assess the potential impact of large language models (LLMs) such as ChatGPT, the analysis incorporates a lexical tracking approach that monitors the frequency of adjectives and adverbs commonly associated with AI-generated content. The findings reveal a global improvement in writing complexity, with non-native English-speaking countries showing notable advances. China, initially lagging in English writing standards, has surpassed traditional leaders such as the United States, signalling a shift in global academic communication. Enhanced digital infrastructure and the adoption of AI-assisted writing tools appear to play a contributory role in this convergence. These results offer empirical insights into how technological advancements are reshaping scholarly expression and mitigating long-standing linguistic and structural disparities. The study provides evidence-based guidance for policymakers, educators and research institutions seeking to enhance the accessibility, inclusivity and quality of academic writing across diverse global contexts.}
-      \field{issn}{2662-9992}
-      \field{issue}{1}
       \field{journaltitle}{Humanities and Social Sciences Communications 2025 12:1}
       \field{month}{7}
       \field{title}{Writing without borders: AI and cross-cultural convergence in academic writing quality}
@@ -3115,16 +2678,12 @@
       \field{year}{2025}
       \field{pages}{1058\bibrangedash}
       \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1057/s41599-025-05484-6
-      \endverb
       \verb{urlraw}
       \verb https://www.nature.com/articles/s41599-025-05484-6
       \endverb
       \verb{url}
       \verb https://www.nature.com/articles/s41599-025-05484-6
       \endverb
-      \keyw{Development studies,Economics,Education}
     \endentry
     \entry{Qi2025}{article}{}
       \name{author}{5}{}{%
@@ -3164,17 +2723,9 @@
       \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Preprint repositories become central infrastructures for scholarly communication. Their expansion transforms how research is circulated and evaluated before journal publication. Generative large language models (LLMs) introduce a further potential disruption by altering how manuscripts are written. While speculation abounds, systematic evidence of whether and how LLMs reshape scientific publishing remains limited. This paper addresses the gap through a large-scale analysis of more than 2.1 million preprints spanning 2016--2025 (115 months) across four major repositories (i.e., arXiv, bioRxiv, medRxiv, SocArXiv). We introduce a multi-level analytical framework that integrates interrupted time-series models, collaboration and productivity metrics, linguistic profiling, and topic modeling to assess changes in volume, authorship, style, and disciplinary orientation. Our findings reveal that LLMs have accelerated submission and revision cycles, modestly increased linguistic complexity, and disproportionately expanded AI-related topics, while computationally intensive fields benefit more than others. These results show that LLMs act less as universal disruptors than as selective catalysts, amplifying existing strengths and widening disciplinary divides. By documenting these dynamics, the paper provides the first empirical foundation for evaluating the influence of generative AI on academic publishing and highlights the need for governance frameworks that preserve trust, fairness, and accountability in an AI-enabled research ecosystem.}
-      \field{month}{10}
+      \field{journaltitle}{arXiv preprint arXiv:2510.17882}
       \field{title}{Does GenAI Rewrite How We Write? An Empirical Study on Two-Million Preprints}
       \field{year}{2025}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2510.17882v1
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2510.17882v1
-      \endverb
-      \keyw{cs.AI,cs.CL,cs.CY,cs.DL}
     \endentry
     \entry{Sadasivan2025}{article}{}
       \name{author}{5}{}{%
@@ -3214,17 +2765,9 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Large Language Models (LLMs) can perform impressively well in various applications, such as document completion and question-answering. However, the potential for misuse of these models in activities such as plagiarism, generating fake news, and spamming has raised concerns about their responsible use. Consequently, the reliable detection of AI-generated text has become a critical area of research. Recent works have attempted to address this challenge through various methods, including the identification of model signatures in generated text outputs and the application of watermarking techniques to detect AI-generated text. These detectors have shown to be effective under their specific settings. In this paper, we stress-test the robustness of these AI text detectors in the presence of an attacker. We introduce recursive paraphrasing attack to stress test a wide range of detection schemes, including the ones using the watermarking as well as neural network-based detectors, zero-shot classifiers, and retrieval-based detectors. Our experiments conducted on passages, each approximately 300 tokens long, reveal the varying sensitivities of these detectors to our attacks. We also observe that these paraphrasing attacks add slight degradation to the text quality. We analyze the trade-offs between our attack strength and the resulting text quality, measured through human studies, perplexity scores, and accuracy on text benchmarks. Our findings indicate that while our recursive paraphrasing method can significantly reduce detection rates, it only slightly degrades text quality in many cases, highlighting potential vulnerabilities in current detection systems in the presence of an attacker. Additionally, we investigate the susceptibility of watermarked LLMs to spoofing attacks aimed at misclassifying human-written text as AI-generated. We demonstrate that an attacker can infer hidden AI text signatures without white-box access to the detection method, potentially leading to reputational risks for LLM developers. Finally, we provide a theoretical framework connecting the AUROC of the best possible detector to the Total Variation distance between human and AI text distributions. This analysis offers insights into the fundamental challenges of reliable detection as language models continue to advance. Our code is publicly available at https://github.com/vinusankars/Reliability-of-AI-text-detectors.}
-      \field{journaltitle}{arxiv.org}
-      \field{month}{1}
+      \field{journaltitle}{arXiv preprint arXiv:2303.11156}
       \field{title}{Can AI-generated text be reliably detected?}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2303.11156
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2303.11156
-      \endverb
+      \field{year}{2023}
     \endentry
     \entry{Sourati2026}{article}{}
       \name{author}{3}{}{%
@@ -3258,23 +2801,10 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Cognitive diversity, reflected in variations of language, perspective, and reasoning, is essential to creativity and collective intelligence. This diversity is rich and grounded in culture, history, and individual experience. Yet as large language models (LLMs) become deeply embedded in people's lives, they risk standardizing language and reasoning. We synthesize evidence across linguistics, psychology, cognitive science, and computer science to show how LLMs reflect and reinforce dominant styles while marginalizing alternative voices and reasoning strategies. We examine how their design and widespread use contribute to this effect by mirroring patterns in their training data and amplifying convergence as all people increasingly rely on the same models across contexts. Unchecked, this homogenization risks flattening the cognitive landscapes that drive collective intelligence and adaptability.}
-      \field{issn}{1879307X}
-      \field{issue}{0}
       \field{journaltitle}{Trends in Cognitive Sciences}
       \field{month}{1}
       \field{title}{The Homogenizing Effect of Large Language Models on Human Expression and Thought}
-      \field{volume}{0}
       \field{year}{2026}
-      \verb{doi}
-      \verb 10.1016/J.TICS.2026.01.003/ASSET/CB3E2B30-C0E5-449D-AFA4-8295C3D9DB6D/MAIN.ASSETS/GR1.JPG
-      \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/2508.01491
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/2508.01491
-      \endverb
-      \keyw{cognitive homogenization,epistemic collapse,human–AI interaction,large language models,linguistic diversity,reasoning diversity}
     \endentry
     \entry{Tang2025}{article}{}
       \name{author}{1}{}{%
@@ -3298,23 +2828,18 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{There is now widespread use of large language (LLM)-based generative artificial intelligence (AI) tools in academic research and writing. While these are convenient, quick, and output enhancing, they also arguably incur ethical issues, such as questionable authenticity and plagiarism. Here, I explore epistemological aspects of AI use in academic writing and posit that there is evidence for three related pitfalls in AI use that should not be ignored. These include (1) epistemic detriment or harm in terms of illusions of understanding, (2) potential for cognitive dulling or impairment, and (3) AI dependency (both habitual and/or emotional). Thus, any potential infringements of academic ethics aside, AI use in academic writing incurs intrinsic problems that are epistemic in nature. These epistemic downsides call for restraint and moderation beyond regulatory measures to address ethical issues in AI use.}
-      \field{issn}{2304-6775}
-      \field{issue}{4}
-      \field{journaltitle}{Publications 2025, Vol. 13, Page 63}
+      \field{journaltitle}{Publications 2025}
       \field{month}{12}
       \field{title}{The Epistemic Downside of Using LLM-Based Generative AI in Academic Writing}
       \field{volume}{13}
       \field{year}{2025}
       \field{pages}{63}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.3390/PUBLICATIONS13040063
-      \endverb
       \verb{urlraw}
-      \verb https://www.mdpi.com/2304-6775/13/4/63/htm https://www.mdpi.com/2304-6775/13/4/63
+      \verb https://www.mdpi.com/2304-6775/13/4/63/htm
       \endverb
       \verb{url}
-      \verb https://www.mdpi.com/2304-6775/13/4/63/htm%20https://www.mdpi.com/2304-6775/13/4/63
+      \verb https://www.mdpi.com/2304-6775/13/4/63/htm
       \endverb
       \keyw{AI dependency,artificial intelligence (AI),cognitive dulling,epistemology,large language model (LLM)}
     \endentry
@@ -3339,8 +2864,6 @@
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{10959203}
-      \field{issue}{6630}
       \field{journaltitle}{Science}
       \field{month}{1}
       \field{title}{ChatGPT is fun, but not an author}
@@ -3348,9 +2871,6 @@
       \field{year}{2023}
       \field{pages}{313}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1126/SCIENCE.ADG7879/ASSET/E576EF79-5CF7-44F0-A6F6-8AA953C0D70F/ASSETS/IMAGES/LARGE/SCIENCE.ADG7879-F1.JPG
-      \endverb
       \verb{urlraw}
       \verb https://www.science.org/doi/10.1126/science.adg7879
       \endverb
@@ -3434,7 +2954,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Introduction: Generative artificial intelligence (GenAI) Large-language models such as ChatGPT have become increasingly popular in various fields. However, the impact of ChatGPT on dental research writing has yet to be quantified. This study aimed to assess ChatGPT's usage in dental research writing and discuss potential advantages and challenges. Methods: Using a bibliometric design, we performed a keyword analysis of specific 'signaling words' indicative of ChatGPT use in the titles/abstracts of 299,695 dental research abstracts indexed PubMed 2018–2024. Statistical comparisons using normalized ratios per 10,000 dental publications compared changes in word frequency before and after the ChatGPT release on November 30, 2022. Results: Before ChatGPT's release, the frequency of abstracts with signaling words was 47.1 per 10,000 papers. After the release, this increased to 224.2 per 10,000 papers, an increase of 177.2 per 10,000 papers (p = 0.014, 95 \% CI 53.5–300.7). The word 'delve' showed the most significant usage increase (increased ratio=17.0). Conclusions: This study is among the first to systematically assess the use of GenAI, specifically ChatGPT, in dental research. We found evidence of the use and growth of ChatGPT in dental research publications. This trend indicates the widespread adoption of GenAI-assisted writing in scientific communication, consistent with other scientific fields. While GenAI can potentially increase productivity and inclusivity, it raises concerns such as bias, inaccuracy, and distortion of academic incentives. Therefore, our findings support the need for clear AI guidelines and standards for academic publishing to ensure responsible use and maintain scientific integrity.}
-      \field{issn}{0300-5712}
       \field{journaltitle}{Journal of Dentistry}
       \field{month}{10}
       \field{title}{Estimating the use of ChatGPT in dental research publications}
@@ -3442,10 +2961,36 @@
       \field{year}{2024}
       \field{pages}{105275}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/J.JDENT.2024.105275
-      \endverb
       \keyw{Artificial intelligence,ChatGPT,Dental research,Large-language model,Scientific communication}
+    \endentry
+    \entry{ver2012invented}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1edd239faae1ce798bea8e60a38513e2}{%
+           family={Ver\bibnamedelima Hoef},
+           familyi={V\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={Jay\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{1edd239faae1ce798bea8e60a38513e2}
+      \strng{fullhash}{1edd239faae1ce798bea8e60a38513e2}
+      \strng{bibnamehash}{1edd239faae1ce798bea8e60a38513e2}
+      \strng{authorbibnamehash}{1edd239faae1ce798bea8e60a38513e2}
+      \strng{authornamehash}{1edd239faae1ce798bea8e60a38513e2}
+      \strng{authorfullhash}{1edd239faae1ce798bea8e60a38513e2}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American Statistician}
+      \field{number}{2}
+      \field{title}{Who invented the delta method?}
+      \field{volume}{66}
+      \field{year}{2012}
+      \field{pages}{124\bibrangedash 127}
+      \range{pages}{4}
     \endentry
     \entry{Walters2023}{article}{}
       \name{author}{2}{}{%
@@ -3474,19 +3019,13 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Although chatbots such as ChatGPT can facilitate cost-effective text generation and editing, factually incorrect responses (hallucinations) limit their utility. This study evaluates one particular type of hallucination: fabricated bibliographic citations that do not represent actual scholarly works. We used ChatGPT-3.5 and ChatGPT-4 to produce short literature reviews on 42 multidisciplinary topics, compiling data on the 636 bibliographic citations (references) found in the 84 papers. We then searched multiple databases and websites to determine the prevalence of fabricated citations, to identify errors in the citations to non-fabricated papers, and to evaluate adherence to APA citation format. Within this set of documents, 55\% of the GPT-3.5 citations but just 18\% of the GPT-4 citations are fabricated. Likewise, 43\% of the real (non-fabricated) GPT-3.5 citations but just 24\% of the real GPT-4 citations include substantive citation errors. Although GPT-4 is a major improvement over GPT-3.5, problems remain.}
-      \field{isbn}{0123456789}
-      \field{issn}{2045-2322}
-      \field{issue}{1}
-      \field{journaltitle}{Scientific Reports 2023 13:1}
+      \field{journaltitle}{Scientific Reports}
       \field{month}{9}
       \field{title}{Fabrication and errors in the bibliographic citations generated by ChatGPT}
       \field{volume}{13}
       \field{year}{2023}
       \field{pages}{14045\bibrangedash}
       \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1038/s41598-023-41032-5
-      \endverb
       \verb{urlraw}
       \verb https://www.nature.com/articles/s41598-023-41032-5
       \endverb
@@ -3552,16 +3091,11 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Recent advances in generative pre-trained transformer large language models have emphasised the potential risks of unfair use of artificial intelligence (AI) generated content in an academic environment and intensified efforts in searching for solutions to detect such content. The paper examines the general functionality of detection tools for AI-generated text and evaluates them based on accuracy and error type analysis. Specifically, the study seeks to answer research questions about whether existing detection tools can reliably differentiate between human-written text and ChatGPT-generated text, and whether machine translation and content obfuscation techniques affect the detection of AI-generated text. The research covers 12 publicly available tools and two commercial systems (Turnitin and PlagiarismCheck) that are widely used in the academic setting. The researchers conclude that the available detection tools are neither accurate nor reliable and have a main bias towards classifying the output as human-written rather than detecting AI-generated text. Furthermore, content obfuscation techniques significantly worsen the performance of tools. The study makes several significant contributions. First, it summarises up-to-date similar scientific and non-scientific efforts in the field. Second, it presents the result of one of the most comprehensive tests conducted so far, based on a rigorous research methodology, an original document set, and a broad coverage of tools. Third, it discusses the implications and drawbacks of using detection tools for AI-generated text in academic settings.}
-      \field{issn}{18332595}
-      \field{issue}{1}
       \field{journaltitle}{International Journal for Educational Integrity}
       \field{month}{12}
       \field{title}{Testing of detection tools for AI-generated text}
       \field{volume}{19}
       \field{year}{2023}
-      \verb{doi}
-      \verb 10.1007/S40979-023-00146-Z
-      \endverb
       \keyw{AI detectors,Academic integrity,Artificial intelligence,ChatGPT,Detection of AI-generated text,Generative pre-trained transformers,Machine-generated text}
     \endentry
     \entry{Wiley2026}{misc}{}
@@ -3646,16 +3180,9 @@
       \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Hallucination has been widely recognized to be a significant drawback for large language models (LLMs). There have been many works that attempt to reduce the extent of hallucination. These efforts have mostly been empirical so far, which cannot answer the fundamental question whether it can be completely eliminated. In this paper, we formalize the problem and show that it is impossible to eliminate hallucination in LLMs. Specifically, we define a formal world where hallucination is defined as inconsistencies between a computable LLM and a computable ground truth function. By employing results from learning theory, we show that LLMs cannot learn all the computable functions and will therefore inevitably hallucinate if used as general problem solvers. Since the formal world is a part of the real world which is much more complicated, hallucinations are also inevitable for real world LLMs. Furthermore, for real world LLMs constrained by provable time complexity, we describe the hallucination-prone tasks and empirically validate our claims. Finally, using the formal world framework, we discuss the possible mechanisms and efficacies of existing hallucination mitigators as well as the practical implications on the safe deployment of LLMs.}
-      \field{month}{2}
-      \field{title}{Hallucination is Inevitable: An Innate Limitation of Large Language Models}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/2401.11817
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/2401.11817
-      \endverb
+      \field{journaltitle}{arXiv preprint arXiv:2401.11817}
+      \field{title}{Hallucination is inevitable: An innate limitation of large language models}
+      \field{year}{2024}
     \endentry
     \entry{Yakura2025}{article}{}
       \name{author}{7}{}{%
@@ -3705,11 +3232,9 @@
       \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{From the invention of writing [1] and the printing press [2, 3], to television [4, 5] and social media [6], human history is punctuated by major innovations in communication technology, which fundamentally altered how ideas spread and reshaped our culture [7, 8]. Recent chat-bots powered by generative artificial intelligence constitute a novel medium that encodes cultural patterns in their neural representations and disseminates them in conversations with hundreds of millions of people [9]. Understanding whether these patterns transmit into human language, and ultimately shape human culture, is a fundamental question. While fully quantifying the causal impact of a chatbot like ChatGPT on human culture is very challenging, lexicographic shift in human spoken communication may offer an early indicator of such broad phenomenon. Here, we apply econometric causal inference techniques [10] to 740,249 hours of human discourse from 360,445 YouTube academic talks and 771,591 conversational podcast episodes across multiple disciplines. We detect a measurable and abrupt increase in the use of words preferentially generated by ChatGPT-such as delve, comprehend , boast, swift, and meticulous-after its release. These findings suggest a scenario where machines, originally trained on human data and subsequently exhibiting their own cultural traits, can, in turn, measurably reshape human culture. This marks the beginning of a closed cultural feedback loop in which cultural traits circulate bidirectionally between humans and machines [11]. Our results motivate further research into the evolution of human-machine culture, and raise concerns over the erosion of linguistic and cultural diversity, and the risks of scalable manipulation.}
-      \field{month}{7}
+      \field{journaltitle}{arXiv preprint arXiv:2409.01754}
       \field{title}{Empirical evidence of Large Language Model's influence on human spoken communication}
-      \field{year}{2025}
-      \keyw{cs.AI,cs.CL,cs.CY,cs.HC}
+      \field{year}{2024}
     \endentry
     \entry{Zheng2023}{article}{}
       \name{author}{2}{}{%
@@ -3737,8 +3262,6 @@
       \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{15557162}
-      \field{issue}{8}
       \field{journaltitle}{American Journal of Medicine}
       \field{month}{8}
       \field{title}{ChatGPT in Scientific Writing: A Cautionary Tale}
@@ -3746,15 +3269,6 @@
       \field{year}{2023}
       \field{pages}{725\bibrangedash 726.e6}
       \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1016/j.amjmed.2023.02.011
-      \endverb
-      \verb{urlraw}
-      \verb https://www.amjmed.com/action/showFullText?pii=S0002934323001596 https://www.amjmed.com/action/showAbstract?pii=S0002934323001596 https://www.amjmed.com/article/S0002-9343(23)00159-6/abstract
-      \endverb
-      \verb{url}
-      \verb https://www.amjmed.com/action/showFullText?pii=S0002934323001596%20https://www.amjmed.com/action/showAbstract?pii=S0002934323001596%20https://www.amjmed.com/article/S0002-9343(23)00159-6/abstract
-      \endverb
     \endentry
     \entry{Zhou2026_creative}{article}{}
       \name{author}{4}{}{%
@@ -3793,7 +3307,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Generative AI such as ChatGPT has been proven to enhance human creativity at the cost of content diversity. Yet, what occurs when individuals, who have developed a dependency on it, find ChatGPT inaccessible? In this study, we examine the impact of both the presence and absence of ChatGPT on sustained creative output and content homogeneity, leveraging two complementary methodologies: a natural experiment (Study 1) and a controlled laboratory experiment with extended follow-ups (Study 2). Study 1 analyzed 419,344 academic papers published before and after ChatGPT-3.5’s release across all subjects categorized by Web of Science (i.e., Physical Sciences, Life Sciences & Biomedicine, Technology, Social Sciences, Arts & Humanities). Study 2, a seven-day laboratory experiment with two follow-up surveys, collected 3593 original ideas and 427 solutions across 18 different creative tasks, with half of the participants using ChatGPT-4. We find that although generative AI helps scholars to publish more academic works in higher-ranked journals and enhances individuals' performance in creative tasks, such creativity drops remarkably upon withdrawal of AI assistance. Strikingly, the induced content homogeneity keeps climbing even months later. We resemble the latter as a creative scar inked in the temporal creativity trajectory. This research identifies a creativity illusion that although generative AI can augment creative performance, users do not truly acquire the ability to create but easily lost it once generative AI is no longer available.}
-      \field{issn}{0160-791X}
       \field{journaltitle}{Technology in Society}
       \field{month}{3}
       \field{title}{Creative scar without generative AI: Individual creativity fails to sustain while homogeneity keeps climbing}
@@ -3801,9 +3314,6 @@
       \field{year}{2026}
       \field{pages}{103087}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/J.TECHSOC.2025.103087
-      \endverb
       \keyw{Content homogeneity,Generative artificial intelligence (AI),Laboratory experiment,Natural experiment,Sustained innovation}
     \endentry
   \enddatalist
