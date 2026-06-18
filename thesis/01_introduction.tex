@@ -1,9 +1,9 @@
-\section{Introduction}\label{sec:intro}
+\chapter{Introduction}\label{sec:intro}
 
-Since the release of OpenAI's ChatGPT\footnote{https://chatgpt.com/} in November 2022, chatbots based on Large language models (LLMs) have become ubiquitous in the public consciousness.
+Since the release of OpenAI's ChatGPT\footnote{https://chatgpt.com/} in November 2022, chatbots based on Large Language Models (LLMs) have become ubiquitous in the public consciousness.
 Due to their continued improvement, going from simple chat interfaces to fully integrated agentic systems like Anthropic's Claude Code\footnote{https://claude.com/product/claude-code}, they are increasingly helpful in any workplace dealing with writing, programming, or project planning.
 One such workplace is academia, and it is not surprising that researchers across disciplines have begun to adopt LLMs for editing or writing papers, peer reviews, or grant applications \cite{Kwon2025}.
-Proponents of the technology praise it as a tool for accessibility and inclusivity \cite{Bao2025_linguistic, Berdejo-Espinola2023, Prakash2025}, arguing that it enables non-native English speakers (NNES) to overcome language barriers by translating or performing grammar checks \cite{Kousha2025}.
+Proponents of the technology praise it as a tool for accessibility and inclusivity \cite{Bao2025_linguistic, Berdejo-Espinola2023, Prakash2025}, arguing that it enables non-native English speakers (NNES) to overcome language barriers by translating drafts or performing grammar checks \cite{Kousha2025}.
 However, the surge of ChatGPT's popularity is accompanied by concerns of misuse \cite{Liebrenz2023, Zheng2023}.
 LLMs are prone to hallucination, so if their output is not thoroughly checked before using it in a paper, false or misleading statements might be published, especially if the review is also delegated to an LLM \cite{Alansari2026, Lindsay2023, Walters2023, Xu2025}.
 Chatbots also make scientific fraud much easier, with the possibility of fabricating entire papers at the cost of a single prompt \cite{Kendall2024}.  
@@ -39,22 +39,20 @@ While these words appear more frequently in LLM outputs, some of them still have
 There are texts by human authors that include them, and LLM-generated texts that don't.
 \\
 Using the combined excess frequencies of a selection of excess style words, Kobak et al. derive a lower bound for LLM-use estimates.
-Their reasoning is quite intuitive: all instances of using one of the relevant words that go beyond the predicted frequency must have been caused by LLM-use.
-Excess frequency as a metric has the advantage of not needing to distinguish between using an LLM write a whole paragraph, or suggesting changes on previously written text.
+Their reasoning is quite intuitive: all instances of papers including one of the relevant words that go beyond the predicted frequency must have been caused by LLM-use.
+Excess frequency as a metric has the advantage of not needing to distinguish between using an LLM to write a whole paragraph, or suggesting changes on previously written text.
 Both use-cases will lead to some LLM-suggested words being present in the final product.
 \\
 Here, we expand on their work on excess word frequency as a lower bound estimate of LLM-use in biomedical abstracts by making the following contributions:
 \begin{itemize}
     \item \textbf{Widening the focus} from an analyzing only the abstract to the entire paper. By using the open-access PubMed Central (PMC \cite{pmc}) dataset  instead of PubMed, the proportion of LLM-assisted text in the main text of the paper can be compared with usage in the abstract, and different sections within the body can be compared against each other. 
     \item Deriving a \textbf{stronger lower bound} metric going beyond excess frequency. We show that while excess frequency is an intuitive estimate for LLM-use, it severely underestimates the true proportion of LLM-assisted text. 
-    \item Computing \textbf{uncertainty measures} and performing tests on \textbf{simulated data} to increase confidence in the estimates. A disadvantage of the previous approach is the lack of a ground-truth set to test performance with. By simulating the data generation process in a Binomial model of word occurrence, we can evaluate our metric for several ground-truth levels of LLM-use.
+    \item Computing \textbf{uncertainty measures} and performing tests on \textbf{simulated data} to increase confidence in the estimates. A disadvantage of the previous approach is the lack of a ground-truth set to test performance with. By simulating the data generation process in a binomial model of word occurrence, we can evaluate our metric for several ground-truth levels of LLM-use.
     \item \textbf{Comparing} the LLM-use estimates with those of other estimation approaches, as well as survey data asking researchers about their LLM-use. Unlike previous studies, we find that LLM-like language has almost completely permeated academic writing.
 \end{itemize}
-
-This thesis is structured in the following way: In Section \ref{sec:related}, other approaches to estimate LLM-use in academia are discussed, such as comparable word frequency measures, word distribution modeling and LLM-detectors.
-Section \ref{sec:methods} gives an overview of the data processing pipeline, the metrics used to estimate LLM-use, as well as the validation procedure employed to increase confidence in the estimates attained.
-This is followed by Section \ref{sec:results}, where our estimates are reported and compared to results from other work.
-Finally, the results, along with their impact and limitations are discussed in Section \ref{sec:discussion}.
+This thesis is structured in the following way: In Chapter \ref{sec:related}, other approaches to estimate LLM-use in academia are discussed, such as comparable word frequency measures, word distribution modeling and LLM-detectors.
+Chapter \ref{sec:methods} gives an overview of the data processing pipeline, the metrics used to estimate LLM-use, as well as the validation procedure employed to increase confidence in the estimates attained.
+This is followed by Chapter \ref{sec:results}, where our estimates are reported and compared to results from other work.
+Finally, the results, along with their impact and limitations are discussed in Chapter \ref{sec:discussion}.
 \\
 All code is available on GitHub\footnote{https://github.com/LenaHolzwarth/llms\_in\_academia}.
-%The PMC dataset can be downloaded here\footnote{https://ftp.ncbi.nlm.nih.gov/pub/pmc/deprecated/oa\_bulk/}.

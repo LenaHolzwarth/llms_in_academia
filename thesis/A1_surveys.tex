@@ -1,5 +1,11 @@
-\section{Review: Results from the literature}
-\subsection{LLM-use estimation results}
+\chapter{Review on LLM-use estimates from the literature}
+\section{Indirect Methods}
+Indirect estimation methods use properties of finished papers as the basis for their estimation of LLM-use.
+Table \ref{tab:review_estimation} shows the results of the studies.
+The studies are ordered by the date of estimation, not the date of publication.
+If the date details a month, the estimates are based on papers from this month.
+If the date only gives a year, or multiple months, the estimates are based on the entire time span.
+The studies are sorted into different estimation methods that are described in Section \ref{sec:related}.
 
 \begin{sidewaystable}
 \centering
@@ -15,7 +21,7 @@
 \midrule
 2023    & full      & Dimensions        & 0.02 & word frequency     & \cite{Gray2025}\\
 \midrule
-\multirow{3}{*}{2023}    & \multirow{3}{*}{abstract}  & \multirow{3}{*}{arXiv (CS-LLM)}    & 0.07 & zero-shot (GPTKIT) & \multirow{3}{*}{\cite{Liu2024}} \\
+\multirow{3}{*}{2023}    & \multirow{3}{*}{abstract}  & \multirow{3}{*}{arXiv (CS-LLM)}    & 0.07 & zero-shot (GPTKIT) & \multirow{3}{*}{\cite{Liu2024_profiles}} \\
         &           &                   & 0.04 & zero-shot (Smodin) & \\
         &           &                   & 0.69 & zero-shot (Sapling)& \\
 \midrule
@@ -39,19 +45,21 @@
 
 \bottomrule
 \end{tabular}
-\caption{Summary of survey results on AI/LLM usage in academic and clinical research}
+\caption{Summary of indirect estimation results on LLM-use in research papers.}
 \label{tab:review_estimation}
 \end{sidewaystable}
 
 
 
-\subsection{Survey results}\label{ap:surveys}
-In all surveys, we focused on use cases that could have an influence on the formulation if final paper, such as editing or summarizing of other papers, instead of use cases in other academic undertakings, such as writing code, or very early in the writing process, like brainstorming or writing an outline.
+\section{Survey results}\label{ap:surveys}
+Surveys are a direct way of estimating LLM-use in research by asking academics.
+An overview of surveys can be found in Table \ref{tab:review_surveys}.
+In all selected surveys, we focused on use cases that could have an influence on the formulation if final paper, such as editing or summarizing of other papers, instead of use cases in other academic undertakings, such as writing code, or very early in the writing process, like brainstorming or writing an outline.
 Grammar checks were also excluded as a relevant use case, because while this is a very popular task for LLMs, this should have a minor influence on phrasing.
 Surveys that only asked about LLM use in general without listing use-cases were not considered \cite{Elsevier2024}, as well as questions regarding general LLM-use from the surveys that are included in the review. 
-an important factor in evaluating the results is the organization doing the survey.
-Researchers might be hesitant to admit LLM use in a survey done by an important academic publisher despite anonymity, especially if this publisher is known to be anti-LLM, such as Nature
-
+This is because LLMs have a lot of use-cases that are not directly related to the paper-writing process, such as writing code or brainstorming.
+An important factor in evaluating the results is the organization doing the survey.
+Researchers might be hesitant to admit LLM use in a survey done by an important academic publisher despite anonymity, because they depend on them professionally.
 \begin{sidewaystable}
 \centering
 \begin{tabular}{lrlllrc}
@@ -164,6 +172,6 @@ Researchers might be hesitant to admit LLM use in a survey done by an important 
 
 \bottomrule
 \end{tabular}
-\caption{Summary of survey results on AI/LLM usage in academic and clinical research}
+\caption{Summary of survey results on LLM-use in research papers.}
 \label{tab:review_surveys}
 \end{sidewaystable}

@@ -1,6 +1,8 @@
 \ProvidesPackage{settings}
 
 %packages
+\usepackage[utf8]{inputenc} % For UTF-8 encoding
+\usepackage[english, ngerman]{babel} % For English and German languages
 \usepackage{graphicx} 
 \usepackage{subcaption}
 \usepackage{booktabs}
@@ -10,9 +12,12 @@
 \usepackage{makecell}
 \usepackage{rotating}
 \usepackage{hyperref}
-\usepackage[backend=biber]{biblatex}
-\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage[backend=biber, style=numeric]{biblatex}
+\usepackage{amsmath, amssymb}
 \usepackage{bookmark}
+\usepackage{geometry} % For page margins
+\usepackage{setspace} % For line spacing
 
 % work around abstracts in citation
 \AtEveryBibitem{%

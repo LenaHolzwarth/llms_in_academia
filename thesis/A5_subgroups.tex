@@ -1,26 +1,81 @@
-\section{Subgroup analysis}
-\subsection{Countries and language regions}
+\chapter{Subgroup analysis}
+\section{Countries and language regions}\label{ap:countries}
+\begin{table}
+    \centering
+    \begin{tabular}{lr}
+\toprule
+country & paper counts \\
+\midrule
+NNES & 719959 \\
+NES & 333161 \\
+China & 246000 \\
+USA & 208178 \\
+UK & 64347 \\
+Japan & 59863 \\
+Germany & 54827 \\
+Italy & 28716 \\
+Canada & 28649 \\
+Netherlands & 27538 \\
+South Korea & 25537 \\
+France & 24577 \\
+Australia & 22956 \\
+Spain & 22657 \\
+Brazil & 19670 \\
+Sweden & 16015 \\
+Switzerland & 15389 \\
+India & 14173 \\
+Taiwan & 11001 \\
+Iran & 9399 \\
+\bottomrule
+\end{tabular}
+\caption{Overview of countries and language regions, detailing the number of papers published in the time span from 2017 up to and including 2025. The language regions include papers from all relevant countries, not only those listed here.}
+\label{tab:countires_counts}
+\end{table}
+
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/countries_individual_freqs_subsubopt.png}
-    \caption{}
+    \caption{Observed and expected frequencies for the body of papers from different countries and language regions. The frequencies are computed with the wordlist created by the third-to-optimal cutoff, because higher cutoff values lead to unreliable results.}
     \label{fig:countries_freqs}
 \end{figure}
 
-\subsection{Academic Discipline}\label{ap:disciplines}
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/countries_individual_freqs_opt.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/countries_individual_freqs_subopt.png}
+    \end{minipage}
+    \caption{Observed and expected frequencies for the body of papers from different countries and language regions, which were excluded from the analysis because they did not yield reliable estimates. The left panel shows frequencies based on the optimal word list, the right panel those based on the second-to-optimal word list. In both scenarios, there are many countries for which the observed frequency doesn't sufficiently differ from the expected frequency. Because our LLM-use estimate is based on the difference of observed and expected frequency, this leads to unreliable estimates.}
+    \label{fig:countries_opt_subopt}
+\end{figure}
+
+\section{Academic Discipline}\label{ap:disciplines}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/disciplines_individual_freqs.png}
+    \caption{Observed and expected frequencies for papers from different research disciplines. The frequencies are computed with the wordlist created by the third-to-optimal cutoff, because higher cutoff values lead to unreliable results. Because the number of papers per category is quite small, the error margins of the predictions can be quite large. Of note are the frequencies for papers from computation fields, where an outlier in 2022 leads to an expected frequency that is clearly too low. Because the LLM-use estimate is a metric based on the difference of expected and observed frequency, we can make no reliable estimate for this discipline.}
+    %comment: this is still the wrong color, but I might just leave it like that 
+    %comment: need number of papers per category
+    \label{fig:disciplines_freqs}
+\end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/disciplines_individual.png}
-    \caption{LLM-use estimates for different academic disciplines contributing to PMC for the abstract and main body of the paper. The highest estimate in each panel is marked in a gray box.}
+    \caption{LLM-use estimates for different academic disciplines contributing to PMC for the abstract and main body of the paper. The highest estimate in each panel is marked in a gray box. The estimates are computed with the wordlist created by the third-to-optimal cutoff, because higher cutoff values lead to unreliable results.}
     \label{fig:disciplines_ind}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{../results/plots/baseline_2026-01-23/research-article_aimrd_f/disciplines_2024v2025.png}
-    \caption{LLM-use estimates of 2024 (x-axis) and 2025 (y-axis) for different academic disciplines. Because the number of papers in each category is very small, some estimates have very high uncertainty.}
+    \caption{LLM-use estimates of 2024 (x-axis) and 2025 (y-axis) for different academic disciplines. Because the number of papers in each category is very small, some estimates have very high uncertainty, which is not visible in this plot.}
     \label{fig:disciplines_all}
-    %comment: this should be a different color than countries
 \end{figure}
