@@ -10,6 +10,7 @@ BASELINE_NAME = "baseline_2026-01-23"
 DATA_PATH = os.path.join("../data", BASELINE_NAME, "formatted")
 VERSION = [""]#, "crop", "sample"]
 MAX_LEN = 255
+LEMMATIZE = False
 
 for version in VERSION:
     # need to define this in the loop, bc it gets changed in the function call
@@ -32,7 +33,7 @@ for version in VERSION:
             f"{ARTICLE_TYPE}_a{secs_acro}_{version}{MAX_LEN}",
         )
 
-    if not os.path.exists(RESULTS_PATH):
+    if not os.path.exists(os.path.join(RESULTS_PATH, "abstract", f"freqs_df{"_lemmatized" if LEMMATIZE else ""}.csv.gz")):
         print(f"computing word frequency for version {version}")
         utils.compute_word_frequency(
             data_path=DATA_PATH,
@@ -42,6 +43,7 @@ for version in VERSION:
             full_text=FULL_TEXT,
             version=version,
             max_len=MAX_LEN,
+            lemmatize=LEMMATIZE
         )
 
     ### there is no need to compute the frequency proj for each and every word

@@ -80,6 +80,7 @@ def compute_word_frequency(
     min_token_len: int = 4,
     version: str = "",
     max_len: int = -1,
+    lemmatize: bool = False
 ):
     """
     Get monthly word frequency for each section of PMC papers.
@@ -88,7 +89,7 @@ def compute_word_frequency(
     - run every section through binary count vectorizer
     - aggregate counts from individual paper to monthly
     - use monthly counts to compute frequency
-    - lemmatize: aggregate frequencies of different versions of the same word
+    - if lemmatize: aggregate frequencies of different versions of the same word
 
     Args:
         data_path: where the paper df is stored
@@ -107,15 +108,16 @@ def compute_word_frequency(
         version: one of ["crop", "sample", "] determine if the texts
                  should be cropped or sampled to be at most as long as max_len
         max_len: texts should not have more words than this. Fewer is okay
+        lemmatize: count inflections as the same word
     """
     years = np.arange(2000, 2026)
     months = np.arange(1, 13)
 
-    os.makedirs(os.path.join(results_path, "abstract"), exist_ok=False)
+    os.makedirs(os.path.join(results_path, "abstract"), exist_ok=True)
     if full_text:
-        os.makedirs(os.path.join(results_path, "full"), exist_ok=False)
+        os.makedirs(os.path.join(results_path, "full"), exist_ok=True)
     for sec in sections:
-        os.makedirs(os.path.join(results_path, sec), exist_ok=False)
+        os.makedirs(os.path.join(results_path, sec), exist_ok=True)
 
     df, paper_count_full, paper_count_filtered = load_paper_df(
         data_path, article_type, sections, full_text, allow_other
@@ -126,13 +128,13 @@ def compute_word_frequency(
     }
 
     filters_dict["all_dates"] = list(map(str, df["date"].values))
-    filters_dict["all_countries"] = df["country"].values
-    filters_dict["all_journals"] = df["journal"].values
+    filters_dict["all_countries"] = list(df["country"])
+    filters_dict["all_journals"] = list(df["journal"])
 
     sections.append("abstract")
     if full_text:
         sections.append("full")
-
+    
     for sec in sections:
         print(f"vectorizing section {sec}")
         vectorizer = CountVectorizer(
@@ -187,23 +189,24 @@ def compute_word_frequency(
             dict(zip(months_w_years, list(counts.astype(int).T))), index=words
         )
 
-        # lemmatize, americanize and combine counts
-        lemmas = get_lemma_dict(list(count_df.index))
-        with open("../src/british_spellings.json") as f:
-            british_spell = json.load(f)
-        count_df = count_df.rename(index=british_spell).rename(index=lemmas)
-        count_df = count_df.groupby(count_df.index).sum()
-        # lemmatizing shortens some strings below threshold, they should be removed
-        count_df = count_df[count_df.index.str.len() >= min_token_len]
-        # save lemmas for each section
-        with open(os.path.join(results_path, sec, "lemmas.json"), "w") as f:
-            json.dump(lemmas, f)
-        # also save lemmatized word list?
-        np.save(
-            os.path.join(results_path, sec, "words_lemmatized.pkl"),
-            count_df.index,
-            allow_pickle=True,
-        )
+        if lemmatize:
+            # lemmatize, americanize and combine counts
+            lemmas = get_lemma_dict(list(count_df.index))
+            with open("../src/british_spellings.json") as f:
+                british_spell = json.load(f)
+            count_df = count_df.rename(index=british_spell).rename(index=lemmas)
+            count_df = count_df.groupby(count_df.index).sum()
+            # lemmatizing shortens some strings below threshold, they should be removed
+            count_df = count_df[count_df.index.str.len() >= min_token_len]
+            # save lemmas for each section
+            with open(os.path.join(results_path, sec, "lemmas.json"), "w") as f:
+                json.dump(lemmas, f)
+            # also save lemmatized word list?
+            np.save(
+                os.path.join(results_path, sec, "words_lemmatized.pkl"),
+                count_df.index,
+                allow_pickle=True,
+            )
 
         # df with each row corresponding to the frequency for one word
         # in each month (in how many papers does the word appear)
@@ -212,10 +215,10 @@ def compute_word_frequency(
         freqs_df = pd.DataFrame(
             dict(zip(months_w_years, list(freqs.T))), index=count_df.index
         )
-
-        count_df.to_csv(os.path.join(results_path, sec, f"count_df.csv.gz"))
-        freqs_df.to_csv(os.path.join(results_path, sec, f"freqs_df.csv.gz"))
-
+        
+        count_df.to_csv(os.path.join(results_path, sec, f"count_df{"_lemmatized" if lemmatize else ""}.csv.gz"))
+        freqs_df.to_csv(os.path.join(results_path, sec, f"freqs_df{"_lemmatized" if lemmatize else ""}.csv.gz"))
+    
     # save paper counts
     filters_dict["filters"] = {
         "article_type": article_type,
